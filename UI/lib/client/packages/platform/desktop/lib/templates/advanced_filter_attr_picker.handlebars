@@ -1,0 +1,12 @@
+<div class="is-container-for-filter-attr-picker">
+  <button
+      class="{{if showingMenu 'on' 'off'}} is-button-for-toggle-show-filter-attr-picker btn btn-small filter-attr-picker-btn"
+      {{action "toggleShowFilterAttrPicker" bubbles=false preventDefault=true}}>
+    {{selectedAttrLabel}}
+  </button>
+
+  {{#if showingMenu}}
+    {{view treeController.TreeView controller=treeController class="filter-attr-picker-view-panel"}}
+  {{/if}}
+</div>
+

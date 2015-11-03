@@ -1,0 +1,71 @@
+/***************************************************************************************
+*  RetrieveDirs.rul
+*
+*  Purpose:	retrieves locations for various products, such as Java and Tomcat
+*           note retrieving from 64-bit registry
+*/ 
+
+prototype RetrieveDirsFromRegistry();
+
+//
+//
+
+STRING szValueName;
+NUMBER nvType;
+
+function RetrieveDirsFromRegistry() 
+begin 
+
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+ 	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	szRegKey = "SOFTWARE\\JavaSoft\\Java Runtime Environment\\1.7";
+	szValueName = "JavaHome";
+	
+	//get JavaHome directory from registry
+	if (RegDBGetKeyValueEx (szRegKey, szValueName, nvType, szJavaHome, nvSize) < 0) then
+        MessageBox ("Reading JavaHome location from registry failed. \nJava 7 may not be properly installed.", SEVERE);
+        abort;
+    else
+        // Check to see if the value returned is a string
+        if (nvType != REGDB_STRING) then
+            MessageBox ("Reading JavaHome location from registry: \nLocation is not valid.", SEVERE);
+            abort;
+        endif;
+
+    endif;
+    
+    
+    //get Tomcat 8 directory from registry
+    szRegKey = "SOFTWARE\\Apache Software Foundation\\Tomcat\\8.0\\Tomcat8";
+	szValueName = "InstallPath";
+	if (RegDBGetKeyValueEx (szRegKey, szValueName, nvType, szTomcat, nvSize) < 0) then
+		if(Is(FILE_EXISTS, "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.0\\bin\\Tomcat8.exe")) then
+			MessageBox ("Reading Tomcat8 location from registry failed. \nTomcat 8 may not be properly installed.", WARNING);
+			szTomcat = "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.0";
+		else
+			MessageBox ("Reading Tomcat8 location from registry failed. \nTomcat 8 may not be properly installed.", SEVERE);
+			abort;
+        endif;
+    else
+        // Check to see if the value returned is a string
+        if (nvType != REGDB_STRING) then
+            MessageBox ("Reading Tomcat8 location from registry: \nLocation is not valid.", SEVERE);
+            abort;
+        endif;
+
+    endif;
+    
+    bTomcat7Present = FALSE;
+    //get Tomcat 7 directory from registry
+    szRegKey = "SOFTWARE\\Apache Software Foundation\\Tomcat\\7.0\\Tomcat7";
+	szValueName = "InstallPath";
+	if (RegDBGetKeyValueEx (szRegKey, szValueName, nvType, szTomcat7, nvSize) >= 0) then
+		bTomcat7Present = TRUE;	
+        // Check to see if the value returned is a string
+        if (nvType != REGDB_STRING) then
+            MessageBox ("Reading Tomcat7 location from registry: \nLocation is not valid.", WARNING);
+        endif;
+
+    endif;
+	
+end;

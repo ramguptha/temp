@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>JsWorld Monetary Locales Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../JsWorld.js"></script>
+<script type="text/javascript" src="../locales/js/POSIX_LC.js"></script>
+
+<script type="text/javascript">
+
+function onLoad() {
+
+	var input = -1234567.89;
+	
+	document.getElementById("input").value = input;
+	
+	doTest();
+}
+
+function useRandom() {
+
+	var randomNumber = Math.floor(Math.random()*1000000000) / 100;
+	
+	doTest(randomNumber);
+}
+
+function doTest(num, opt) {
+
+	// get user input
+	if (typeof num == "number")
+		var input = num;
+	else
+		var input = document.getElementById("input").value;
+	
+	if (typeof opt == "string")
+		var options = opt;
+	else
+		var options = document.getElementById("options").value;
+	
+	
+	// delete old table rows
+	var resultTableBody = document.getElementById("result-table-body");
+	
+	while (resultTableBody.firstChild)
+		resultTableBody.removeChild(resultTableBody.firstChild);
+	
+	// current locale
+	var lc = null;
+	
+	// formatted output
+	var formattedOutput = null;
+	
+	// parsed output
+	var parsedOutput = null;
+	
+	// render new rows
+	var i = 1;
+	var tr = null;
+	var td = null;
+	var cdata = null;
+	
+	for (var locale in POSIX_LC) {
+			
+		// create new table row
+		tr = document.createElement("tr");
+	
+		// number
+		td = document.createElement("td");
+		cdata = document.createTextNode(i++);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// locale code
+		td = document.createElement("td");
+		cdata = document.createTextNode(locale);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// input
+		td = document.createElement("td");
+		cdata = document.createTextNode(input);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		try {
+			lc = new jsworld.Locale(POSIX_LC[locale]);
+			var mf = new jsworld.MonetaryFormatter(lc);
+			var formattedOutput = mf.format(input, options);
+		} catch (error) {
+			formattedOutput = error;
+		}
+		td = document.createElement("td");
+		cdata = document.createTextNode(formattedOutput);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		try {
+			var mp = new jsworld.MonetaryParser(lc);
+			parsedOutput = mp.parse(formattedOutput);
+		} catch (error) {
+			parsedOutput = error;
+		}
+		td = document.createElement("td");
+		cdata = document.createTextNode(parsedOutput);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// append row to table
+		resultTableBody.appendChild(tr);
+	}
+}
+</script>
+
+</head>
+
+<body onload="onLoad()">
+
+	<h1>JsWorld Monetary Locales Test</h1>
+
+	<div>
+		Amount
+		<input id="input" type="text" maxlength="20"/>
+		Options [^!~i.n]
+		<input id="options" type="text" type="text" size="6" "maxlength="10"/>
+		<input type="submit" value="Test" onclick="doTest();"/>
+		<input type="submit" value="Random test" onClick="useRandom();"/>
+	</div>
+
+	<table id="result-table" border="1" cellspacing="0">
+		<thead id="result-table-head">
+			<tr>
+				<th>#</th>
+				<th>Locale</th>
+				<th>Input</th>
+				<th>Formatted currency</th>
+				<th>Parsed amount</th>
+			</tr>
+		</thead>
+		<tbody id="result-table-body" >
+			<!-- generated rows come here -->
+		</tbody>
+	</table>
+
+</body>
+
+</html>

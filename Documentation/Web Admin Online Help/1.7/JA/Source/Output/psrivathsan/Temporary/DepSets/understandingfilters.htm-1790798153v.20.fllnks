@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/creatingsmartpolicies.htm" />
+    <Link
+      Url="Content/Resources/Images/filterex3.jpg" />
+    <Link
+      Url="Content/Resources/Images/filterex1.jpg" />
+    <Link
+      Url="Content/Resources/Images/filterex2.jpg" />
+    <Link
+      Url="Content/Resources/Images/Remove_filter_icon.png" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/creatingsmartpolicies.htm" />
+    <Link
+      Url="Content/Resources/Images/filterex3.jpg" />
+    <Link
+      Url="Content/Resources/Images/filterex1.jpg" />
+    <Link
+      Url="Content/Resources/Images/filterex2.jpg" />
+    <Link
+      Url="Content/Resources/Images/Remove_filter_icon.png" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

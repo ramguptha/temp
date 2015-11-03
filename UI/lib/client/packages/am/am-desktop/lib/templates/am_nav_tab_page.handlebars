@@ -1,0 +1,97 @@
+<div class="snap-view-menu" style={{view.navStyle}}>
+  {{nav-header
+    title=navTitle
+    searchQuery=navController.searchQuery
+    searchFilterSupported=navController.searchFilterSupported
+    nameOptions=navController.searchableOptions
+
+    navActions=navController.navActions
+    navActionsContext=navController.navActionsContext
+    navActionsTarget=navController.navActionsTarget
+  }}
+
+  {{data-list
+    class=navController.classNames
+    pager=navController.dataPager
+    paused=navController.paused
+
+    showErrorDetail="showCommunicationError"
+    rowClick="rowClick"
+
+    rowHeight=navController.rowHeight
+    rowPresentation=navController.rowPresentation
+    itemComponent=navController.itemComponent
+
+    columns=navController.columns
+    selectedIds=navController.selections
+    hasMultipleSelection=false
+    hasSingleSelection=true
+    hasSelectAll=false
+    hideSelectionCheckboxes=true
+    showHeader=false
+  }}
+</div>
+
+<div class="page-snap-view" style={{view.clientStyle}}>
+  <div class="snap-view-divider-container">
+
+    <div class="snap-view-handler">
+      <div class="panel-opener">
+        <div class="panel-handle icon-arrow-4"><div class="slide-button"></div></div>
+      </div>
+    </div>
+
+    <div class="snap-view-divider"></div>
+  </div>
+
+  <div class="snap-container-title"><span class="snap-container-icon"><img src={{snapContainerIconPath}}></span>
+    {{#if snapContainerSubTitle }}
+      <div class="list-info-header text-ellipsis">
+        <h1 class="list-title" data-tooltip-attr="title">{{model.name}}</h1>
+        <h3 class="list-title-summary text-ellipsis" data-tooltip-source-id="deviceDetailsDesc">
+          {{snapContainerSubTitle}}
+        </h3>
+        <div class="hide-block" data-tooltip-id="deviceDetailsDesc">{{snapContainerSubTitle}}</div>
+      </div>
+    {{else}}
+      <h2 class="text-ellipsis">{{model.name}}</h2>
+    {{/if}}
+
+    {{#if buttonBlockView}}
+      {{view buttonBlockView}}
+    {{/if}}
+  </div>
+
+  <div class={{snapContainerContentClass}}>
+    {{#if hasWarning}}
+      {{view warningView}}
+    {{/if}}
+    <div class="snap-container-frame">
+
+      {{#unless readOnlyPolicy}}
+        <div class="tabs-menu">
+          <ul class="snap-menu-tabs">
+            {{#each tabList as |tab|}}
+              {{#if tab.length}}
+                <li class="menu-parent menu-closed">
+                  <label>{{tab.label}}</label>
+                  {{view tabCompoundItemView activeTab=activeTab tab=tab}}
+                </li>
+              {{else}}
+                {{view tabItemView activeTab=activeTab tab=tab}}
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      {{/unless}}
+
+      <div class="page-content-frame {{if readOnlyPolicy 'no-tabs-frame'}} ">
+        <div class="page-content">
+          {{outlet}}
+        </div>
+      </div>
+
+      <div class="snap-container-footer"></div>
+    </div>
+  </div>
+</div>

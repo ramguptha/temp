@@ -1,0 +1,16 @@
+{{#if promptForEraseSDCard}}
+  <div class="commands-input-list">
+
+    {{#each eraseOptions as |option|}}
+      <label>
+        {{radio-button
+        name='eraseData'
+        selection=eraseOption
+        value=option.value
+        class=option.class}}
+        {{option.label}}
+      </label>
+    {{/each}}
+
+  </div>
+{{/if}}

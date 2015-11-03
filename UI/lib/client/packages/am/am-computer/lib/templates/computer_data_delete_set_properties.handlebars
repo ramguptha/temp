@@ -1,0 +1,44 @@
+<div class="progress-steps-new-content">
+<ul class="progress-steps">
+    <li class="active-step"><span class="icon-number-1"></span>SET PROPERTIES</li>
+    <li><span class="icon-number-2"></span>DELETE OPTIONS</li>
+    <li><span class="icon-number-3"></span>REVIEW AND REQUEST</li>
+  </ul>
+</div>
+
+<div class="container-device-freeze-set-properties" >
+  <!-- TODO change name for select-enter-category class to select-freeze-set-properties -->
+  <div class="select-enter-category for-device-freeze">
+    <div>
+      <label>Reason for this request</label>
+    </div>
+    <div>
+      {{select-field content=reasonList value=selectedReasonId optionValuePath="content.data.id" optionLabelPath="content.data.dataDeleteReasonTitle" }}
+    </div>
+    <div>
+      <label>Comments</label>
+    </div>
+    <div class="comments-for-data-delete">
+    {{textarea placeholder="Enter comment here..." rows="3" class="folder-name-field" value=comment}}
+    </div>
+
+    <div class="force-reboot-block">
+    </div>
+    {{#if errorMessage}}
+      <div class="alert alert-error tipsy tipsy-sw">
+        <div class="tipsy-arrow tipsy-arrow-sw"></div>
+        <div class="tipsy-inner">{{errorMessage}}</div>
+      </div>
+    {{/if}}
+    {{#if actionWarning}}
+      <div class="alert-warning">{{actionWarning}}</div>
+    {{/if}}
+  </div>
+</div>
+
+<div class="container-fluid add-content-actions">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>Cancel</button>
+    <button class="btn btn-action" {{action "gotoNextStep"}} disabled={{isContinueDisabled}}>Continue</button>
+  </div>
+</div>

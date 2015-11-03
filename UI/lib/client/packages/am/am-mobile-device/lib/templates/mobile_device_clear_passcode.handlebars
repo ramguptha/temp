@@ -1,0 +1,73 @@
+<div class="modal-section-wrapper modal-commands-properties-container">
+  <div class="commands-info">
+    {{#if deviceCountDetails}}
+      {{#if (compare deviceCountDetails 1 ">")}}<p><b>{{t 'amMobileDevice.shared.devicesSelected' deviceCountDetails=deviceCountDetails}}</b></p>{{/if}}
+    {{/if}}
+
+    {{#if actionDescription}}
+      <p> {{actionDescription}} </p>
+    {{/if}}
+
+    {{#if actionWarning}}
+      <p> <span class="alert alert-warning">{{actionWarning}}</span></p>
+    {{/if}}
+  </div>
+
+  {{#if promptForPasscode}}
+    <div class="properties-label properties-label-wide push-margin">
+      <label class="for-checkbox">{{input type="checkbox" checked=newPasscodeEnabled}} {{checkBoxTitle}}</label>
+    </div>
+    <div class="properties-value"></div>
+
+    <div disabled={{isNewPasscodeDisabled}}>
+      <div class="properties-label properties-label-wide">
+        <label>{{t 'amMobileDevice.modals.clearAndSetPasscode.enterNewPasscode'}}</label>
+      </div>
+      <div class="properties-value properties-value-narrow">
+        <div class="inline-flex-row">
+          {{input type="text"
+          id="newPasscode"
+          type="password"
+          value=passcode
+          disabled=isNewPasscodeDisabled}}
+
+          {{#if passcodeErrorMessage}}
+            <div class="is-container-for-passphrase-error-message required-field-message error">{{passcodeErrorMessage}}</div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    <div disabled={{isNewPasscodeDisabled}}>
+      <div class="properties-label properties-label-wide">
+        <label>{{t 'amMobileDevice.modals.clearAndSetPasscode.typeThePasscodeAgain'}}</label>
+      </div>
+
+      <div class="properties-value properties-value-narrow">
+        <div>
+          <div>
+            {{input type="text"
+            id="reTypePasscode"
+            type="password"
+            value=verifyPasscode
+            disabled=isNewPasscodeDisabled}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+
+  {{#if unsupportedDevices}}
+    <div class="commands-unsupported-info"><span class="icon-triangle-attention"></span>{{unsupportedDevicesMessage}}</div>
+
+    {{view unsupportedDeviceListController.SummaryListView context=unsupportedDeviceListController controller=unsupportedDeviceListController}}
+  {{/if}}
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

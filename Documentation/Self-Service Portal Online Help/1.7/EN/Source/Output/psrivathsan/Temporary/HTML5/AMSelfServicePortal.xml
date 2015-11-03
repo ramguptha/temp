@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1">
+    <TocEntry Title="Welcome to the Absolute Manage Self-Service Portal" Link="/Content/welcome.htm" />
+    <TocEntry Title="Disclaimer" Link="/Content/disclaimer.htm" />
+    <TocEntry Title="Setting login and language preferences" Link="/Content/loginpreferences.htm" />
+    <TocEntry Title="Viewing information about your mobile device or computer" Link="/Content/viewing_device_details.htm" />
+    <TocEntry Title="Remote Commands">
+        <TocEntry Title="Sending a message to your mobile device or computer" Link="/Content/sending_messages.htm" />
+        <TocEntry Title="Locking your mobile device or OS X computer" Link="/Content/locking_device.htm" />
+        <TocEntry Title="Clearing the passcode on your mobile device" Link="/Content/clearing_passcode.htm" />
+        <TocEntry Title="Setting the passcode on your Android device" Link="/Content/setting_passcode.htm" />
+        <TocEntry Title="Erasing your mobile device or OS X computer" Link="/Content/erasing_device.htm" />
+    </TocEntry>
+</CatapultToc>

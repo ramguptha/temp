@@ -1,0 +1,43 @@
+{
+  "name": "abs-am-admin",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://dv2wlss-linux1.absolute.com/cc-old.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "async": "0.2.9",
+    "consolidate": "0.9.1",
+    "express": "3.0.x",
+    "express-markdown": "0.0.6",
+    "handlebars": "1.3.0",
+    "http-proxy": "^1.11.1",
+    "less": "^2.5.1",
+    "less-middleware": "~1.0.4",
+    "madge": "0.1.4",
+    "minimist": "^1.1.1",
+    "ncp": "0.5.0",
+    "node-qunit-phantomjs": "^1.2.0",
+    "optimist": "0.3.5",
+    "qunit": "0.5.18",
+    "raw-body": "1.1.3",
+    "request": "^2.60.0",
+    "requirejs": "2.0.x",
+    "shelljs": "0.2.5",
+    "underscore": "1.5.2"
+  },
+  "devDependencies": {
+    "clean-css": "^3.3.5",
+    "forever-monitor": "~1.5.2",
+    "fs": "0.0.2",
+    "grunt-express-server": "^0.5.1",
+    "grunt-open": "~0.2.3",
+    "node-qunit-phantomjs": "~1.0.0",
+    "recursive-readdir": "^1.2.1",
+    "shelljs": "~0.2.5"
+  }
+}

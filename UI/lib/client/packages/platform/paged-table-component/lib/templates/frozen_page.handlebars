@@ -1,0 +1,52 @@
+<table class="paged-table frozen">
+  <tbody>
+    {{#each presenter.rows as |row|}}
+      <tr
+        style={{row.style}}
+        class="{{if row.isEven "even" "odd"}} {{if row.isSelected "selected"}} {{if row.isDisabled "disabled"}} {{if row.isHighlighted "row-state-hover"}} {{if row.hasRowClick "pointer"}}"
+        data-automation-id={{row.automationId}}
+        data-automation-parent-id={{row.parentNodeId}}
+        data-id={{row.id}}
+        {{action "updateOneSelection" row.id target=presenter.pagedComponent}}
+      >
+        {{#if row.hasControlColumn}}
+          <td class="is-container-for-control">
+            {{#if row.hasSelection}}
+              {{#if row.hasSingleSelection}}
+                <input
+                  type="radio" name="radioGroup"
+                  checked={{row.isSelected}} disabled={{row.isDisabled}} value={{row.id}}
+                  {{action "updateOneSelection" row.id preventDefault=false bubbles=false target=presenter.pagedComponent}}
+                >
+              {{else}}
+                <input
+                  class="is-select-checkbox" type="checkbox" value="all"
+                  checked={{row.isSelected}} disabled={{row.isDisabled}}
+                  {{action "updateOneSelection" row.id preventDefault=false bubbles=false target=presenter.pagedComponent}}
+                >
+              {{/if}}
+            {{/if}}
+          </td>
+        {{/if}}
+
+        {{#each row.frozenDataCells as |cell|}}
+          {{component cell.valueComponent
+            tagName="td"
+
+            pagedComponent=cell.pagedComponent
+            row=cell.row
+            cell=cell
+            node=cell.node
+            presenter=cell.presenter
+
+            refreshedAt=cell.pagedComponent.pager.contentChangedAt
+
+            style=cell.style
+            name=cell.name
+            click=cell.click
+          }}
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

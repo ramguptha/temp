@@ -1,0 +1,53 @@
+<div class="progress-steps-new-content">
+  <ul class="progress-steps">
+    <li class="complete-step"><span class="icon-checkmark1"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.uploadFiles'}}</li>
+    <li class="active-step"><span class="icon-number-2"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.assignProperties'}}</li>
+    <li><span class="icon-number-3"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.assignPolicy'}}</li>
+    <li><span class="icon-number-4"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.finish'}}</li>
+  </ul>
+</div>
+
+<label class="select-message">{{t 'amAssignableItem.modals.addContent.assignPropertiesStep.categoryLabel'}}</label>
+
+<div class="select-enter-category ui-front">
+  {{ng-text-field id="customCategory" placeholder=categoryTextFieldPlaceholder value=selectedCategory }}
+</div>
+
+<div class="add-description-area">
+  {{textarea placeholder=categoryDescriptionPlaceholder rows="3" value=description}}
+</div>
+
+<div class="content-permissions-area">
+  <h5>{{t 'amAssignableItem.modals.addContent.assignPropertiesStep.assignPermissionsLabel' numberOfFiles=newContentFiles.length}}</h5>
+  <div class="container-fluid-options">
+    <div class="pull-left" >
+      <label class="for-checkbox is-checkbox-for-allow-file-to-leave-abs-safe">{{input type="checkbox" checked=allowFileToLeaveAbsSafe disabled=isAllowFileToLeaveAbsSafeDisabled}}
+        {{t 'amAssignableItem.modals.addContent.assignPropertiesStep.canLeaveCheckbox'}}
+      </label>
+      <label class="for-checkbox is-checkbox-for-can-email">&#160;&#160;&#160;&#160;{{input type="checkbox" checked=canEmail disabled=isCanEmailDisabled}}
+        {{t 'amAssignableItem.modals.addContent.assignPropertiesStep.canEmailCheckbox'}}</label>
+      <label class="for-checkbox is-checkbox-for-can-print">&#160;&#160;&#160;&#160;{{input type="checkbox" checked=canPrint disabled=isCanPrintDisabled}}
+        {{t 'amAssignableItem.modals.addContent.assignPropertiesStep.canPrintCheckbox'}}</label>
+      <label class="for-checkbox is-checkbox-for-wifi-only-download">{{input type="checkbox" checked=wifiOnlyDownload}}
+        {{t 'amAssignableItem.modals.addContent.assignPropertiesStep.downloadOnlyOverWiFiCheckbox'}}</label>
+    </div>
+    <div class="pull-right" >
+      <div class="container-fluid-password">
+        <label>{{t 'amAssignableItem.modals.addContent.assignPropertiesStep.passphraseLabel'}}</label>
+
+        {{input type="text" id="newPasscode" placeholder=enterPassphrasePlaceholder type="password" value=passphrase}}
+        {{input type="text" id="reTypePasscode" placeholder=confirmPassphrasePlaceholder type="password" value=verifyPassphrase}}
+        {{#if passphraseErrorMessage}}<div class="alert alert-error">{{passphraseErrorMessage}}</div>{{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid add-content-actions">
+  <span class="icon-question-mark modal-footer-info" alt="Help" {{action "onHelpStep2"}}></span>
+  <div class="button-group">
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-low back-button" {{action "gotoPreviousStep"}}>{{t 'shared.buttons.back'}}</button>
+    <button class="btn btn-action" {{action "gotoNextStep"}} disabled={{isContinueDisabled}}>{{t 'shared.buttons.continue'}}</button>
+  </div>
+</div>

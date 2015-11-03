@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1157" MadCap:lastWidth="1137">
+    <head>
+        <link href="Resources/Stylesheets/In_Column.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">アクションで変数を使用する</h1>
+        <p class="Body">モバイルデバイス用のメッセージまたは名前を含むアクションを作成する場合、特定のテキストフィールド内に、デバイスおよびユーザーに関連する変数を埋め込むことができます。これらの変数は、アクションが実行されるときに、対応する情報アイテムの内容に置換されます。</p>
+        <p class="Body">アクションで変数を使用するには、波括弧とドルマークの接頭辞で囲みます (例: <span class="Bold">${MD_DeviceName}</span>)。</p>
+        <p class="Body">以下の表は、アクションに記載できる変数のリストです。</p>
+        <table style="mc-table-style: url('Resources/Stylesheets/In_Column.css');width: 600px;" class="TableStyle-In_Column" cellspacing="0">
+            <col class="TableStyle-In_Column-Column-Column1" style="width: 241px;">
+            </col>
+            <col class="TableStyle-In_Column-Column-Column1" style="width: 357px;">
+            </col>
+            <thead>
+                <tr class="TableStyle-In_Column-Head-Header1">
+                    <th class="TableStyle-In_Column-HeadE-Column1-Header1">変数</th>
+                    <th class="TableStyle-In_Column-HeadD-Column1-Header1">対応する情報アイテムを含む</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1" colspan="2">
+                        <p class="CellSubHeading">デバイス関連の変数</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_CurrentCarrierNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの現在のキャリアネットワーク</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_DeviceModel</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのモデル</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_DeviceName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイス名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_HomeCarrierNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのホームネットワーク</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IMEI</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの IMEI</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_UDID</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの識別子 (UDID)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_PhoneNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの電話番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_SerialNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのシリアル番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_LastMDMHeartbeat</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの最後の連絡</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_IPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのパブリック IP アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_CellIPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスのセル IP アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_WifiIPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの Wi-Fi IP アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_WifiMACAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの Wi-Fi MAC アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_WifiNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの Wi-Fi ネットワーク</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_Model</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスのモデル番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_OSVersion</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの OS バージョン</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IsJailbroken</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Jailbreak されたモバイルデバイス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_PasscodePresent</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのパスコードが存在</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IsRoaming</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスがローミング中</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_DataRoamingEnabled</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのデータローミングが有効</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_VoiceRoamingEnabled</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスボイスローミングが有効</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1" colspan="2">
+                        <p class="CellSubHeading">ユーザー関連の変数</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_FirstName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーのファースト・ネーム（名）</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_LastName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーのラスト・ネーム（姓）</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_LogOnName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーのログイン名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_DisplayName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの表示名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_EnrollmentUsername</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの登録ユーザー名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_EnrollmentDomain</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの登録ドメイン</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_PhoneNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの電話番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_EMail</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの E メール</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_OrganizationalUnitPath</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの組織単位のパス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_OrganizationalUnitPath</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの組織単位</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_IsMemberOf</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーは次のメンバーである</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Department</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの部署</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_Office</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの事務所</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Company</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの会社</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_Street</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの番地</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_City</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの市区町村</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_State</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの都道府県</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Country</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの国</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyB-Column1-Body2">
+                        <p class="CellBody">MDU_ZIPCode</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyA-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの郵便番号</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyFollowingList">また、<a href="creatingcustomfields.htm">カスタムフィールドを作成</a>し、変数名をフィールドに割り当てることでカスタム変数を使用することもできます。</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="actionsendmessage.htm" />
+                <MadCap:relatedTopic src="actionsendemail.htm" />
+                <MadCap:relatedTopic src="actionsendsms.htm" />
+                <MadCap:relatedTopic src="actionsetdevicename.htm" />
+                <MadCap:relatedTopic src="actionsetcustomfield.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

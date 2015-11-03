@@ -1,0 +1,8 @@
+{{number-field number=number1 min="0" max="9999"}}
+
+{{#if isRange}}
+  {{conjunctionText}}
+  {{number-field number=number2 min="0" max="9999"}}
+{{/if}}
+
+{{select-field content=operatorTypes optionValuePath="content.name" optionLabelPath="content.label" value=value}}

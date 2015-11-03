@@ -1,0 +1,17 @@
+<div class="button-group clearfix">
+  {{#each presentation as |button|}}
+    <div class="reset-absolute-origin">
+      {{#if button.hasChildren}}
+        {{#each button.children as |childButton|}}
+          <button data-tooltip-attr="title" data-sticky-tooltip="true" title={{childButton.tooltipName}} disabled={{childButton.disabled}} type="button" class="button-for-icon {{childButton.buttonClass}}"
+            {{action "buttonClick" childButton}}>
+            {{#if childButton.iconClass}}
+              <span data-tooltip-attr="title" data-sticky-tooltip="true" title={{childButton.tooltipName}} class="button-icon tooltip-s {{childButton.iconClass}}"></span>
+            {{/if}}
+          </button>
+        {{/each}}
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
+

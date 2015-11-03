@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="944" MadCap:lastWidth="1176">
+    <head>
+        <link href="Resources/TableStyles/In_ColumnIndent.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">Action: Register User In VPP</h1>
+        <p class="Body">You can create an action that adds mobile devices to your Volume Purchase Program (VPP) account when they join smart policies you assign the action to. You can also optionally send an invitation to users to register in the program using their personal Apple ID. This action is available for iOS&#160;devices only.</p>
+        <p class="Body">After you create actions, you can view and manage them (along with all other actions that exist in your deployment) within the <span class="Bold">Assignable Items</span> &gt; <span class="Bold">Actions</span> area.</p>
+        <p class="Note" MadCap:autonum="NOTE &#160;&#160;">If you are editing or duplicating a Register User In VPP action, refer to the table in the following task for a description of the fields available for the action.</p>
+        <p class="TaskIntro">To create a Register User In VPP action:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Assignable Items</span> &gt;&#160;<span class="Bold">Actions</span> area. (You can also  click <img src="Resources/Images/navicon.jpg" class="Icon" /> in the top left corner of the screen and then click <span class="Bold">Actions</span>.)</p>
+        <p class="Steps" MadCap:autonum="2. ">In the work area toolbar, click <span class="Bold">Add Action</span> &gt; <span class="Bold">Register User In VPP</span>.</p>
+        <p class="Steps" MadCap:autonum="3. ">Enter the following information. Required fields are marked with an asterisk (*).</p>
+        <table style="width: 90%;mc-table-style: url('Resources/TableStyles/In_ColumnIndent.css');" class="TableStyle-In_ColumnIndent" cellspacing="0">
+            <col class="TableStyle-In_ColumnIndent-Column-Column1" style="width: 255px;" />
+            <col class="TableStyle-In_ColumnIndent-Column-Column1" style="width: 519px;" />
+            <thead>
+                <tr class="TableStyle-In_ColumnIndent-Head-Header1">
+                    <th class="TableStyle-In_ColumnIndent-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-In_ColumnIndent-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-In_ColumnIndent-Body-Body1">
+                    <td class="TableStyle-In_ColumnIndent-BodyE-Column1-Body1">
+                        <p class="CellBody">Action name*</p>
+                    </td>
+                    <td class="TableStyle-In_ColumnIndent-BodyD-Column1-Body1">
+                        <p class="CellBody">A name for the action</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_ColumnIndent-Body-Body2">
+                    <td class="TableStyle-In_ColumnIndent-BodyE-Column1-Body2">
+                        <p class="CellBody">Description</p>
+                    </td>
+                    <td class="TableStyle-In_ColumnIndent-BodyD-Column1-Body2">
+                        <p class="CellBody">A description explaining the purpose
+of the action</p>
+                        <p class="CellBody">This text is shown within <MadCap:variable name="Variables.ProductName" />
+and is intended for your own reference and that of other
+administrators.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_ColumnIndent-Body-Body1">
+                    <td class="TableStyle-In_ColumnIndent-BodyE-Column1-Body1">
+                        <p class="CellBody">Target platforms</p>
+                    </td>
+                    <td class="TableStyle-In_ColumnIndent-BodyD-Column1-Body1">
+                        <p class="CellBody">The target platforms of the mobile devices to which  this action should apply</p>
+                        <p class="CellBody">This action is available for iOS&#160;devices only.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_ColumnIndent-Body-Body2">
+                    <td class="TableStyle-In_ColumnIndent-BodyE-Column1-Body2">
+                        <p class="CellBody">VPP&#160;account</p>
+                    </td>
+                    <td class="TableStyle-In_ColumnIndent-BodyD-Column1-Body2">
+                        <p class="CellBody">The VPP account under which you want to register device users</p>
+                        <p class="CellBody">This lists contains all VPP&#160;accounts that
+have been defined in the settings of your Absolute Manage Server.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_ColumnIndent-Body-Body1">
+                    <td class="TableStyle-In_ColumnIndent-BodyB-Column1-Body1">
+                        <p class="CellBody">Register options</p>
+                    </td>
+                    <td class="TableStyle-In_ColumnIndent-BodyA-Column1-Body1">
+                        <p class="CellBody">The VPP&#160;registration options:</p>
+                        <p class="CellBodyBullet" MadCap:autonum="• "><span class="Bold">Register users only</span> – If this option is selected, users affected by
+this action are registered in the selected VPP account, but are not yet invited
+to link their Apple ID to the account. This invitation must
+happen at a later time (for example, using the <a href="actionsendvppinvitation.htm">Send VPP Invitation</a> action) before users can download and use apps through VPP.
+This two-step process is faster on Apple’s servers than
+registering and inviting users at the same time and is therefore recommended if
+you are registering a large numbers of users.</p>
+                        <p class="CellBodyBullet" MadCap:autonum="• "><span class="Bold">Register and invite users</span> – If this option is selected, users affected by
+this action are registered in the selected VPP account and are also invited
+to link their Apple ID to the account. Select the channels you want to
+use to send the VPP registration invitation to users. Users must
+complete the registration themselves by entering their
+personal Apple ID and password on Apple’s VPP website. You can choose one or more of the following notification methods:</p>
+                        <p class="CellBodyBullet2" MadCap:autonum="◦"><span class="Bold">MDM dialog</span> – Sends an invitation through an MDM dialog displayed on the mobile device. You can use this method with mobile devices running iOS
+7.0.3 and higher only.</p>
+                        <p class="CellBodyBullet2" MadCap:autonum="◦"><span class="Bold">Web Clip</span> – Sends an invitation using a Web Clip that is placed on the device's home screen</p>
+                        <p class="CellBodyBullet2" MadCap:autonum="◦"><span class="Bold">SMS</span> – Sends an invitation through an SMS message. Enter the message in the field provided, up to a maximum of 140 characters. You can also use <a href="usingmessagevariables.htm">device and user-related variables</a> in your message.</p>
+                        <p class="CellBodyBullet2" MadCap:autonum="◦"><span class="Bold">Email</span> – Sends an invitation through email. Enter the subject and body of the email in the fields provided. You can also use <a href="usingmessagevariables.htm">device and user-related variables</a> in the email body.</p>
+                        <p class="CellBodyBullet2" MadCap:autonum="◦" style="margin-bottom: 6pt;"><span class="Bold">AbsoluteApps message</span> – Sends an invitation through an AbsoluteApps message. Enter the body of the message in the field provided. You can also use <a href="usingmessagevariables.htm">device and user-related variables</a> in your message. You can use this method only with
+mobile devices on which AbsoluteApps is installed.</p>
+                        <p class="CellBodyNote" MadCap:autonum="NOTE &#160;">In addition to device and user-related variables, you can also use the "MD_VPPInviteURL" variable within the invitation text, which
+displays a link to the Apple web page where
+users can enter their Apple ID to register in the
+VPP. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Steps" MadCap:autonum="4. ">Do one of the following:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●">Click <span class="Bold">Save</span> to save the action without immediately assigning it to a smart policy.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●">Click <span class="Bold">Save and Assign to Policies</span> to save and <a href="policyactions.htm">assign the action to one or more smart policies</a>.</p>
+        <p class="Body">
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="workingwithactions.htm" />
+                <MadCap:relatedTopic src="policyactions.htm" />
+                <MadCap:relatedTopic src="usingmessagevariables.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

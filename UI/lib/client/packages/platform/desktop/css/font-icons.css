@@ -1,0 +1,825 @@
+/*Absolute Software */
+/*-----------------------------*/
+/*Absolute Manage Application*/
+
+/* ----CUSTOM ICONS ----*/
+@font-face {
+  font-family: 'absolute-icons';
+  src:url('fonts/absolute-icons.eot');
+  src:url('fonts/absolute-icons.eot') format('embedded-opentype'),
+  url('fonts/absolute-icons.woff') format('woff'),
+  url('fonts/absolute-icons.ttf') format('truetype'),
+  url('fonts/absolute-icons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], [class^="ui-icon-"], [class*=" ui-icon-"] {
+  font-family: 'absolute-icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* actual icons =========== */
+
+.icon-eraser:before {
+  content: "\e639";
+}
+
+.icon-closedialog:before {
+  content: "\e638";
+}
+
+.icon-modal:before {
+  content: "\e637";
+}
+
+.icon-battery-high:before {
+  content: "\e626";
+}
+
+.icon-battery-low:before {
+  content: "\e628";
+}
+
+.icon-battery-med:before {
+  content: "\e629";
+}
+
+.icon-android-phone:before {
+  content: "\e62a";
+}
+
+.icon-android-tablet:before {
+  content: "\e630";
+}
+
+.icon-apple-tv:before {
+  content: "\e631";
+}
+
+.icon-ios-phone:before {
+  content: "\e632";
+}
+
+.icon-ios-tablet:before {
+  content: "\e633";
+}
+
+.icon-mac-laptop:before {
+  content: "\e634";
+}
+
+.icon-pc-laptop:before {
+  content: "\e635";
+}
+
+.icon-windows-phone:before {
+  content: "\e636";
+}
+
+.icon-modal:before {
+  content: "\e637";
+}
+
+.icon-gear-1:before {
+  content: "\e62f";
+}
+
+.icon-play:before {
+  content: "\e62b";
+}
+
+.icon-reset-pass:before {
+  content: "\e62c";
+}
+
+.icon-stop:before {
+  content: "\e62d";
+}
+
+.icon-tracking:before {
+  content: "\e62e";
+}
+
+.icon-capacity:before {
+  content: "\e627";
+}
+
+.icon-uninstall-app-1:before {
+  content: "\e624";
+}
+
+.icon-uninstall-profile:before {
+  content: "\e625";
+}
+
+.icon-cantrash:before {
+  content: "\e623";
+}
+
+.icon-calendar:before {
+  content: "\e622";
+}
+
+.icon-device-monitor:before {
+  content: "\e621";
+}
+
+.icon-devices-white:before {
+  content: "\e61f";
+}
+
+.icon-devices:before {
+  content: "\e620";
+}
+
+.icon-duplicate:before {
+  content: "\e61e";
+}
+
+.icon-active-inher:before {
+  content: "\e61b";
+}
+
+.icon-active:before {
+  content: "\e61c";
+}
+
+.icon-inactive:before {
+  content: "\e61d";
+}
+
+.icon-policies-settings:before {
+  content: "\e619";
+}
+
+.icon-policies-tab:before {
+  content: "\e61a";
+}
+
+.icon-item-new:before {
+  content: "\e618";
+}
+
+.icon-scan-stop:before {
+  content: "\e617";
+}
+
+.icon-cancel-x:before {
+  content: "\e60f";
+}
+
+.icon-checkmark3:before {
+  content: "\e610";
+}
+
+.icon-end-of-life:before {
+  content: "\e611";
+}
+
+.icon-enrollment-user:before {
+  content: "\e612";
+}
+
+.icon-import-list1:before {
+  content: "\e613";
+}
+
+.icon-recycle:before {
+  content: "\e614";
+}
+
+.icon-settings-check:before {
+  content: "\e615";
+}
+
+.icon-time-request:before {
+  content: "\e616";
+}
+
+.icon-org-info:before {
+  content: "\e60e";
+}
+
+.icon-file-text:before {
+  content: "\e60d";
+}
+
+.icon-global-policy:before {
+  content: "\e600";
+}
+
+.icon-device-flag:before {
+  content: "\e601";
+}
+
+.icon-book-alt2:before {
+  content: "\21";
+}
+
+.icon-list:before {
+  content: "\28";
+}
+
+.icon-warning:before {
+  content: "\31";
+}
+
+.icon-minus:before {
+  content: "\32";
+}
+
+.icon-close:before {
+  content: "\34";
+}
+
+.icon-octagon-attention:before {
+  content: "\35";
+}
+
+.icon-help:before {
+  content: "\22";
+}
+
+.icon-close-2:before {
+  content: "\3f";
+}
+
+.icon-arrow:before {
+  content: "\2a";
+}
+
+.icon-arrow-2:before {
+  content: "\2b";
+}
+
+.icon-arrow-3:before {
+  content: "\2c";
+}
+
+.icon-arrow-4:before {
+  content: "\2d";
+}
+
+.icon-star:before {
+  content: "\2f";
+}
+
+.icon-clock:before {
+  content: "\30";
+}
+
+.icon-single-left-icon:before {
+  content: "\39";
+}
+
+.icon-double-right-icon:before {
+  content: "\3a";
+}
+
+.icon-double-left-icon:before {
+  content: "\3b";
+}
+
+.icon-edit2:before {
+  content: "\40";
+}
+
+.icon-user:before {
+  content: "\29";
+}
+
+.icon-number-2:before {
+  content: "\41";
+}
+
+.icon-number-3:before {
+  content: "\42";
+}
+
+.icon-number-4:before {
+  content: "\43";
+}
+
+.icon-number-5:before {
+  content: "\44";
+}
+
+.icon-number-6:before {
+  content: "\45";
+}
+
+.icon-number-7:before {
+  content: "\46";
+}
+
+.icon-number-8:before {
+  content: "\47";
+}
+
+.icon-number-9:before {
+  content: "\48";
+}
+
+.icon-users:before {
+  content: "\49";
+}
+
+.icon-device-computer:before {
+  content: "\e621";
+
+}.icon-device:before {
+  content: "\4a";
+}
+.icon-reports:before {
+  content: "\4b";
+}
+
+.icon-cd:before {
+  content: "\4c";
+}
+
+.icon-install:before {
+  content: "\4d";
+}
+
+.icon-sort:before {
+  content: "\4e";
+}
+
+.icon-floppy:before {
+  content: "\4f";
+}
+
+.icon-column-sort:before {
+  content: "\50";
+}
+
+.icon-column-freeze:before {
+  content: "\51";
+}
+
+.icon-drag:before {
+  content: "\52";
+}
+
+.icon-invisible:before {
+  content: "\53";
+}
+
+.icon-apple:before {
+  content: "\54";
+}
+
+.icon-android:before {
+  content: "\55";
+}
+
+.icon-windows:before {
+  content: "\56";
+}
+
+.icon-square-attention1:before {
+  content: "\5c";
+}
+
+.icon-a-logo:before {
+  content: "\58";
+}
+
+.icon-handle:before {
+  content: "\5b";
+}
+
+.icon-settings:before {
+  content: "\5e";
+}
+
+.icon-add-files:before {
+  content: "\5f";
+}
+
+.icon-talk:before {
+  content: "\60";
+}
+
+.icon-open-panel:before {
+  content: "\62";
+}
+
+.icon-content:before {
+  content: "\63";
+}
+
+.icon-policy:before {
+  content: "\64";
+}
+
+.icon-unchecked:before {
+  content: "\65";
+}
+
+.icon-checked:before {
+  content: "\66";
+}
+
+.icon-checkmark:before {
+  content: "\e059";
+}
+
+.icon-single-right-icon:before {
+  content: "\38";
+}
+
+.icon-question-mark:before {
+  content: "\24";
+}
+
+.icon-funnel:before {
+  content: "\26";
+}
+
+.icon-share:before {
+  content: "\25";
+}
+
+.icon-plus:before {
+  content: "\33";
+}
+
+.icon-edit-icon:before {
+  content: "\3e";
+}
+
+.icon-trashcan:before {
+  content: "\3c";
+}
+.icon-trashcan2:before {
+  content: "\3c";
+}
+
+.icon-mac:before {
+  content: "\3d";
+}
+
+.icon-ios:before {
+  content: "\67";
+}
+
+.icon-blackberry:before {
+  content: "\68";
+}
+
+.icon-windows-2:before {
+  content: "\69";
+}
+
+.icon-WiFi:before {
+  content: "\6a";
+}
+
+.icon-print:before {
+  content: "\6b";
+}
+
+.icon-openwith:before {
+  content: "\6c";
+}
+
+.icon-email:before {
+  content: "\6d";
+}
+
+.icon-full-screen2:before {
+  content: "\6e";
+}
+
+.icon-number-1:before {
+  content: "\27";
+}
+
+.icon-laptop:before {
+  content: "\6f";
+}
+
+.icon-shield:before {
+  content: "\70";
+}
+
+.icon-info:before {
+  content: "\71";
+}
+
+.icon-message1:before {
+  content: "\73";
+}
+
+.icon-roaming:before {
+  content: "\74";
+}
+
+.icon-message:before {
+  content: "\75";
+}
+
+.icon-wifi:before {
+  content: "\76";
+}
+
+.icon-unlocked:before {
+  content: "\77";
+}
+
+.icon-tablet-device:before {
+  content: "\78";
+}
+
+.icon-phone-device:before {
+  content: "\79";
+}
+
+.icon-os:before {
+  content: "\7a";
+}
+
+.icon-manufacturer:before {
+  content: "\7b";
+}
+
+.icon-locked:before {
+  content: "\7c";
+}
+
+.icon-homenet:before {
+  content: "\7d";
+}
+
+.icon-gpsmark:before {
+  content: "\7e";
+}
+
+.icon-current-network:before {
+  content: "\e000";
+}
+
+.icon-celltech:before {
+  content: "\e001";
+}
+
+.icon-battery:before {
+  content: "\e002";
+}
+
+.icon-status:before {
+  content: "\e003";
+}
+
+.icon-info-1:before {
+  content: "\e004";
+}
+
+.icon-pivot:before {
+  content: "\e005";
+}
+
+.icon-policy-page:before {
+  content: "\e006";
+}
+
+.icon-checkmark-1:before {
+  content: "\e007";
+}
+
+.icon-system:before {
+  content: "\e008";
+}
+
+.icon-share1:before {
+  content: "\e009";
+}
+
+.icon-refresh:before {
+  content: "\e00a";
+}
+
+.icon-triangle-attention:before {
+  content: "\36";
+}
+
+.icon-search:before {
+  content: "\2e";
+}
+
+.icon-import-list:before {
+  content: "\f0000";
+}
+
+.icon-commands:before {
+  content: "\e00b";
+}
+
+.icon-install-app:before {
+  content: "\e00c";
+}
+
+.icon-install-config:before {
+  content: "\e00d";
+}
+
+.icon-uninstall-app:before {
+  content: "\e00e";
+}
+
+.icon-uninstall-config:before {
+  content: "\e00f";
+}
+
+.icon-unmanaged-device:before {
+  content: "\e010";
+}
+
+.icon-arrow-5:before {
+  content: "\e011";
+}
+
+.icon-checkmark1:before {
+  content: "\23";
+}
+
+.icon-checkmark1-2:before {
+  content: "\f0001";
+}
+
+.icon-openwith-2:before {
+  content: "\e012";
+}
+
+.icon-print-2:before {
+  content: "\e013";
+}
+
+.icon-email-2:before {
+  content: "\e014";
+}
+
+.icon-fixedgroup:before {
+  content: "\e016";
+}
+
+.icon-smartgroup:before {
+  content: "\e015";
+}
+
+.icon-fixedgr:before {
+  content: "\e018";
+}
+
+.icon-software-report:before {
+  content: "\e019";
+}
+
+.icon-smartgr:before {
+  content: "\e01a";
+}
+
+.icon-newfolder:before {
+  content: "\e017";
+}
+
+.icon-folder:before {
+  content: "\e01b";
+}
+
+.icon-ui-icon-circlesmall-plus:before {
+  content: "\e01c";
+}
+
+.icon-circle-attention:before {
+  content: "\37";
+}
+
+.icon-sort1:before {
+  content: "\f0002";
+}
+
+.icon-customdb:before {
+  content: "\e01e";
+}
+
+.icon-calendar2:before {
+  content: "\e01f";
+}
+
+.icon-close-panel:before {
+  content: "\61";
+}
+
+.icon-arrow-rel:before {
+  content: "\f0003";
+}
+
+.icon-move-to:before {
+  content: "\e020";
+}
+
+.icon-customdb-act:before {
+  content: "\e021";
+}
+
+.icon-deactivate-db:before {
+  content: "\e022";
+}
+
+.icon-drag-drop:before {
+  content: "\e023";
+}
+
+.icon-dragable:before {
+  content: "\e024";
+}
+
+.icon-move-cursor:before {
+  content: "\e025";
+}
+
+.icon-fixedgroupcreate:before {
+  content: "\e026";
+}
+
+.icon-smartgroupcreate:before {
+  content: "\e028";
+}
+
+.icon-newfoldercreate:before {
+  content: "\e027";
+}
+
+.icon-report-gen:before {
+  content: "\e029";
+}
+
+.icon-smartpolicy:before {
+  content: "\e02a";
+}
+
+.icon-policy-2:before {
+  content: "\e02b";
+}
+
+.icon-passcode:before {
+  content: "\e602";
+}
+
+.icon-tui-icon-circlesmall-minus:before {
+  content: "\e01d";
+}
+
+.icon-map-view:before {
+  content: "\e604";
+}
+
+.icon-item-changed:before {
+  content: "\e605";
+}
+
+.icon-full-screen:before {
+  content: "\e606";
+}
+
+.icon-anti-malware:before {
+  content: "\e603";
+}
+
+.icon-comp-availability:before {
+  content: "\e609";
+}
+
+.icon-unknown-device-dark:before {
+  content: "\e60c";
+}
+
+.icon-unknown-device:before {
+  content: "\e60b";
+}
+
+.icon-key:before {
+  content: "\e607";
+}
+
+.icon-wrench:before {
+  content: "\e608";
+}
+
+.icon-chart:before {
+  content: "\e60a";
+}
+

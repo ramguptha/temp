@@ -1,0 +1,75 @@
+<html>
+<head>
+   <title>AMWebAPI - Login Test</title> 
+    <script src="../scripts/jquery-1.8.2.min.js"  
+        type="text/javascript"></script> 
+    <script type="text/javascript">
+
+
+        function doLogin(serverName, serverPort, userName, password, locale) {
+            $.post("../api/login", { 'ServerName': serverName, 'ServerPort': serverPort, 'UserName': userName, 'Password': password, 'Locale': locale }, function () {
+                var currentTime = new Date()
+            	var message = currentTime.toLocaleString() + '  :  ' + 'Logged in to ' + serverName + ':' + serverPort + ' as '+ userName + ' with ' + locale + ' locale.';
+                $('#loginStatus').html(message);
+            })
+        .fail(
+            function (jqXHR, textStatus, err) {
+                var message = 'Error: ' + err + ' Status: ' + textStatus;
+                $('#loginStatus').html(message);
+            });
+        }
+        
+        
+        function doLogout() {
+            $.ajax({
+            		type: "DELETE",
+            		url: "../api/login", 
+            		success: function () {
+                		$('#loginStatus').html('Logged out.');
+            		},
+            		fail: function (jqXHR, textStatus, err) {
+    	                var message = 'Error: ' + err + ' Status: ' + textStatus;
+    	                $('#loginStatus').html(message);
+    	            }
+            })        	
+        }
+
+        function doReloadLoggingConfig() {
+                $.post("../api/login", function () {
+                    var message = 'Logback config updated.';
+                    $('#loginStatus').html(message);
+                })
+            .fail(
+                function (jqXHR, textStatus, err) {
+                    var message = 'Error: ' + err + ' Status: ' + textStatus;
+                    $('#loginStatus').html(message);
+                });
+            }
+
+        
+    </script>
+</head>
+   <body>
+       <div> 
+        <h1>Login</h1>
+        <label for="serverName">AM Server:</label> 
+        <input type="text" id="serverName" size="20" value=""/>
+        <label for="serverName">port:</label> 
+        <input type="text" id="serverPort" size="10" value="3971"/>                          
+        <label for="userName">User name:</label> 
+        <input type="text" id="userName" size="15" value="admin"/> 
+        <label for="password">Password:</label> 
+        <input type="password" id="password" size="15" value=""/> 
+        <label for="locale">Locale:</label>
+        <input type="text" id="locale" size="6" value="en_US"/> 
+        <input type="button" value="Login" onclick="doLogin($('#serverName').val(), $('#serverPort').val(), $('#userName').val(), $('#password').val(), $('#locale').val());" />  
+        <input type="button" value="Logout" onclick="doLogout();" />        
+        <p id="loginStatus" /> 
+    </div>
+    
+    <div> 
+        <input type="button" value="Reload logging configuration" onclick="doReloadLoggingConfig();" /> 
+        </div>
+
+   </body>
+</html>

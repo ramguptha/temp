@@ -1,0 +1,47 @@
+<div class="all-details-content content-details-container">
+  <div class="snap-content-title">
+    <h3>{{t 'amAssignableItem.assignableActionsDetailsPage.tabDetails.header'}}</h3>
+    <button class="btn btn-smaller" {{action "gotoDuplicateAction"}}>{{t 'shared.buttons.copy'}}</button>
+    <button class="btn btn-smaller" {{action "gotoEditAction"}}>{{t 'shared.buttons.edit'}}</button>
+    <button class="btn btn-smaller" {{action "gotoDeleteAction"}}>{{t 'shared.buttons.delete'}}</button>
+  </div>
+  <table class="content-details-table-body">
+    <tbody>
+      <tr>
+        <td>{{t 'amAssignableItem.modals.actionProperties.name'}}</td>
+        <td>{{model.presentation.name}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.modals.actionProperties.description'}}</td>
+        <td>{{model.presentation.description}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableActionsDetailsPage.tabDetails.type'}}</td>
+        <td>{{model.presentation.type}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.modals.actionProperties.targetPlatforms'}}</td>
+        <td>{{model.presentation.osPlatform}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.modals.actionProperties.lastModified'}}</td>
+        <td>{{model.presentation.lastModified}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br/>
+
+  {{#if dynamicProperties}}
+    <table class="content-details-table-body {{if isOneRecord 'one-row-table'}}">
+      <tbody>
+    {{#each dynamicProperties as |property|}}
+      <tr>
+        <td>{{property.title}}</td>
+        <td>{{#if property.proxied}}{{#if property.value.isImage}}<div class="center-cropped" style={{property.value.value}}></div>{{else}}{{property.value.value}}{{/if}}{{else}}{{property.value}}{{/if}}</td>
+      </tr>
+    {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>

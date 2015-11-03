@@ -1,0 +1,117 @@
+<div class="snap-content-container">
+
+<div class="all-details-content">
+
+<div class="snap-content-title"><h3>{{t 'amComputer.cpuTab.title'}}</h3>
+</div>
+
+<div class="snap-content-icon"><img src={{deviceIconPath}}></div>
+  <div class="device-main-description">
+    <div class="device-details-table-heading">
+      <div class="table-heading-row">
+        <div class="device-details-table-cell"><span class="os-version"><img src={{osIconPath}}></span>{{t 'amData.computerCpuSpec.osPlatform'}}<p>{{relatedCpuController.model.presentation.osPlatform}}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <table class="device-details-table-body">
+    <tbody>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorType'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorType}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorVendor'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorVendor}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorSpeed'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorSpeed}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.busSpeed'}}</td>
+      <td>{{relatedCpuController.model.presentation.busSpeed}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.physicalCores'}}</td>
+      <td>{{relatedCpuController.model.presentation.physicalCores}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.activeCores'}}</td>
+      <td>{{relatedCpuController.model.presentation.activeCores}}</td>
+    </tr>
+    {{#if isMacPlatform}}
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.coresPerProcessor'}}</td>
+        <td>{{relatedCpuController.model.presentation.coresPerProcessor}}</td>
+      </tr>
+    {{/if}}
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorL1DataCache'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorL1DataCache}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorL1InformationCache'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorL1InformationCache}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorL2DataCache'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorL2DataCache}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorL2InstructionCache'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorL2InstructionCache}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorL3Cache'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorL3Cache}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorSupportsHyperthreading'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorSupportsHyperthreading}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerCpuSpec.processorHyperthreadingEnabled'}}</td>
+      <td>{{relatedCpuController.model.presentation.processorHyperthreadingEnabled}}</td>
+    </tr>
+    {{#unless isMacPlatform}}
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorHasMMX'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorHasMMX}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorHas3dNow'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorHas3dNow}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorHasSSE'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorHasSSE}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorHasSSE2'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorHasSSE2}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorHasSSE3'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorHasSSE3}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorFamily'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorFamily}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorModel'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorModel}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerCpuSpec.processorStepping'}}</td>
+        <td>{{relatedCpuController.model.presentation.processorStepping}}</td>
+      </tr>
+    {{/unless}}
+    </tbody>
+</table>
+
+</div>
+
+</div>

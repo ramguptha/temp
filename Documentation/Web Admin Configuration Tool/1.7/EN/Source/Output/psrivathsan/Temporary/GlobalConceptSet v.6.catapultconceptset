@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalConceptSet
+  SavedSource="file:///C:/Data/TFS/Documentation/Manage/Web Admin Configuration Tool/0.1/EN/Source/Output/psrivathsan/Temporary/GlobalConceptSet v.6.catapultconceptset">
+  <Concepts />
+  <SourceUrls>
+    <Url
+      Source="AddingaNewAMServer.htm" />
+    <Url
+      Source="ConfiguringWebAdminSettings.htm" />
+    <Url
+      Source="disclaimer.htm" />
+    <Url
+      Source="GettingStartedWithWebAdminConfigurationTool.htm" />
+    <Url
+      Source="InstallingWebAdminConfigurationTool.htm" />
+    <Url
+      Source="ManagingAMServers.htm" />
+    <Url
+      Source="ViewingListofAMServers.htm" />
+    <Url
+      Source="welcome.htm" />
+    <Url
+      Source="Resources/Images/abs-icons.png" />
+    <Url
+      Source="Resources/Images/AM-logo-med.jpg" />
+    <Url
+      Source="Resources/Images/blog.png" />
+    <Url
+      Source="Resources/Images/duplicate-button.png" />
+    <Url
+      Source="Resources/Images/edit-button.png" />
+    <Url
+      Source="Resources/Images/email_icon.jpg" />
+    <Url
+      Source="Resources/Images/erase-button.png" />
+    <Url
+      Source="Resources/Images/facebook.png" />
+    <Url
+      Source="Resources/Images/filterex1.jpg" />
+    <Url
+      Source="Resources/Images/filterex2.jpg" />
+    <Url
+      Source="Resources/Images/filterex3.jpg" />
+    <Url
+      Source="Resources/Images/google-plus.png" />
+    <Url
+      Source="Resources/Images/help_button.png" />
+    <Url
+      Source="Resources/Images/infonav.jpg" />
+    <Url
+      Source="Resources/Images/linkedin.png" />
+    <Url
+      Source="Resources/Images/managenav.jpg" />
+    <Url
+      Source="Resources/Images/manage_video.jpg" />
+    <Url
+      Source="Resources/Images/navicon.jpg" />
+    <Url
+      Source="Resources/Images/print_icon.jpg" />
+    <Url
+      Source="Resources/Images/reexecute-button.png" />
+    <Url
+      Source="Resources/Images/related_topics_icon2.png" />
+    <Url
+      Source="Resources/Images/remove-button.png" />
+    <Url
+      Source="Resources/Images/Remove_filter_icon.png" />
+    <Url
+      Source="Resources/Images/rightarrow.jpg" />
+    <Url
+      Source="Resources/Images/search-button-focus.png" />
+    <Url
+      Source="Resources/Images/search-button-hover.png" />
+    <Url
+      Source="Resources/Images/search_all.png" />
+    <Url
+      Source="Resources/Images/sidebar.jpg" />
+    <Url
+      Source="Resources/Images/SortOrder2_icon.png" />
+    <Url
+      Source="Resources/Images/SortOrder_icon.png" />
+    <Url
+      Source="Resources/Images/toolbar.jpg" />
+    <Url
+      Source="Resources/Images/twitter.png" />
+    <Url
+      Source="Resources/Images/usernav.jpg" />
+    <Url
+      Source="Resources/Images/workarea.jpg" />
+    <Url
+      Source="Resources/Images/work_area.jpg" />
+    <Url
+      Source="Resources/Images/youtube.png" />
+    <Url
+      Source="Resources/PageLayouts/Chapters.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Default.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/FrontMatter.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Glossary.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Index.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/OnlineHelpMasterPage.flmsp" />
+    <Url
+      Source="Resources/PageLayouts/WelcomeMasterPage.flmsp" />
+    <Url
+      Source="Resources/Stylesheets/Absolute.css" />
+    <Url
+      Source="Resources/Stylesheets/Absolutenew.css" />
+    <Url
+      Source="Resources/Stylesheets/BookStyles.css" />
+    <Url
+      Source="Resources/Stylesheets/diagram.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_A.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_B.css" />
+    <Url
+      Source="Resources/Stylesheets/Header.css" />
+    <Url
+      Source="Resources/Stylesheets/In_Column.css" />
+    <Url
+      Source="Resources/Stylesheets/In_ColumnIndent.css" />
+    <Url
+      Source="Resources/Stylesheets/Modern.css" />
+    <Url
+      Source="Resources/Stylesheets/NewStyle.css" />
+    <Url
+      Source="Resources/Stylesheets/Styles.css" />
+    <Url
+      Source="Resources/TableStyles/diagram.css" />
+    <Url
+      Source="Resources/TableStyles/Format_A.css" />
+    <Url
+      Source="Resources/TableStyles/Format_B.css" />
+    <Url
+      Source="Resources/TableStyles/Header.css" />
+    <Url
+      Source="Resources/TableStyles/In_Column.css" />
+    <Url
+      Source="Resources/TableStyles/In_ColumnIndent.css" />
+  </SourceUrls>
+  <UsedUrls />
+  <UsedConceptControlUrls />
+</CatapultGlobalConceptSet>

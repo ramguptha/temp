@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1286" MadCap:lastWidth="1228">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Working with Third-Party Applications Inside a Policy</h1>
+        <p class="BodyWithListFollowing">For iOS&#160;and Android devices, you can use third-party applications within a policy in the following ways:</p>
+        <p class="Bullet1" MadCap:autonum="●">Make third-party applications available for on-demand installation by users of mobile devices that belong to the policy</p>
+        <p class="Bullet1Last" MadCap:autonum="●">Automatically install third-party applications on mobile devices that belong to the policy</p>
+        <p class="Body">Before you can add a third-party application to a policy from <MadCap:variable name="Variables.ProductName" />, you must import the application file as a mobile application package using the Absolute Manage Admin interface. For more information, see "Installing software on mobile devices" in the <span class="Emphasis">Absolute Manage User Guide</span>.</p>
+        <p class="BodyWithListFollowing">Depending on the operating system of the mobile device, the user may need to confirm the installation or removal of applications:</p>
+        <p class="Bullet1" MadCap:autonum="●"> Silent installation (the application is installed without user confirmation) is supported on some Samsung Galaxy devices</p>
+        <p class="Bullet1Last" MadCap:autonum="●">Silent removal (the application is removed without user confirmation) is supported on some Samsung Galaxy devices and devices running iOS 5 or higher (only for applications installed through Absolute Manage)</p>
+        <p class="Body">Policy actions take place on any mobile device belonging to the
+policy as soon as the device next contacts the notification server of its OS&#160;vendor. If
+the device is connected to a Wi-Fi or mobile network, this action usually takes place within a minute; otherwise, it happens when the device
+has reconnected to a network. With on-demand installation of applications, you can <a href="sendingmessages.htm">send a message</a> to or email the users of the devices to notify them of
+the availability of a new application.</p>
+        <p class="Body">After you add a third-party application to a policy, you cannot edit the application's assignment properties within the policy. If you want to edit these properties, you must remove the application from the policy and re-add it using the desired properties.</p>
+        <h2 class="Heading2">Adding Third-Party Applications to a Policy</h2>
+        <p class="TaskIntro">To add third-party applications to a policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the policy that you want to add third-party applications to.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Third-Party Applications</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">In the work area toolbar, click <span class="Bold">Add Third-Party Application</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Select the checkbox of the third-party applications you want to add to the policy.</p>
+        <p class="Indent2">To quickly find specific applications, you can use the search field to narrow the applications listed by specific criteria (for example, by application name or version number).</p>
+        <p class="Steps" MadCap:autonum="6. ">From the <span class="Bold">Assignment Rule</span> list, select how you want to manage the selected applications on devices belonging to the policy:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Auto-install</span>: The application is installed when a device enters
+the policy. The application remains on the device when it leaves the
+policy, and the device's user can manually delete the application, if desired.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">On-demand</span>: The application is made available within AbsoluteApps and the device's user can manually install the application.
+The application remains on the device when it leaves the policy, and the device's user can
+manually delete the application, if desired.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Auto-install, Auto-remove</span>: The application is installed when the
+device enters the policy and removed when it leaves.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">On-demand, Auto-remove</span>: The application is made available within AbsoluteApps and the device's user can manually install the application. The application is removed when the device leaves the policy.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">For information about on-demand installation on iOS devices,
+please contact <a href="http://www.absolute.com/en/support" target="_blank" class="Hyperlink">Absolute Global Support</a>.</p>
+        <p class="Steps" MadCap:autonum="7. ">If you want the policy to restrict the availability of the selected applications to certain dates or times, select the <span class="Bold">Set availability time</span> checkbox, then choose one of the following options:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Every day between</span>: The application is
+available to mobile devices belonging to this policy only during a certain
+time of the day (for example, during office hours). Specify the start and end times in the available fields.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">From</span>: The application is available to mobile devices belonging to this policy only during a specific time period. Specify the start date and time as well as the end date and time.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">Use your local time in these fields. Times you enter are converted to and stored in Coordinated Universal Time (UTC) on the Absolute Manage server. As a result, you should take into account any time
+differences that may exist with your mobile clients. You also must
+manually compensate for Daylight Saving Time (DST), if desired,
+because DST does not apply to UTC.</p>
+        <p class="Steps" MadCap:autonum="8. ">Click <span class="Bold">Add to Policy</span>.</p>
+        <p class="Steps" MadCap:autonum="9. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <h2 class="Heading2">Removing Third-Party Applications from a Policy</h2>
+        <p class="Body">When you remove an application from a policy, there is no immediate effect on
+the mobile devices that belong to the policy. That is, when you remove an application that is set to "auto-install", it is not removed from the
+policy's devices, and when you remove an application that is set to "forbidden", it is
+not installed on the policy's devices.
+However, the restrictions placed on mobile devices with respect to the
+application are lifted: the user can now remove a previously required application or install a previously prohibited application.</p>
+        <p class="TaskIntro">To remove third-party applications from a policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the policy that you want to remove third-party applications from.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Third-Party Applications</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">Select the checkbox of the applications that you want to remove.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <img src="Resources/Images/remove-button.png" class="Icon" />.</p>
+        <p class="Steps" MadCap:autonum="6. ">Click <span class="Bold">Remove Applications</span>.</p>
+        <p class="Steps" MadCap:autonum="7. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="aboutpolicies.htm" />
+                <MadCap:relatedTopic src="creatingpolicies.htm" />
+                <MadCap:relatedTopic src="creatingsmartpolicies.htm" />
+                <MadCap:relatedTopic src="editingpolicies.htm" />
+                <MadCap:relatedTopic src="sendingmessages.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<div class="progress-steps-new-content">
+  <ul class="progress-steps">
+    <li><span class="icon-checkmark1"></span>SET PROPERTIES</li>
+    <li><span class="icon-checkmark1"></span>DELETE OPTIONS</li>
+    <li class="active-step"><span class="icon-number-3"></span>REVIEW AND REQUEST</li>
+  </ul>
+</div>
+
+<div class="container-device-freeze-request" >
+  <div class="select-enter-category">
+    <div class="request-name-box">
+
+      <div class="request-name-box-info clearfix">
+        <div class="side-block">
+          <div class="selected-reboot selected-info-block">
+            <label>Data Delete Option Chosen:</label>
+            <p>{{dataDeleteOptionChosenTitle}}</p>
+            {{textarea rows="3" class="folder-name-field" value=customPolicy isVisible=customRulesOption}}
+          </div>
+        </div>
+      </div>
+
+      <div class="side-block">
+      </div>
+    </div>
+
+    <div class="selected-username clearfix">
+      <p>Enter your password to authorize this Data Delete command.</p>
+      <div class="password-box for-device-freeze">
+        {{input type="text" placeholder="Enter Password" class="password-name-field" type="password" value=passwordCommand }}
+      </div>
+      {{#if validationPasswordWarningMessage}}
+        <div class="alert alert-error alert-for-device-freeze tipsy tipsy-w">
+          <div class="tipsy-arrow tipsy-arrow-w"></div>
+          <div class="tipsy-inner">{{validationPasswordWarningMessage}}</div>
+        </div>
+      {{/if}}
+    </div>
+
+    <div>
+      <label class="for-checkbox">{{input type="checkbox" checked=agreeAcceptAgreement}} I agree to the
+        <a href="#" {{action "seviceAgreementHandler"}}>Data Delete Agreement.</a>
+      </label>
+    </div>
+
+  </div>
+
+  {{#if errorMessage}}
+    <div class="alert alert-error tipsy tipsy-sw">
+      <div class="tipsy-arrow tipsy-arrow-sw"></div>
+      <div class="tipsy-inner">{{errorMessage}}</div>
+    </div>
+  {{/if}}
+
+  {{#if actionWarning}}
+      <div class="password-alert-warning warning-for-device-freeze alert alert-warning">{{actionWarning}}</div>
+  {{/if}}
+
+  {{#if unsupportedComputers}}
+    <div class="unsupported-attention-message"><span class="icon-triangle-attention"></span>{{unsupportedComputersMessage}}</div>
+    <div class="unsupported-list-view">
+      {{view unsupportedComputerListController.SummaryListView context=unsupportedComputerListController controller=unsupportedComputerListController}}
+    </div>
+  {{/if}}
+</div>
+
+<div class="container-fluid add-content-actions">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>Cancel</button>
+    <button class="btn btn-low back-button" {{action "gotoPreviousStep"}}>Back</button>
+    <button class="btn btn-action" {{action "onVerifyPasswordAndDataDeleteAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

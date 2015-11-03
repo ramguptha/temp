@@ -1,0 +1,47 @@
+<div class="filters-main-content">
+  <div class="and-block filters-main-content-scrollable">
+    {{#each filterNodeController as |orFilterController|}}
+      <div class="or-block add-filter-container ui-droppable">
+
+        {{#each orFilterController as |filterController|}}
+          <div class="filter-line clearfix">
+            {{view AdvancedFilterEditorLineItemView filterController=filterController}}
+
+            {{#unless hideAnd}}
+              <button type="button" class="remove-filter icon-minus tooltip-w" data-tooltip-attr="title"
+                      data-sticky-tooltip="true" {{ta title="shared.tooltips.tooltipRemove"}}
+                {{action "removeOrFilterOperand" orFilterController filterController.filter}}>
+              </button>
+            {{/unless}}
+          </div>
+
+          {{#unless hideAnd}} <span class="or uppercase">{{t 'shared.or'}}</span> {{/unless}}
+        {{/each}}
+
+        {{#unless hideAndButton}}
+          <button type="button" class="add-filter-button add-single-filter-trigger" {{action "addOrFilterOperand" orFilterController}}>
+            <span class="plus-filter icon-plus"></span>
+            {{t 'shared.buttons.addFilter'}}
+          </button>
+        {{/unless}}
+
+        <button type="button" class="remove-or-block btn-smaller" {{action "removeAndFilterOperand" orFilterController.filter}}>{{t 'shared.buttons.remove'}}</button>
+
+      </div>
+
+      {{#unless hideAnd}}<div class="and uppercase">{{t 'shared.and'}}</div>{{/unless}}
+    {{/each}}
+
+    {{#if noFiltersSpecified}}
+      <div class="no-filters-specified-container">
+        {{noFiltersSpecifiedMessage}}
+      </div>
+    {{/if}}
+
+    <button type="button" class="add-filter-button add-single-filter-block-trigger" {{action "addAndFilterOperand"}}>
+      <span class="plus-filter icon-plus"></span>
+      {{t 'shared.buttons.addFilter'}}
+    </button>
+
+  </div><!-- end filters-main-content-scrollable -->
+</div>

@@ -1,0 +1,39 @@
+{{#if hasNavActions}}
+  {{button-group
+    class="right action-buttons-block"
+    content=navActions
+    buttonContext=navActionsContext
+    buttonTarget=navActionsTarget
+  }}
+{{/if}}
+
+<h2 class="snap-view-title uppercase">
+  {{#if iconClass}}
+    <span class="nav-container-icon is-nav-icon {{iconClass}}"></span>
+  {{/if}}
+
+  {{#if iconPath}}
+    <span class="nav-container-icon"><img src={{iconPath}} alt="" class="is-nav-icon"></span>
+  {{/if}}
+
+  <span class="is-nav-title">{{title}}</span>
+</h2>
+
+{{#if subTitle}}
+  <h3 class="is-nav-subtitle">{{subTitle}}</h3>
+{{/if}}
+
+{{#if searchFilterSupported}}
+  <div class="is-container-for-search">
+    {{adhoc-search
+      searchQuery=searchQuery
+      nameOptions=nameOptions
+      nameOptionValuePath=nameOptionValuePath
+      nameOptionLabelPath=nameOptionLabelPath
+      showSelectionText=false
+      isSearchCaseSensitive=isSearchCaseSensitive
+    }}
+  </div>
+{{/if}}
+
+{{yield}}

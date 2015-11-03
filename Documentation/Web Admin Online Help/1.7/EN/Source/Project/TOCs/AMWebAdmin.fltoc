@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Introduction">
+    <TocEntry
+      Title="Welcome to Absolute Manage Web Admin"
+      Link="/Content/welcome.htm" />
+    <TocEntry
+      Title="Disclaimer"
+      Link="/Content/disclaimer.htm" />
+    <TocEntry
+      Title="What's New?"
+      Link="/Content/whatsnew.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Getting Started with Absolute Manage Web Admin">
+    <TocEntry
+      Title="Setting Login and Language Preferences"
+      Link="/Content/loginpreferences.htm" />
+    <TocEntry
+      Title="Navigating the Interface"
+      Link="/Content/navigating.htm" />
+    <TocEntry
+      Title="Customizing Column Layout"
+      Link="/Content/columnlayout.htm" />
+    <TocEntry
+      Title="Searching for Information"
+      Link="/Content/searchingforinfo.htm" />
+    <TocEntry
+      Title="Managing Queued Commands and Command History"
+      Link="/Content/viewingcommands.htm" />
+    <TocEntry
+      Title="About the Self-Service Portal"
+      Link="/Content/aboutselfservice.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Working with Computers"
+    Link="/Content/workingwithcomputers.htm">
+    <TocEntry
+      Title="Viewing Computer Details"
+      Link="/Content/viewingcompdetails.htm" />
+    <TocEntry
+      Title="Sending Messages to Computers"
+      Link="/Content/sendingmessagescomp.htm" />
+    <TocEntry
+      Title="Gathering Computer Information"
+      Link="/Content/gatheringinformation.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Working with Mobile Devices "
+    Link="/Content/workingwithdevices.htm">
+    <TocEntry
+      Title="About Mobile Device Management"
+      Link="/Content/aboutmdm.htm" />
+    <TocEntry
+      Title="Viewing Device Details"
+      Link="/Content/viewingdevicedetails.htm" />
+    <TocEntry
+      Title="Locking Devices"
+      Link="/Content/lockingdevices.htm" />
+    <TocEntry
+      Title="Managing Passcodes on Devices"
+      Link="/Content/managingpasscodes.htm" />
+    <TocEntry
+      Title="Erasing Devices"
+      Link="/Content/deletingdata.htm" />
+    <TocEntry
+      Title="Sending Messages to Devices"
+      Link="/Content/sendingmessages.htm" />
+    <TocEntry
+      Title="Updating Device Information"
+      Link="/Content/updatingdevice.htm" />
+    <TocEntry
+      Title="Renaming Devices"
+      Link="/Content/settingdevicename.htm" />
+    <TocEntry
+      Title="Setting Roaming Options for Devices"
+      Link="/Content/roamingoptions.htm" />
+    <TocEntry
+      Title="Distributing Applications to Devices"
+      Link="/Content/installingapps.htm" />
+    <TocEntry
+      Title="Uninstalling Applications on Devices"
+      Link="/Content/uninstallingapps.htm" />
+    <TocEntry
+      Title="Installing Configuration Profiles on Devices"
+      Link="/Content/installingconfigprofiles.htm" />
+    <TocEntry
+      Title="Removing Configuration Profiles from Devices"
+      Link="/Content/removingconfigprofiles.htm" />
+    <TocEntry
+      Title="Installing Provisioning Profiles on Devices"
+      Link="/Content/installingprovprofiles.htm" />
+    <TocEntry
+      Title="Removing Provisioning Profiles from Devices"
+      Link="/Content/removingprovprofiles.htm" />
+    <TocEntry
+      Title="Setting Device Ownership"
+      Link="/Content/settingdeviceownership.htm" />
+    <TocEntry
+      Title="Setting the Enrollment User for Devices"
+      Link="/Content/settingenrollmentuser.htm" />
+    <TocEntry
+      Title="Setting Organization Information on Devices"
+      Link="/Content/settingorginfo.htm" />
+    <TocEntry
+      Title="Setting Activation Lock Options"
+      Link="/Content/settingactivationlock.htm" />
+    <TocEntry
+      Title="Setting Custom Field Values"
+      Link="/Content/settingcustomfieldvalue.htm" />
+    <TocEntry
+      Title="Retrying Failed Installations"
+      Link="/Content/reissuingcommands.htm" />
+    <TocEntry
+      Title="Adding Devices to Policies"
+      Link="/Content/addingdevicetopolicy.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Working with Policies"
+    Link="/Content/workingwithpolicies.htm">
+    <TocEntry
+      Title="About Policies"
+      Link="/Content/aboutpolicies.htm" />
+    <TocEntry
+      Title="Viewing Policy Details"
+      Link="/Content/viewingpolicydetails.htm" />
+    <TocEntry
+      Title="Creating Standard Policies"
+      Link="/Content/creatingpolicies.htm" />
+    <TocEntry
+      Title="Creating Smart Policies"
+      Link="/Content/creatingsmartpolicies.htm">
+      <TocEntry
+        Title="Understanding Filters"
+        Link="/Content/understandingfilters.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Working with In-House Applications Inside a Policy"
+      Link="/Content/policyinhouseapps.htm" />
+    <TocEntry
+      Title="Working with Third-Party Applications Inside a Policy"
+      Link="/Content/policy3rdpartyapps.htm" />
+    <TocEntry
+      Title="Working with Configuration Profiles Inside a Policy"
+      Link="/Content/policyconfigprofiles.htm" />
+    <TocEntry
+      Title="Working with Media Files Inside a Policy"
+      Link="/Content/policymediafiles.htm" />
+    <TocEntry
+      Title="Working with Actions Inside a Policy"
+      Link="/Content/policyactions.htm" />
+    <TocEntry
+      Title="Editing Policies"
+      Link="/Content/editingpolicies.htm" />
+    <TocEntry
+      Title="Deleting Policies"
+      Link="/Content/deletingpolicies.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Working with Assignable Items"
+    Link="/Content/workingwithitems.htm">
+    <TocEntry
+      Title="Managing Media Files">
+      <TocEntry
+        Title="Importing Media Files"
+        Link="/Content/importingmediafiles.htm" />
+      <TocEntry
+        Title="Viewing Media File Details"
+        Link="/Content/viewingcontentdetails.htm" />
+      <TocEntry
+        Title="Editing Media File Properties"
+        Link="/Content/editingcontent.htm" />
+      <TocEntry
+        Title="Deleting Media Files"
+        Link="/Content/deletingcontent.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="Viewing In-House Application Details"
+      Link="/Content/contentinhouseapps.htm" />
+    <TocEntry
+      Title="Viewing Third-Party Application Details"
+      Link="/Content/content3rdpartyapps.htm" />
+    <TocEntry
+      Title="Viewing Electronic Book Details"
+      Link="/Content/contentbooks.htm" />
+    <TocEntry
+      Title="Viewing Configuration Profile Details"
+      Link="/Content/contentconfigprofiles.htm" />
+    <TocEntry
+      Title="Viewing Provisioning Profile Details"
+      Link="/Content/contentprovisioningprofiles.htm" />
+    <TocEntry
+      Title="Working with Actions"
+      Link="/Content/workingwithactions.htm">
+      <TocEntry
+        Title="Viewing Action Details"
+        Link="/Content/viewingactiondetails.htm" />
+      <TocEntry
+        Title="Creating Actions">
+        <TocEntry
+          Title="Send Message To Device"
+          Link="/Content/actionsendmessage.htm" />
+        <TocEntry
+          Title="Send Email"
+          Link="/Content/actionsendemail.htm" />
+        <TocEntry
+          Title="Send SMS"
+          Link="/Content/actionsendsms.htm" />
+        <TocEntry
+          Title="Set Roaming Options"
+          Link="/Content/actionsetroaming.htm" />
+        <TocEntry
+          Title="Set Activation Lock Options"
+          Link="/Content/actionsetactivationlock.htm" />
+        <TocEntry
+          Title="Set Wallpaper"
+          Link="/Content/actionsetwallpaper.htm" />
+        <TocEntry
+          Title="Set Device Name"
+          Link="/Content/actionsetdevicename.htm" />
+        <TocEntry
+          Title="Set Custom Field Value"
+          Link="/Content/actionsetcustomfield.htm" />
+        <TocEntry
+          Title="Update Device Information"
+          Link="/Content/actionupdatedeviceinfo.htm" />
+        <TocEntry
+          Title="Set Attention Mode"
+          Link="/Content/actionsetattentionmode.htm" />
+        <TocEntry
+          Title="Freeze Device"
+          Link="/Content/actionfreezedevice.htm" />
+        <TocEntry
+          Title="Send VPP Invitation"
+          Link="/Content/actionsendvppinvitation.htm" />
+        <TocEntry
+          Title="Register User In VPP"
+          Link="/Content/actionregistervpp.htm" />
+        <TocEntry
+          Title="Retire User From VPP"
+          Link="/Content/actionretirevpp.htm" />
+        <TocEntry
+          Title="Remove Configuration Profile"
+          Link="/Content/actionremoveconfigprofile.htm" />
+        <TocEntry
+          Title="Demote To Unmanaged Device"
+          Link="/Content/actiondemotedevice.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="Editing Actions"
+        Link="/Content/editingactions.htm" />
+      <TocEntry
+        Title="Duplicating Actions"
+        Link="/Content/duplicatingactions.htm" />
+      <TocEntry
+        Title="Deleting Actions"
+        Link="/Content/deletingactions.htm" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="Working with Custom Fields"
+    Link="/Content/workingwithcustomfields.htm">
+    <TocEntry
+      Title="Creating Custom Fields"
+      Link="/Content/creatingcustomfields.htm" />
+    <TocEntry
+      Title="Editing Custom Fields"
+      Link="/Content/editingcustomfields.htm" />
+    <TocEntry
+      Title="Duplicating Custom Fields"
+      Link="/Content/duplicatingcustomfields.htm" />
+    <TocEntry
+      Title="Deleting Custom Fields"
+      Link="/Content/deletingcustomfields.htm" />
+  </TocEntry>
+</CatapultToc>

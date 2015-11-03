@@ -1,0 +1,13 @@
+<div class="{{modalActionWindowClass}} {{addModalClass}}">
+  {{#if displayClose}}
+    <div class="button close modal-window-close icon-closedialog pointer" {{action "close"}}></div>
+  {{/if}}
+
+  {{#if urlForHelp}}
+    <a href={{urlForHelp}} target="_blank" class="btn btn-small btn-help is-button-for-help float-right">?</a>
+  {{/if}}
+
+  <div class="modal-action-body">
+    {{yield}}
+  </div>
+</div>

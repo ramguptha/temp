@@ -1,0 +1,10 @@
+{{#each options as |option|}}
+  <li>
+    <button type="button"
+      {{action "menuClick" option target=option.contextMenuComponent bubbles=false}}
+      class={{option.menuClass}} disabled={{option.disabled}}
+    >
+      {{option.label}}
+    </button>
+  </li>
+{{/each}}

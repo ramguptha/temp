@@ -1,0 +1,33 @@
+<div class="list-top list-controls clearfix">
+  <div class="top-container-block device-groups-list">
+    <div class="list-info-header">
+      <h1 class="list-title">{{name}}<span class="icon-question-mark content-help-icon" data-tooltip-source-id-manual="title-help" alt="Help icon" title="Click to see the content."></span></h1>
+    </div>
+    <div class="tooltip-source tooltip-help" data-tooltip-id-manual="title-help">
+      {{t "ccDevice.deviceGroupsListPage.header.helpTooltip"}}
+        <a href="javascript:sendEmberAction('showIntro')">{{t "shared.gettingStartedLink"}}</a>
+    </div>
+    <div class="button-block-container">
+      {{#if urlForHelp}}
+        <a href={{urlForHelp}} target="_blank" class="btn btn-small btn-help is-button-for-help">?</a>
+      {{/if}}
+      {{#if listActions}}
+        {{button-group content=listActions class="groups-landing-actions right action-buttons-block"}}
+      {{/if}}
+    </div>
+
+  </div>
+  <div class="manage-content-group">
+    {{adhoc-search searchQuery=query nameOptions=searchableColumnSpecs}}
+  </div>
+</div>
+
+<div class="list-top-frame">
+  {{#if hasSelectionActions}}
+    {{button-group content=selectionActionsWrapper class="left action-buttons-block"}}
+  {{/if}}
+</div>
+
+<div class="group-list-wrapper">
+  <div class={{view.treeClass}}></div>
+</div>

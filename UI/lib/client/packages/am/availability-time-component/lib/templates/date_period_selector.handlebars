@@ -1,0 +1,26 @@
+<div class="daily-date">
+
+  {{t 'availabilityTimeComponent.datePeriodSelector.from'}}
+  {{am-content-date-time-picker date=availabilityDateStart disabled=dailyIntervalBtnSelected}}
+
+  {{t 'availabilityTimeComponent.datePeriodSelector.until'}}
+  {{am-content-date-time-picker date=availabilityDateEnd disabled=dailyIntervalBtnSelected
+    defaultHours=23 defaultMinutes=59 defaultSeconds=59}}
+
+  <div class="status-message">
+  {{#if availabilityDateStartUTC}}
+    {{availabilityDateStartUTC}} {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.utc'}}
+  {{/if}}
+  {{#if availabilityDateEndUTC}}
+    {{t 'availabilityTimeComponent.datePeriodSelector.until'}}
+    {{availabilityDateEndUTC}} {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.utc'}}
+  {{/if}}
+  </div>
+
+  {{#if dateErrorMessage}}
+    <div class="alert alert-error tipsy tipsy-w">
+      <div class="tipsy-arrow tipsy-arrow-w"></div>
+      <div class="tipsy-inner">{{dateErrorMessage}}</div>
+    </div>
+  {{/if}}
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1286" MadCap:lastWidth="1228">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">ポリシー内のサードパーティアプリケーションを操作する</h1>
+        <p class="BodyWithListFollowing">iOS&#160;および Android デバイスでは、以下の方法でポリシー内のサードパーティアプリケーションを使用できます:</p>
+        <p class="Bullet1" MadCap:autonum="●">サードパーティアプリケーションを、ポリシーに属するモバイルデバイスのユーザーによるオンデマンドインストールが行えるようにする</p>
+        <p class="Bullet1Last" MadCap:autonum="●">サードパーティアプリケーションを、ポリシーに属するモバイルデバイスに自動的にインストールする</p>
+        <p class="Body">サードパーティアプリケーションを<MadCap:variable name="Variables.ProductName" />からポリシーに追加する前に、Absolute Manage アドミンインターフェイスを使用して、アプリケーションファイルをモバイルアプリケーションパッケージとしてインポートする必要があります。詳細については、<span class="Emphasis">Absolute Manage ユーザーガイド</span>の「モバイルデバイスでのソフトウェアのインストール」を参照してください。</p>
+        <p class="BodyWithListFollowing">モバイルデバイスのオペレーティング・システムに応じて、ユーザーは以下のアプリケーションのインストールまたは削除を確認する必要がある場合があります:</p>
+        <p class="Bullet1" MadCap:autonum="●"> サイレントインストール (アプリケーションがユーザーの確認なしにインストールされる) は一部の Samsung Galaxy デバイスでサポートされています</p>
+        <p class="Bullet1Last" MadCap:autonum="●">サイレント削除 (アプリケーションがユーザーの確認なしに削除される) は一部の Samsung Galaxy デバイスと、iOS 5 以降を実行しているデバイスでサポートされています (Absolute Manage を通じてインストールしたアプリケーションのみ)</p>
+        <p class="Body">ポリシーのアクションは、デバイスが通知サーバーまたはその OS&#160;ベンダーに次回接触するとすぐに、ポリシーに属するモバイルデバイスで発生します。デバイスが Wi-Fi またはモバイルネットワークに接続されている場合、このアクションは通常 1 分以内に実行されますが、それ以外の場合はデバイスがネットワークに再接続されたときに行われます。アプリケーションのオンデマンドインストールを用いると、デバイスのユーザーに<a href="sendingmessages.htm">メッセージを送信</a>または電子メールを送信して、新しいアプリケーションが利用できることを通知できます。</p>
+        <p class="Body">ポリシーにサードパーティアプリケーションを追加したら、そのポリシー内のアプリケーションの割り当てプロパティを編集することはできなくなります。これらのプロパティを編集する場合、ポリシーから該当するアプリケーションを削除し、適切なプロパティを使用して再度追加する必要があります。</p>
+        <h2 class="Heading2">ポリシーにサードパーティアプリケーションを追加する</h2>
+        <p class="TaskIntro">ポリシーにサードパーティアプリケーションを追加するには:</p>
+        <p class="Step1" MadCap:autonum="1. "><span class="Bold">モバイルポリシー</span>エリアに移動します。</p>
+        <p class="Steps" MadCap:autonum="2. ">サードパーティアプリケーションを追加したいポリシーをクリックします。</p>
+        <p class="Steps" MadCap:autonum="3. "><span class="Bold">サードパーティアプリケーション</span>タブをクリックします。</p>
+        <p class="Steps" MadCap:autonum="4. ">作業エリアのツールバーで、<span class="Bold">サードパーティアプリケーションを追加</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="5. ">ポリシーに追加したい各サードパーティアプリケーションのチェックボックスを選択します</p>
+        <p class="Indent2">検索フィールドを使用して、具体的な条件 (アプリケーション名またはバージョン番号など) でリストを絞り込み、特定のアプリケーションを素早く探しだすことができます。</p>
+        <p class="Steps" MadCap:autonum="6. "><span class="Bold">割り当てルール</span>リストから、ポリシーに属するデバイス上で、選択したアプリケーションをどのように管理したいかを選択します:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">自動インストール</span>:アプリケーションは、デバイスがポリシーに入ったときにインストールされます。デバイスがポリシーを離れてもアプリケーションはデバイスに留まり、デバイスのユーザーが必要であればアプリケーションを手動で削除することができます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">オンデマンド</span>:アプリケーションは AbsoluteApps がなくても利用できるようになり、デバイスのユーザーはアプリケーションを手動でインストールすることができます。デバイスがポリシーを離れてもアプリケーションはデバイスに留まり、デバイスのユーザーが必要であればアプリケーションを手動で削除することができます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">自動インストール、自動削除</span>:アプリケーションは、デバイスがポリシーに入ったときにインストールされ、ポリシーから離れると削除されます。</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">オンデマンド、自動削除</span>:アプリケーションは AbsoluteApps がなくても利用できるようになり、デバイスのユーザーはアプリケーションを手動でインストールすることができます。アプリケーションは、デバイスがポリシーから離れると削除されます。</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">iOS デバイスでのオンデマンドインストールについての詳細は、<a href="http://www.absolute.com/en/support" target="_blank" class="Hyperlink">Absolute Global Support</a>にお問い合わせください。</p>
+        <p class="Steps" MadCap:autonum="7. ">ポリシーが選択したアプリケーションの可用性を特定の日付または時刻に制限するようにさせたい場合、<span class="Bold">利用可能時間を設定</span>チェックボックスを選択し、次に以下のオプションの 1 つを選択します:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">次の期間内で毎日</span>:アプリケーションは、このポリシーに属するモバイルデバイスで、1 日の特定の時刻の間のみ利用できます (たとえば営業時間中など)。利用可能なフィールドで開始時刻と終了時刻を指定します。</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">開始</span>:アプリケーションは、このポリシーに属するモバイルデバイスで、特定の期間の間のみ利用できます。開始時刻と日付、および終了時刻と日付を指定します。</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">これらのフィールドには、現地の時刻を使用してください。入力した時刻は、協定世界時 (UTC) に変換され、Absolute Manage サーバー上に保存されます。結果として、モバイルクライアントとの時差の存在を考慮する必要があります。さらに、夏時間 (DST) は UTC に適用されていないため、その補正も手動で行う必要があります。</p>
+        <p class="Steps" MadCap:autonum="8. "><span class="Bold">ポリシーへの追加</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="9. "><span class="Bold">OK</span> をクリックして確認メッセージを閉じてください。</p>
+        <h2 class="Heading2">ポリシーからサードパーティアプリケーションを削除する</h2>
+        <p class="Body">ポリシーからアプリケーションを削除すると、当該ポリシーに属するモバイルデバイスにはすぐには影響がありません。つまり、「自動インストール」に設定されているアプリケーションを削除しても、それはポリシーのデバイスからは削除されず、「禁止」に設定されているアプリケーションを削除しても、それがポリシーのデバイスにインストールされることはありません。しかし、アプリケーションに関してモバイルデバイスに敷かれた制限は解除され、その後は、以前必要だったアプリケーションを削除したり、禁止したアプリケーションをインストールしたりすることができます。</p>
+        <p class="TaskIntro">ポリシーからサードパーティアプリケーションを削除するには:</p>
+        <p class="Step1" MadCap:autonum="1. "><span class="Bold">モバイルポリシー</span>エリアに移動します。</p>
+        <p class="Steps" MadCap:autonum="2. ">サードパーティアプリケーションを削除したいポリシーをクリックします。</p>
+        <p class="Steps" MadCap:autonum="3. "><span class="Bold">サードパーティアプリケーション</span>タブをクリックします。</p>
+        <p class="Steps" MadCap:autonum="4. ">削除したい各サードパーティアプリケーションのチェックボックスを選択します</p>
+        <p class="Steps" MadCap:autonum="5. "><img src="Resources/Images/remove-button.png" class="Icon" />をクリックします。</p>
+        <p class="Steps" MadCap:autonum="6. "><span class="Bold">アプリケーションを削除</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="7. "><span class="Bold">OK</span> をクリックして確認メッセージを閉じてください。</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="aboutpolicies.htm" />
+                <MadCap:relatedTopic src="creatingpolicies.htm" />
+                <MadCap:relatedTopic src="creatingsmartpolicies.htm" />
+                <MadCap:relatedTopic src="editingpolicies.htm" />
+                <MadCap:relatedTopic src="sendingmessages.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

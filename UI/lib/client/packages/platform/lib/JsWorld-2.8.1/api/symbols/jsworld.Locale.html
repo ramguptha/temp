@@ -1,0 +1,1269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JSWorld API Reference - jsworld.Locale</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 120%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#logo {
+	margin-bottom: 15px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<div id="logo">
+	<img src="../icon-jsworld-64x64.png"/><b>JsWorld 2.8.1</b>
+</div>
+
+			
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/jsworld.html">jsworld</a></li>
+	
+	<li><a href="../symbols/jsworld.DateTimeFormatter.html">jsworld.DateTimeFormatter</a></li>
+	
+	<li><a href="../symbols/jsworld.DateTimeParser.html">jsworld.DateTimeParser</a></li>
+	
+	<li><a href="../symbols/jsworld.Locale.html">jsworld.Locale</a></li>
+	
+	<li><a href="../symbols/jsworld.MonetaryFormatter.html">jsworld.MonetaryFormatter</a></li>
+	
+	<li><a href="../symbols/jsworld.MonetaryParser.html">jsworld.MonetaryParser</a></li>
+	
+	<li><a href="../symbols/jsworld.NumericFormatter.html">jsworld.NumericFormatter</a></li>
+	
+	<li><a href="../symbols/jsworld.NumericParser.html">jsworld.NumericParser</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class jsworld.Locale
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				Represents a POSIX-style locale with its numeric, monetary and date/time 
+properties. Also provides a set of locale helper methods.
+
+<p>The locale properties follow the POSIX standards:
+
+<ul>
+    <li><a href="http://www.opengroup.org/onlinepubs/000095399/basedefs/xbd_chap07.html#tag_07_03_04">POSIX LC_NUMERIC</a>
+    <li><a href="http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html#tag_07_03_03">POSIX LC_MONETARY</a>
+    <li><a href="http://www.opengroup.org/onlinepubs/000095399/basedefs/xbd_chap07.html#tag_07_03_05">POSIX LC_TIME</a>
+</ul>
+				
+				
+					<br /><i>Defined in: </i> &lt;JsWorld.js&gt;.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jsworld.Locale.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/jsworld.Locale.html#constructor">jsworld.Locale</a></b>(properties)
+							</div>
+							<div class="description">Creates a new locale object (POSIX-style) with the specified
+properties.</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jsworld.Locale.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#currencySymbolPrecedes">currencySymbolPrecedes</a></b>()
+								</div>
+								<div class="description">Gets the position of the local (shorthand) currency 
+symbol relative to the amount.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getAbbreviatedMonthName">getAbbreviatedMonthName</a></b>(monthNum)
+								</div>
+								<div class="description">Returns the abbreviated name of the specified month.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getAbbreviatedWeekdayName">getAbbreviatedWeekdayName</a></b>(weekdayNum)
+								</div>
+								<div class="description">Returns the abbreviated name of the specified weekday.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getCurrencySymbol">getCurrencySymbol</a></b>()
+								</div>
+								<div class="description">Gets the local shorthand currency symbol.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getDecimalPoint">getDecimalPoint</a></b>()
+								</div>
+								<div class="description">Gets the decimal delimiter (radix) character for
+numeric quantities.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getFractionalDigits">getFractionalDigits</a></b>()
+								</div>
+								<div class="description">Gets the number of fractional digits for local
+(shorthand) symbol formatting.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getIntCurrencySymbol">getIntCurrencySymbol</a></b>()
+								</div>
+								<div class="description">Gets the internaltion currency symbol (ISO-4217 code).</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getIntFractionalDigits">getIntFractionalDigits</a></b>()
+								</div>
+								<div class="description">Gets the number of fractional digits for
+international (ISO-4217 code) formatting.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getMonetaryDecimalPoint">getMonetaryDecimalPoint</a></b>()
+								</div>
+								<div class="description">Gets the decimal delimiter (radix) for monetary
+quantities.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getMonthName">getMonthName</a></b>(monthNum)
+								</div>
+								<div class="description">Returns the name of the specified month.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#getWeekdayName">getWeekdayName</a></b>(weekdayNum)
+								</div>
+								<div class="description">Returns the name of the specified weekday.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.Locale.html#intCurrencySymbolPrecedes">intCurrencySymbolPrecedes</a></b>()
+								</div>
+								<div class="description">Gets the position of the international (ISO-4217 code) 
+currency symbol relative to the amount.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>jsworld.Locale</b>(properties)
+				</div>
+				
+				<div class="description">
+					Creates a new locale object (POSIX-style) with the specified
+properties.
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{object}</span>  <b>properties</b>
+								
+							</dt>
+								<dd>An object containing the raw locale properties:</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.decimal_point</b>
+								
+							</dt>
+								<dd>A string containing the symbol that shall be used as the decimal
+       delimiter (radix character) in numeric, non-monetary formatted
+       quantities. This property cannot be omitted and cannot be set to the
+       empty string.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.thousands_sep</b>
+								
+							</dt>
+								<dd>A string containing the symbol that shall be used as a separator for
+       groups of digits to the left of the decimal delimiter in numeric,
+       non-monetary formatted monetary quantities.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.grouping</b>
+								
+							</dt>
+								<dd>Defines the size of each group of digits in formatted non-monetary
+       quantities. The operand is a sequence of integers separated by
+       semicolons. Each integer specifies the number of digits in each group,
+       with the initial integer defining the size of the group immediately
+       preceding the decimal delimiter, and the following integers defining
+       the preceding groups. If the last integer is not -1, then the size of
+       the previous group (if any) shall be repeatedly used for the
+       remainder of the digits. If the last integer is -1, then no further
+       grouping shall be performed.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.int_curr_symbol</b>
+								
+							</dt>
+								<dd>The first three letters signify the ISO-4217 currency code,
+       the fourth letter is the international symbol separation character
+       (normally a space).</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.currency_symbol</b>
+								
+							</dt>
+								<dd>The local shorthand currency symbol, e.g. "$" for the en_US locale</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.mon_decimal_point</b>
+								
+							</dt>
+								<dd>The symbol to be used as the decimal delimiter (radix character)</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.mon_thousands_sep</b>
+								
+							</dt>
+								<dd>The symbol to be used as a separator for groups of digits to the
+       left of the decimal delimiter.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.mon_grouping</b>
+								
+							</dt>
+								<dd>A string that defines the size of each group of digits. The
+       operand is a sequence of integers separated by semicolons (";").
+       Each integer specifies the number of digits in each group, with the
+       initial integer defining the size of the group preceding the
+       decimal delimiter, and the following integers defining the
+       preceding groups. If the last integer is not -1, then the size of
+       the previous group (if any) must be repeatedly used for the
+       remainder of the digits. If the last integer is -1, then no
+       further grouping is to be performed.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.positive_sign</b>
+								
+							</dt>
+								<dd>The string to indicate a non-negative monetary amount.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.negative_sign</b>
+								
+							</dt>
+								<dd>The string to indicate a negative monetary amount.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.frac_digits</b>
+								
+							</dt>
+								<dd>An integer representing the number of fractional digits (those to
+       the right of the decimal delimiter) to be written in a formatted
+       monetary quantity using currency_symbol.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_frac_digits</b>
+								
+							</dt>
+								<dd>An integer representing the number of fractional digits (those to
+       the right of the decimal delimiter) to be written in a formatted
+       monetary quantity using int_curr_symbol.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.p_cs_precedes</b>
+								
+							</dt>
+								<dd>An integer set to 1 if the currency_symbol precedes the value for a
+       monetary quantity with a non-negative value, and set to 0 if the
+       symbol succeeds the value.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.n_cs_precedes</b>
+								
+							</dt>
+								<dd>An integer set to 1 if the currency_symbol precedes the value for a
+       monetary quantity with a negative value, and set to 0 if the symbol
+       succeeds the value.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.p_sep_by_space</b>
+								
+							</dt>
+								<dd>Set to a value indicating the separation of the currency_symbol,
+       the sign string, and the value for a non-negative formatted monetary
+       quantity:
+       
+            <p>0 No space separates the currency symbol and value.</p>
+
+            <p>1 If the currency symbol and sign string are adjacent, a space
+                 separates them from the value; otherwise, a space separates
+                 the currency symbol from the value.</p>
+
+            <p>2 If the currency symbol and sign string are adjacent, a space
+                 separates them; otherwise, a space separates the sign string
+                 from the value.</p></dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.n_sep_by_space</b>
+								
+							</dt>
+								<dd>Set to a value indicating the separation of the currency_symbol,
+       the sign string, and the value for a negative formatted monetary
+       quantity. Rules same as for p_sep_by_space.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.p_sign_posn</b>
+								
+							</dt>
+								<dd>An integer set to a value indicating the positioning of the
+       positive_sign for a monetary quantity with a non-negative value:
+	
+	       <p>0 Parentheses enclose the quantity and the currency_symbol.</p>
+
+	       <p>1 The sign string precedes the quantity and the currency_symbol.</p>
+
+	       <p>2 The sign string succeeds the quantity and the currency_symbol.</p>
+
+	       <p>3 The sign string precedes the currency_symbol.</p>
+
+	       <p>4 The sign string succeeds the currency_symbol.</p></dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.n_sign_posn</b>
+								
+							</dt>
+								<dd>An integer set to a value indicating the positioning of the
+	  negative_sign for a negative formatted monetary quantity. Rules same
+	  as for p_sign_posn.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_p_cs_precedes</b>
+								
+							</dt>
+								<dd>An integer set to 1 if the int_curr_symbol precedes the value for a
+	  monetary quantity with a non-negative value, and set to 0 if the
+	  symbol succeeds the value.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_n_cs_precedes</b>
+								
+							</dt>
+								<dd>An integer set to 1 if the int_curr_symbol precedes the value for a
+	  monetary quantity with a negative value, and set to 0 if the symbol
+	  succeeds the value.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_p_sep_by_space</b>
+								
+							</dt>
+								<dd>Set to a value indicating the separation of the int_curr_symbol,
+	  the sign string, and the value for a non-negative internationally
+	  formatted monetary quantity. Rules same as for p_sep_by_space.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_n_sep_by_space</b>
+								
+							</dt>
+								<dd>Set to a value indicating the separation of the int_curr_symbol,
+	  the sign string, and the value for a negative internationally
+	  formatted monetary quantity. Rules same as for p_sep_by_space.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_p_sign_posn</b>
+								
+							</dt>
+								<dd>An integer set to a value indicating the positioning of the
+	  positive_sign for a positive monetary quantity formatted with the
+	  international format. Rules same as for p_sign_posn.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{integer Number}</span>  <b>properties.int_n_sign_posn</b>
+								
+							</dt>
+								<dd>An integer set to a value indicating the positioning of the
+	  negative_sign for a negative monetary quantity formatted with the
+	  international format. Rules same as for p_sign_posn.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String[] | String}</span>  <b>properties.abday</b>
+								
+							</dt>
+								<dd>The abbreviated weekday names, corresponding to the %a conversion
+       specification. The property must be either an array of 7 strings or
+       a string consisting of 7 semicolon-separated substrings, each 
+       surrounded by double-quotes. The first must be the abbreviated name 
+       of the day corresponding to Sunday, the second the abbreviated name 
+       of the day corresponding to Monday, and so on.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String[] | String}</span>  <b>properties.day</b>
+								
+							</dt>
+								<dd>The full weekday names, corresponding to the %A conversion
+       specification. The property must be either an array of 7 strings or
+       a string consisting of 7 semicolon-separated substrings, each 
+       surrounded by double-quotes. The first must be the full name of the 
+       day corresponding to Sunday, the second the full name of the day 
+       corresponding to Monday, and so on.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String[] | String}</span>  <b>properties.abmon</b>
+								
+							</dt>
+								<dd>The abbreviated month names, corresponding to the %b conversion
+       specification. The property must be either an array of 12 strings or
+       a string consisting of 12 semicolon-separated substrings, each 
+       surrounded by double-quotes. The first must be the abbreviated name 
+       of the first month of the year (January), the second the abbreviated 
+       name of the second month, and so on.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String[] | String}</span>  <b>properties.mon</b>
+								
+							</dt>
+								<dd>The full month names, corresponding to the %B conversion
+       specification. The property must be either an array of 12 strings or
+       a string consisting of 12 semicolon-separated substrings, each 
+       surrounded by double-quotes. The first must be the full name of the 
+       first month of the year (January), the second the full name of the second 
+       month, and so on.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.d_fmt</b>
+								
+							</dt>
+								<dd>The appropriate date representation. The string may contain any
+       combination of characters and conversion specifications (%<char>).</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.t_fmt</b>
+								
+							</dt>
+								<dd>The appropriate time representation. The string may contain any
+       combination of characters and conversion specifications (%<char>).</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>properties.d_t_fmt</b>
+								
+							</dt>
+								<dd>The appropriate date and time representation. The string may contain
+       any combination of characters and conversion specifications (%<char>).</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String[] | String}</span>  <b>properties.am_pm</b>
+								
+							</dt>
+								<dd>The appropriate representation of the ante-meridiem and post-meridiem
+       strings, corresponding to the %p conversion specification. The property 
+       must be either an array of 2 strings or a string consisting of 2 
+       semicolon-separated substrings, each surrounded by double-quotes. 
+       The first string must represent the ante-meridiem designation, the 
+       last string the post-meridiem designation.</dd>
+						
+						</dl>
+					
+					
+					
+					
+						<dl class="detailList">
+						<dt class="heading">Throws:</dt>
+						
+							<dt>
+								 <b></b>
+							</dt>
+								<dd>@throws Error on a undefined or invalid locale property.</dd>
+						
+						</dl>
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="currencySymbolPrecedes"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>currencySymbolPrecedes</b>()
+					
+					</div>
+					<div class="description">
+						Gets the position of the local (shorthand) currency 
+symbol relative to the amount. Assumes a non-negative amount.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> True if the symbol precedes the amount, false if
+the symbol succeeds the amount.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getAbbreviatedMonthName"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String | String[]}</span>
+					<b>getAbbreviatedMonthName</b>(monthNum)
+					
+					</div>
+					<div class="description">
+						Returns the abbreviated name of the specified month.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer Number}</span> <b>monthNum</b>
+									<i>Optional</i>
+								</dt>
+								<dd>An integer between 0 and 11. Zero 
+       corresponds to January, one to February, etc. If omitted the
+       method will return an array of all abbreviated month names.</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>Error on invalid argument.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String | String[]}</span> The abbreviated name of the specified month
+         or an array of all abbreviated month names.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getAbbreviatedWeekdayName"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String | String[]}</span>
+					<b>getAbbreviatedWeekdayName</b>(weekdayNum)
+					
+					</div>
+					<div class="description">
+						Returns the abbreviated name of the specified weekday.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer Number}</span> <b>weekdayNum</b>
+									<i>Optional</i>
+								</dt>
+								<dd>An integer between 0 and 6. Zero 
+       corresponds to Sunday, one to Monday, etc. If omitted the
+       method will return an array of all abbreviated weekday 
+       names.</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>Error on invalid argument.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String | String[]}</span> The abbreviated name of the specified weekday
+         or an array of all abbreviated weekday names.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getCurrencySymbol"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String}</span>
+					<b>getCurrencySymbol</b>()
+					
+					</div>
+					<div class="description">
+						Gets the local shorthand currency symbol.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> The currency symbol.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getDecimalPoint"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String}</span>
+					<b>getDecimalPoint</b>()
+					
+					</div>
+					<div class="description">
+						Gets the decimal delimiter (radix) character for
+numeric quantities.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> The radix character.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getFractionalDigits"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer Number}</span>
+					<b>getFractionalDigits</b>()
+					
+					</div>
+					<div class="description">
+						Gets the number of fractional digits for local
+(shorthand) symbol formatting.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer Number}</span> The number of fractional digits.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getIntCurrencySymbol"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String}</span>
+					<b>getIntCurrencySymbol</b>()
+					
+					</div>
+					<div class="description">
+						Gets the internaltion currency symbol (ISO-4217 code).
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> The international currency symbol.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getIntFractionalDigits"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer Number}</span>
+					<b>getIntFractionalDigits</b>()
+					
+					</div>
+					<div class="description">
+						Gets the number of fractional digits for
+international (ISO-4217 code) formatting.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer Number}</span> The number of fractional digits.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getMonetaryDecimalPoint"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String}</span>
+					<b>getMonetaryDecimalPoint</b>()
+					
+					</div>
+					<div class="description">
+						Gets the decimal delimiter (radix) for monetary
+quantities.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> The radix character.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getMonthName"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String | String[]}</span>
+					<b>getMonthName</b>(monthNum)
+					
+					</div>
+					<div class="description">
+						Returns the name of the specified month.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer Number}</span> <b>monthNum</b>
+									<i>Optional</i>
+								</dt>
+								<dd>An integer between 0 and 11. Zero 
+       corresponds to January, one to February, etc. If omitted the
+       method will return an array of all month names.</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>Error on invalid argument.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String | String[]}</span> The name of the specified month or an array 
+         of all month names.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getWeekdayName"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String | String[]}</span>
+					<b>getWeekdayName</b>(weekdayNum)
+					
+					</div>
+					<div class="description">
+						Returns the name of the specified weekday.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{integer Number}</span> <b>weekdayNum</b>
+									<i>Optional</i>
+								</dt>
+								<dd>An integer between 0 and 6. Zero 
+       corresponds to Sunday, one to Monday, etc. If omitted the
+       method will return an array of all weekday names.</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>Error on invalid argument.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String | String[]}</span> The name of the specified weekday or an 
+         array of all weekday names.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="intCurrencySymbolPrecedes"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>intCurrencySymbolPrecedes</b>()
+					
+					</div>
+					<div class="description">
+						Gets the position of the international (ISO-4217 code) 
+currency symbol relative to the amount. Assumes a non-negative 
+amount.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> True if the symbol precedes the amount, false if
+the symbol succeeds the amount.</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0
+		</div>
+	</body>
+</html>

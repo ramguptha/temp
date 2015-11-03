@@ -1,0 +1,130 @@
+<div class="progress-steps-new-content">
+  <ul class="progress-steps">
+    <li class="active-step"><span class="icon-number-1"></span>SET PROPERTIES</li>
+    <li><span class="icon-number-2"></span>REVIEW AND REQUEST</li>
+  </ul>
+</div>
+
+<div class="container-device-freeze-set-properties" >
+  <!-- TODO change name for select-enter-category class to select-freeze-set-properties -->
+  <div class="select-enter-category for-device-freeze">
+
+    <!-- TODO enable it in the next release
+    <div class="request-name-box">
+      {{input type="text" placeholder="Enter request name" class="folder-name-field" value=requestName}}
+    </div>
+    {{#if isEditOrAddMode}}
+        {{input type="text" placeholder="Enter message name" class="folder-name-field" value=selectedMessageTitle}}
+    {{else}}
+        {{select-field content=model value=selectedMessageId optionValuePath="content.data.id" optionLabelPath="content.data.deviceFreezeTitle" }}
+    {{/if}}
+    -->
+
+    {{#unless isEditOrAddMode}}
+      <button type="button" class="btn btn-small is-button-for-new-content" {{action "onAddMessageAction"}}>
+        <span class="plus-content icon-plus"></span>Add Message
+      </button>
+    {{/unless}}
+
+    {{#if isEditOrAddMode}}
+    <!-- TODO enable it in the next release
+      <button type="button" class="btn btn-small is-cancel-button-for-new-content" {{action "onCancelMessageAction"}}>
+        <span class="plus-content"></span>Cancel
+      </button>
+      <button type="button" class="btn btn-action is-save-button-for-new-content" {{action "onSaveMessageAction" this}}>
+        Save
+      </button>
+    -->
+    {{/if}}
+
+    {{#if isEditMode}}
+      <button type="button" class="btn btn-small is-delete-button-for-new-content" {{action "onDeleteMessageAction"}}>
+        <span class="minus-delete-content icon-minus"></span>Delete
+      </button>
+    {{/if}}
+    <div class="editor-input-container">
+      <div id="wysihtml5-editor-toolbar" style="display: none;">
+        <header>
+          {{#if isEditOrAddMode}}
+          <ul class="commands">
+            <li data-wysihtml5-command="bold" title="Make text bold (CTRL + B)" class="command"></li>
+            <li data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" title="Insert headline 1" class="command"></li>
+            <li data-wysihtml5-command="insertImage" title="Insert an image" class="command"></li>
+            <li data-wysihtml5-command-group="foreColor" class="fore-color" title="Color the selected text" class="command">
+              <ul>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="black"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="silver"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="gray"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="maroon"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="purple"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="olive"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="navy"></li>
+                <li data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue"></li>
+              </ul>
+            </li>
+            <a data-wysihtml5-action="change_view">html view</a>
+          </ul>
+          {{/if}}
+          {{#if isReadonlyMode}}
+            <label>Preview</label>
+            <button type="button" class="btn btn-small is-edit-button-for-new-content" {{action "onEditMessageAction"}}>
+              Edit
+            </button>
+          {{/if}}
+        </header>
+        <div class="insert-image-dialog" data-wysihtml5-dialog="insertImage" style="display: none;">
+          <label>
+            Image:
+            <input data-wysihtml5-dialog-field="src" value="http://">
+          </label>
+          <button class="btn btn-action" data-wysihtml5-dialog-action="save">OK</button>&nbsp;<button class="btn btn-low" data-wysihtml5-dialog-action="cancel">Cancel</button>
+        </div>
+      </div>
+      <textarea id="wysihtml5-editor" spellcheck="false" rows="10" wrap="off" autofocus placeholder="Enter message here..."></textarea>
+    </div>
+    <div class="radio-button-block block-no-float">
+      <label class="name-input-container">{{view Em.RadioButton isSelected=generatePassword }} Generate different random password for each device</label>
+    </div>
+    <div class="radio-button-block block-no-float">
+      <label>{{view Em.RadioButton isSelected=specifyPassword }} Specify 8-digit password for selected devices</label>
+    </div>
+    <div class="password-for-device--block">
+      {{view DigitalFieldView placeholder="Set password" class="folder-name-field" type="text" min="10000000" max="99999999" maxlength="8" value=passwordDevice isVisible=specifyPassword }}
+      {{#if specifyPassword}}
+        <a href="#" class="btn btn-link" {{action "onGeneratePasscode"}}>Generate Passcode</a>
+      {{/if}}
+    </div>
+    <div class="force-reboot-block">
+      <div><label class="for-checkbox">{{input type="checkbox" checked=forceRebootEnabled}} Force Reboot (Optional)</label></div>
+      <div class="help-wrapper help-no-float">
+        <div class="help-container">
+          <span class="icon-question-mark"></span><span class="help-tooltip">
+            <div class="tooltip-arrow large-tooltip"></div>
+            <ul>
+              <li><strong>Help text TODO:</strong> Force Reboot (Optional) help text</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+    {{#if errorMessage}}
+      <div class="alert alert-error tipsy tipsy-sw">
+        <div class="tipsy-arrow tipsy-arrow-sw"></div>
+        <div class="tipsy-inner">{{errorMessage}}</div>
+      </div>
+    {{/if}}
+    {{#if actionWarning}}
+      <div class="password-alert-warning alert alert-warning">{{actionWarning}}</div>
+    {{/if}}
+  </div>
+</div>
+
+<div class="container-fluid add-content-actions">
+  <span class="icon-question-mark modal-footer-info" alt="Help" {{action "onHelpStep1"}}></span>
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>Cancel</button>
+    <button class="btn btn-action" {{action "gotoNextStep"}} disabled={{isContinueDisabled}}>Continue</button>
+  </div>
+</div>

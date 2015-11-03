@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1586" MadCap:lastWidth="1228">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">ポリシー内のメディアファイルを操作する</h1>
+        <p class="BodyWithListFollowing">iOS&#160;および Android デバイスでは、以下の方法でポリシー内のメディアファイルを使用できます:</p>
+        <p class="Bullet1" MadCap:autonum="●">メディアファイルンを、ポリシーに属するモバイルデバイスのユーザーによる AbsoluteSafe 内のオンデマンドインストールが行えるようにする</p>
+        <p class="Bullet1Last" MadCap:autonum="●">AbsoluteSafe を通じて、ポリシーに属するモバイルデバイスにメディアファイルを自動的にダウンロードする</p>
+        <p class="Body">ポリシーを通じて利用可能になったメディアファイルにユーザーがアクセスするには、モバイルデバイスに AbsoluteSafe アプリケーションがインストールされている必要があります。</p>
+        <p class="Body">ポリシーにメディアファイルを追加するには、<a href="importingmediafiles.htm">ファイルを Absolute Manage にインポートする必要があります</a>。</p>
+        <p class="Body">ポリシーのアクションは、デバイスが通知サーバーまたはその OS&#160;ベンダーに接触するとすぐに、ポリシーに属するモバイルデバイスで発生します。デバイスが Wi-Fi またはモバイルネットワークに接続されている場合、このアクションは通常 1 分以内に実行されますが、それ以外の場合はデバイスがネットワークに再接続されたときに行われます。デバイスのユーザーに<a href="sendingmessages.htm">メッセージを送信</a>または電子メールを送信して、新しいメディアファイルが利用できることを通知できます。</p>
+        <h2 class="Heading2">メディアファイルをポリシーに追加する</h2>
+        <p class="TaskIntro">メディアファイルをポリシーに追加するには:</p>
+        <p class="Step1" MadCap:autonum="1. "><span class="Bold">モバイルポリシー</span>エリアに移動します。</p>
+        <p class="Steps" MadCap:autonum="2. ">メディアファイルを追加したいポリシーをクリックします。</p>
+        <p class="Steps" MadCap:autonum="3. "><span class="Bold">コンテンツ</span>タブをクリックします。</p>
+        <p class="Steps" MadCap:autonum="4. ">作業エリアのツールバーで、<span class="Bold">コンテンツをポリシーに追加</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="5. ">ポリシーに追加したい各メディアファイルのチェックボックスを選択します</p>
+        <p class="Indent2">検索フィールドを使用して、具体的な条件 (ファイル名またはメディアカテゴリーなど) でリストを絞り込み、特定のメディアファイルを素早く探しだすことができます。</p>
+        <p class="Steps" MadCap:autonum="6. "><span class="Bold">割り当てルール</span>リストから、ポリシーに属するデバイス上で、選択したメディアファイルをどのように管理したいかを選択します:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">自動インストール</span>:メディアファイルは、デバイスがポリシーに入ったときにダウンロードされます。デバイスがポリシーを離れてもメディアファイルはデバイスに留まり、デバイスのユーザーが必要であればファイルを手動で削除することができます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">オンデマンド</span>:メディアファイルは AbsoluteApps がなくても利用できるようになり、デバイスのユーザーはファイルを手動でダウンロードすることができます。デバイスがポリシーを離れてもメディアファイルはデバイスに留まり、デバイスのユーザーが必要であればファイルを手動で削除することができます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">自動インストール、自動削除</span>:メディアファイルは、デバイスがポリシーに入ったときにダウンロードされ、ポリシーから離れると削除されます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">オンデマンド、自動削除</span>:メディアファイルは AbsoluteApps がなくても利用できるようになり、デバイスのユーザーはファイルを手動でダウンロードすることができます。ファイルは、デバイスがポリシーから離れると削除されます。</p>
+        <p class="Steps" MadCap:autonum="7. ">ポリシーが選択したメディアファイルの可用性を特定の日付または時刻に制限するようにさせたい場合、<span class="Bold">利用可能時間を設定</span>チェックボックスを選択し、次に以下のオプションの 1 つを選択します:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">次の期間内で毎日</span>:メディアファイルは、このポリシーに属するモバイルデバイスで、1 日の特定の時刻の間のみ利用できます (たとえば営業時間中など)。利用可能なフィールドで開始時刻と終了時刻を指定します。</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">開始</span>:メディアファイルは、このポリシーに属するモバイルデバイスで、特定の期間の間のみ利用できます。開始時刻と日付、および終了時刻と日付を指定します。</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">これらのフィールドには、現地の時刻を使用してください。入力した時刻は、協定世界時 (UTC) に変換され、Absolute Manage サーバー上に保存されます。結果として、モバイルクライアントとの時差の存在を考慮する必要があります。さらに、夏時間 (DST) は UTC に適用されていないため、その補正も手動で行う必要があります。</p>
+        <p class="Steps" MadCap:autonum="8. "><span class="Bold">ポリシーへの追加</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="9. "><span class="Bold">完了</span> をクリックして確認メッセージを閉じてください。</p>
+        <h2 class="Heading2">メディアファイルの割り当てルールを編集する</h2>
+        <p class="TaskIntro">ポリシー内のメディアファイルの割り当てルールを編集するには:</p>
+        <p class="Step1" MadCap:autonum="1. "><span class="Bold">モバイルポリシー</span>エリアに移動します。</p>
+        <p class="Steps" MadCap:autonum="2. ">編集したいポリシーをクリックします。</p>
+        <p class="Steps" MadCap:autonum="3. "><span class="Bold">コンテンツ</span>タブをクリックします。</p>
+        <p class="Steps" MadCap:autonum="4. ">割り当てルールを変更したい各メディアファイルのチェックボックスを選択します</p>
+        <p class="Steps" MadCap:autonum="5. "><img src="Resources/Images/edit-button.png" class="Icon" />をクリックします。</p>
+        <p class="Steps" MadCap:autonum="6. "><span class="Bold">割り当てルール</span>リストから、ポリシーに属するデバイス上で、選択したメディアファイルをどのように管理したいかを選択します:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">自動インストール</span>:メディアファイルは、デバイスがポリシーに入ったときにダウンロードされます。デバイスがポリシーを離れてもメディアファイルはデバイスに留まり、デバイスのユーザーが必要であればファイルを手動で削除することができます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">オンデマンド</span>:メディアファイルは AbsoluteApps がなくても利用できるようになり、デバイスのユーザーはファイルを手動でダウンロードすることができます。デバイスがポリシーを離れてもメディアファイルはデバイスに留まり、デバイスのユーザーが必要であればファイルを手動で削除することができます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">自動インストール、自動削除</span>:メディアファイルは、デバイスがポリシーに入ったときにダウンロードされ、ポリシーから離れると削除されます。</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">オンデマンド、自動削除</span>:メディアファイルは AbsoluteApps がなくても利用できるようになり、デバイスのユーザーはファイルを手動でダウンロードすることができます。ファイルは、デバイスがポリシーから離れると削除されます。</p>
+        <p class="Steps" MadCap:autonum="7. ">ポリシーが選択したメディアファイルの可用性を特定の日付または時刻に制限するようにさせたい場合、<span class="Bold">利用可能時間を設定</span>チェックボックスを選択し、次に以下のオプションの 1 つを選択します:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">次の期間内で毎日</span>:メディアファイルは、このポリシーに属するモバイルデバイスで、1 日の特定の時刻の間のみ利用できます (たとえば営業時間中など)。利用可能なフィールドで開始時刻と終了時刻を指定します。</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">開始</span>:メディアファイルは、このポリシーに属するモバイルデバイスで、特定の期間の間のみ利用できます。開始時刻と日付、および終了時刻と日付を指定します。</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">これらのフィールドには、現地の時刻を使用してください。入力した時刻は、協定世界時 (UTC) に変換され、Absolute Manage サーバー上に保存されます。結果として、モバイルクライアントとの時差の存在を考慮する必要があります。さらに、夏時間 (DST) は UTC に適用されていないため、その補正も手動で行う必要があります。</p>
+        <p class="Steps" MadCap:autonum="8. "><span class="Bold">コンテンツの編集</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="9. "><span class="Bold">完了</span> をクリックして確認メッセージを閉じてください。</p>
+        <h2 class="Heading2">ポリシーからメディアファイルを削除する</h2>
+        <p class="TaskIntro">ポリシーからメディアファイルを削除するには:</p>
+        <p class="Step1" MadCap:autonum="1. "><span class="Bold">モバイルポリシー</span>エリアに移動します。</p>
+        <p class="Steps" MadCap:autonum="2. ">メディアファイルを削除したいポリシーをクリックします。</p>
+        <p class="Steps" MadCap:autonum="3. "><span class="Bold">コンテンツ</span>タブをクリックします。</p>
+        <p class="Steps" MadCap:autonum="4. ">削除したい各メディアファイルのチェックボックスを選択します</p>
+        <p class="Steps" MadCap:autonum="5. "><img src="Resources/Images/remove-button.png" class="Icon" />をクリックします。</p>
+        <p class="Steps" MadCap:autonum="6. "><span class="Bold">コンテンツを削除する</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="7. "><span class="Bold">OK</span> をクリックして確認メッセージを閉じてください。</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="aboutpolicies.htm" />
+                <MadCap:relatedTopic src="creatingpolicies.htm" />
+                <MadCap:relatedTopic src="creatingsmartpolicies.htm" />
+                <MadCap:relatedTopic src="editingpolicies.htm" />
+                <MadCap:relatedTopic src="sendingmessages.htm" />
+                <MadCap:relatedTopic src="importingmediafiles.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

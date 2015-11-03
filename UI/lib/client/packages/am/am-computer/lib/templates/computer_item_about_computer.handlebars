@@ -1,0 +1,240 @@
+<div class="snap-content-container">
+
+  <div class="all-details-content">
+
+    <div class="snap-content-title"><h3>{{t 'amComputer.aboutComputerTab.title'}}</h3>
+    </div>
+
+    <div class="snap-content-icon"><img src={{deviceIconPath}}></div>
+    <div class="device-main-description">
+      <h4 class="device-model">{{machineModel}}</h4>
+
+      <div class="device-details-table-heading">
+        <div class="table-heading-row">
+          <div class="device-details-table-cell"><span class="os-version"><img
+            src={{osIconPath}}></span>{{t 'amData.computerItemAgentInformationSpec.osPlatform'}}
+            <p>{{model.presentation.osPlatform}}</p></div>
+          <div class="device-details-table-cell">{{t 'amData.computerItemAgentInformationSpec.osVersion'}}
+            <p>{{model.presentation.osVersion}}</p></div>
+          <div class="device-details-table-cell">{{t 'amData.computerItemAgentInformationSpec.lastHeartbeat'}}
+            <p>{{model.presentation.lastHeartbeat}}</p></div>
+          <div class="device-details-table-cell">{{t 'amData.computerItemAgentInformationSpec.recordCreationDate'}}
+            <p>{{model.presentation.recordCreationDate}}</p></div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <table class="device-details-table-body">
+      <tbody>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.agentActiveIp'}}</td>
+        <td>{{model.presentation.agentActiveIp}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.agentVersion'}}</td>
+        <td>{{model.presentation.agentVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.agentBuildNumber'}}</td>
+        <td>{{model.presentation.agentBuildNumber}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.agentSerialNumber'}}</td>
+        <td>{{model.presentation.agentSerialNumber}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerOnline'}}</td>
+        <td>{{model.presentation.computerOnline}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.sdServerAddress'}}</td>
+        <td>{{model.presentation.sdServerAddress}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.lmServerAddress'}}</td>
+        <td>{{model.presentation.lmServerAddress}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.sdServerCheckInterval'}}</td>
+        <td>{{model.presentation.sdServerCheckInterval}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.lmServerCheckInterval'}}</td>
+        <td>{{model.presentation.lmServerCheckInterval}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.includedInOsPatchManagement'}}</td>
+        <td>{{model.presentation.includedInOsPatchManagement}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.includedInThirdPartyPatchManagement'}}</td>
+        <td>{{model.presentation.includedInThirdPartyPatchManagement}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.useOnlyAbsoluteManageForOsUpdates'}}</td>
+        <td>{{model.presentation.useOnlyAbsoluteManageForOsUpdates}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.absoluteRemoteEnabled'}}</td>
+        <td>{{model.presentation.absoluteRemoteEnabled}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.absoluteRemotePort'}}</td>
+        <td>{{model.presentation.absoluteRemotePort}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.absoluteRemoteUserConfirmationRequired'}}</td>
+        <td>{{model.presentation.absoluteRemoteUserConfirmationRequired}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerOwnership'}}</td>
+        <td>{{model.presentation.computerOwnership}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrollmentDate'}}</td>
+        <td>{{model.presentation.computerEnrollmentDate}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrolledInMdm'}}</td>
+        <td>{{model.presentation.computerEnrolledInMdm}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrolledViaEnrollmentProgram'}}</td>
+        <td>{{model.presentation.computerEnrolledViaEnrollmentProgram}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrollmentProgramRegistrationDate'}}</td>
+        <td>{{model.presentation.computerEnrollmentProgramRegistrationDate}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrollmentProfileAssignmentDate'}}</td>
+        <td>{{model.presentation.computerEnrollmentProfileAssignmentDate}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrollmentProfileInstallationDate'}}</td>
+        <td>{{model.presentation.computerEnrollmentProfileInstallationDate}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrollmentProfileUuid'}}</td>
+        <td>{{model.presentation.computerEnrollmentProfileUuid}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerEnrollmentStatus'}}</td>
+        <td>{{model.presentation.computerEnrollmentStatus}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerDeviceIdentifierUdid'}}</td>
+        <td>{{model.presentation.computerDeviceIdentifierUdid}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.computerIsTracked'}}</td>
+        <td>{{model.presentation.computerIsTracked}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation1'}}</td>
+        <td>{{model.presentation.clientInformation1}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation2'}}</td>
+        <td>{{model.presentation.clientInformation2}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation3'}}</td>
+        <td>{{model.presentation.clientInformation3}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation4'}}</td>
+        <td>{{model.presentation.clientInformation4}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation5'}}</td>
+        <td>{{model.presentation.clientInformation5}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation6'}}</td>
+        <td>{{model.presentation.clientInformation6}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation7'}}</td>
+        <td>{{model.presentation.clientInformation7}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation8'}}</td>
+        <td>{{model.presentation.clientInformation8}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation9'}}</td>
+        <td>{{model.presentation.clientInformation9}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerItemAgentInformationSpec.clientInformation10'}}</td>
+        <td>{{model.presentation.clientInformation10}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="device-actions">
+    <div class="device-actions-title"><span class="icon-checkmark1"></span>
+
+      <h3>{{t 'amComputer.aboutComputerTab.commandsTitle'}}</h3></div>
+    <div class="device-actions-list">
+      <ul class="actions-list">
+        <li>
+          <a href="#" class="is-button-for-send-message"{{action "sendMessageCommand"}}>
+            <span class="icon-action"></span>
+            <span class="record-action-name">{{t 'amComputer.computerListPage.commands.sendMessage'}}</span>
+
+            <p
+              class="record-action-description">{{t 'amComputer.computerListPage.commands.sendMessageDescription' agentName=model.presentation.agentName}}</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="is-button-for-gather-inventory"{{action "gatherInventoryCommand"}}>
+            <span class="icon-action"></span>
+            <span class="record-action-name">{{t 'amComputer.computerListPage.commands.gatherInventory'}}</span>
+
+            <p
+              class="record-action-description">{{t 'amComputer.computerListPage.commands.gatherInventoryDescription' agentName=model.presentation.agentName}}</p>
+          </a>
+        </li>
+        {{#if isFreezeCommandSupported}}
+          <li>
+            <a href="#" class="is-button-for-device-freeze"{{action "deviceFreezeCommand"}}>
+              <span class="icon-action"></span>
+              <span class="record-action-name">{{t 'amComputer.computerListPage.commands.deviceFreeze'}}</span>
+
+              <p
+                class="record-action-description">{{t 'amComputer.computerListPage.commands.deviceFreezeDescription' agentName=model.presentation.agentName}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if isUnfreezeCommandSupported}}
+          <li>
+            <a href="#" class="is-button-for-device-unfreeze"{{action "deviceUnfreezeCommand"}}>
+              <span class="icon-action"></span>
+              <span class="record-action-name">{{t 'amComputer.computerListPage.commands.deviceUnfreeze'}}</span>
+
+              <p
+                class="record-action-description">{{t 'amComputer.computerListPage.commands.deviceUnfreezeDescription' agentName=model.presentation.agentName}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if isDataDeleteCommandSupported}}
+          <li>
+            <a href="#" class="is-button-for-data-delete" {{action "dataDeleteCommand"}}>
+              <span class="icon-action"></span>
+              <span class="record-action-name">{{t 'amComputer.computerListPage.commands.dataDelete'}}</span>
+
+              <p
+                class="record-action-description">{{t 'amComputer.computerListPage.commands.dataDeleteDescription' agentName=model.presentation.agentName}}</p>
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+
+  </div>
+
+</div>

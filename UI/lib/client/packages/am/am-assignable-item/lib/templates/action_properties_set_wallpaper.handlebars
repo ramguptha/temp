@@ -1,0 +1,122 @@
+<div class="action-properties-container">
+  <div class="is-container-for-properties-container-upper properties-container-upper">
+    <div>
+      <div class="properties-label">
+        <label>{{t 'amAssignableItem.modals.actionProperties.actionName'}}</label>
+      </div>
+      <div class="properties-value">
+        <div class="properties-value-input-text">
+          <div class="inline-flex-row">
+            {{input type="text"
+            id="actionName"
+            value=name
+            maxlength="255"
+            classNames="is-input-for-action-name flex-shrink-off"}}
+
+            {{#if isNameDuplicate}}
+              <div class="is-container-for-duplicate-name-error-message required-field-message error">
+                {{t 'amAssignableItem.modals.actionProperties.validation.duplicateNameMessage'}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="properties-label">
+        <label>{{t 'amAssignableItem.modals.actionProperties.description'}}</label>
+      </div>
+      <div class="properties-value">
+        {{textarea
+        rows="3"
+        value=description
+        maxlength="255"
+        classNames="is-input-for-action-description"}}
+      </div>
+    </div>
+
+    <div>
+      {{view SupportedPlatformsView}}
+    </div>
+
+    <div class="is-container-for-action-dynamic-properties properties-container-lower">
+
+      <div class="is-container-for-action-set-wallpaper">
+        <div>
+          <div class="properties-label">
+            <label>{{t 'amAssignableItem.modals.actionProperties.wallpaperOptions'}}</label>
+          </div>
+
+          <div class="properties-value">
+            <div class="inline-flex-row">
+              <div>
+                <label class="show-block">{{input type="checkbox" checked=lockScreenChecked classNames="is-checkbox-for-lock-screen"}}{{t 'amAssignableItem.modals.actionProperties.lockScreen'}}</label>
+                <label class="show-block">{{input type="checkbox" checked=homeScreenChecked classNames="is-checkbox-for-home-screen"}}{{t 'amAssignableItem.modals.actionProperties.homeScreen'}}</label>
+              </div>
+              {{#if isScreenOptionEmpty}}
+                <div class="is-container-for-screen-options-error-message required-field-message screen-options error">
+                  {{t 'amAssignableItem.modals.actionProperties.validation.requiredScreenOptionMessage'}}
+                </div>
+              {{/if}}
+            </div>
+
+            <div class="wallpaper-container">
+              <button id="openFileButton" class="btn btn-low is-button-for-select-wallpaper">{{t 'amAssignableItem.modals.actionProperties.selectImage'}}</button>
+              <label class="info">{{t 'amAssignableItem.modals.actionProperties.imageFormat'}}</label>
+
+              <div class="help-wrapper">
+                <div class="help-container"><span class="icon-question-mark"></span><span class="help-tooltip"><div class="tooltip-arrow large-tooltip"></div>
+            <ul>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoTitleTooltip'}}</li>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoiPhone6PlusTooltip'}}</li>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoiPhone6Tooltip'}}</li>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoiPhone5Tooltip'}}</li>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoiPhone4Tooltip'}}</li>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoiPadRetinaTooltip'}}</li>
+              <li>{{t 'amAssignableItem.modals.actionProperties.wallpaperInfoiPadTooltip'}}</li>
+            </ul>
+            </span>
+                </div>
+              </div>
+              {{#if isImageError}}
+                <div class="wallpaper-image-error is-container-for-screen-options-error-message required-field-message screen-options error">
+                  {{t 'amDesktop.shared.invalidImageFormatMessage'}}
+                </div>
+              {{/if}}
+              <div class="properties-value-input-text">
+                <div class="fd-zone is-container-for-wallpaper">
+                  {{file-upload id='selectFileId' imageSource=wallpaper isError=isImageError}}
+
+                  <div id="clickArea" class="wallpaper-preview">
+                    <div class="center-cropped" style={{wallpaperPreviewStyle}}>
+                      {{#unless wallpaper}}
+                        {{t 'amAssignableItem.modals.actionProperties.noImageSelected'}}
+                      {{/unless}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>{{t 'amAssignableItem.modals.actionProperties.actionMessage'}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="required-field-message">
+      <span><span class="bullet-small">&bull;</span>{{t 'amAssignableItem.modals.actionProperties.indicatesRequiredField'}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-small" {{action "saveAndAndAssignToPolicies"}} disabled={{isSaveAndAssignActionBtnDisabled}}>{{t 'amAssignableItem.modals.action.saveAndAssignButton'}}</button>
+    <button class="btn btn-action" {{action "save"}} disabled={{isActionBtnDisabled}}>{{t 'shared.buttons.save'}}</button>
+  </div>
+</div>
+

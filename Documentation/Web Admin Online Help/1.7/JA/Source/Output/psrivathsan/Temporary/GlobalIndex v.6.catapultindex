@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalIndex
+  SavedSource="file:///C:/Data/TFS/Documentation/Manage/Web Admin Online Help/1.6.1/JA/Source/Output/psrivathsan/Temporary/GlobalIndex v.6.catapultindex">
+  <IndexEntry>
+    <Entries />
+    <Links />
+    <SeeAlsoLinks />
+    <IndexControlLinks />
+    <SortAsLinks />
+  </IndexEntry>
+  <SourceUrls>
+    <Url
+      Source="aboutmdm.htm" />
+    <Url
+      Source="aboutpolicies.htm" />
+    <Url
+      Source="aboutselfservice.htm" />
+    <Url
+      Source="actiondemotedevice.htm" />
+    <Url
+      Source="actionfreezedevice.htm" />
+    <Url
+      Source="actionregistervpp.htm" />
+    <Url
+      Source="actionremoveconfigprofile.htm" />
+    <Url
+      Source="actionretirevpp.htm" />
+    <Url
+      Source="actionsendemail.htm" />
+    <Url
+      Source="actionsendmessage.htm" />
+    <Url
+      Source="actionsendsms.htm" />
+    <Url
+      Source="actionsendvppinvitation.htm" />
+    <Url
+      Source="actionsetactivationlock.htm" />
+    <Url
+      Source="actionsetattentionmode.htm" />
+    <Url
+      Source="actionsetcustomfield.htm" />
+    <Url
+      Source="actionsetdevicename.htm" />
+    <Url
+      Source="actionsetroaming.htm" />
+    <Url
+      Source="actionsetwallpaper.htm" />
+    <Url
+      Source="actionupdatedeviceinfo.htm" />
+    <Url
+      Source="addingdevicetopolicy.htm" />
+    <Url
+      Source="amwebadminonlinehelp.pdf" />
+    <Url
+      Source="columnlayout.htm" />
+    <Url
+      Source="content3rdpartyapps.htm" />
+    <Url
+      Source="contentbooks.htm" />
+    <Url
+      Source="contentconfigprofiles.htm" />
+    <Url
+      Source="contentinhouseapps.htm" />
+    <Url
+      Source="contentprovisioningprofiles.htm" />
+    <Url
+      Source="creatingcustomfields.htm" />
+    <Url
+      Source="creatingpolicies.htm" />
+    <Url
+      Source="creatingsmartpolicies.htm" />
+    <Url
+      Source="deletingactions.htm" />
+    <Url
+      Source="deletingcontent.htm" />
+    <Url
+      Source="deletingcustomfields.htm" />
+    <Url
+      Source="deletingdata.htm" />
+    <Url
+      Source="deletingpolicies.htm" />
+    <Url
+      Source="disclaimer.htm" />
+    <Url
+      Source="duplicatingactions.htm" />
+    <Url
+      Source="duplicatingcustomfields.htm" />
+    <Url
+      Source="editingactions.htm" />
+    <Url
+      Source="editingcontent.htm" />
+    <Url
+      Source="editingcustomfields.htm" />
+    <Url
+      Source="editingpolicies.htm" />
+    <Url
+      Source="gatheringinformation.htm" />
+    <Url
+      Source="importingmediafiles.htm" />
+    <Url
+      Source="installingapps.htm" />
+    <Url
+      Source="installingconfigprofiles.htm" />
+    <Url
+      Source="installingprovprofiles.htm" />
+    <Url
+      Source="lockingdevices.htm" />
+    <Url
+      Source="loginpreferences.htm" />
+    <Url
+      Source="managingpasscodes.htm" />
+    <Url
+      Source="navigating.htm" />
+    <Url
+      Source="policy3rdpartyapps.htm" />
+    <Url
+      Source="policyactions.htm" />
+    <Url
+      Source="policyconfigprofiles.htm" />
+    <Url
+      Source="policyinhouseapps.htm" />
+    <Url
+      Source="policymediafiles.htm" />
+    <Url
+      Source="reissuingcommands.htm" />
+    <Url
+      Source="removingconfigprofiles.htm" />
+    <Url
+      Source="removingprovprofiles.htm" />
+    <Url
+      Source="roamingoptions.htm" />
+    <Url
+      Source="searchingforinfo.htm" />
+    <Url
+      Source="sendingmessages.htm" />
+    <Url
+      Source="sendingmessagescomp.htm" />
+    <Url
+      Source="settingactivationlock.htm" />
+    <Url
+      Source="settingcustomfieldvalue.htm" />
+    <Url
+      Source="settingdevicename.htm" />
+    <Url
+      Source="settingdeviceownership.htm" />
+    <Url
+      Source="settingenrollmentuser.htm" />
+    <Url
+      Source="settingorginfo.htm" />
+    <Url
+      Source="understandingfilters.htm" />
+    <Url
+      Source="uninstallingapps.htm" />
+    <Url
+      Source="updatingdevice.htm" />
+    <Url
+      Source="usingmessagevariables.htm" />
+    <Url
+      Source="viewingactiondetails.htm" />
+    <Url
+      Source="viewingcommands.htm" />
+    <Url
+      Source="viewingcompdetails.htm" />
+    <Url
+      Source="viewingcontentdetails.htm" />
+    <Url
+      Source="viewingdevicedetails.htm" />
+    <Url
+      Source="viewingpolicydetails.htm" />
+    <Url
+      Source="welcome.htm" />
+    <Url
+      Source="whatsnew.htm" />
+    <Url
+      Source="workingwithactions.htm" />
+    <Url
+      Source="workingwithcomputers.htm" />
+    <Url
+      Source="workingwithcustomfields.htm" />
+    <Url
+      Source="workingwithdevices.htm" />
+    <Url
+      Source="workingwithitems.htm" />
+    <Url
+      Source="workingwithpolicies.htm" />
+    <Url
+      Source="Resources/Images/abs-icons.png" />
+    <Url
+      Source="Resources/Images/AM-logo-med.jpg" />
+    <Url
+      Source="Resources/Images/blog.png" />
+    <Url
+      Source="Resources/Images/duplicate-button.png" />
+    <Url
+      Source="Resources/Images/edit-button.png" />
+    <Url
+      Source="Resources/Images/email_icon.jpg" />
+    <Url
+      Source="Resources/Images/erase-button.png" />
+    <Url
+      Source="Resources/Images/facebook.png" />
+    <Url
+      Source="Resources/Images/filterex1.jpg" />
+    <Url
+      Source="Resources/Images/filterex2.jpg" />
+    <Url
+      Source="Resources/Images/filterex3.jpg" />
+    <Url
+      Source="Resources/Images/google-plus.png" />
+    <Url
+      Source="Resources/Images/helpnav.jpg" />
+    <Url
+      Source="Resources/Images/infonav.jpg" />
+    <Url
+      Source="Resources/Images/linkedin.png" />
+    <Url
+      Source="Resources/Images/managenav.jpg" />
+    <Url
+      Source="Resources/Images/manage_video_ja.jpg" />
+    <Url
+      Source="Resources/Images/navicon.jpg" />
+    <Url
+      Source="Resources/Images/print_icon.jpg" />
+    <Url
+      Source="Resources/Images/reexecute-button.png" />
+    <Url
+      Source="Resources/Images/related_topics_icon2.png" />
+    <Url
+      Source="Resources/Images/remove-button.png" />
+    <Url
+      Source="Resources/Images/Remove_filter_icon.png" />
+    <Url
+      Source="Resources/Images/rightarrow.jpg" />
+    <Url
+      Source="Resources/Images/search-button-focus.png" />
+    <Url
+      Source="Resources/Images/search-button-hover.png" />
+    <Url
+      Source="Resources/Images/search_all.png" />
+    <Url
+      Source="Resources/Images/sidebar.jpg" />
+    <Url
+      Source="Resources/Images/SortOrder2_icon.png" />
+    <Url
+      Source="Resources/Images/SortOrder_icon.png" />
+    <Url
+      Source="Resources/Images/toolbar.jpg" />
+    <Url
+      Source="Resources/Images/twitter.png" />
+    <Url
+      Source="Resources/Images/usernav.jpg" />
+    <Url
+      Source="Resources/Images/work_area.jpg" />
+    <Url
+      Source="Resources/Images/youtube.png" />
+    <Url
+      Source="Resources/PageLayouts/Chapters.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Default.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/FrontMatter.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Glossary.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Index.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/OnlineHelpMasterPage.flmsp" />
+    <Url
+      Source="Resources/PageLayouts/WelcomeMasterPage.flmsp" />
+    <Url
+      Source="Resources/Stylesheets/Absolute.css" />
+    <Url
+      Source="Resources/Stylesheets/Absolutenew.css" />
+    <Url
+      Source="Resources/Stylesheets/BookStyles.css" />
+    <Url
+      Source="Resources/Stylesheets/diagram.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_A.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_B.css" />
+    <Url
+      Source="Resources/Stylesheets/Header.css" />
+    <Url
+      Source="Resources/Stylesheets/In_Column.css" />
+    <Url
+      Source="Resources/Stylesheets/In_ColumnIndent.css" />
+    <Url
+      Source="Resources/Stylesheets/Modern.css" />
+    <Url
+      Source="Resources/Stylesheets/NewStyle.css" />
+    <Url
+      Source="Resources/Stylesheets/Styles.css" />
+    <Url
+      Source="Resources/TableStyles/diagram.css" />
+    <Url
+      Source="Resources/TableStyles/Format_A.css" />
+    <Url
+      Source="Resources/TableStyles/Format_B.css" />
+    <Url
+      Source="Resources/TableStyles/Header.css" />
+    <Url
+      Source="Resources/TableStyles/In_Column.css" />
+    <Url
+      Source="Resources/TableStyles/In_ColumnIndent.css" />
+  </SourceUrls>
+  <SourceLinkSetUrls>
+    <Url
+      Source="Advanced/Index Link Sets/IndexLinkSet.flixl" />
+  </SourceLinkSetUrls>
+  <UsedUrls />
+  <UsedIndexControlUrls />
+</CatapultGlobalIndex>

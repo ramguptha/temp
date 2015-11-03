@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="898" MadCap:lastWidth="1019">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">フィルターを理解する</h1>
+        <p class="Body">スマートポリシーのフィルターは、ポリシーの一部であるべきモバイルデバイスを決定するために使用できます。たとえば、特定の構成プロファイルを iOS&#160;6 以前のモバイルデバイスにインストールするというポリシーを作成したい場合があるかもしれません。展開されているデバイスが数百台あれば、ポリシーに含めるデバイスを手作業でピックアップして選択するのではなく、システムが自動的にデバイスのリストをその場で作成し、更新してほしいと思うでしょう。スマートポリシーは、設定したフィルターに基づいてポリシーに含めるデバイスのリストを管理します。(スマートポリシーの作成については、<a href="creatingsmartpolicies.htm">スマートポリシーを作成する</a>を参照してください。)</p>
+        <h2 class="Heading2">フィルターフィールドを使用する</h2>
+        <p class="Body">フィルターは、使用するフィルター基準に応じて2つ以上のフィールドで構成されます。以下は、スマートポリシー内で指定できるフィルターの例を示します。</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex3.jpg" />
+            
+        </p>
+        <p class="Figure">例 1:このフィルターは、Absolute Manage によって積極的に管理されているモバイルデバイスを抽出します。</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex1.jpg" />
+        </p>
+        <p class="Figure">例 2:このフィルターは、任意のバージョンのiOS オペレーティングシステムを実行しているモバイルデバイスを抽出します。</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex2.jpg" />
+        </p>
+        <p class="Figure">例 3:このフィルターは、任意のオペレーティングシステムのバージョン 6 以前を実行しているモバイルデバイスを抽出します。</p>
+        <p class="BodyWithListFollowing">フィルターに含まれるフィールドは、以下のように定義されています:</p>
+        <p class="Bullet1" MadCap:autonum="●">最初のフィールド = フィルター基準:利用可能なフィルター基準のリスト (<span class="Bold">管理中のモバイルデバイス</span>など)</p>
+        <p class="Bullet1" MadCap:autonum="●">2 番目のフィールド= 演算子:選択したフィルター基準ごとの演算子のリスト (<span class="Bold">は以下の値以下である</span>など)</p>
+        <p class="Bullet1" MadCap:autonum="●">3 番目のフィールド = 値:特定の値を入力または選択できるテキストフィールドまたはリストボックス (選択したフィルター基準に応じて、利用できる場合とできない場合があります)</p>
+        <p class="Bullet1Last" MadCap:autonum="●">4 番目のフィールド = 値のタイプ:前のフィールドで入力した値をさらに定義するための値のタイプのリスト (選択したフィルター基準に応じて、利用できる場合とできない場合があります)</p>
+        <p class="BodyWithListFollowing">たとえば、保証期間が 30 日後に切れるモバイルデバイスを抽出するには、以下のようにフィルターを作成することができます:</p>
+        <p class="Bullet1" MadCap:autonum="●">フィルター基準 = <span class="Bold">モバイルデバイスの保証終了</span></p>
+        <p class="Bullet1" MadCap:autonum="●">演算子 = <span class="Bold">次の値に入る</span></p>
+        <p class="Bullet1" MadCap:autonum="●">値 = <span class="Bold">30</span></p>
+        <p class="Bullet1" MadCap:autonum="●">値のタイプ = <span class="Bold">日数</span></p>
+        <h2 class="Heading2">フィルターの組み合わせ</h2>
+        <p class="BodyWithListFollowing">希望する結果を得るため、複数のフィルターを組み合わせることができます:</p>
+        <p class="Bullet1" MadCap:autonum="●"> 結果の精度を高めるには、フィルターエリア上部のリストから<span class="Bold">すべて</span>を選択し、<span class="Bold">フィルターを追加</span>をクリックして追加のフィルターを指定します。この操作によって各フィルター間に「AND」演算子が置かれ、すべてのフィルターを満たす結果のみ得られるようになります。</p>
+        <p class="Bullet1Last" MadCap:autonum="●">結果の範囲を広げるには、フィルターエリア上部のリストから<span class="Bold">任意</span>を選択し、<span class="Bold">フィルターを追加</span>をクリックして追加のフィルターを指定します。この操作によって各フィルター間に「OR」演算子が置かれ、少なくとも 1 つのフィルターを満たす結果が得られるようになります。 </p>
+        <p class="BodyFollowingList">希望の結果を得るため、必要なだけフィルターを追加することができます。 </p>
+        <h2 class="Heading2">フィルターを削除する</h2>
+        <p class="BodyWithListFollowing">1つ以上のフィルターを削除することができます。個々のフィルターを削除するには、フィルターの隣にある<img src="Resources/Images/Remove_filter_icon.png" style="width: 15px; height: 14px;" class="Icon" />アイコンをクリックします。</p>
+    </body>
+</html>

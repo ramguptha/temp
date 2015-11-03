@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RecentLinks>
+    <Dialog Name="B3.XmlMdiEditorKit.ImageGeneralDialogPage">
+        <Link Value="C:\Users\jberardo\Documents\My Projects\AMWebAdmin\Content\Resources\Images\rightarrow.jpg" />
+    </Dialog>
+    <Dialog Name="B3.XmlTextKit.InsertCrossReferenceDialog">
+        <Link Value="C:\Documentation\Manage\Web Admin Online Help\1.3\Source\Content\aboutpolicies.htm" />
+    </Dialog>
+    <Dialog Name="B3.XmlTextKit.InsertHyperlinkDialog">
+        <Link Value="C:\Documentation\Manage\Web Admin Online Help\1.3\Source\Content\columnlayout.htm" />
+    </Dialog>
+</RecentLinks>

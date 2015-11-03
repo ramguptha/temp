@@ -1,0 +1,814 @@
+<div class="snap-content-container">
+  <div class="all-details-content">
+    <div class="snap-content-title"><h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.title'}}</h3>
+    </div>
+    <div class="snap-content-icon"><img src={{deviceIconPath}}></div>
+
+    <div class="device-main-description">
+      <h4 class="device-model">{{model.presentation.model}}</h4>
+
+      <p>{{t 'amMobileDevice.devicePage.aboutDeviceTab.phoneNumber' phoneNumber=model.presentation.phoneNumber}}</p>
+
+      <div class="device-details-table-heading">
+        <div class="table-heading-row">
+          <div class="device-details-table-cell"><span class="os-version"><img
+            src={{osIconPath}}></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.osVersion'}}
+            <p>{{model.presentation.osPlatform}} {{model.presentation.osVersion}}</p></div>
+          <div class="device-details-table-cell">{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastContact'}}
+            <p>{{model.presentation.lastContact}}</p></div>
+        </div>
+        {{#if isNotWinPhoneDevice}}
+          <div class="table-heading-row">
+            <div class="device-details-table-cell"><span
+              class={{passcodePresentIconClass}}></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.passcodePresent'}}
+              <p>{{model.presentation.isPasscodePresent}}</p></div>
+            <div class="device-details-table-cell">
+              <span class={{batteryLevelIconClass}}></span>
+              <span class="device-underscore-text">{{t 'amMobileDevice.devicePage.aboutDeviceTab.batteryLevel'}}
+                <p>{{model.presentation.batteryLevel}}%</p></span>
+            </div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <br>
+    <table class="device-details-table-body">
+      <tbody>
+      {{#if isIOSDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.modelNumber'}}</td>
+          <td>{{model.presentation.modelNumber}}</td>
+        </tr>
+      {{/if}}
+      {{#if isNotWinPhoneDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.serialNumber'}}</td>
+          <td>{{model.presentation.serialNumber}}</td>
+        </tr>
+      {{/if}}
+      <tr>
+        <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.identifierUDID'}}</td>
+        <td>{{model.presentation.udid}}</td>
+      </tr>
+      {{#if isWinPhoneDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.deviceGUID'}}</td>
+          <td>{{model.presentation.deviceGUID}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.identity'}}</td>
+          <td>{{model.presentation.identity}}</td>
+        </tr>
+      {{/if}}
+      <tr>
+        <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.osBuildNumber'}}</td>
+        <td>{{model.presentation.osBuildNumber}}</td>
+      </tr>
+      {{#if isWinPhoneDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.osLanguage'}}</td>
+          <td>{{model.presentation.osLanguage}}</td>
+        </tr>
+      {{/if}}
+      </tbody>
+    </table>
+
+    <br>
+    <table class="device-details-table-body">
+      <tbody>
+      {{#if isNotWinPhoneDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.ownership'}}</td>
+          <td>{{model.presentation.ownership}}</td>
+        </tr>
+      {{/if}}
+      <tr>
+        <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.isManaged'}}</td>
+        <td>{{model.presentation.isManaged}}</td>
+      </tr>
+      {{#if isNotWinPhoneDevice}}
+        <tr>
+          <td>{{jailBrokenLabel}}</td>
+          <td>{{model.presentation.isJailBroken}}</td>
+        </tr>
+      {{/if}}
+      <tr>
+        <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.recordCreated'}}</td>
+        <td>{{model.presentation.recordCreated}}</td>
+      </tr>
+      {{#if isNotWinPhoneDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.absoluteAppsVersion'}}</td>
+          <td>{{model.presentation.absoluteAppsVersion}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.absoluteAppsBuildNo'}}</td>
+          <td>{{absoluteAppsBuildNo}}</td>
+        </tr>
+      {{/if}}
+      {{#if isAndroidDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.hasPersistence'}}</td>
+          <td>{{model.presentation.hasPersistence}}</td>
+        </tr>
+      {{/if}}
+      {{#if isIOSDevice}}
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.isMdmProfileUpToDate'}}</td>
+          <td>{{model.presentation.isMdmProfileUpToDate}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.productionDate'}}</td>
+          <td>{{model.presentation.productionDate}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.age'}}</td>
+          <td>{{model.presentation.age}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.warrantyInfo'}}</td>
+          <td>{{model.presentation.warrantyInfo}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.warrantyEndDate'}}</td>
+          <td>{{warrantyEndDate}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.isPasscodeCompliant'}}</td>
+          <td>{{model.presentation.isPasscodeCompliant}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.isPasscodeCompliantWithProfiles'}}</td>
+          <td>{{model.presentation.isPasscodeCompliantWithProfiles}}</td>
+        </tr>
+      {{/if}}
+      </tbody>
+    </table>
+
+    <br>
+    {{#if isIOSDevice}}
+      <div class="device-view-info-block {{if slideSettings.storageCapacity 'block-opened' 'block-closed'}}"
+           data-name="storage-capacity">
+        <div class="title-collapsible {{if slideSettings.storageCapacity 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.storageCapacity'}}</h3>
+        </div>
+        <div class="content-collapsible {{if slideSettings.storageCapacity 'collapsible-is-open'}}">
+          <table class="device-details-table-body storage-data-capacity">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.deviceCapacity'}}</td>
+              <td>{{model.presentation.deviceCapacity}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.usedCapacity'}}</td>
+              <td>{{usedCapacity}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.availableCapacity'}}</td>
+              <td>{{model.presentation.availableCapacity}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if isAndroidDevice}}
+      <div class="device-view-info-block {{if slideSettings.storage 'block-opened' 'block-closed'}}"
+           data-name="storage">
+        <div class="title-collapsible {{if slideSettings.storage 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.storage'}}</h3>
+        </div>
+        <div class="content-collapsible {{if slideSettings.storage 'collapsible-is-open'}}">
+          <table class="device-details-table-body storage-data">
+            <tbody>
+            <th>{{t 'amMobileDevice.devicePage.aboutDeviceTab.storageType'}}</th>
+            <th>{{t 'amMobileDevice.devicePage.aboutDeviceTab.storageTotalSpace'}}</th>
+            <th>{{t 'amMobileDevice.devicePage.aboutDeviceTab.storageAvailableSpace'}}</th>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.internalStorage'}}</td>
+              <td>{{model.presentation.internalStorageTotal}}</td>
+              <td>{{model.presentation.internalStorageAvailable}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.sDCard1NonRemovable'}}</td>
+              <td>{{model.presentation.sdcard1Total}}</td>
+              <td>{{model.presentation.sdcard1Available}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.sDCard2Removable'}}</td>
+              <td>{{model.presentation.sdcard2Total}}</td>
+              <td>{{model.presentation.sdcard2Available}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if isNotWinPhoneDevice}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.networking 'block-opened' 'block-closed'}}"
+           data-name="networking">
+        <div
+          class="title-collapsible title-with-icons {{if slideSettings.networking 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.networking'}}</h3>
+
+          <div class="device-details-table-heading">
+            <div class="table-heading-row">
+              <div class="device-details-table-cell"><span
+                class="icon-gpsmark"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.isGpsCapable'}}
+                <p>{{model.presentation.isGpsCapable}}</p></div>
+              <div class="device-details-table-cell"><span
+                class="icon-wifi"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.wifiNetwork'}}
+                <p>{{model.presentation.wifiNetwork}}</p></div>
+              <div class="device-details-table-cell"><span
+                class="icon-homenet"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.homeNetwork'}}
+                <p>{{model.presentation.homeNetwork}}</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-collapsible {{if slideSettings.networking 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.publicIpAddress'}}</td>
+              <td>{{model.presentation.publicIpAddress}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cellIpAddress'}}</td>
+              <td>{{model.presentation.cellIpAddress}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.wifiIpAddress'}}</td>
+              <td>{{model.presentation.wifiIpAddress}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.wifiMacAddress'}}</td>
+              <td>{{model.presentation.wifiMacAddress}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.bluetoothMacAddress'}}</td>
+              <td>{{model.presentation.bluetoothMacAddress}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if isNotWinPhoneDevice}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.hardware 'block-opened' 'block-closed'}}"
+           data-name="hardware">
+        <div class="title-collapsible title-with-icons {{if slideSettings.hardware 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.hardware'}}</h3>
+
+          <div class="device-details-table-heading">
+            <div class="table-heading-row">
+              <div class="device-details-table-cell"><span
+                class={{isTabletIconClass}}></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.tablet'}}
+                <p>{{model.presentation.isTablet}}</p></div>
+              <div class="device-details-table-cell"><span
+                class="icon-manufacturer"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.manufacturer'}}
+                <p>{{model.presentation.manufacturer}}</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-collapsible {{if slideSettings.hardware 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cpuName'}}</td>
+              <td>{{model.presentation.cpuName}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cpuSpeed'}}</td>
+              <td>{{model.presentation.cpuSpeed}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.displayResolution'}}</td>
+              <td>{{model.presentation.displayResolution}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.board'}}</td>
+              <td>{{model.presentation.board}}</td>
+            </tr>
+            {{#if isAndroidDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.kernelVersion'}}</td>
+                <td>{{model.presentation.kernelVersion}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.deviceInfo'}}</td>
+                <td>{{model.presentation.deviceInfo}}</td>
+              </tr>
+            {{/if}}
+            {{#if isIOSDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.hardwareEncryption'}}</td>
+                <td>{{model.presentation.hardwareEncryption}}</td>
+              </tr>
+            {{/if}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if isAndroidDevice}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.systemMemory 'block-opened' 'block-closed'}}"
+           data-name="system-memory">
+        <div class="title-collapsible {{if slideSettings.systemMemory 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.systemMemory'}}</h3>
+        </div>
+        <div class="content-collapsible {{if slideSettings.systemMemory 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.memoryTotal'}}</td>
+              <td>{{model.presentation.memoryTotal}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.memoryAvailable'}}</td>
+              <td>{{model.presentation.memoryAvailable}}</td>
+            </tr>
+            </tbody>
+          </table>
+          <br>
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cacheTotal'}}</td>
+              <td>{{model.presentation.cacheTotal}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cacheAvailable'}}</td>
+              <td>{{model.presentation.cacheAvailable}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if hasCellularCapability}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.cellularInformation 'block-opened' 'block-closed'}}"
+           data-name="cellular-information">
+        <div
+          class="title-collapsible title-with-icons {{if slideSettings.cellularInformation 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cellularInformation'}}</h3>
+
+          <div class="device-details-table-heading">
+            <div class="table-heading-row">
+              <div class="device-details-table-cell"><span
+                class="icon-current-network"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.currentCarrierNetwork'}}
+                <p>{{model.presentation.currentCarrierNetwork}}</p></div>
+              {{#if isNotWinPhoneDevice}}
+                <div class="device-details-table-cell"><span
+                  class="icon-celltech"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cellularTechnology'}}
+                  <p>{{model.presentation.cellularTechnology}}</p></div>
+                <div class="device-details-table-cell"><span
+                  class="icon-roaming"></span>{{t 'amMobileDevice.devicePage.aboutDeviceTab.isRoaming'}}
+                  <p>{{model.presentation.isRoaming}}</p></div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="content-collapsible {{if slideSettings.cellularInformation 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            {{#if isAndroidDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.cellularNetworkType'}}</td>
+                <td>{{model.presentation.cellularNetworkType}}</td>
+              </tr>
+            {{/if}}
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.imei'}}</td>
+              <td>{{model.presentation.imei}}</td>
+            </tr>
+            {{#if isNotWinPhoneDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.simIccId'}}</td>
+                <td>{{model.presentation.simIccId}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.currentMcc'}}</td>
+                <td>{{model.presentation.currentMcc}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.currentMnc'}}</td>
+                <td>{{model.presentation.currentMnc}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.homeMcc'}}</td>
+                <td>{{model.presentation.homeMcc}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.homeMnc'}}</td>
+                <td>{{model.presentation.homeMnc}}</td>
+              </tr>
+            {{/if}}
+            {{#if isAndroidDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.imeiSv'}}</td>
+                <td>{{model.presentation.imeiSv}}</td>
+              </tr>
+            {{/if}}
+            {{#if isIOSDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.dataRoamingEnabled'}}</td>
+                <td>{{model.presentation.dataRoamingEnabled}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.voiceRoamingEnabled'}}</td>
+                <td>{{model.presentation.voiceRoamingEnabled}}</td>
+              </tr>
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.carrierSettingsVersion'}}</td>
+                <td>{{model.presentation.carrierSettingsVersion}}</td>
+              </tr>
+            {{/if}}
+            {{#if isNotWinPhoneDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.modemFirmwareVersion'}}</td>
+                <td>{{model.presentation.modemFirmwareVersion}}</td>
+              </tr>
+            {{/if}}
+            {{#if isWinPhoneDevice}}
+              <tr>
+                <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.enableOutboundSMS'}}</td>
+                <td>{{model.presentation.enableOutboundSMS}}</td>
+              </tr>
+            {{/if}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if isWinPhoneDevice}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.remoteWipe 'block-opened' 'block-closed'}}"
+           data-name="remote-wipe">
+        <div class="title-collapsible {{if slideSettings.remoteWipe 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.remoteWipe'}}</h3>
+        </div>
+        <div class="content-collapsible {{if slideSettings.remoteWipe 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.remoteWipeSupported'}}</td>
+              <td>{{model.presentation.remoteWipeSupported}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.remoteWipeStatus'}}</td>
+              <td>{{model.presentation.remoteWipeStatus}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.remoteWipeStatusNote'}}</td>
+              <td>{{model.presentation.remoteWipeStatusNote}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.wipeRequestTime'}}</td>
+              <td>{{model.presentation.wipeRequestTime}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.wipeSentTime'}}</td>
+              <td>{{model.presentation.wipeSentTime}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.wipeAckTime'}}</td>
+              <td>{{model.presentation.wipeAckTime}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastWipeRequestor'}}</td>
+              <td>{{model.presentation.lastWipeRequestor}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if isWinPhoneDevice}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.exchangeServer 'block-opened' 'block-closed'}}"
+           data-name="exchange-server">
+        <div class="title-collapsible {{if slideSettings.exchangeServer 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.exchangeServer'}}</h3>
+        </div>
+        <div class="content-collapsible {{if slideSettings.exchangeServer 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.accessState'}}</td>
+              <td>{{model.presentation.accessState}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.accessStateReason'}}</td>
+              <td>{{model.presentation.accessStateReason}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.numberOfFoldersSynched'}}</td>
+              <td>{{model.presentation.numberOfFoldersSynched}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if canSetOrgInfo}}
+      <br>
+
+      <div class="device-view-info-block {{if slideSettings.organizationalInfo 'block-opened' 'block-closed'}}"
+           data-name="organizational-info">
+        <div class="title-collapsible {{if slideSettings.organizationalInfo 'content-opened' 'content-closed'}}">
+          <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.organizationalInfo'}}</h3></div>
+        <div class="content-collapsible {{if slideSettings.organizationalInfo 'collapsible-is-open'}}">
+          <table class="device-details-table-body">
+            <tbody>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.organizationName'}}</td>
+              <td>{{model.presentation.organizationName}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.organizationPhone'}}</td>
+              <td>{{model.presentation.organizationPhone}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.organizationEMail'}}</td>
+              <td>{{model.presentation.organizationEMail}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.organizationAddress'}}</td>
+              <td>{{model.presentation.organizationAddress}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.organizationCustom'}}</td>
+              <td>{{model.presentation.organizationCustom}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+
+    <br>
+
+    <div class="device-view-info-block {{if slideSettings.lastChangedItems 'block-opened' 'block-closed'}}"
+         data-name="last-changed-items">
+      <div class="title-collapsible {{if slideSettings.lastChangedItems 'content-opened' 'content-closed'}}">
+        <h3>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastChangedItems'}}</h3>
+      </div>
+      <div class="content-collapsible {{if slideSettings.lastChangedItems 'collapsible-is-open'}}">
+        <table class="device-details-table-body">
+          <tbody>
+          {{#if isNotWinPhoneDevice}}
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastInfoUpdate'}}</td>
+              <td>{{model.presentation.lastInfoUpdate}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastInstalledSwUpdate'}}</td>
+              <td>{{model.presentation.lastInstalledSwUpdate}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastConfigProfileUpdate'}}</td>
+              <td>{{model.presentation.lastConfigProfileUpdate}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastCertificateUpdate'}}</td>
+              <td>{{model.presentation.lastCertificateUpdate}}</td>
+            </tr>
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastProvisioningProfileUpdate'}}</td>
+              <td>{{model.presentation.lastProvisioningProfileUpdate}}</td>
+            </tr>
+          {{/if}}
+          {{#if isWinPhoneDevice}}
+            <tr>
+              <td>{{t 'amMobileDevice.devicePage.aboutDeviceTab.lastPolicyUpdate'}}</td>
+              <td>{{lastPolicyUpdate}}</td>
+            </tr>
+          {{/if}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="device-actions">
+    <div class="device-actions-title"><span class="icon-checkmark1"></span>
+
+      <h3>{{t 'amMobileDevice.commandsLabel'}}</h3></div>
+    <div class="device-actions-list">
+      <ul class="actions-list">
+        {{#if canIssueLockDeviceCommand}}
+          <li>
+            <a href="#" class="is-button-for-lock-device" {{action "lockDevice"}}>
+              <span class="icon-action"></span>
+              <span class="record-action-name">{{t 'amMobileDevice.devicePage.commands.deviceLockTitle'}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.deviceLockDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueClearPasscodeCommand}}
+          <li>
+            <a href="#" class="is-button-for-clear-passcode" {{action "clearPasscode"}}>
+              <span class="icon-action"></span>
+                  <span class="record-action-name">
+                    {{#if isIOSDevice}}
+                      {{t 'amMobileDevice.devicePage.commands.clearPasscodeTitle' clearPasscode=clearPasscode}}
+                    {{else}}
+                      {{t 'amMobileDevice.devicePage.commands.setPasscodeTitle' setPasscode=setPasscode}}
+                    {{/if}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setPasscodeDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueRemoteEraseCommand}}
+          <li>
+            <a href="#" class="is-button-for-remote-erase" {{action "remoteErase"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.remoteDataDeleteTitle' remoteDataDeleteTitle=remoteDataDeleteTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.remoteDataDeleteDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueSendMessageCommand}}
+          <li>
+            <a href="#" class="is-button-for-send-message" {{action "sendMessage"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.sendMessageTitle' sendMessageTitle=sendMessageTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.sendMessageDescription' deviceName=name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueUpdateDeviceInfoCommand}}
+          <li>
+            <a href="#" class="is-button-for-update-device-info" {{action "updateDeviceInfo"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.updateDeviceInfoTitle' updateDeviceInfoTitle=updateDeviceInfoTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.updateDeviceInfoDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueSetRoamingOptions}}
+          <li>
+            <a href="#" class="is-button-for-set-roaming-options" {{action "setRoamingOptions"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.setRoamingOptionsTitle' setRoamingOptionsTitle=setRoamingOptionsTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setRoamingOptionsDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueInstallApplication}}
+          <li>
+            <a href="#" class="is-button-for-install-application" {{action "installApplication"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.installApplicationTitle' installApplicationTitle=installApplicationTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.installApplicationDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canIssueInstallConfigurationProfile}}
+          <li>
+            <a href="#" class="is-button-for-install-config-profile" {{action "installConfigProfile"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.installConfigurationProfileTitle' installConfigurationProfileTitle=installConfigurationProfileTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.installConfigurationProfileDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+
+        {{#if canIssueInstallProvisioningProfile}}
+          <li>
+            <a href="#" class="is-button-for-install-provisioning-profile" {{action "installProvisioningProfile"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.installProvisioningProfileTitle' phoneNumber=installProvisioningProfileTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.installProvisioningProfileDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+
+        <li>
+          <a href="#" class="is-button-for-set-device-ownership" {{action "setDeviceOwnership"}}>
+            <span class="icon-action"></span>
+            <span
+              class="record-action-name">{{t 'amMobileDevice.devicePage.commands.setDeviceOwnershipTitle' setDeviceOwnershipTitle=setDeviceOwnershipTitle}}</span>
+
+            <p
+              class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setDeviceOwnershipDescription' deviceName=model.presentation.name}}</p>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="is-button-for-set-device-enrollment-user" {{action "setDeviceEnrollmentUser"}}>
+            <span class="icon-action"></span>
+            <span
+              class="record-action-name">{{t 'amMobileDevice.devicePage.commands.setDeviceEnrollmentUserTitle' setDeviceEnrollmentUserTitle=setDeviceEnrollmentUserTitle}}</span>
+
+            <p
+              class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setDeviceEnrollmentUserDescription' deviceName=model.presentation.name}}</p>
+          </a>
+        </li>
+        {{#if canSetName}}
+          <li>
+            <a href="#" class="is-button-for-set-device-name" {{action "setDeviceName"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.setDeviceNameTitle' setDeviceNameTitle=setDeviceNameTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setDeviceNameDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+        {{#if canSetOrgInfo}}
+          <li>
+            <a href="#" class="is-button-for-set-device-organization-info" {{action "setDeviceOrganizationInfo"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.setDeviceOrganizationInfoTitle' setDeviceOrganizationInfoTitle=setDeviceOrganizationInfoTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setDeviceOrganizationInfoDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+
+        <li>
+          <a href="#" class="is-button-for-retry-all-command" {{action "retryAllCommand"}}>
+            <span class="icon-action"></span>
+            <span
+              class="record-action-name">{{t 'amMobileDevice.devicePage.commands.retryAllCommandTitle' retryAllCommandTitle=retryAllCommandTitle}}</span>
+
+            <p
+              class="record-action-description">{{t 'amMobileDevice.devicePage.commands.retryAllCommandDescription' deviceName=model.presentation.name}}</p>
+          </a>
+        </li>
+        {{#if canSetLockOptions}}
+          <li>
+            <a href="#" class="is-button-for-set-activation-lock" {{action "setActivationLock"}}>
+              <span class="icon-action"></span>
+              <span
+                class="record-action-name">{{t 'amMobileDevice.devicePage.commands.setActivationLockTitle' setActivationLockTitle=setActivationLockTitle}}</span>
+
+              <p
+                class="record-action-description">{{t 'amMobileDevice.devicePage.commands.setActivationLockDescription' deviceName=model.presentation.name}}</p>
+            </a>
+          </li>
+        {{/if}}
+
+        {{#if isAndroidAndSupportsNoCommands}}
+          <div>{{t 'amMobileDevice.devicePage.commands.isAndroidAndSupportsNoCommandsMessage' isAndroidAndSupportsNoCommandsMessage=isAndroidAndSupportsNoCommandsMessage}}</div>
+        {{/if}}
+        {{#if isIOSAndSupportsNoCommands}}
+          <div>{{t 'amMobileDevice.devicePage.commands.isIOSAndSupportsNoCommandsMessage' isIOSAndSupportsNoCommandsMessage=isIOSAndSupportsNoCommandsMessage}}</div>
+        {{/if}}
+        {{#if isWinPhoneAndSupportsNoCommands}}
+          <div>{{t 'amMobileDevice.devicePage.commands.isWinPhoneAndSupportsNoCommandsMessage' isWinPhoneAndSupportsNoCommandsMessage=isWinPhoneAndSupportsNoCommandsMessage}}</div>
+        {{/if}}
+        {{#if userHasNoCommandPermissions}}
+          <div>{{t 'amMobileDevice.devicePage.commands.userHasNoCommandPermissionsMessage' userHasNoCommandPermissionsMessage=userHasNoCommandPermissionsMessage}}</div>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,228 @@
+<div class="snap-content-container">
+  <div class="all-details-content">
+
+  <div class="snap-content-title"><h3>{{t 'amComputer.hardwareTab.title'}}</h3>
+  </div>
+
+  <div class="snap-content-icon"><img src={{deviceIconPath}}>
+  </div>
+
+  <div class="device-main-description">
+    <h4 class="device-model">{{machineModel}}</h4>
+    <div class="device-details-table-heading">
+      <div class="table-heading-row">
+        <div class="device-details-table-cell">{{t 'amData.computerHardwareTabSpec.computerSerialNumber'}}<p>{{relatedHardwareController.model.presentation.computerSerialNumber}}</p></div>
+        <div class="device-details-table-cell">{{t 'amData.computerHardwareTabSpec.primaryMacAddress'}}<p>{{relatedHardwareController.model.presentation.primaryMacAddress}}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+  <table class="device-details-table-body">
+    <tbody>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.dateTime'}}</td>
+      <td>{{relatedHardwareController.model.presentation.dateTime}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.bootRomInformation'}}</td>
+      <td>{{relatedHardwareController.model.presentation.bootRomInformation}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.memorySlots'}}</td>
+      <td>{{relatedHardwareController.model.presentation.memorySlots}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.memoryModuleCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.memoryModuleCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.physicalMemory'}}</td>
+      <td>{{relatedHardwareController.model.presentation.physicalMemory}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.swapSpaceTotal'}}</td>
+      <td>{{relatedHardwareController.model.presentation.swapSpaceTotal}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.swapSpaceUsed'}}</td>
+      <td>{{relatedHardwareController.model.presentation.swapSpaceUsed}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.swapSpaceFree'}}</td>
+      <td>{{relatedHardwareController.model.presentation.swapSpaceFree}}</td>
+    </tr>
+    {{#if isMacPlatform}}
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.swapSpaceEncrypted'}}</td>
+        <td>{{relatedHardwareController.model.presentation.swapSpaceEncrypted}}</td>
+      </tr>
+    {{/if}}
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.volumeCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.volumeCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.ataDeviceCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.ataDeviceCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.scsiDeviceCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.scsiDeviceCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.fireWireDeviceCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.fireWireDeviceCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.usbDeviceCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.usbDeviceCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.pciDeviceCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.pciDeviceCount}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amData.computerHardwareTabSpec.displayCount'}}</td>
+      <td>{{relatedHardwareController.model.presentation.displayCount}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br/>
+  <table class="device-details-table-body">
+    <tbody>
+    {{#unless isMacPlatform}}
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.biosData'}}</td>
+        <td>{{relatedHardwareController.model.presentation.biosData}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.biosVendor'}}</td>
+        <td>{{relatedHardwareController.model.presentation.biosVendor}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.biosVersion'}}</td>
+        <td>{{relatedHardwareController.model.presentation.biosVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.biosType'}}</td>
+        <td>{{relatedHardwareController.model.presentation.biosType}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.smbiosVersion'}}</td>
+        <td>{{relatedHardwareController.model.presentation.smbiosVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.mainboardManufacturer'}}</td>
+        <td>{{relatedHardwareController.model.presentation.mainboardManufacturer}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.mainboardProductName'}}</td>
+        <td>{{relatedHardwareController.model.presentation.mainboardProductName}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.mainboardSerialNumber'}}</td>
+        <td>{{relatedHardwareController.model.presentation.mainboardSerialNumber}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.mainboardType'}}</td>
+        <td>{{relatedHardwareController.model.presentation.mainboardType}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.mainboardVersion'}}</td>
+        <td>{{relatedHardwareController.model.presentation.mainboardVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.mainboardAssetTag'}}</td>
+        <td>{{relatedHardwareController.model.presentation.mainboardAssetTag}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.systemEnclosureManufacturer'}}</td>
+        <td>{{relatedHardwareController.model.presentation.systemEnclosureManufacturer}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.systemEnclosureSerialNumber'}}</td>
+        <td>{{relatedHardwareController.model.presentation.systemEnclosureSerialNumber}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.systemEnclosureType'}}</td>
+        <td>{{relatedHardwareController.model.presentation.systemEnclosureType}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.systemEnclosureVersion'}}</td>
+        <td>{{relatedHardwareController.model.presentation.systemEnclosureVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.systemEnclosureAssetTag'}}</td>
+        <td>{{relatedHardwareController.model.presentation.systemEnclosureAssetTag}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerManufacturer'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerManufacturer}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerVersion'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerModel'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerModel}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerServiceTag'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerServiceTag}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerWarrantyInfo'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerWarrantyInfo}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerWarrantyEnd'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerWarrantyEnd}}</td>
+      </tr>
+    {{/unless}}
+    {{#if isMacPlatform}}
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerType'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerType}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.smcVersion'}}</td>
+        <td>{{relatedHardwareController.model.presentation.smcVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerAge'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerAge}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerProductionDate'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerProductionDate}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.computerProductionFactory'}}</td>
+        <td>{{relatedHardwareController.model.presentation.computerProductionFactory}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.appleProductName'}}</td>
+        <td>{{relatedHardwareController.model.presentation.appleProductName}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.applePurchaseDate'}}</td>
+        <td>{{relatedHardwareController.model.presentation.applePurchaseDate}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.appleWarrantyInfo'}}</td>
+        <td>{{relatedHardwareController.model.presentation.appleWarrantyInfo}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerHardwareTabSpec.appleWarrantyEnd'}}</td>
+        <td>{{relatedHardwareController.model.presentation.appleWarrantyEnd}}</td>
+      </tr>
+    {{/if}}
+    </tbody>
+  </table>
+
+  </div>
+
+</div>

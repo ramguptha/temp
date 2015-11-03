@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Unit Tests</title>
+  <link rel="stylesheet" href="../src/packages/platform/lib/css/qunit.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script src="../src/packages/platform/lib/qunit.js"></script>
+<script src="../src/packages/platform/lib/require.js"></script>
+<script>
+// <![CDATA[
+
+QUnit.config.autostart = false;
+
+require(['./config'], function(config) {
+  require(['packages/platform/locale-config'], function(LocaleConfig) {
+    LocaleConfig.setLocale('en-us', function() {
+      var testedPackages = [
+        'platform/date-type',
+        'platform/guid',
+        'platform/cookie',
+        'platform/locale-config',
+        'platform/locale',
+
+        'platform/offset-monitor',
+        'platform/child-controller',
+        'platform/session',
+        'platform/activity-monitor',
+        'platform/send-ember-action',
+        'platform/ui',
+        'platform/data',
+        'platform/desktop',
+        'platform/advanced-filter',
+        'platform/query',
+        'platform/naming',
+        'platform/formatter',
+        'platform/ip-util',
+        'platform/enum-util',
+        'platform/number-type',
+        'platform/regex',
+
+        'platform/set',
+        'platform/sink',
+        'platform/single-enumerable',
+        'platform/tracer',
+        'platform/selection',
+
+        'platform/nth-day-of-month-picker-view',
+        'platform/presenter',
+        'platform/is-data-presenter',
+        'platform/async-status',
+        'platform/counter',
+        'platform/queried-counter',
+        'platform/data-counter',
+        'platform/count-status-component',
+        'platform/pager',
+        'platform/queried-pager',
+        'platform/data-pager',
+        'platform/paged-component',
+        'platform/paged-list-component',
+        'platform/paged-table-component',
+        'platform/data-list-component',
+        'platform/data-table-component',
+        'platform/data-table-controller',
+        'platform/adhoc-search-component',
+        'platform/page-view',
+        'platform/nav-page-view',
+        'platform/nav-header-component',
+        'platform/vertical-splitter-component',
+        'platform/button-group-component',
+        'platform/button-group-horizontal-component',
+        'platform/collection-header-component',
+        'platform/context-menu-component',
+        'platform/clearable-text-field-component',
+        'platform/data-poller',
+
+        'platform/app-foundation',
+
+        'cc/cc-session',
+        'cc/cc-processing-status',
+        'cc/cc-reports',
+        'cc/cc-data',
+        'cc/cc-app-foundation',
+        'cc/cc-software-titling-foundation',
+        'cc/cc-policies-foundation',
+        'cc/cc-device-foundation',
+        'cc/cc-device'
+      ];
+
+      // Go!
+      require(testedPackages.map(function(packageName) {
+        return 'packages/' + packageName + '/test/test_main';
+      }), function() {
+        for (var i = 0; i < arguments.length; i++) {
+          arguments[i].run();
+        }
+        QUnit.start();
+      });
+    });
+  });
+});
+
+// ]]>
+</script>
+</body>
+</html>

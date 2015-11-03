@@ -1,0 +1,140 @@
+// Static values for RefreshEnvironment()
+#define WM_SETTINGCHANGE      0x001A
+#define SMTO_ABORTIFHUNG      0x0002
+prototype BOOL USER.SendMessageTimeout(HWND, SHORT, SHORT, POINTER, SHORT, SHORT, POINTER);
+prototype LONG KERNEL.GetLastError();
+
+prototype SetEnvPath(STRING, BOOL);
+prototype SetRegValue(STRING, STRING, STRING);
+prototype STRING GetRegValue(STRING, STRING, STRING);
+prototype RemoveFromPath(STRING);
+prototype RefreshEnvironment();
+
+
+function SetEnvPath(szWorkPath, bAddMe)
+	NUMBER nResult;
+	STRING szKey;
+	STRING szOldPath; 
+	STRING szNewPath;
+	NUMBER nvSize, nvType;
+    STRING sTemp;
+    STRING svMssg;
+
+begin
+
+	Disable(LOGGING);
+	
+	szOldPath = GetRegValue("SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment","Path","");
+	
+	if (bAddMe) then
+		// Does the path we want to add already exist in the path?
+		if (szOldPath % szWorkPath) then
+			Enable(LOGGING );
+			return 0;
+		endif;
+
+		szNewPath = szOldPath + ";" + szWorkPath;
+	else                       
+		szNewPath = szWorkPath;
+	endif;
+
+	nResult = SetRegValue("SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment","Path",szNewPath);
+	
+	if ((nResult < 0) && bAddMe) then
+		Sprintf (svMssg, "\nResult message:" + FormatMessage(nResult) + "\nResult code: %ld.", nResult);
+		MessageBox("Unable to set Path environment variable." + svMssg + "\nPlease set Path variable manually: " + szWorkPath, WARNING);		
+	else
+		// Flush the NT registry to all applications.
+		RefreshEnvironment();
+	endif;
+
+	Enable(LOGGING );
+end;	
+
+// Get a registry value from HKEY_LOCAL_MACHINE
+function STRING GetRegValue(szPath, szKey, szDefault)
+	STRING svValue;
+	NUMBER nvType;
+	NUMBER nvSize;
+begin
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	RegDBGetKeyValueEx(szPath,szKey,nvType, svValue, nvSize);	
+
+	if (svValue = "") then
+		return szDefault;
+	else
+		return svValue;
+	endif;
+end;	
+
+// Set a registry value in HKEY_LOCAL_MACHINE
+function SetRegValue(szPath, szKey, szValue)
+begin
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	RegDBCreateKeyEx(szPath,"");
+	return RegDBSetKeyValueEx(szPath,szKey,REGDB_STRING_EXPAND,szValue,-1);
+end;
+
+function RemoveFromPath(szRemoveMe)
+	STRING szKey;
+	NUMBER nvType;
+	STRING svValue;
+	NUMBER nvSize; 
+	STRING szNewPath, szPath;
+	STRING szBeginPath, szEndPath;
+	NUMBER nLength, nPos;
+begin
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	
+	// Get the current Path
+	szPath = GetRegValue("SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment","Path","");
+
+	// Look for the path we want to remove in the current path
+	nPos = StrFind(szPath,szRemoveMe);                        
+	
+	// If we found it
+	if (nPos >= 0) then
+		nLength = StrLength(szRemoveMe);
+
+		// Is the location of the path we want to remove at the beginning of the
+		// system path?  If not, get everything up to that position.
+		if (nPos > 0) then
+			StrSub(szBeginPath,szPath,0,nPos);          
+		endif;
+		
+		// Make sure there is something to copy after the path we want to remove.
+		// If there is, get everything after the path we want to remove.
+		if (nPos + nLength < StrLength(szPath)) then
+			StrSub(szEndPath,szPath,nPos + nLength + 1, StrLength(szPath) - nPos - nLength);
+		endif;              
+		
+		// If EndPath is blank then there is a trailing semicolon in BeginPath
+		// that needs to be removed.
+		if (szEndPath = "") then
+			StrSub(szBeginPath,szBeginPath,0,StrLength(szBeginPath) -1);
+		endif;
+		
+		// Add the beginpath and endpath together and we have the new path.
+		szNewPath = szBeginPath + szEndPath;
+
+		// Set the new path.
+		SetEnvPath(szNewPath,FALSE);
+	endif;	
+end;
+
+
+
+function RefreshEnvironment()
+      STRING      sParam;
+      POINTER     pParam, pResult;
+      LONG        lResult;
+
+begin
+      sParam      = "Environment";
+      pParam      = &sParam;
+      pResult     = &lResult;
+
+      if (!SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0, pParam, SMTO_ABORTIFHUNG, 100, pResult)) then
+            SprintfBox(WARNING, "", "SendMessageTimeout failed in RefreshEnvironment(), Error: %d\nAfter the installation/removal is finished, you must restart your system to complete the process.", GetLastError());
+      endif;
+end;

@@ -1,0 +1,14 @@
+<div class="modal-wizard-window">
+    <div class="modal-wizard-header">
+        <div class="pull-right">
+            <!--<div class="button close modal-window-close icon-close" {{!action close}}></div>-->
+          {{#if urlForHelp}}
+              <a href={{urlForHelp}} target="_blank" class="btn btn-small btn-help is-button-for-help">?</a>
+          {{/if}}
+        </div>
+        <h2><span class={{headingIconClass}}></span>{{heading}}<b>{{deviceName}}</b></h2>
+    </div>
+    <div class="modal-wizard-body">
+      {{yield}}
+    </div>
+</div>

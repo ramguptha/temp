@@ -1,0 +1,41 @@
+<html>
+
+<head>
+	<!-- Load JsWorld classes -->
+	<script type="text/javascript" src="JsWorld.js"></script>
+	
+	<!-- Load definition for selected locale -->
+	<script type="text/javascript" src="locales/js/en_US.js"></script>
+</head>
+
+<body>
+
+	<h1>JsWorld Quick Start Example</h1>
+
+	<script>
+	// Create locale object from en_US data
+	var locale = new jsworld.Locale(POSIX_LC.en_US);
+	
+	// Format a number
+	var numFormatter = new jsworld.NumericFormatter(locale);
+	alert(numFormatter.format(15000.001));
+
+	// Format a monetary amount
+	var monFormatter = new jsworld.MonetaryFormatter(locale);
+	alert(monFormatter.format(25000000.99));
+
+	// Format current date/time
+	var dtFormatter = new jsworld.DateTimeFormatter(locale);
+	var now = new Date();
+	alert("Current date: "      + dtFormatter.formatDate(now) + "\n" +
+	      "Current time: "      + dtFormatter.formatTime(now) + "\n" +
+	      "Current date/time: " + dtFormatter.formatDateTime(now)      );
+
+	// Parse localy formatted USD currency amount
+	var monParser = new jsworld.MonetaryParser(locale);
+	alert(monParser.parse("$1,500,000.01"));
+	
+	</script>
+</body>
+
+</html>

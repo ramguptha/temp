@@ -1,0 +1,166 @@
+<div class="fill-absolute container {{if hasSelection "has-selection"}} {{if hasMenus "has-menus"}} {{if hasControlColumn "has-control-column"}}">
+
+  {{#if showHeader}}
+    <div class="header-container">
+      <table class="paged-table frozen" style={{frozenHeaderTableStyle}}>
+        <thead>
+        <tr>
+          {{#if hasControlColumn}}
+            <th class="is-container-for-control">
+              {{#if hasSelectAll}}
+                <input class="is-select-all-checkbox" type="checkbox" value="all"
+                  checked={{isAllSelected}} disabled={{isSelectAllDisabled}}
+                  {{action "updateAllSelections" preventDefault=false bubbles=false}}
+                >
+              {{/if}}
+            </th>
+          {{/if}}
+
+          {{#each columnPresentation.frozenDataColumns as |column|}}
+            <th
+              style={{column.style}}
+              class="{{if isFirst "is-first-child"}} {{if isLast "is-last-child"}} {{column.isSorted}} {{unless column.config.isSortable "is-not-sortable"}}"
+            >
+              <span class="resize" {{action "startResizing" column on="mouseDown"}}>&nbsp;</span>
+
+              <span
+                data-tooltip-attr="title"
+                title={{column.content}}
+                class="header-content tooltip-s {{if column.config.isSortable "pointer"}} {{if column.labelIconClass 'text-no-ellipsis' 'text-ellipsis'}}"                {{action "sortColumn" column}}
+              >
+
+                {{#if column.isShowingLabelIcon}}
+                  <span class="is-label-icon {{column.labelIconClass}}"></span>
+                {{else}}
+                  {{column.content}}
+                {{/if}}
+
+                <span class="is-container-for-sort sort-container color-muted-icon ui-icon-sort {{column.sortDir}}"></span>
+              </span>
+            </th>
+          {{/each}}
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <table class="paged-table free">
+      <thead>
+        <tr>
+          {{#if hasControlColumn}}
+            <th class="is-container-for-control"></th>
+          {{/if}}
+
+          {{#each columnPresentation.freeDataColumns as |column|}}
+            <th 
+              style={{column.style}}
+              class="{{if isFirst "is-first-child"}} {{if isLast "is-last-child"}} {{column.isSorted}} {{unless column.config.isSortable "is-not-sortable"}}"
+              data-column-name={{column.config.id}}
+            >
+              <span class="resize" {{action "startResizing" column on="mouseDown"}}>&nbsp;</span>
+
+              <span
+                data-tooltip-attr="title"
+                title={{column.content}}
+                class="header-content tooltip-s {{if column.config.isSortable "pointer"}} {{if column.labelIconClass 'text-no-ellipsis' 'text-ellipsis'}}"
+                {{action "sortColumn" column}}
+              >
+
+                {{#if column.isShowingLabelIcon}}
+                  <span class="is-label-icon {{column.labelIconClass}}"></span>
+                {{else}}
+                  {{column.content}}
+                {{/if}}
+
+                <span class="is-container-for-sort sort-container color-muted-icon ui-icon-sort {{column.sortDir}}"></span>
+              </span>
+            </th>
+          {{/each}}
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  {{/if}}
+  <div class="body-container virtual-container reset-origin">
+    {{#if isEmptyResultSet}}
+      {{component emptyResultComponent tNoResults=tNoResults tNoItems=tNoItems}}
+    {{/if}}
+
+    <div class="free-container reset-origin">
+      <div class="frozen-container reset-origin">
+        {{#each virtualPage0.overlays as |overlay|}}
+          <div
+            class="overlay-row-container"
+            style={{overlay.style}}
+            data-automation-id={{overlay.node.id}}
+            data-automation-parent-id={{overlay.parentNodeId}}
+          >
+            {{paged-table-overlay-presentation
+              presentation=overlay
+
+              pagedComponent=overlay.pagedComponent
+              node=overlay.node
+              refreshedAt=overlay.component.pager.contentChangedAt
+            }}
+          </div>
+        {{/each}}
+
+        {{#each virtualPage1.overlays as |overlay|}}
+          <div
+            class="overlay-row-container"
+            style={{overlay.style}}
+            data-automation-id={{overlay.node.id}}
+            data-automation-parent-id={{overlay.parentNodeId}}
+          >
+            {{paged-table-overlay-presentation
+              presentation=overlay
+
+              pagedComponent=overlay.pagedComponent
+              node=overlay.node
+              refreshedAt=overlay.component.pager.contentChangedAt
+            }}
+          </div>
+        {{/each}}
+
+        {{#each virtualPage2.overlays as |overlay|}}
+          <div class="overlay-row-container"
+            style={{overlay.style}}
+            data-automation-id={{overlay.node.id}}
+            data-automation-parent-id={{overlay.parentNodeId}}
+          >
+            {{paged-table-overlay-presentation
+              presentation=overlay
+
+              pagedComponent=overlay.pagedComponent
+              node=overlay.node
+              refreshedAt=overlay.component.pager.contentChangedAt
+            }}
+          </div>
+        {{/each}}
+
+        {{paged-table-frozen-page presenter=virtualPage0}}
+        {{paged-table-frozen-page presenter=virtualPage1}}
+        {{paged-table-frozen-page presenter=virtualPage2}}
+      </div>
+
+      {{paged-table-free-page presenter=virtualPage0}}
+      {{paged-table-free-page presenter=virtualPage1}}
+      {{paged-table-free-page presenter=virtualPage2}}
+
+      <!-- 1x1 transparent GIF -->
+      <img
+        style={{virtualSizerStyle}}
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      >
+    </div>
+
+    {{#if paused}}
+      {{#unless externalError}}
+        {{component pausedComponent pagedComponent=this classNames="is-paused"}}
+      {{/unless}}
+    {{/if}}
+  </div>
+
+  {{view Resizer.View resizer=resizer}}
+</div>

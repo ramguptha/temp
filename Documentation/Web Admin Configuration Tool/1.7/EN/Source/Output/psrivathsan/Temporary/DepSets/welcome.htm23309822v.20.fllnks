@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileClass="welcome"
+  FileTitle="Welcome to Absolute Manage Web Admin"
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Stylesheets/Styles.css" />
+    <Link
+      Url="Content/Resources/Images/search-button-focus.png" />
+    <Link
+      Url="Content/Resources/Images/search-button-hover.png" />
+    <Link
+      Url="Content/Resources/Images/abs-icons.png" />
+    <Link
+      Url="Content/Resources/Images/AM-logo-med.jpg" />
+    <Link
+      Url="https://www.absolute.com/en/resources" />
+    <Link
+      Url="Content/Resources/Images/manage_video.jpg" />
+    <Link
+      Url="Content/viewingdevicedetails.htm" />
+    <Link
+      Url="Content/lockingdevices.htm" />
+    <Link
+      Url="Content/deletingdata.htm" />
+    <Link
+      Url="Content/sendingmessages.htm" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="https://amrc.absolute.com/" />
+    <Link
+      Url="Content/aboutpolicies.htm" />
+    <Link
+      Url="Content/creatingpolicies.htm" />
+    <Link
+      Url="Content/creatingsmartpolicies.htm" />
+    <Link
+      Url="Content/editingpolicies.htm" />
+    <Link
+      Url="http://blogs.absolute.com/" />
+    <Link
+      Url="Content/Resources/Images/blog.png" />
+    <Link
+      Url="https://twitter.com/absolutecorp" />
+    <Link
+      Url="Content/Resources/Images/twitter.png" />
+    <Link
+      Url="http://www.linkedin.com/company/absolute-software" />
+    <Link
+      Url="Content/Resources/Images/linkedin.png" />
+    <Link
+      Url="https://www.facebook.com/absolutesoftware" />
+    <Link
+      Url="Content/Resources/Images/facebook.png" />
+    <Link
+      Url="http://www.youtube.com/user/absolutesoftware" />
+    <Link
+      Url="Content/Resources/Images/youtube.png" />
+    <Link
+      Url="https://plus.google.com/113748723024007000912/posts" />
+    <Link
+      Url="Content/Resources/Images/google-plus.png" />
+    <Link
+      Url="Project/ConditionTagSets/Default.flcts" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Stylesheets/Styles.css" />
+    <Link
+      Url="Content/Resources/Images/AM-logo-med.jpg" />
+    <Link
+      Url="https://www.absolute.com/en/resources#sort=relevancy&amp;f:Product=[Absolute Manage,Absolute Manage MDM]&amp;f:Videos=[Product Demos,Product Feature Videos]" />
+    <Link
+      Url="Content/Resources/Images/manage_video.jpg" />
+    <Link
+      Url="Content/viewingdevicedetails.htm" />
+    <Link
+      Url="Content/lockingdevices.htm" />
+    <Link
+      Url="Content/deletingdata.htm" />
+    <Link
+      Url="Content/sendingmessages.htm" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="https://amrc.absolute.com/" />
+    <Link
+      Url="Content/aboutpolicies.htm" />
+    <Link
+      Url="Content/creatingpolicies.htm" />
+    <Link
+      Url="Content/creatingsmartpolicies.htm" />
+    <Link
+      Url="Content/editingpolicies.htm" />
+    <Link
+      Url="http://blogs.absolute.com/" />
+    <Link
+      Url="Content/Resources/Images/blog.png" />
+    <Link
+      Url="https://twitter.com/absolutecorp" />
+    <Link
+      Url="Content/Resources/Images/twitter.png" />
+    <Link
+      Url="http://www.linkedin.com/company/absolute-software" />
+    <Link
+      Url="Content/Resources/Images/linkedin.png" />
+    <Link
+      Url="https://www.facebook.com/absolutesoftware" />
+    <Link
+      Url="Content/Resources/Images/facebook.png" />
+    <Link
+      Url="http://www.youtube.com/user/absolutesoftware" />
+    <Link
+      Url="Content/Resources/Images/youtube.png" />
+    <Link
+      Url="https://plus.google.com/113748723024007000912/posts" />
+    <Link
+      Url="Content/Resources/Images/google-plus.png" />
+    <Link
+      Url="Project/ConditionTagSets/Default.flcts" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions>
+    <Condition
+      Tag="Default.ScreenOnly" />
+  </FileConditions>
+  <FileTags />
+  <AllConditions>
+    <Condition
+      Tag="Default.ScreenOnly" />
+  </AllConditions>
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/Stylesheets/Styles.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

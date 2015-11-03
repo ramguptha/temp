@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.absolute.am.Elevator</groupId>
+  <artifactId>com.absolute.am.Elevator</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>com.absolute.am.Elevator</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+<build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.3</version>
+        		<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<minimizeJar>true</minimizeJar>
+							<finalName>com.absolute.am.Elevator</finalName>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<manifestEntries>
+										<Main-Class>com.absolute.am.Elevator.PrivilegesElevator</Main-Class>
+									</manifestEntries>
+								</transformer>
+							</transformers>
+							<filters>
+							</filters>
+						</configuration>
+					</execution>
+				</executions>
+      </plugin>
+      
+	    <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.1</version>
+			<configuration>
+				<useProjectReferences>false</useProjectReferences>
+				<source>1.7</source>
+				<target>1.7</target>
+			</configuration>
+		</plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+  
+  	<dependency>
+		<groupId>net.java.dev.jna</groupId>
+		<artifactId>jna-platform</artifactId>
+		<version>4.1.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>net.java.dev.jna</groupId>
+		<artifactId>jna</artifactId>
+		<version>4.1.0</version>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+  </dependencies>
+</project>

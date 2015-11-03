@@ -1,0 +1,678 @@
+/*<meta />*/
+
+/* Prevents Safari in landscape orientation from zooming in on text*/
+
+body
+{
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Css to prevent Chrome's automatic border around active fields*/
+
+*:focus
+{
+	outline: none;
+}
+
+/* Default css class for hiding element*/
+
+.hidden
+{
+	display: none;
+}
+
+/* Topic Popup */
+
+.MCTopicPopup
+{
+	text-decoration: none;
+}
+
+.MCTopicPopupHotSpot
+{
+	cursor: pointer;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.MCTopicPopup_Open.MCTopicPopupHotSpot
+{
+	
+}
+
+.MCTopicPopup_Closed.MCTopicPopupHotSpot
+{
+	
+}
+
+.MCTopicPopupContainer
+{
+	background-color: #FFFFFF;
+	padding: 10px;
+	position: fixed;
+	top: 100px;
+	left: 100px;
+	right: 100px;
+	bottom: 100px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 10px #333333;
+	-moz-box-shadow: 0 4px 10px #333333;
+	box-shadow: 0 4px 10px #333333;
+	filter: alpha( opacity = 0 );
+	opacity: 0.0;
+	z-index: 10001;
+}
+
+.MCTopicPopupBody
+{
+	width: 100%;
+	border: none;
+}
+
+/**/
+/* Thumbnail Popup */
+
+.MCPopupThumbnailLink
+{
+	
+}
+
+.MCPopupThumbnail
+{
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.MCPopupContainer
+{
+	background-color: #FFFFFF;
+	border: solid 1px #000000;
+	padding: 10px;
+	position: absolute;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 10001;
+}
+
+.MCPopupContainer2
+{
+	background-color: #FFFFFF;
+	border: solid 1px #000000;
+	padding: 10px;
+	position: absolute;
+	cursor: pointer;
+	-moz-box-shadow: 2px 2px 8px #FFFFFF;
+	-webkit-box-shadow: 2px 2px 8px #FFFFFF;
+	box-shadow: 2px 2px 8px #FFFFFF;
+}
+
+.MCPopupFullImage
+{
+	width: 0px;
+	height: 0px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/**/
+/* HelpControl */
+
+.MCHelpControl_Image_Icon
+{
+	border: none;
+}
+
+.MCHelpControl span
+{
+	background: url("Images/help-control.png") no-repeat left center;
+	padding-left: 18px;
+}
+
+a.MCHelpControl
+{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/**/
+/* Dialog */
+
+.MCDialog
+{
+	display: none;
+	width: 400px;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	padding: 6px;
+	background-color: #000000;
+	border: 1px solid #000000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	filter: alpha( opacity = 0 );
+	opacity: 0.0;
+	z-index: 10001;
+}
+
+.MCDialogHeader
+{
+	margin: 0 0 4px;
+	padding: 5px 0 5px 5px;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-family: Helvetica;
+}
+
+.MCDialogClose
+{
+	color: #FFFFFF;
+	font-family: tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 12px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	width: 20px;
+	height: 18px;
+	padding-top: 2px;
+	margin-top: -2px;
+	background-color: #999999;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.MCDialogBody
+{
+	color: #555555;
+	padding: 10px;
+	background-color: #FFFFFF;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/**/
+
+a.glossaryTerm
+{
+	text-decoration: none;
+}
+
+/**/
+
+#ios-wrapper
+{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.img_off
+{
+	display: none;
+}
+
+.MCTextPopupHotSpot_
+{
+	background-position: right;
+}
+
+.MCTextPopup_Open.MCTextPopupHotSpot_
+{
+	background-image: none;
+	padding-left: 0;
+}
+
+.MCTextPopup_Closed.MCTextPopupHotSpot_
+{
+	padding-left: 0;
+	background-image: none;
+}
+
+.popupBody
+{
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000000;
+	background-color: #dcdcdc;
+	border: solid 1px #000000;
+	margin: 0px;
+	padding: 5px;
+}
+
+.\000023text
+{
+	color: #000000;
+	font-weight: inherit;
+	cursor: default;
+	border-bottom: ridge 1px #000000;
+	border-bottom-style: dashed;
+}
+
+div.MCBreadcrumbsBox_0
+{
+	font-family: Arial;
+	font-size: 9pt;
+	border-bottom-width: 1px;
+	margin-top: 6pt;
+	font-style: italic;
+	padding-bottom: 2pt;
+	margin-bottom: 18pt;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+
+table.AutoNumber_p_Bullet1
+{
+	word-spacing: 1px;
+	margin-left: 0.5in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 3pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+td.AutoNumber_p_Bullet1
+{
+	font-family: Arial;
+	word-spacing: 1px;
+	font-size: 10pt;
+}
+
+.xref
+{
+	text-decoration: underline;
+	color: blue;
+}
+
+.xref.xrefHeadingTextOnly
+{
+	text-decoration: underline;
+	word-spacing: 1px;
+	font-family: inherit;
+	font-size: inherit;
+	color: #0c721e;
+}
+
+.MCHelpControl-RelatedHotSpot_
+{
+	background-position: left;
+}
+
+.MCHelpControl-Related .MCHelpControl-RelatedHotSpot_
+{
+	background-image: url('related_topics_icon2.png');
+	padding-left: 5px;
+	padding-right: 0px;
+	background-position: left;
+}
+
+.link-list-popup
+{
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000000;
+	background-color: #dcdcdc;
+	border: solid 1px #000000;
+	margin: 0px;
+	padding: 0px;
+}
+
+.link-list-popup ul li
+{
+	font-family: Arial;
+	font-size: 9pt;
+	color: Black;
+	background-color: Transparent;
+	padding: 5px;
+}
+
+.link-list-popup ul li:hover
+{
+	font-size: 10pt;
+	color: White;
+	background-color: Blue;
+}
+
+.MCHelpControlList
+{
+	
+}
+
+.MCHelpControlListItem
+{
+	
+}
+
+.MCHelpControlListItem a
+{
+	
+}
+
+.MCHelpControlListItem a:link
+{
+	
+}
+
+.MCConceptLinkControlListItem a:link
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:link
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCRelatedTopicsControlListItem a:link
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCHelpControlListItem a:visited
+{
+	
+}
+
+.MCConceptLinkControlListItem a:visited
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:visited
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCRelatedTopicsControlListItem a:visited
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCHelpControlListItem a:focus
+{
+	
+}
+
+.MCConceptLinkControlListItem a:focus
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:focus
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCRelatedTopicsControlListItem a:focus
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCHelpControlListItem a:hover
+{
+	
+}
+
+.MCConceptLinkControlListItem a:hover
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:hover
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCRelatedTopicsControlListItem a:hover
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCConceptLinkControlList
+{
+	
+}
+
+.MCConceptLinkControlListItem
+{
+	
+}
+
+.MCConceptLinkControlListItem a
+{
+	
+}
+
+.MCKeywordLinkControlList
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCKeywordLinkControlListItem
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCKeywordLinkControlListItem a
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCRelatedTopicsControlList
+{
+	font-family: Arial;
+	font-size: 9pt;
+	text-decoration: underline;
+}
+
+.MCRelatedTopicsControlListItem
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.MCRelatedTopicsControlListItem a
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+.relatedTopics
+{
+	font-weight: bold;
+	font-style: normal;
+	font-family: Arial;
+	font-size: 9pt;
+	color: #000000;
+	padding-top: 12pt;
+}
+
+.relatedTopics:hover
+{
+	font-size: 9pt;
+}
+
+.relatedTopics:focus
+{
+	font-size: 9pt;
+}
+
+table.AutoNumber_p_Bullet1Last
+{
+	margin-left: 0.5in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 6pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+td.AutoNumber_p_Bullet1Last
+{
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+table.AutoNumber_p_Steps
+{
+	margin-left: 0.5in;
+	margin-right: 0in;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_Bullet1Procedure
+{
+	margin-left: 0.75in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 3pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+td.AutoNumber_p_Bullet1Procedure
+{
+	font-family: Arial;
+	font-size: 10pt;
+	line-height: 12pt;
+}
+
+table.AutoNumber_p_subSubStep1
+{
+	margin-left: 1in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 3pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_Bullet2Procedure
+{
+	margin-left: 1in;
+	margin-right: 0in;
+	margin-top: 0;
+	margin-bottom: 3pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_Bullet2ProcedureLast
+{
+	margin-left: 1in;
+	margin-right: 0in;
+	margin-top: 0;
+	margin-bottom: 6pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_Step1
+{
+	word-spacing: 1px;
+	margin-left: 0.5in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 6pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_Bullet1ProcedureLast
+{
+	margin-left: 0.75in;
+	margin-right: 0in;
+	margin-top: 0;
+	margin-bottom: 6pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_CellBodyBullet
+{
+	margin-left: 0.15in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 1pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+td.AutoNumber_p_CellBodyBullet
+{
+	font-family: Arial;
+	font-size: 9pt;
+}
+
+table.AutoNumber_p_SubStep1
+{
+	margin-left: 0.75in;
+	margin-right: 0in;
+	margin-top: 0;
+	margin-bottom: 3pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_Bullet1subSubProcedure
+{
+	margin-left: 1.25in;
+	margin-right: 0in;
+	margin-top: 0;
+	margin-bottom: 3pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+table.AutoNumber_p_CellBodyBullet2
+{
+	margin-left: 0.3in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 1pt;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+.MCWebHelpFramesetLink a
+{
+	color: #0000ee;
+}
+
+.MCWebHelpFramesetLink.MCWebHelpFramesetLinkTop a
+{
+	
+}
+
+.MCWebHelpFramesetLink.MCWebHelpFramesetLinkBottom a
+{
+	
+}
+

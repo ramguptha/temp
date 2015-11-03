@@ -1,0 +1,867 @@
+/***************************************************************************************
+*  InstallFunctions.rul
+*
+*  Purpose:	main installation script and auxiliary scripts to back up and restore data when upgrading
+*           
+*/ 
+
+prototype InstallProduct(BOOL, BYREF STRING, BYREF STRING);
+
+function InstallProduct(isFirstTimeInstall, szDomainName, szIP)
+begin 
+    
+		
+	if (isFirstTimeInstall) then
+			CopySecurityPolicies(szJavaHome);
+	endif;
+    
+	SetStatusWindow(5, @ID_STATUS_MESSAGE_1);
+    
+    //copy contents of Am Web UI
+    szSource = SRCDIR^"AmWebUi"^"*.*";
+    szTarget = szProductPath;
+    
+	//delete old contents
+
+	szExec = "cmd";
+	szArgs = "/c rd \"" + szTarget + "\" /s /q";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);
+		abort;
+	endif;
+	//MessageBox ("AmWebUi files successfully deleted from: " + szTarget, INFORMATION);
+	
+	
+    if (XCopyFile (szSource, szTarget, COMP_NORMAL | INCLUDE_SUBDIR) < 0) then
+        MessageBox ("Copying AmWebUi files failed", SEVERE);
+        abort;
+    else
+        //MessageBox ("AmWebUi files successfully copied to " + szTarget, INFORMATION);
+    endif;
+    
+	//copy NOTICES file into Am Web UI root folder
+    szSource = SUPPORTDIR^"NOTICES.txt";
+    szTarget = szProductPath;
+    if (XCopyFile (szSource, szTarget, COMP_NORMAL) < 0) then
+        MessageBox ("Copying NOTICES.txt file failed", SEVERE);
+        abort;
+    else
+        //MessageBox ("NOTICES.txt file successfully copied to " + szTarget, INFORMATION);
+    endif;
+    
+    SetStatusWindow(8, @ID_STATUS_MESSAGE_1);
+    
+    //retrieve IP if not first time install
+    szIpNew = szIP;
+	if (!isFirstTimeInstall || szIpNew == "") then
+    
+		if (Is(FILE_EXISTS, szTargetInstallDataPath^"com.absolute.webapi.cert.ipport.txt")) then
+			//extract IP address
+			ReadLineFromTextFile(szTargetInstallDataPath, "com.absolute.webapi.cert.ipport.txt", szString);
+			nIndex = StrFind (szString, ":");
+			StrSub ( szIpOld, szString, 0, nIndex );
+			szIpNew = szIpOld;
+		else
+			if (Is(FILE_EXISTS, szTargetInstallDataPath^"com.absolute.webapi.cert.ip.txt")) then
+				ReadLineFromTextFile(szTargetInstallDataPath, "com.absolute.webapi.cert.ip.txt", szString);
+				szIpNew = szString;
+			else
+				szIpNew = szIP;
+			endif;
+		endif;
+    endif;
+    
+    //set up AM Sync Service
+    
+    szTargetAmSyncPath64 = PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMSyncServices";
+    //this path is used for removing 32-bit version, if exists
+	szTargetAmSyncPath = PROGRAMFILES^ABSOLUTE_SOFTWARE^"AMSyncServices";
+	
+	//delete old contents
+	DeleteDir(szTargetAmSyncPath, ALLCONTENTS);
+	DeleteDir(szTargetAmSyncPath64, ALLCONTENTS);
+	//MessageBox ("AmSyncServices files successfully deleted from: " + szTargetAmSyncPath, INFORMATION);
+	
+    //copy contents of AmSyncServices
+    szSource = SRCDIR^"AmSyncServices"^"*.*";
+    
+    // Copy all program files in a source subdirectory to
+    // a subdirectory of the target directory.
+    if (XCopyFile (szSource, szTargetAmSyncPath64, COMP_NORMAL | INCLUDE_SUBDIR) < 0) then
+        MessageBox ("Copying AmSyncServices files failed", SEVERE);
+        abort;
+    else
+		//MessageBox ("AmSyncServices files successfully copied to " + szTargetAmSyncPath64, INFORMATION);
+    endif;
+    
+    
+    // set up Tomcat webapp
+    if (bTomcat7Present) then
+		nResult = ServiceGetServiceState (TOMCAT7_SERVICE_NAME, nvServiceState);
+		if (nResult >= ISERR_SUCCESS) then
+			if ((nvServiceState == SERVICE_START_PENDING)||(nvServiceState == SERVICE_RUNNING)) then
+				MessageBox (@ABS_TOMCAT7_WILL_BE_STOPPED, INFORMATION);
+			endif;
+		endif;
+	endif;
+    
+    //stop Tomcat service
+    szExec = "sc";
+	szArgs = "stop " + TOMCAT7_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "stop " + TOMCAT8_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	
+	Delay(2);
+	
+    szTomcatWebappsPath = szTomcat^"webapps";
+    
+    //always try deleting first - there might be leftovers from failed uninstalls
+	DeleteFile (szTomcatWebappsPath^"com.absolute.am.webapi.war");
+	DeleteDir(szTomcatWebappsPath^"com.absolute.am.webapi", ALLCONTENTS);
+	//MessageBox ("Tomcat webapp successfully deleted from: " + szTomcatWebappsPath, INFORMATION);
+
+	
+	szTomcat7WebappsPath = szTomcat7^"webapps";
+	if (bTomcat7Present) then
+		DeleteFile (szTomcat7WebappsPath^"com.absolute.am.webapi.war");
+		DeleteDir(szTomcat7WebappsPath^"com.absolute.am.webapi", ALLCONTENTS);
+		
+		//change Tomcat7 service startup mode to Manual
+		//note space after start=
+		szExec = "sc";
+		szArgs = "config " + TOMCAT7_SERVICE_NAME + " start= demand";
+		if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+			Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+			MessageBox(szMsg1, WARNING);
+		endif;
+		
+	endif;
+
+	//add lib path to environment variable
+	szTomcatWebappsLibPath = szTomcatWebappsPath^"com.absolute.am.webapi"^"WEB-INF"^"lib";
+	SetEnvPath(szTomcatWebappsLibPath, TRUE);
+		
+	Delay(2);
+	
+	
+	// Copy tcnative-1.dll to Tomcat8 bin folder
+	szSource = SUPPORTDIR ^ "tcnative-1.dll";
+	szTarget = szTomcat ^ "bin";
+    if (XCopyFile (szSource, szTarget, COMP_NORMAL) < 0) then
+        MessageBox ("Copying tcnative-1.dll file failed, source: " + szSource + ", target: " + szTarget, SEVERE);
+        abort;
+    else
+		//MessageBox ("tcnative-1.dll file successfully copied to " + szTarget, INFORMATION);
+    endif;
+    
+ 	
+	//backup original web.xml, server.xml files
+	
+	szTomcatConf = szTomcat ^ "conf";
+	
+	szSource = szTomcatConf;
+	szTarget = szTomcatConf^"backup";
+	if (ExistsDir (szTarget) != EXISTS) then
+		szExec = "cmd";
+		szArgs = "/c robocopy \"" + szSource + "\" \"" + szTarget + "\" /copyall";
+		if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+			Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+			MessageBox(szMsg1, SEVERE);
+			abort;
+		else
+			//MessageBox ("Tomcat configuration files successfully backed up to " + szTarget, INFORMATION);
+		endif;
+	endif;
+	
+
+	// Copy new configuration files to Tomcat8 conf folder
+	szSource = SUPPORTDIR^"*.xml";
+    if (XCopyFile (szSource, szTomcatConf, COMP_NORMAL) < 0) then
+        MessageBox ("Copying Tomcat configuration files failed", SEVERE);
+        abort;
+    else
+		//MessageBox ("Tomcat configuration files successfully copied to " + szTomcatConf, INFORMATION);
+    endif;
+    
+    //create host folder under Catalina
+    szTarget = szTomcatConf^"Catalina"^szDomainName;
+	if (ExistsDir (szTarget) != EXISTS) then
+		CreateFolder(szTarget);    
+    endif;
+    
+    szSource = SUPPORTDIR^"rewrite.config";
+    nReturn = XCopyFile (szSource, szTarget, COMP_NORMAL);
+	if (nReturn < 0) then
+		MessageBox ("rewrite.config cannot be copied, source: " + szSource + ", target: " + szTarget + ", result: " + FormatMessage(nReturn), SEVERE);
+		abort;
+	else
+		//MessageBox ("rewrite.config successfully copied to " + szTarget, INFORMATION);
+	endif;
+    
+    
+    szResultConfigPath = CommonAppDataFolder^ABSOLUTE_SOFTWARE^"AmWebApiData";
+    szTargetTempUploadPath = szResultConfigPath^"tempuploads";
+    szTargetLogbackPath = szResultConfigPath^"logs";
+    szTargetUserPrefsPath =  szResultConfigPath^"userprefs";
+    szTargetInstallDataPath =  szResultConfigPath^"install";
+    szTargetSettingsPath =  szResultConfigPath^"settings";
+    
+    szTargetCertificatePath = szResultConfigPath^"certificates";
+	if (ExistsDir (szTargetCertificatePath) != EXISTS) then
+		CreateFolder(szTargetCertificatePath);
+	endif;
+	if (ExistsDir (szTargetInstallDataPath) != EXISTS) then
+		CreateFolder(szTargetInstallDataPath);
+	endif;
+
+	
+    Delay(1);
+    
+    //if only 1 IPv4 on the machine - remove the "address" attribute from Connector element in server.xml file
+    
+	szExec = "cmd";
+	szArgs = "/c cd \"" + szTargetInstallDataPath + "\" \& ipconfig /all | findstr /C:\"IPv4 Address\" | find /i \"IPv4 Address\" /c > IPcount.txt";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);
+		abort;
+	endif;
+    ReadLineFromTextFile(szTargetInstallDataPath, "IPcount.txt", szString);
+    if (szString = "1") then
+		// cmd /k mode con:cols=255 & cd "C:\Program Files\Apache Software Foundation\Tomcat 8.0\conf" & type server.xml.bak | powershell -Command "$input | ForEach-Object{ $_ -replace \"address=\"\"\`${IpAddress}\"\" \", \"\"} > server.xml
+		ReplaceTextInFile(szTomcatConf, "server.xml", "address=\\\"\\\"${IpAddress}\\\"\\\" ", "");
+		
+    endif;
+    szExec = "cmd";
+	szArgs = "/c del /f /q \"" + szTargetInstallDataPath^"IPcount.txt\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);      
+	endif;
+
+  
+    //replacing vars in Tomcat configuration files
+    ReplaceTextInFile(szTomcatConf, "server.xml", "${KeystoreFile}", szTargetCertificatePath ^ "AmWebAdmin.jks");
+    ReplaceTextInFile(szTomcatConf, "server.xml", "${KeystorePass}", KEYSTORE_PASSWORD);
+    ReplaceTextInFile(szTomcatConf, "server.xml", "${HostDomainName}", szDomainName);
+    ReplaceTextInFile(szTomcatConf, "server.xml", "${IpAddress}", szIpNew);    
+    ReplaceTextInFile(szTomcatConf, "server.xml", "${WebRootFolder}", szProductPath);
+
+	
+    //create keystore and generate keypair
+    if (!Is(FILE_EXISTS, szTargetCertificatePath^"AmWebAdmin.jks")) then
+		szExec = "\"" + szJavaHome^"bin"^"keytool.exe\"";
+		szArgs = " -genkey -keyalg RSA -alias \"" + szDomainName + "\" -keystore \"" + szTargetCertificatePath ^ "AmWebAdmin.jks\"" + " -storepass " + KEYSTORE_PASSWORD + " -validity 3650 -keysize 2048 -dname \"CN=" + szDomainName + "\" -keypass " + KEYSTORE_PASSWORD;
+		if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+			Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+			MessageBox(szMsg1, SEVERE);
+			abort;
+		else
+			//MessageBox ("Keystore is created and keypair generated in " + szTargetCertificatePath, INFORMATION);
+		endif;    
+    endif;
+    
+    //start Tomcat
+    szExec = "net";
+    szArgs = "start " + TOMCAT8_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	
+	Delay(4);
+	
+    
+    //allow port 443 in firewall
+    //netsh advfirewall firewall add rule name="Open Port 443" dir=in action=allow protocol=TCP localport=443
+    szExec = "netsh";
+    szString = "\"Absolute Manage Web Admin Open Port " + WEB_SSL_PORT_NUMBER + "\"";
+    //delete rule first to prevent duplicate rules
+    szArgs = "advfirewall firewall delete rule name=" + szString;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "advfirewall firewall add rule name=" + szString + " dir=in action=allow protocol=TCP localport=" + WEB_SSL_PORT_NUMBER;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);
+	endif;
+
+	
+    //block port 8080 in firewall
+    //netsh advfirewall firewall add rule name="Block Port 8080" dir=in action=block protocol=TCP localport=8080
+    szExec = "netsh";
+    szString = "\"Absolute Manage Web Admin Block Port " + API_NONSSL_PORT_NUMBER + "\"";
+    //delete rule first to prevent duplicate rules
+    szArgs = "advfirewall firewall delete rule name=" + szString;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );
+	    MessageBox(szMsg1, SEVERE);
+	endif;
+    szArgs = "advfirewall firewall add rule name=" + szString + " dir=in action=block protocol=TCP localport=" + API_NONSSL_PORT_NUMBER;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );
+	    MessageBox(szMsg1, SEVERE);
+	endif;
+	
+
+	//copy *.war file into Tomcat webapps folder
+	szSource = SRCDIR^"AmWebApi"^"com.absolute.am.webapi.war";
+	
+	if (XCopyFile (szSource, szTomcatWebappsPath, COMP_NORMAL) < 0) then
+        MessageBox ("Copying com.absolute.am.webapi.war file failed. Target directory: " + szTomcatWebappsPath, SEVERE);
+        abort;
+    else
+		//MessageBox ("com.absolute.am.webapi.war file successfully copied to " + szTomcatWebappsPath, INFORMATION);
+    endif;
+
+    //wait, so that Tomcat has time to create web apps
+    //note that shorter delays caused occasional problems in the dev environment
+
+	SetStatusWindow(10, @ID_STATUS_MESSAGE_1);
+
+	Delay(4);
+	
+	SetStatusWindow(13, @ID_STATUS_MESSAGE_1);
+
+	Delay(4);
+
+	SetStatusWindow(16, @ID_STATUS_MESSAGE_1);
+
+	Delay(4);
+
+	SetStatusWindow(19, @ID_STATUS_MESSAGE_1);
+
+	Delay(4);
+
+	//copy LoadableSqliteExtensions.dll into Tomcat's folder /webapps/com.absolute.am.webapi/WEB-INF/lib
+	szFolder = szTomcatWebappsPath^"com.absolute.am.webapi"^"WEB-INF"^"lib";
+	if (ExistsDir (szFolder) != EXISTS) then
+		MessageBox ("Folder does not exist:\n" + szFolder, SEVERE);
+		abort;
+	else
+		szSource = SRCDIR^"LoadableSqliteExtensions"^"*.*";
+		
+		nReturn = XCopyFile (szSource, szFolder, INCLUDE_SUBDIR);
+		if (nReturn < 0) then
+			MessageBox ("Copying Loadable SQLite Extensions files failed,\nSource: \n" + szSource + "\nTarget: \n" + szFolder + "\nResult: " + FormatMessage(nReturn), SEVERE);
+			abort;
+		else
+			//MessageBox ("Loadable SQLite Extensions files successfully copied to " + szFolder, INFORMATION);
+		endif;
+	endif;
+
+    
+	SetStatusWindow(20, @ID_STATUS_MESSAGE_2);
+
+	//create necessary folders under szResultConfigPath
+	
+	CreateFolder(szTargetTempUploadPath);
+	CreateFolder(szTargetLogbackPath);
+	CreateFolder(szTargetUserPrefsPath);
+	CreateFolder(szTargetSettingsPath);
+	
+	    
+    //copy view_config files into specified folder
+    szSource = SRCDIR^"view_config"^"*.*";
+    szTargetViewConfigPath = szResultConfigPath^"view_config";
+    if (XCopyFile (szSource, szTargetViewConfigPath, COMP_NORMAL | INCLUDE_SUBDIR) < 0) then
+        MessageBox ("Copying view_config files failed", SEVERE);
+        abort;
+    else
+        //MessageBox ("view_config files successfully copied to " + szTargetViewConfigPath, INFORMATION);
+    endif;
+    
+    
+	Enable(BACKBUTTON);
+    Enable(CANCELBUTTON);
+	
+	//replace login URL key in the welcome page
+	ReplaceTextInFile(szProductPath, "welcome.html", "${AmWebAdminLoginUrl}", szDomainName + "/login");
+
+	//KEY REPLACEMENTS IN WEB.XML
+	
+	szXmlFilePath = szTomcat^"webapps"^"com.absolute.am.webapi"^"WEB-INF";
+	
+	
+	szTomcatPort = API_NONSSL_PORT_NUMBER;
+	
+	CheckFile:
+	nResult  = Is(FILE_EXISTS, szXmlFilePath^"web.xml");
+	
+	if (nResult = FALSE) then
+		MessageBox("The file \"" + szXmlFilePath^"web.xml" + "\" does not exist.\nMake sure " + TOMCAT8_SERVICE_NAME + " service is running.", WARNING);
+		Delay(1);
+		goto CheckFile;
+	endif;
+	
+	//$WebAPICertificatesFolder
+	szValue = szTargetCertificatePath;
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPICertificatesFolder}", szValue);
+
+	//$WebAPISyncServiceNotificationUrl
+	szValue = "http://localhost:" + szTomcatPort + "/com.absolute.am.webapi/api/syncnotify";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPISyncServiceNotificationUrl}", szValue);
+	
+	//$WebAPIViewConfigFolder
+	szValue = szResultConfigPath^"view_config";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPIViewConfigFolder}", szValue);
+	
+	//$WebAPIUserPrefsFiles
+	szValue = szTargetUserPrefsPath^"files";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPIUserPrefsFiles}", szValue);
+	
+	//$WebAPIUserPrefsDatabaseFile
+	szValue = szTargetUserPrefsPath^"UserPrefs.db";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPIUserPrefsDatabaseFile}", szValue);
+
+	//$WebAPITempUploadsFolder
+	szValue = szTargetTempUploadPath;
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPITempUploadsFolder}", szValue);
+	
+	//$WebAPILogbackFile
+	szValue = szXmlFilePath^"classes"^"logback.xml";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPILogbackFile}", szValue);
+	
+	//$WebAPISyncServicePort
+	szValue = SYNC_SERVICE_PORT_NUMBER;
+	//TODO: prompt user and update port number (when supporting functionality is in)
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPISyncServicePort}", szValue);
+	
+	//$WebAPIDatabaseFile
+	szValue = szResultConfigPath^"webapidb"^"webapi.db";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPIDatabaseFile}", szValue);
+	
+	//$WebAPISettingsFile in web.xml
+	szValue = szTargetSettingsPath^"settings.txt";
+	ReplaceTextInFile(szXmlFilePath, "web.xml", "${WebAPISettingsFile}", szValue);
+	
+	//$WebAPISettingsFile in wizard_settings.txt
+	szValue = szTargetSettingsPath^"settings.txt";
+	StrReplace ( szValue, "\\", "\\\\", 0 );
+	ReplaceTextInFile(SUPPORTDIR, "wizard_settings.txt", "${WebAPISettingsFile}", szValue);
+	
+	//$WebAPIConfigurationFile in wizard_settings.txt
+	szValue = szXmlFilePath^"web.xml";
+	StrReplace ( szValue, "\\", "\\\\", 0 );
+	ReplaceTextInFile(SUPPORTDIR, "wizard_settings.txt", "${WebAPIConfigurationFile}", szValue);
+
+	
+	//KEY REPLACEMENTS IN LOGBACK.XML
+	
+	szXmlFilePath = szTomcat^"webapps"^"com.absolute.am.webapi"^"WEB-INF"^"classes";
+	
+	//$WebAPIDataFolder
+	szValue = szResultConfigPath;
+	//remove logback.xml if exists, so that templateLogback.xml can be renamed to logback.xml
+	if (Is(FILE_EXISTS, szXmlFilePath^"logback.xml")) then
+		DeleteFile (szXmlFilePath^"logback.xml");
+	endif;
+	ReplaceTextInFile(szXmlFilePath, "templateLogback.xml", "${WebAPILogbackFileLocation}", szValue);
+	//rename and move the file
+   if (RenameFile (szXmlFilePath^"templateLogback.xml", szXmlFilePath^"logback.xml") < 0) then
+      MessageBox ("Renaming templateLogback.xml file failed. Target directory: " + szXmlFilePath, SEVERE);
+      abort;
+   else
+      //MessageBox ("templateLogback.xml file successfully renamed to logback.xml", INFORMATION);
+   endif;
+
+    
+	SetStatusWindow(70, @ID_STATUS_MESSAGE_7);
+	
+	if (!Is(FILE_EXISTS, szTargetInstallDataPath^"com.absolute.am.webapi.domain.txt")) then
+		//store domain name in text file for uninstaller
+		OpenFileMode (FILE_MODE_APPEND);
+		if (CreateFile (nvFileHandle, szTargetInstallDataPath, "com.absolute.am.webapi.domain.txt") < 0) then
+			MessageBox("Cannot create file " + szTargetInstallDataPath^"com.absolute.am.webapi.domain.txt", WARNING);
+		else
+			szMsg = szDomainName;
+			if (WriteLine(nvFileHandle, szMsg) < 0) then
+				MessageBox("Cannot write to the file " + szTargetInstallDataPath^"com.absolute.am.webapi.domain.txt.", WARNING);
+			else
+				//MessageBox ("File " + szTargetInstallDataPath^"com.absolute.am.webapi.domain.txt has been created.", INFORMATION);
+			endif;
+		endif;
+		CloseFile (nvFileHandle);
+	endif;
+	
+	if (!Is(FILE_EXISTS, szTargetInstallDataPath^"com.absolute.am.webapi.ip.txt")) then
+		//store web app's IP in text file for uninstaller
+		OpenFileMode (FILE_MODE_APPEND);
+		if (CreateFile (nvFileHandle, szTargetInstallDataPath, "com.absolute.am.webapi.ip.txt") < 0) then
+			MessageBox("Cannot create file " + szTargetInstallDataPath^"com.absolute.am.webapi.ip.txt", WARNING);
+		else
+			szMsg = szIP;
+			if (WriteLine(nvFileHandle, szMsg) < 0) then
+				MessageBox("Cannot write to the file " + szTargetInstallDataPath^"com.absolute.am.webapi.ip.txt.", WARNING);
+			else
+				//MessageBox ("File " + szTargetInstallDataPath^"com.absolute.am.webapi.ip.txt has been created.", INFORMATION);
+			endif;
+		endif;
+		CloseFile (nvFileHandle);
+	endif;
+
+	//unbind IP address from IIS
+	//netsh http delete iplisten ipaddress=xxx.xxx.xxx.xxx
+	
+	szExec = "netsh";
+    szArgs = "http delete iplisten ipaddress=" + szIpNew;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, WARNING);
+	endif;
+	
+
+    //start services in case they are not running
+    
+	SetStatusWindow(80, @ID_STATUS_MESSAGE_9);
+	
+	
+    szExec = "net";
+    szArgs = "stop " + TOMCAT8_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, WARNING);
+	endif;
+	Delay(1);
+	
+	//change Tomcat service startup mode to Automatic (it is Manual by default)
+	//note space after start=
+	szExec = "sc";
+	szArgs = "config " + TOMCAT8_SERVICE_NAME + " start= auto";
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, WARNING);
+	endif;
+	Delay(1);
+	
+    
+    //remove TomcatXw from the startup to get rid of
+	//"Unable to open the service TomcatX" pop-up
+	//which makes no harm, but is annoying
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+    RegDBSetDefaultRoot (HKEY_CURRENT_USER);
+    szRegKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+    szValue = "ApacheTomcatMonitor7.0_Tomcat7";
+    RegDBDeleteValue (szRegKey, szValue);
+    szValue = "ApacheTomcatMonitor8.0_Tomcat8";
+    RegDBDeleteValue (szRegKey, szValue);
+
+
+	szExec = "net";
+    szArgs = "start " + TOMCAT8_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);
+	    abort;
+	endif;
+
+
+	//stop AM Sync Service
+	szExec = "net";
+	szArgs = "stop \"" + ABSOLUTE_SOFTWARE + " AM Sync Service\"";
+		//MessageBox("Stop AM Sync Service command line:\n" + szArgs, INFORMATION);
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);
+	endif;
+	
+	Delay(4);
+	
+	//delete AM Sync Service
+	szExec = "sc";
+	szArgs = "Delete \"" + ABSOLUTE_SOFTWARE + " AM Sync Service\"";
+		//MessageBox("Delete AM Sync Service command line:\n" + szArgs, INFORMATION);
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);
+	endif;
+	
+	Delay(4);
+	
+	//delete C:\ProgramData\Absolute Software\AMSyncServices
+	szExec = "cmd";
+	szArgs = "/c del /f /q \"" + CommonAppDataFolder^ABSOLUTE_SOFTWARE^"AMSyncServices\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);      
+	endif;
+	
+	//create and start AM Sync Service
+	szExec = "sc";
+	szArgs = "create \"" + ABSOLUTE_SOFTWARE + " AM Sync Service\" binPath= \"" + szTargetAmSyncPath64^"AMSyncServices.exe\" start= auto obj= LocalSystem password= \"\"";
+		//MessageBox("Create AM Sync Service command line:\n" + szArgs, INFORMATION);
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);
+		abort;
+	endif;
+
+	szArgs = "description \"" + ABSOLUTE_SOFTWARE + " AM Sync Service\" \"" + @ID_SYNC_SERVICE_DESCRIPTION + "\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);
+	endif;
+		
+
+    Delay(3);
+	
+    szExec = "sc";
+    szArgs = "start \"" + ABSOLUTE_SOFTWARE + " AM Sync Service\"";
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);
+	    abort;
+	endif;
+
+	SetStatusWindow(90, @ID_STATUS_MESSAGE_10);
+	
+	//remove old versions of the cert registration apps
+	DeleteDir(PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMCertRegistration", ALLCONTENTS);
+	DeleteDir(PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMWebConfigurationTool", ALLCONTENTS);
+	DeleteFile (CommonAppDataFolder^"Microsoft"^"Windows"^"Start Menu"^"Programs"^"Absolute Manage"^"Web Admin Certificate Registration.lnk");
+	DeleteFile (CommonAppDataFolder^"Microsoft"^"Windows"^"Start Menu"^"Programs"^"Absolute Manage"^"Web Admin Configuration Tool.lnk");	
+	
+
+	//copy AMWebConfigurationApp.jar
+	szSource = SRCDIR^"AmWebConfigurationTool"^"AMWebConfigurationApp.jar";
+	szTargetAmConfigurationToolPath = PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMWebConfigurationTool";
+	if (XCopyFile (szSource, szTargetAmConfigurationToolPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying AMWebConfigurationApp.jar file failed", SEVERE);
+		abort;
+	else
+		//MessageBox ("AMWebConfigurationApp.jar file successfully copied to " + szTargetAmConfigurationToolPath, INFORMATION);
+	endif;
+	
+
+	//copy com.absolute.am.Elevator.jar to complement AMWebConfigurationApp.jar
+	szSource = SRCDIR^"AmWebConfigurationTool"^"com.absolute.am.Elevator.jar";
+	szTargetAmConfigurationToolPath = PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMWebConfigurationTool";
+	if (XCopyFile (szSource, szTargetAmConfigurationToolPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying com.absolute.am.Elevator.jar file failed", SEVERE);
+		abort;
+	else
+		//MessageBox ("com.absolute.am.Elevator.jar file successfully copied to " + szTargetAmConfigurationToolPath, INFORMATION);
+	endif;
+	
+	//copy settings file
+	szSource = SUPPORTDIR^"wizard_settings.txt";
+	szTargetAmConfigurationToolPath = PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMWebConfigurationTool";
+	if (XCopyFile (szSource, szTargetAmConfigurationToolPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying wizard_settings.txt file failed", SEVERE);
+		abort;
+	else
+		//MessageBox ("wizard_settings.txt file successfully copied to " + szTargetAmConfigurationToolPath, INFORMATION);
+	endif;
+	
+	//copy the default web.xml file
+	szSource = szTomcat^"webapps"^"com.absolute.am.webapi"^"WEB-INF"^"web.xml";
+	szTargetAmConfigurationToolPath = PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMWebConfigurationTool";
+	if (XCopyFile (szSource, szTargetAmConfigurationToolPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying the default web.xml file failed", WARNING);
+	else
+		//MessageBox ("The default web.xml file successfully copied to " + szTargetAmConfigurationToolPath, INFORMATION);
+	endif;
+	
+	//copy env.js file
+	szSource = SRCDIR^"AmWebUi"^"env.js";
+	szTargetAmConfigurationToolPath = PROGRAMFILES64^ABSOLUTE_SOFTWARE^"AMWebConfigurationTool";
+	if (XCopyFile (szSource, szTargetAmConfigurationToolPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying env.js file failed", SEVERE);
+		abort;
+	else
+		//MessageBox ("env.js file successfully copied to " + szTargetAmConfigurationToolPath, INFORMATION);
+	endif;
+		
+	//Relax ExecutionPolicy to be able to run PS scripts
+	szExec = "powershell";
+	szArgs = " -Command Set-ExecutionPolicy RemoteSigned";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);
+		abort;
+	else
+		//MessageBox ("Relax ExecutionPolicy successfully executed.", INFORMATION);
+	endif;
+
+	//copy powershell script to install folder
+	if (XCopyFile (SUPPORTDIR^"AddIPsToIIS.ps1", szTargetInstallDataPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying AddIPsToIIS.ps1 script file failed. Target directory: " + szTargetInstallDataPath, SEVERE);
+		abort;
+	else
+		//MessageBox ("AddIPsToIIS.ps1 file successfully copied to " + szTargetInstallDataPath, INFORMATION);
+	endif;
+
+		
+	szExec = "powershell";
+	szScriptPath = szTargetInstallDataPath^"AddIPsToIIS.ps1";
+	//script parameters: $ipWebAdmin
+	szArgs = " -file \"" + szScriptPath + "\" \"" + szIpNew + "\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);
+		abort;
+	else
+		//MessageBox ("iplisten table successfully updated.", INFORMATION);
+	endif;
+
+		
+	//create shortcut
+	//copy powershell script to install folder
+	if (XCopyFile (SUPPORTDIR^"CreateShortcut.ps1", szTargetInstallDataPath, COMP_NORMAL) < 0) then
+		MessageBox ("Copying CreateShortcut.ps1 script file failed. Target directory: " + szTargetInstallDataPath, SEVERE);
+		abort;
+	else
+		//MessageBox ("CreateShortcut.ps1 file successfully copied to " + szTargetInstallDataPath, INFORMATION);
+	endif;
+
+	//note using favicon from the web app
+	szExec = "powershell";
+	szScriptPath = szTargetInstallDataPath^"CreateShortcut.ps1";
+	//script parameters: $javaFullPath, $apiCertFolder, $jarFullPath, $portNumber, $iconFullPath, $linkName
+	szArgs = " -file \"" + szScriptPath + "\" \"" + szJavaFullPath + "\" \"" + szTargetCertificatePath + "\" \"" + szTargetAmConfigurationToolPath^"com.absolute.am.Elevator.jar\" " + SYNC_SERVICE_PORT_NUMBER + " \"" + szProductPath^"packages"^"platform"^"desktop"^"img"^"favicon.ico\" \"Web Admin Configuration Tool.lnk\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );
+		MessageBox(szMsg1, SEVERE);
+		abort;
+	else
+		//MessageBox ("Configuration Tool shortcut successfully created.", INFORMATION);
+	endif;
+
+	//clean-up
+	szExec = "cmd";
+	szArgs = "/c del /f /q \"" + szTargetInstallDataPath^"CreateShortcut.ps1\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);      
+	endif;
+
+
+	if (isFirstTimeInstall) then
+				
+		//launch configuration tool
+		//note extra parameter Caller="Installation" in this case
+		szExec = "cmd";
+		szArgs = "/c cd \"" + szTargetAmConfigurationToolPath + "\" \& \"" + szJavaFullPath + "\" -jar AMWebConfigurationApp.jar WebAPICertFolder=\"" + szTargetCertificatePath + "\" SyncSvcPortNumber=" + SYNC_SERVICE_PORT_NUMBER + " Caller=\"Installation\"";
+		if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+			Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+			MessageBox(szMsg1, SEVERE);
+			abort;
+		endif;
+		
+	endif;
+		
+	//restart http, so that updated iplisten table is applied
+	szExec = "cmd";
+	szArgs = "/c net stop http /y";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "/c net stop " + TOMCAT8_SERVICE_NAME;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "/c net start http";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "/c net start w3svc";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "/c net start " + TOMCAT8_SERVICE_NAME;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+
+	//clean-up	
+	szExec = "cmd";
+	szArgs = "/c del /f /q \"" + szTargetInstallDataPath^"AddIPsToIIS.ps1\"";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);      
+	endif;
+	
+	//Restrict ExecutionPolicy
+	szExec = "powershell";
+	szArgs = " -Command Set-ExecutionPolicy Restricted";
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, WARNING);
+		abort;
+	else
+		//MessageBox ("Restrict ExecutionPolicy successfully executed.", INFORMATION);
+	endif;
+	
+	//delete old web site under IIS if exists
+	szExec = WINDIR^"System32"^"inetsrv"^"appcmd.exe";
+	szArgs = "delete site " + WEB_SITE_NAME;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		//don't raise an error - IIS may not exist on the machine
+		//Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		//MessageBox(szMsg1, WARNING);
+	endif;
+		
+end; 
+
+prototype BackupFolder(STRING, STRING);
+function BackupFolder(szSource, szTarget)
+begin
+
+	if (ExistsDir (szSource) != EXISTS) then
+	
+		//MessageBox ("Folder cannot be backed up - source folder does not exist: " + szSource, INFORMATION);
+		
+	else
+
+		//XCopyFile is not used to avoid file access error caused by exclusive read lock
+
+		szExec = "cmd";
+		szArgs = "/c robocopy \"" + szSource + "\" \"" + szTarget + "\" /e /copyall";
+		//MessageBox ("Creating backup copy,\n command line:\n" + szArgs, INFORMATION);
+		if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+			Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+			MessageBox(szMsg1, SEVERE);
+			abort;
+		endif;
+		
+	endif;
+
+end;
+
+prototype RestoreFolder(STRING, STRING);
+function RestoreFolder(szSource, szTarget)
+begin 
+
+	if (ExistsDir (szSource) != EXISTS) then
+	
+		//MessageBox ("Folder cannot be restored - source folder does not exist: " + szSource, INFORMATION);
+		
+	else
+		
+		szSource = szSource^"*.*";
+		nReturn = XCopyFile (szSource, szTarget, COMP_NORMAL | INCLUDE_SUBDIR);
+		if (nReturn < 0) then
+			MessageBox ("Folder cannot be restored, source: " + szSource + ", target: " + szTarget + ", result: " + FormatMessage(nReturn), SEVERE);
+			abort;
+		else
+			//MessageBox ("Folder " + szSource + " successfully restored to " + szTarget, INFORMATION);
+		endif;
+		
+	endif;
+	
+end;

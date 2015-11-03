@@ -1,0 +1,12 @@
+{{#if iOS6andIOS7Selected}}
+  <p><span class="icon-triangle-attention"></span>{{t 'amMobileDevice.modals.setRoamingOptions.unsupportedAttentionMessage'}}</p>
+{{/if}}
+
+<div class="commands-input-list">
+  <label class="for-checkbox {{if isVoiceRoamingSelectionDisabled 'disabled'}}">
+    {{input type="checkbox" checked=voiceRoamingEnabled disabled=isVoiceRoamingSelectionDisabled}} {{t 'amMobileDevice.modals.setRoamingOptions.voiceRoamingEnabled'}}
+  </label>
+  <label class="for-checkbox {{if isDataRoamingSelectionDisabled 'disabled'}}">
+    {{input type="checkbox" checked=dataRoamingEnabled  disabled=isDataRoamingSelectionDisabled}} {{t 'amMobileDevice.modals.setRoamingOptions.dataRoamingEnabled'}}
+  </label>
+</div>

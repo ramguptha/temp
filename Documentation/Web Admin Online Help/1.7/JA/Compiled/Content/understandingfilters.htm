@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="ja" xml:lang="ja" data-mc-search-type="NGram" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="ポリシーを操作する|スマートポリシーを作成する">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>フィルターを理解する</title>
+        <script>/* <![CDATA[ */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50107827-2', 'absolute.com');
+			ga('send', 'pageview');
+		/* ]]> */</script>
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" data-mc-generated="True" />
+        <link href="Resources/Stylesheets/Absolute.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Default.htm#understandingfilters.htm">ナビ付きでトピックを開</a>
+        </p>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">現在位置: </span><a class="MCBreadcrumbsLink" href="workingwithpolicies.htm">ポリシーを操作する</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="creatingsmartpolicies.htm">スマートポリシーを作成する</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">フィルターを理解する</span>
+        </div>
+        <h1 class="Heading1">フィルターを理解する</h1>
+        <p class="Body">スマートポリシーのフィルターは、ポリシーの一部であるべきモバイルデバイスを決定するために使用できます。たとえば、特定の構成プロファイルを iOS&#160;6 以前のモバイルデバイスにインストールするというポリシーを作成したい場合があるかもしれません。展開されているデバイスが数百台あれば、ポリシーに含めるデバイスを手作業でピックアップして選択するのではなく、システムが自動的にデバイスのリストをその場で作成し、更新してほしいと思うでしょう。スマートポリシーは、設定したフィルターに基づいてポリシーに含めるデバイスのリストを管理します。(スマートポリシーの作成については、<a href="creatingsmartpolicies.htm">スマートポリシーを作成する</a>を参照してください。)</p>
+        <h2 class="Heading2">フィルターフィールドを使用する</h2>
+        <p class="Body">フィルターは、使用するフィルター基準に応じて2つ以上のフィールドで構成されます。以下は、スマートポリシー内で指定できるフィルターの例を示します。</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex3.jpg" />
+        </p>
+        <p class="Figure">例 1:このフィルターは、<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Absolute Manage<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>組織がそのエンドポイントのすべてを、PC、Mac、iOS、Android、Windows Phone デバイスを含む単独コンソールから永続的に管理し、安全を確保できるようにします。Absolute Manage は、完全な資産管理ソリューションとして展開することも、モバイルデバイスの管理 (MDM) のスタンドアローンソリューションとして展開することもできます。</span></a> によって積極的に管理されているモバイルデバイスを抽出します。</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex1.jpg" />
+        </p>
+        <p class="Figure">例 2:このフィルターは、任意のバージョンのiOS オペレーティングシステムを実行しているモバイルデバイスを抽出します。</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex2.jpg" />
+        </p>
+        <p class="Figure">例 3:このフィルターは、任意のオペレーティングシステムのバージョン 6 以前を実行しているモバイルデバイスを抽出します。</p>
+        <p class="BodyWithListFollowing">フィルターに含まれるフィールドは、以下のように定義されています:</p>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">最初のフィールド = フィルター基準:利用可能なフィルター基準のリスト (<span class="Bold">管理中のモバイルデバイス</span>など)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">2 番目のフィールド= 演算子:選択したフィルター基準ごとの演算子のリスト (<span class="Bold">は以下の値以下である</span>など)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">3 番目のフィールド = 値:特定の値を入力または選択できるテキストフィールドまたはリストボックス (選択したフィルター基準に応じて、利用できる場合とできない場合があります)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Last" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="●">4 番目のフィールド = 値のタイプ:前のフィールドで入力した値をさらに定義するための値のタイプのリスト (選択したフィルター基準に応じて、利用できる場合とできない場合があります)</td>
+            </tr>
+        </table>
+        <p class="BodyWithListFollowing">たとえば、保証期間が 30 日後に切れるモバイルデバイスを抽出するには、以下のようにフィルターを作成することができます:</p>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">フィルター基準 = <span class="Bold">モバイルデバイスの保証終了</span></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">演算子 = <span class="Bold">次の値に入る</span></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">値 = <span class="Bold">30</span></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">値のタイプ = <span class="Bold">日数</span></td>
+            </tr>
+        </table>
+        <h2 class="Heading2">フィルターの組み合わせ</h2>
+        <p class="BodyWithListFollowing">希望する結果を得るため、複数のフィルターを組み合わせることができます:</p>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●"> 結果の精度を高めるには、フィルターエリア上部のリストから<span class="Bold">すべて</span>を選択し、<span class="Bold">フィルターを追加</span>をクリックして追加のフィルターを指定します。この操作によって各フィルター間に「AND」演算子が置かれ、すべてのフィルターを満たす結果のみ得られるようになります。</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Last" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="●">結果の範囲を広げるには、フィルターエリア上部のリストから<span class="Bold">任意</span>を選択し、<span class="Bold">フィルターを追加</span>をクリックして追加のフィルターを指定します。この操作によって各フィルター間に「OR」演算子が置かれ、少なくとも 1 つのフィルターを満たす結果が得られるようになります。 </td>
+            </tr>
+        </table>
+        <p class="BodyFollowingList">希望の結果を得るため、必要なだけフィルターを追加することができます。 </p>
+        <h2 class="Heading2">フィルターを削除する</h2>
+        <p class="BodyWithListFollowing">1つ以上のフィルターを削除することができます。個々のフィルターを削除するには、フィルターの隣にある<img src="Resources/Images/Remove_filter_icon_15x14.png" style="width: 15;height: 14;" class="Icon" />アイコンをクリックします。</p>
+        <table cellspacing="0" width="100%">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <tr>
+                <td>
+                    <br />
+                    <br /><span style="font-size: 8pt;">©2015 Absolute Software Corporation. 
+				無断複写・複製・転載を禁ず。</span>
+                </td>
+                <td>
+                    <p style="text-align: right;">
+                        <br />
+                        <br />
+                        <script type="text/javascript">/*<![CDATA[*/var str = location.href.toString();
+//var arr = str.split("::/");
+var htm_page = str;
+var mailSubject = 'Absolute Manage Web Admin Documentation Feedback: ' + htm_page;
+var mailBody = '\n\n(Comments apply to the following help page: ' + location.href + ')'; 
+							var mailDisplay = 'このヘルプトピックについてフィードバックを送る'; 
+document.write('<a href="#" style="font-size: 8pt;">上に戻る</a> | <a target="_blank" href="mailto:helpfeedback_AMWA@absolute.com' + '?subject=' + escape(mailSubject) + '&body=' + escape(mailBody) + '" style="font-size: 8pt;">' + mailDisplay + '</a>');/*]]>*/</script>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

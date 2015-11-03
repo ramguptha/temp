@@ -1,0 +1,27 @@
+{{#unless noFiltersSpecified}}
+  {{#each filterNodeController as |filterController|}}
+      "{{filterController.attrLabel}}"
+      {{filterController.opLabel}}
+
+      {{#if filterController.opTypeIsBetweenDate}}
+        "{{filterController.topRvalValue1}}" <span class="and-class">{{t 'desktop.advancedFilterComponent.ipAddressTo'}}</span>  "{{filterController.topRvalValue2}}"
+      {{else}}
+        {{#if filterController.opTypeIsLastNOp}}
+          "{{filterController.topRvalValue1}}" {{filterController.tTopRvalValue2}} {{filterController.filterLineAppendWord}}
+        {{else}}
+          {{#if filterController.opTypeIsLastNOpRange}}
+            "{{filterController.topRvalValue1}}" <span class="and-class">{{t 'desktop.advancedFilterComponent.betweenAnd'}}</span> "{{filterController.topRvalValue2}}" {{filterController.tTopRvalValue3}} {{filterController.filterLineAppendWord}}
+          {{else}}
+            {{#if filterController.opTypeIsIpRange}}
+              "{{filterController.topRvalValue1}}" <span class="and-class">{{t 'desktop.advancedFilterComponent.ipAddressTo'}}</span> "{{filterController.topRvalValue2}}"
+            {{else}}
+              {{#unless filterController.opIsUnary}}
+                "{{filterController.opRvalPresentation}}"
+              {{/unless}}
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{#unless filterController.isLastOperand}} <br/> <span class="or-class">{{filterNodeController.filter.label}}</span> <br/> {{/unless}}
+  {{/each}}
+{{/unless}}

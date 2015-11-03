@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="522" MadCap:lastWidth="1228">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Gathering Computer Information</h1>
+        <p class="Body">You can gather a wide
+range of information on your administered computers to help you manage your network.</p>
+        <p class="Body">Information about administered computers is regularly collected by the Absolute Manage agent, which sends the information to the Absolute Manage Server. This information is then retrieved by <MadCap:variable name="Variables.ProductName" /> for display within the application. The process of collecting information is mostly automatic; however, certain types of
+information – such as font, printer, and startup item information –
+are collected on request only to conserve local processing power
+and network bandwidth. You can send a command to retrieve information on these specific items, as well as to manually update other computer information when you do not want to wait for the
+next scheduled update.</p>
+        <p class="TaskIntro">To manually gather computer information:</p>
+        <p class="Steps" MadCap:autonum="1. ">Navigate to a page in the Computers area that contains the computers you want to gather information about. For example, you can navigate to <span class="Bold">Computers</span> &gt; <span class="Bold">All Computers</span>, then <a href="searchingforinfo.htm">search for specific computers</a>.</p>
+        <p class="Steps" MadCap:autonum="2. ">In the results grid, select the checkbox of each applicable computer and click <span class="Bold">Commands</span> &gt; <span class="Bold">Gather Inventory</span>.</p>
+        <p class="Indent2">You can also issue the command for a single computer from its Computer Details page:</p>
+        <p class="SubSteps" MadCap:autonum="a) ">In the results grid, click the computer you want to gather information about.  The computer's Computer Details page opens.</p>
+        <p class="SubSteps" MadCap:autonum="b) "> From the Commands sidebar, click <span class="Bold">Gather Inventory</span>.</p>
+        <p class="Steps" MadCap:autonum="3. ">Computer information that has changed since the last update is always gathered when you perform this command. You can also select options for gathering additional information:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Force full inventory</span> – Prompts agents on the selected computers to transmit all
+computer information (that is, not only information that has
+changed) to the server</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Include font information</span> – Prompts agents on the selected computers to transmit information on installed fonts</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Include printer information</span> – Prompts agents on the selected computers to transmit information on connected printers</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Include startup item information (ОS X only)</span> – Prompts agents on selected ОS X computers to transmit information on installed startup items</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">Include service information (Windows only)</span> – Prompts agents on selected Windows computers to transmit information on running services</p>
+        <p class="Steps" MadCap:autonum="4. ">Click <span class="Bold">Gather Inventory</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p class="Body">
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="viewingcompdetails.htm" />
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

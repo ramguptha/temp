@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlossary>
+  <GlossaryEntry>
+    <Terms>
+      <Term>passcode</Term>
+    </Terms>
+    <Definition
+      Link="">A string of alphanumeric characters required to access a mobile device.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UDID</Term>
+    </Terms>
+    <Definition
+      Link="">Unique Device Identifier. A 40-digit sequence of letters and numbers that uniquely identifies every iPhone, iPod touch, and iPad.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>managed device</Term>
+    </Terms>
+    <Definition
+      Link="">A mobile device that is enrolled on the Absolute Manage server and that you can administer through Absolute Manage Web Admin.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>AbsoluteApps</Term>
+    </Terms>
+    <Definition
+      Link="">The client application installed on mobile devices that acts as a link to Absolute Manage. AbsoluteApps reports on the status of a mobile device and enables administrators to perform remote actions on the device.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Persistence</Term>
+    </Terms>
+    <Definition
+      Link="">Technology that allows the Absolute Manage client software to remain on a mobile device even after removal attempts or factory resets. Persistence technology is supported on certain Android devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MAC address</Term>
+    </Terms>
+    <Definition
+      Link="">Media Access Control Address. A 12-digit hexadecimal number that hardware devices use to uniquely identify themselves on a network.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>roaming</Term>
+    </Terms>
+    <Definition
+      Link="">When a mobile device moves out of the standard network of its carrier and connects to networks of other carriers to resume voice or data service.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>IMEI</Term>
+    </Terms>
+    <Definition
+      Link="">International Mobile Station Equipment Identity. A 15-digit number that uniquely identifies all 3GPP (GSM, UMTS, and LTE) mobile devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MEID</Term>
+    </Terms>
+    <Definition
+      Link="">Mobile Equipment Identifier. A 14-digit number that uniquely identifies all CDMA mobile devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SIM</Term>
+    </Terms>
+    <Definition
+      Link="">Subscriber Identification Module. An integrated circuit that securely stores information used to identify and authenticate subscribers on mobile devices. A SIM circuit is embedded into a removable plastic card called a "SIM card".</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>configuration profile</Term>
+    </Terms>
+    <Definition
+      Link="">An easy way of distributing common settings (for example, Wi-Fi, VPN, email, or application-specific settings) to mobile devices and OS X computers.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>provisioning profile</Term>
+    </Terms>
+    <Definition
+      Link="">Applies to iOS devices only. A binary file that contains the necessary digital certificate, App ID, and UDIDs to allow an enterprise or beta application to be distributed to an iOS device outside of the App Store.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>OS</Term>
+    </Terms>
+    <Definition
+      Link="">Operating System. The software on mobile devices that manages hardware resources and provides common services for applications.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MDM</Term>
+    </Terms>
+    <Definition
+      Link="">Mobile Device Management. The module of Absolute Manage that provides support for administering mobile devices through an MDM server.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Absolute Manage</Term>
+    </Terms>
+    <Definition
+      Link="">Allows organizations to persistently manage and secure all of their endpoints from a single console, including PC, Mac, iOS, Android, and Windows Phone devices. Absolute Manage can be deployed as a complete asset management solution as well as a stand-alone solution for Mobile Device Management (MDM).</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GB</Term>
+    </Terms>
+    <Definition
+      Link="">Gigabyte. A multiple of byte, the unit for measuring the size of digital information. One gigabyte equals either 1,000,000,000 or 1,073,741,824 bytes, depending on the measurement standard used.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>iTunes</Term>
+    </Terms>
+    <Definition
+      Link="">Apple's mobile device management application that provides an interface for managing files and applications on iOS devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>USB</Term>
+    </Terms>
+    <Definition
+      Link="">Universal Serial Bus. An industry standard that defines the connection between electronic devices and their peripherals.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SD</Term>
+    </Terms>
+    <Definition
+      Link="">Secure Digital. A memory card format used in portable devices such as smartphones.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GPS</Term>
+    </Terms>
+    <Definition
+      Link="">Global Positioning System. A global system of navigational satellites that can provide precise location and time information anywhere on or near the Earth where there is an unobstructed line of sight to four or more GPS satellites.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Wi-Fi</Term>
+    </Terms>
+    <Definition
+      Link="">A technology that allows electronic devices to connect to the Internet or communicate with one another wirelessly within a particular area over radio waves.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Bluetooth</Term>
+    </Terms>
+    <Definition
+      Link="">A technology standard for exchanging data between electronic devices wirelessly over short distances.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>CPU</Term>
+    </Terms>
+    <Definition
+      Link="">Central Processing Unit. The component within a mobile device that interprets and carries out hardware and software instructions.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>IPv4 address</Term>
+    </Terms>
+    <Definition
+      Link="">Internet Protocol Version 4 Address. A numerical label assigned to each device in a network using the Internet Protocol Version 4 for communication.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>kernel</Term>
+    </Terms>
+    <Definition
+      Link="">A fundamental part of a mobile device's operating system that acts as a bridge between the device's software and hardware.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>RAM</Term>
+    </Terms>
+    <Definition
+      Link="">Random Access Memory. The main type of memory in a mobile device that provides a temporary workspace for quickly carrying out instructions and processing data.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>cache</Term>
+    </Terms>
+    <Definition
+      Link="">A type of memory that a mobile device can access more quickly than random access memory (RAM). It is used to store instructions that are repeatedly required to run applications, improving overall device speed.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GSM</Term>
+    </Terms>
+    <Definition
+      Link="">Global System for Mobile Communications. The world's most widely used international standard for digital cellular communications.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>CDMA</Term>
+    </Terms>
+    <Definition
+      Link="">Code Division Multiple Access. A digital cellular technology that uses spread-spectrum techniques, most common in North America and parts of Asia.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>EDGE</Term>
+    </Terms>
+    <Definition
+      Link="">Enhanced Data GSM Environment. A subsequent version of the GSM standard, designed to enable faster data rates and the delivery of multimedia to mobile devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GPRS</Term>
+    </Terms>
+    <Definition
+      Link="">General Packet Radio Service. A packet-based wireless data standard used on GSM networks that allows mobile devices to maintain a continuous connection to the Internet. GPRS was the first popular data standard for mobile devices and is an evolutionary step toward EDGE and UMTS.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UMTS</Term>
+    </Terms>
+    <Definition
+      Link="">Universal Mobile Telecommunications Service. A third generation (3G) mobile broadband system for cellular networks based on the GSM standard that provides high-speed data and multimedia capabilities to mobile users.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ICC Identifier</Term>
+    </Terms>
+    <Definition
+      Link="">Integrated Circuit Card Identifier. A number of up to 22 digits that uniquely identifies each SIM.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>IMEISV</Term>
+    </Terms>
+    <Definition
+      Link="">International Mobile Station Equipment Identity Software Version. The two-digit software version number attached to the IMEI that identifies the revision of the software installed on the mobile device.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Active Directory</Term>
+    </Terms>
+    <Definition
+      Link="">A directory service developed by Microsoft for Windows domain networks and included in most Windows Server operating systems as a set of processes and services.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Open Directory</Term>
+    </Terms>
+    <Definition
+      Link="">The native directory service for Mac OS X Server.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>push notifications</Term>
+    </Terms>
+    <Definition
+      Link="">A technique used by an application to alert mobile device users about content updates, messages, or other events without the need to open the application.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Absolute Manage Admin</Term>
+    </Terms>
+    <Definition
+      Link="">The software application that administrators can install on their workstations to manage client devices (both computers and mobile devices) through the Absolute Manage system. In contrast, Absolute Manage Web Admin is a web-based application that administrators access through their browser to manage mobile devices only.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>VPN</Term>
+    </Terms>
+    <Definition
+      Link="">Virtual Private Network. A network technology that creates a secure connection to a private network over a public network such as the Internet.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ActiveSync</Term>
+    </Terms>
+    <Definition
+      Link="">A protocol that allows mobile devices to synchronize data and policies with a Microsoft Exchange server.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>policy</Term>
+    </Terms>
+    <Definition
+      Link="">A tool you can use to automate certain aspects of mobile device administration. A policy includes a collection of target mobile devices, plus one or more of the following elements: third-party applications, in-house applications, configuration profiles, and media files. There are two types of policies you can use: standard policies and smart policies.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>standard policy</Term>
+    </Terms>
+    <Definition
+      Link="">A policy that allows you to manually add and remove specific mobile devices to and from the policy.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>smart policy</Term>
+    </Terms>
+    <Definition
+      Link="">A policy that allows you to set filter criteria that determine which mobile devices should be included in the policy.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>in-house applications</Term>
+    </Terms>
+    <Definition
+      Link="">Applications that your organization has developed for use on mobile devices in your IT deployment.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>third-party applications</Term>
+    </Terms>
+    <Definition
+      Link="">Applications for mobile devices that are developed outside of your organization and are generally available through a distribution platform such as Google Play or the App Store.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>media files</Term>
+    </Terms>
+    <Definition
+      Link="">Files that you can distribute to mobile devices through policies.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UTC</Term>
+    </Terms>
+    <Definition
+      Link="">Coordinated Universal Time. The primary time standard by which the world regulates clocks and time. UTC is closely related to and generally interchangeable with Greenwich Mean Time (GMT).</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>DST</Term>
+    </Terms>
+    <Definition
+      Link="">Daylight Saving Time. The practice of advancing clocks during the summer months so that people rise earlier in the morning and experience more daylight in the evening. Typically, clocks are adjusted forward one hour near the start of spring and are adjusted backward in the autumn. Exact start and end dates for DST vary with location.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>AbsoluteSafe</Term>
+    </Terms>
+    <Definition
+      Link="">An Absolute Manage client application for iOS and Android devices that allows administrators to securely distribute media to mobile device users.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>VPP</Term>
+    </Terms>
+    <Definition
+      Link="">Volume Purchase Program. A program offered by Apple that allows organizations to purchase iOS applications in volume and distribute them to mobile device users through the use of activation codes.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>iTunes Store</Term>
+    </Terms>
+    <Definition
+      Link="">An online digital media store operated by Apple that allows users of Apple devices to purchase and download music, video, electronic books, and other media.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UUID</Term>
+    </Terms>
+    <Definition
+      Link="">Universally Unique Identifier. A 128-bit number that uniquely identifies Internet objects or data.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>heartbeat</Term>
+    </Terms>
+    <Definition
+      Link="">A regular signal sent by the agent indicating that it is still running on a computer.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>agent</Term>
+    </Terms>
+    <Definition
+      Link="">An endpoint software module that allows you to maintain a connection with all of the devices in your deployment. The agent makes regularly scheduled calls to the Absolute Manage Server to report on device status and to allow for remote device management.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ROM</Term>
+    </Terms>
+    <Definition
+      Link="">Read-Only Memory. A type of storage medium that permanently stores data on a computer, even when turned off. Normally, ROM can only be read and not written to.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>swap space</Term>
+    </Terms>
+    <Definition
+      Link="">The area on a hard disk that temporarily holds inactive memory pages, and along with RAM, makes up a machine's virtual memory. Swap space is used when a machine needs physical memory for active processes and there is insufficient unused physical memory available.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ATA</Term>
+    </Terms>
+    <Definition
+      Link="">Advanced Technology Attachment. An older interface standard for the connection of storage devices (such as hard disk drives and optical disc drives) in computers.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SCSI</Term>
+    </Terms>
+    <Definition
+      Link="">Small Computer System Interface. A set of parallel interface standards developed by the American National Standards Institute (ANSI) for attaching printers, disk drives, scanners, and other peripheral devices to computers.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>FireWire</Term>
+    </Terms>
+    <Definition
+      Link="">A technology that allows high-speed communication and data exchange between digital devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>PCI</Term>
+    </Terms>
+    <Definition
+      Link="">Peripheral Component Interconnect. An interconnection system between a computer's microprocessor and any devices attached through expansion slots, such as modem cards and network cards.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>BIOS</Term>
+    </Terms>
+    <Definition
+      Link="">Basic Input/Output System. Built-in firmware used to start up a computer after it is powered on. BIOS also manages data flow between the computer's operating system and any attached devices.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SMC</Term>
+    </Terms>
+    <Definition
+      Link="">System Management Controller. A subsystem of Intel processor-based Mac computers that controls various internal systems.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>FTP</Term>
+    </Terms>
+    <Definition
+      Link="">File Transfer Protocol. A standard network protocol used to transfer files from one computer to another over the internet.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>DHCP</Term>
+    </Terms>
+    <Definition
+      Link="">Dynamic Host Configuration Protocol. A standardized network protocol used on Internet Protocol (IP) networks for dynamically distributing network configuration parameters, such as IP addresses for interfaces and services.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>DNS</Term>
+    </Terms>
+    <Definition
+      Link="">Domain Name System. A hierarchical distributed naming system for computers, services, or any resource connected to the internet or a private network that translates domain and host names into IP addresses.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>TCP</Term>
+    </Terms>
+    <Definition
+      Link="">Transmission Control Protocol. A transport layer protocol used by applications that require guaranteed delivery of data.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>action</Term>
+    </Terms>
+    <Definition
+      Link="">Allows you to specify what Absolute Manage should do when a mobile device enters a smart policy.</Definition>
+  </GlossaryEntry>
+</CatapultGlossary>

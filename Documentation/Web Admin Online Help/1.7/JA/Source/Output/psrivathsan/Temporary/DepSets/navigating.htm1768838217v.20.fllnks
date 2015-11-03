@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Stylesheets/In_Column.css" />
+    <Link
+      Url="Content/navigating.htm" />
+    <Link
+      Url="Content/Resources/Images/toolbar.jpg" />
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/viewingcommands.htm" />
+    <Link
+      Url="Content/Resources/Images/managenav.jpg" />
+    <Link
+      Url="Content/Resources/Images/infonav.jpg" />
+    <Link
+      Url="Content/Resources/Images/usernav.jpg" />
+    <Link
+      Url="Content/Resources/Images/sidebar.jpg" />
+    <Link
+      Url="Content/Resources/Images/work_area.jpg" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/Resources/Images/SortOrder2_icon.png" />
+    <Link
+      Url="Content/Resources/Images/SortOrder_icon.png" />
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Project/VariableSets/Variables.flvar" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Stylesheets/In_Column.css" />
+    <Link
+      Url="Content/navigating.htm#Navigati" />
+    <Link
+      Url="Content/navigating.htm#Sidebar" />
+    <Link
+      Url="Content/navigating.htm#Work" />
+    <Link
+      Url="Content/Resources/Images/toolbar.jpg" />
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/viewingcommands.htm" />
+    <Link
+      Url="Content/Resources/Images/managenav.jpg" />
+    <Link
+      Url="Content/Resources/Images/infonav.jpg" />
+    <Link
+      Url="Content/Resources/Images/usernav.jpg" />
+    <Link
+      Url="Content/Resources/Images/sidebar.jpg" />
+    <Link
+      Url="Content/Resources/Images/work_area.jpg" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/Resources/Images/SortOrder2_icon.png" />
+    <Link
+      Url="Content/Resources/Images/SortOrder_icon.png" />
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Project/VariableSets/Variables.flvar" />
+  </LongLinks>
+  <Anchors>
+    <Anchor
+      Name="Navigati" />
+    <Anchor
+      Name="Sidebar" />
+    <Anchor
+      Name="Work" />
+  </Anchors>
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables>
+    <Variable
+      Name="Variables.ProductName" />
+  </Variables>
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/Stylesheets/In_Column.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

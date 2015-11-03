@@ -1,0 +1,338 @@
+<div class="snap-content-container">
+
+  <div class="all-details-content">
+
+  <div class="snap-content-title"><h3>{{t 'amComputer.systemSoftwareTab.title'}}</h3>
+  </div>
+
+  <div class="snap-content-icon"><img src={{deviceIconPath}}>
+  </div>
+
+  <div class="device-main-description">
+    <h4 class="device-model">{{machineModel}}</h4>
+    <div class="device-details-table-heading">
+      <div class="table-heading-row">
+        <div class="device-details-table-cell"><span class="os-version"><img src={{osIconPath}}></span>{{t 'amData.computerSystemSoftwareSpec.osPlatform'}}<p>{{relatedSystemSoftwareController.model.presentation.osPlatform}}</p></div>
+        <div class="device-details-table-cell">{{t 'amData.computerSystemSoftwareSpec.osVersion'}}<p>{{relatedSystemSoftwareController.model.presentation.osVersion}}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <br/>
+    <table class="device-details-table-body">
+      <tbody>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.osBuildNumber'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.osBuildNumber}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.osLanguage'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.osLanguage}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.computerBootTime'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.computerBootTime}}</td>
+      </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.computerUpTime'}}</td>
+          <td>{{relatedSystemSoftwareController.computerUpTimeCalculated}}</td>
+        </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.currentUserName'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.currentUserName}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.currentUserAccount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.currentUserAccount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.currentUserIsAdmin'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.currentUserIsAdmin}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.lastUserAccount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.lastUserAccount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.lastUserName'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.lastUserName}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.adComputerOrganizationalUnit'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.adComputerOrganizationalUnit}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.adComputerOrganizationalUnitPath'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.adComputerOrganizationalUnitPath}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.adUserOrganizationalUnit'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.adUserOrganizationalUnit}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.adUserOrganizationalUnitPath'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.adUserOrganizationalUnitPath}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.diskEncryptionProduct'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.diskEncryptionProduct}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.diskEncryptionVersion'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.diskEncryptionVersion}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.diskEncryptionStatus'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.diskEncryptionStatus}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.diskEncryptionAlgorithm'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.diskEncryptionAlgorithm}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.diskEncryptionKeySize'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.diskEncryptionKeySize}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.gmtDelta'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.gmtDelta}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.daylightSavingTime'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.daylightSavingTime}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.fastUserSwitchingEnabled'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.fastUserSwitchingEnabled}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.firewallEnabled'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.firewallEnabled}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.installedSoftwareCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.installedSoftwareCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.missingOsPatchesCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.missingOsPatchesCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.processCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.processCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.fileCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.fileCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.fontCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.fontCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.printerCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.printerCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.timbuktuAccess'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.timbuktuAccess}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.vncAccess'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.vncAccess}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.networkAdapterCount'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.networkAdapterCount}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.absoluteRemoteEnabled'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.absoluteRemoteEnabled}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amData.computerSystemSoftwareSpec.remoteDesktopScreenSharing'}}</td>
+        <td>{{relatedSystemSoftwareController.model.presentation.remoteDesktopScreenSharing}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br/>
+    <table class="device-details-table-body">
+      <tbody>
+      {{#unless isMacPlatform}}
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osServicePack'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osServicePack}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osInstallationDate'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osInstallationDate}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osActivated'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osActivated}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osActivationGracePeriod'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osActivationGracePeriod}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osSerialNumber'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osSerialNumber}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osProductId'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osProductId}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osIsVolumeLicensed'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osIsVolumeLicensed}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.virtualMachine'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.virtualMachine}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.securityIdentifier'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.securityIdentifier}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osSoftwareUpdatesEnabled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osSoftwareUpdatesEnabled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.allowRemoteAssistance'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.allowRemoteAssistance}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.allowRemoteControlViaAssistance'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.allowRemoteControlViaAssistance}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.pcAnywhereAccess'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.pcAnywhereAccess}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.damewareAccess'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.damewareAccess}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.defenderInstalled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.defenderInstalled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.defenderEnabled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.defenderEnabled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.defenderRealTimeProtection'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.defenderRealTimeProtection}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.defenderAutoScanEnabled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.defenderAutoScanEnabled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.defenderEngineVersion'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.defenderEngineVersion}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.defenderDefinitionVersion'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.defenderDefinitionVersion}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.windowsServiceCount'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.windowsServiceCount}}</td>
+        </tr>
+      {{/unless}}
+      {{#if isMacPlatform}}
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.darwinVersion'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.darwinVersion}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.personalFileSharing'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.personalFileSharing}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.windowsFileSharing'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.windowsFileSharing}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.personalWebSharing'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.personalWebSharing}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.remoteLogin'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.remoteLogin}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.ftpAccess'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.ftpAccess}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.remoteAppleEvents'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.remoteAppleEvents}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultSupported'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultSupported}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultEnabled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultEnabled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultAuthenticatedRestartSupported'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultAuthenticatedRestartSupported}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultHasPersonalRecoveryKey'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultHasPersonalRecoveryKey}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultHasInstitutionalRecoveryKey'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultHasInstitutionalRecoveryKey}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultUnlockedUsingRecoveryKey'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultUnlockedUsingRecoveryKey}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.fileVaultRecoveryKeyStoredOnServer'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.fileVaultRecoveryKeyStoredOnServer}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.printerSharing'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.printerSharing}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.remoteManagement'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.remoteManagement}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.wakeOnLanEnabled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.wakeOnLanEnabled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.wakeOnLanSupported'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.wakeOnLanSupported}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.osUpdateUtilityEnabled'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.osUpdateUtilityEnabled}}</td>
+        </tr>
+        <tr>
+          <td>{{t 'amData.computerSystemSoftwareSpec.startupItemCount'}}</td>
+          <td>{{relatedSystemSoftwareController.model.presentation.startupItemCount}}</td>
+        </tr>
+      {{/if}}
+      </tbody>
+    </table>
+  </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,94 @@
+<div class="custom-field-properties-container">
+  {{#unless loadInProgress}}
+    <div class="properties-label">
+      <label>{{t 'amCustomField.modals.addEditCustomField.fieldNameLabel'}}</label>
+    </div>
+    <div class="properties-value">
+      <div class="properties-value-input-text">
+        <div class="inline-flex-row">
+          {{input type="text" id="contentFieldName" value=fieldName maxlength="255" classNames="is-input-for-custom-field-name flex-shrink-off"}}
+
+          {{#if isNameDuplicate}}
+            <div class="is-container-for-duplicate-name-error-message required-field-message error">
+              {{t 'amCustomField.modals.addEditCustomField.validation.duplicateNameMessage'}}
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    <div class="properties-label">
+      <label>{{t 'amCustomField.modals.addEditCustomField.descriptionLabel'}}</label>
+    </div>
+    <div class="properties-value">
+      {{textarea rows="3" id="contentDescription" value=description maxlength="255"}}
+    </div>
+
+    <div class="properties-label">
+      <label>{{t 'amCustomField.modals.addEditCustomField.variableNameLabel'}}</label>
+    </div>
+    <div class="properties-value">
+      <div class="inline-flex-row">
+        {{input type="text" id="contentVariableName" value=variableName classNames="flex-shrink-off"}}
+        {{#if isVariableNameDuplicate}}
+          <div class="is-container-for-duplicate-name-error-message required-field-message error">
+            {{t 'amCustomField.modals.addEditCustomField.validation.duplicateVariableNameMessage'}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="properties-label">
+      <label class="is-selector-for-data-type">{{t 'amCustomField.modals.addEditCustomField.dataTypeLabel'}}</label>
+    </div>
+    <div class="properties-value">
+      {{select-field
+      content=dataTypeList
+      value=selectedDataTypeId
+      optionValuePath="content.data.id"
+      optionLabelPath="content.data.dataTypeTitle"
+      disabled=dataTypeListDisabled}}
+    </div>
+
+    {{#if formatAsVisible}}
+      <div class="properties-label">
+        <label class="is-selector-for-format-as">{{t 'amCustomField.modals.addEditCustomField.formatAsLabel'}}</label>
+      </div>
+      <div class="properties-value">
+        {{select-field
+        content=formatAsList
+        value=selectedFormatAsId
+        optionValuePath="content.data.id"
+        optionLabelPath="content.data.title"
+        disabled=formatAsDisabled}}
+      </div>
+    {{/if}}
+
+    {{#if enumIsVisible}}
+      <div class="properties-label">
+        <label>{{t 'amData.customFieldsEnumerationListStore.name'}}</label>
+      </div>
+      <div class="properties-value">
+        {{textarea
+        placeholder=enumerationValuePlaceholder
+        rows="3"
+        class="enumeration-value-field"
+        value=enumListTextBox }}
+      </div>
+    {{/if}}
+
+    <div class="required-field-message">
+      <span><span class="asterisk-small required-field">&#42;</span>{{t 'amCustomField.modals.addEditCustomField.indicatesRequiredField'}}</span>
+    </div>
+
+  {{else}}
+    <span class="spinner spinner-medium float-left"></span>
+  {{/unless}}
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

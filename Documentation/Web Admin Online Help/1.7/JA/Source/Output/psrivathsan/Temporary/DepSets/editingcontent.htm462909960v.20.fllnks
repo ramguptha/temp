@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/importingmediafiles.htm" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/deletingcontent.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/importingmediafiles.htm" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/deletingcontent.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

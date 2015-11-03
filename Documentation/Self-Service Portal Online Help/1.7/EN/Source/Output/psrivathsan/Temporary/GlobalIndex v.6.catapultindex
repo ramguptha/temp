@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalIndex
+  SavedSource="file:///C:/Data/TFS/Documentation/Manage/Self-Service Portal Online Help/1.6/EN/Source/Output/psrivathsan/Temporary/GlobalIndex v.6.catapultindex">
+  <IndexEntry>
+    <Entries />
+    <Links />
+    <SeeAlsoLinks />
+    <IndexControlLinks />
+    <SortAsLinks />
+  </IndexEntry>
+  <SourceUrls>
+    <Url
+      Source="amselfserviceportalhelp.pdf" />
+    <Url
+      Source="clearing_passcode.htm" />
+    <Url
+      Source="disclaimer.htm" />
+    <Url
+      Source="erasing_device.htm" />
+    <Url
+      Source="locking_device.htm" />
+    <Url
+      Source="loginpreferences.htm" />
+    <Url
+      Source="sending_messages.htm" />
+    <Url
+      Source="setting_passcode.htm" />
+    <Url
+      Source="viewing_device_details.htm" />
+    <Url
+      Source="welcome.htm" />
+    <Url
+      Source="Resources/Images/abs-icons.png" />
+    <Url
+      Source="Resources/Images/AM-logo-med.jpg" />
+    <Url
+      Source="Resources/Images/blog.png" />
+    <Url
+      Source="Resources/Images/facebook.png" />
+    <Url
+      Source="Resources/Images/google-plus.png" />
+    <Url
+      Source="Resources/Images/linkedin.png" />
+    <Url
+      Source="Resources/Images/manage_video.jpg" />
+    <Url
+      Source="Resources/Images/related_topics_icon2.png" />
+    <Url
+      Source="Resources/Images/rightarrow.jpg" />
+    <Url
+      Source="Resources/Images/search-button-focus.png" />
+    <Url
+      Source="Resources/Images/search-button-hover.png" />
+    <Url
+      Source="Resources/Images/twitter.png" />
+    <Url
+      Source="Resources/Images/youtube.png" />
+    <Url
+      Source="Resources/PageLayouts/Chapters.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Default.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/FrontMatter.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Glossary.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/Index.flpgl" />
+    <Url
+      Source="Resources/PageLayouts/OnlineHelpMasterPage.flmsp" />
+    <Url
+      Source="Resources/PageLayouts/WelcomeMasterPage.flmsp" />
+    <Url
+      Source="Resources/Stylesheets/Absolute.css" />
+    <Url
+      Source="Resources/Stylesheets/Absolutenew.css" />
+    <Url
+      Source="Resources/Stylesheets/BookStyles.css" />
+    <Url
+      Source="Resources/Stylesheets/diagram.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_A.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_B.css" />
+    <Url
+      Source="Resources/Stylesheets/Header.css" />
+    <Url
+      Source="Resources/Stylesheets/In_Column.css" />
+    <Url
+      Source="Resources/Stylesheets/In_ColumnIndent.css" />
+    <Url
+      Source="Resources/Stylesheets/Modern.css" />
+    <Url
+      Source="Resources/Stylesheets/NewStyle.css" />
+    <Url
+      Source="Resources/Stylesheets/Styles.css" />
+    <Url
+      Source="Resources/TableStyles/diagram.css" />
+    <Url
+      Source="Resources/TableStyles/Format_A.css" />
+    <Url
+      Source="Resources/TableStyles/Format_B.css" />
+    <Url
+      Source="Resources/TableStyles/Header.css" />
+    <Url
+      Source="Resources/TableStyles/In_Column.css" />
+    <Url
+      Source="Resources/TableStyles/In_ColumnIndent.css" />
+  </SourceUrls>
+  <SourceLinkSetUrls>
+    <Url
+      Source="Advanced/Index Link Sets/IndexLinkSet.flixl" />
+  </SourceLinkSetUrls>
+  <UsedUrls />
+  <UsedIndexControlUrls />
+</CatapultGlobalIndex>

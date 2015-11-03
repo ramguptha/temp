@@ -1,0 +1,949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalStyleCache
+  SavedSource="file:///C:/Data/TFS/Documentation/Manage/Web Admin Configuration Tool/0.1/EN/Source/Output/psrivathsan/Temporary/GlobalStyleSet v.2.xml">
+  <Media>
+    <Medium
+      Name="non-print" />
+    <Medium
+      Name="print" />
+  </Media>
+  <Map>
+    <Tag
+      Name="span">
+      <Class
+        Name="ChapterNumber" />
+      <Class
+        Name="NoteHeader" />
+      <Class
+        Name="CircleBullet" />
+      <Class
+        Name="NoteIndent" />
+      <Class
+        Name="NoteHeaderInTable" />
+      <Class
+        Name="ImportantHead" />
+      <Class
+        Name="ImportantIdent" />
+      <Class
+        Name="ImportantHeaderInTable" />
+      <Class
+        Name="WarningHead" />
+      <Class
+        Name="Bold" />
+      <Class
+        Name="ChapterRefs" />
+      <Class
+        Name="Emphasis" />
+      <Class
+        Name="FileName" />
+      <Class
+        Name="Fields" />
+      <Class
+        Name="TypeCommands" />
+      <Class
+        Name="Hyperlink" />
+      <Class
+        Name="Light" />
+      <Class
+        Name="FigureCaption" />
+      <Class
+        Name="TableTitle" />
+      <Class
+        Name="state" />
+      <Class
+        Name="MCHelpControl-RelatedHotSpot_" />
+      <Class
+        Name="span_1" />
+      <Class
+        Name="Emphasis_1" />
+      <Class
+        Name="SeeAlsoIndex" />
+      <Class
+        Name="SeeAlsoIndexTerms" />
+      <Class
+        Name="SeeIndex" />
+      <Class
+        Name="SeeIndexTerms" />
+      <Class
+        Name="boolean" />
+    </Tag>
+    <Tag
+      Name="p">
+      <Class
+        Name="Body" />
+      <Class
+        Name="AppendixTitle" />
+      <Class
+        Name="Footnote" />
+      <Class
+        Name="DocumentTitle" />
+      <Class
+        Name="Bullet1" />
+      <Class
+        Name="Bullet1Last" />
+      <Class
+        Name="BodyWithListFollowing" />
+      <Class
+        Name="Note" />
+      <Class
+        Name="BodyFollowingList" />
+      <Class
+        Name="TaskIntro" />
+      <Class
+        Name="Step1" />
+      <Class
+        Name="SubStep1" />
+      <Class
+        Name="SubSteps" />
+      <Class
+        Name="Steps" />
+      <Class
+        Name="subSubStep1" />
+      <Class
+        Name="subSubSteps" />
+      <Class
+        Name="BodyFollowingListWithListFollowing" />
+      <Class
+        Name="Bullet2" />
+      <Class
+        Name="Bullet2Last" />
+      <Class
+        Name="Bullet3" />
+      <Class
+        Name="Bullet4" />
+      <Class
+        Name="Bullet4Last" />
+      <Class
+        Name="Bullet3Last" />
+      <Class
+        Name="Subheading" />
+      <Class
+        Name="Note_Procedure" />
+      <Class
+        Name="Bullet1Procedure" />
+      <Class
+        Name="Bullet1ProcedureLast" />
+      <Class
+        Name="Bullet2Procedure" />
+      <Class
+        Name="Bullet3Procedure" />
+      <Class
+        Name="Bullet4Procedure" />
+      <Class
+        Name="Bullet3ProcedureLast" />
+      <Class
+        Name="Bullet2ProcedureLast" />
+      <Class
+        Name="Bullet1SubProcedure" />
+      <Class
+        Name="Bullet2SubProcedure" />
+      <Class
+        Name="Bullet3SubProcedure" />
+      <Class
+        Name="Bullet3SubProcedureLast" />
+      <Class
+        Name="Bullet2SubProcedureLast" />
+      <Class
+        Name="Bullet1SubProcedureLast" />
+      <Class
+        Name="Note_Procedure_Substep" />
+      <Class
+        Name="Note_Procedure_subSubstep" />
+      <Class
+        Name="Bullet1subSubProcedure" />
+      <Class
+        Name="Bullet2subSubProcedure" />
+      <Class
+        Name="Bullet3subSubProcedure" />
+      <Class
+        Name="Bullet3subSubProcedureLast" />
+      <Class
+        Name="Bullet2subSubProcedureLast" />
+      <Class
+        Name="Bullet1subSubProcedureLast" />
+      <Class
+        Name="NoteIndent" />
+      <Class
+        Name="NoteIndentTable" />
+      <Class
+        Name="Important" />
+      <Class
+        Name="ImportantIndent" />
+      <Class
+        Name="ImportantIndentTable" />
+      <Class
+        Name="Important_Procedure" />
+      <Class
+        Name="Important_Procedure_Substep" />
+      <Class
+        Name="Important_Procedure_subSubstep" />
+      <Class
+        Name="Warning" />
+      <Class
+        Name="FigureInsert" />
+      <Class
+        Name="Figure" />
+      <Class
+        Name="TableInsert" />
+      <Class
+        Name="ImportantLandscape" />
+      <Class
+        Name="NoteLandscape" />
+      <Class
+        Name="TitleBook" />
+      <Class
+        Name="WebSite" />
+      <Class
+        Name="DocumentDate" />
+      <Class
+        Name="Copyright" />
+      <Class
+        Name="CellHeadingLeft" />
+      <Class
+        Name="CellBody" />
+      <Class
+        Name="CellBodyBullet" />
+      <Class
+        Name="TableTitleIndent" />
+      <Class
+        Name="CellBodyRight" />
+      <Class
+        Name="TableTitle" />
+      <Class
+        Name="CellHeading" />
+      <Class
+        Name="TableFootnote" />
+      <Class
+        Name="CellBodyBullet2" />
+      <Class
+        Name="CellBodyBullet3" />
+      <Class
+        Name="CellBodyCenter" />
+      <Class
+        Name="CellBodyStep1" />
+      <Class
+        Name="CellBodySteps" />
+      <Class
+        Name="CellBodyCheckbox" />
+      <Class
+        Name="CellBodyCheckmark" />
+      <Class
+        Name="CellBodyIndent" />
+      <Class
+        Name="CellBodyIndent2" />
+      <Class
+        Name="CellBodyMiddleAlign" />
+      <Class
+        Name="CellBodyNote" />
+      <Class
+        Name="CellHeadingRight" />
+      <Class
+        Name="zzHeaderRight" />
+      <Class
+        Name="zzFooterLeft" />
+      <Class
+        Name="zzFooterRight" />
+      <Class
+        Name="zzHeaderLandscape" />
+      <Class
+        Name="zzFooterRightLandscape" />
+      <Class
+        Name="Concept" />
+      <Class
+        Name="IndexHeading" />
+      <Class
+        Name="Indent7Last" />
+      <Class
+        Name="Indent7" />
+      <Class
+        Name="Indent6Last" />
+      <Class
+        Name="Indent6" />
+      <Class
+        Name="Indent5Last" />
+      <Class
+        Name="Indent5" />
+      <Class
+        Name="Indent4Last" />
+      <Class
+        Name="Indent4" />
+      <Class
+        Name="Indent3Last" />
+      <Class
+        Name="Indent3" />
+      <Class
+        Name="Indent2Last" />
+      <Class
+        Name="Indent2" />
+      <Class
+        Name="Indent1Last" />
+      <Class
+        Name="Indent1" />
+      <Class
+        Name="FigureIndent1" />
+      <Class
+        Name="FigureIndent2" />
+      <Class
+        Name="FigureIndent3" />
+      <Class
+        Name="FigureIndent4" />
+      <Class
+        Name="CellSubHeading" />
+      <Class
+        Name="TOC9" />
+      <Class
+        Name="TOC8" />
+      <Class
+        Name="TOC7" />
+      <Class
+        Name="TOC6" />
+      <Class
+        Name="TOC5" />
+      <Class
+        Name="TOC4" />
+      <Class
+        Name="TOC3" />
+      <Class
+        Name="TOC2" />
+      <Class
+        Name="TOC1" />
+      <Class
+        Name="TOC" />
+      <Class
+        Name="ListParagraph" />
+      <Class
+        Name="ListParagraph_1" />
+      <Class
+        Name="ListParagraph_2" />
+      <Class
+        Name="ListParagraph_3" />
+      <Class
+        Name="ListParagraph_4" />
+      <Class
+        Name="Important_1" />
+      <Class
+        Name="ImportantIndent1" />
+      <Class
+        Name="ImportantIndent1_1" />
+      <Class
+        Name="Note_1" />
+      <Class
+        Name="NoteIndent1" />
+      <Class
+        Name="NoteIndent1_1" />
+      <Class
+        Name="NoteIndent1_2" />
+      <Class
+        Name="Emphasis" />
+      <Class
+        Name="Emphasis_1" />
+      <Class
+        Name="Emphasis_2" />
+      <Class
+        Name="p_1" />
+      <Class
+        Name="p_2" />
+      <Class
+        Name="p_3" />
+      <Class
+        Name="p_4" />
+      <Class
+        Name="p_5" />
+      <Class
+        Name="p_6" />
+      <Class
+        Name="heading1" />
+      <Class
+        Name="Title" />
+      <Class
+        Name="Subtitle" />
+      <Class
+        Name="Publisher" />
+      <Class
+        Name="example" />
+      <Class
+        Name="note" />
+      <Class
+        Name="MiniTOC1" />
+      <Class
+        Name="MiniTOC2" />
+      <Class
+        Name="MiniTOC3" />
+      <Class
+        Name="MiniTOC4" />
+      <Class
+        Name="MiniTOC5" />
+      <Class
+        Name="MiniTOC6" />
+      <Class
+        Name="MiniTOC7" />
+      <Class
+        Name="MiniTOC8" />
+      <Class
+        Name="MiniTOC9" />
+      <Class
+        Name="Index1" />
+      <Class
+        Name="Index2" />
+      <Class
+        Name="Index3" />
+      <Class
+        Name="Index4" />
+      <Class
+        Name="Index5" />
+      <Class
+        Name="Index6" />
+      <Class
+        Name="Index7" />
+      <Class
+        Name="Index8" />
+      <Class
+        Name="Index9" />
+      <Class
+        Name="ConceptContext" />
+      <Class
+        Name="ListOf" />
+    </Tag>
+    <Tag
+      Name="h1">
+      <Class
+        Name="Heading1" />
+    </Tag>
+    <Tag
+      Name="h2">
+      <Class
+        Name="Heading2" />
+      <Class
+        Name="pageBreak" />
+    </Tag>
+    <Tag
+      Name="h3">
+      <Class
+        Name="Heading3" />
+    </Tag>
+    <Tag
+      Name="h4">
+      <Class
+        Name="Heading4" />
+    </Tag>
+    <Tag
+      Name="MadCap|xref">
+      <Class
+        Name="HeadingTextOnly" />
+      <Class
+        Name="Step_Number" />
+      <Class
+        Name="Step_Number_Only" />
+      <Class
+        Name="Table_Number_only" />
+      <Class
+        Name="Heading_Page" />
+      <Class
+        Name="TOCPageNumber" />
+      <Class
+        Name="ConceptPageNumber" />
+      <Class
+        Name="IndexPageNumber" />
+      <Class
+        Name="ListOfPageNumber" />
+    </Tag>
+    <Tag
+      Name="MadCap|glossaryTerm">
+      <Class
+        Name="Popup" />
+      <Class
+        Name="Expanding" />
+      <Class
+        Name="Hyperlink" />
+    </Tag>
+    <Tag
+      Name="td">
+      <Class
+        Name="zzFooterRightTable" />
+      <Class
+        Name="zzFooterLeftTable" />
+      <Class
+        Name="td_1" />
+      <Class
+        Name="td_2" />
+      <Class
+        Name="td_3" />
+      <Class
+        Name="td_4" />
+      <Class
+        Name="td_5" />
+      <Class
+        Name="td_6" />
+      <Class
+        Name="td_7" />
+      <Class
+        Name="td_8" />
+      <Class
+        Name="td_9" />
+      <Class
+        Name="noteIcon" />
+      <Class
+        Name="noteText" />
+      <Class
+        Name="importantIcon" />
+      <Class
+        Name="importantText" />
+    </Tag>
+    <Tag
+      Name="MadCap|dropDownHotspot" />
+    <Tag
+      Name="MadCap|dropDownHead" />
+    <Tag
+      Name="MadCap|expandingHead">
+      <Class
+        Name="NewClass" />
+    </Tag>
+    <Tag
+      Name="MadCap|relatedTopics" />
+    <Tag
+      Name="MadCap|relatedTopicsControlList" />
+    <Tag
+      Name="MadCap|relatedTopicsControlListItemLink" />
+    <Tag
+      Name="MadCap|relatedTopicsControlListItem" />
+    <Tag
+      Name="MadCap|popupHead" />
+    <Tag
+      Name="MadCap|popupBody" />
+    <Tag
+      Name="MadCap|popup" />
+    <Tag
+      Name="MadCap|keywordLinkControlListItemLink" />
+    <Tag
+      Name="MadCap|keywordLinkControlListItem" />
+    <Tag
+      Name="MadCap|keywordLinkControlList" />
+    <Tag
+      Name="MadCap|keywordLink" />
+    <Tag
+      Name="MadCap|keyword" />
+    <Tag
+      Name="MadCap|equation" />
+    <Tag
+      Name="MadCap|namedDestination" />
+    <Tag
+      Name="MadCap|qrCode" />
+    <Tag
+      Name="MadCap|annotation" />
+    <Tag
+      Name="MadCap|section" />
+    <Tag
+      Name="MadCap|conditionalText" />
+    <Tag
+      Name="MadCap|relationshipsItem" />
+    <Tag
+      Name="MadCap|concept" />
+    <Tag
+      Name="MadCap|helpControlMenuItem">
+      <Class
+        Name="Highlighted" />
+    </Tag>
+    <Tag
+      Name="MadCap|helpControlMenu" />
+    <Tag
+      Name="img">
+      <Class
+        Name="Icon" />
+      <Class
+        Name="img_1" />
+    </Tag>
+    <Tag
+      Name="body" />
+    <Tag
+      Name="ul">
+      <Class
+        Name="ul_1" />
+      <Class
+        Name="ul_2" />
+      <Class
+        Name="ul_3" />
+      <Class
+        Name="ul_4" />
+      <Class
+        Name="ul_5" />
+    </Tag>
+    <Tag
+      Name="div">
+      <Class
+        Name="GlossaryPageHeading" />
+      <Class
+        Name="GlossaryPageEntry" />
+      <Class
+        Name="GlossaryPageTerm" />
+      <Class
+        Name="GlossaryPageDefinition" />
+    </Tag>
+    <Tag
+      Name="h5" />
+    <Tag
+      Name="dir" />
+    <Tag
+      Name="ol">
+      <Class
+        Name="ol_1" />
+      <Class
+        Name="ol_2" />
+      <Class
+        Name="ol_3" />
+      <Class
+        Name="ol_4" />
+    </Tag>
+    <Tag
+      Name="menu" />
+    <Tag
+      Name="hr" />
+    <Tag
+      Name="dl" />
+    <Tag
+      Name="blockquote" />
+    <Tag
+      Name="h6" />
+    <Tag
+      Name="MadCap|breadcrumbsProxy" />
+    <Tag
+      Name="a">
+      <Class
+        Name="GlossaryPageTerm" />
+      <Class
+        Name="Hyperlink" />
+      <Class
+        Name="Hyperlink_1" />
+      <Class
+        Name="Popup" />
+      <Class
+        Name="MCBreadcrumbsLink" />
+    </Tag>
+    <Tag
+      Name="table">
+      <Class
+        Name="table_1" />
+      <Class
+        Name="noteTable" />
+      <Class
+        Name="importantTable" />
+    </Tag>
+    <Tag
+      Name="colgroup" />
+    <Tag
+      Name="col" />
+    <Tag
+      Name="caption" />
+    <Tag
+      Name="th">
+      <Class
+        Name="th_1" />
+    </Tag>
+    <Tag
+      Name="tfoot" />
+    <Tag
+      Name="tbody" />
+    <Tag
+      Name="thead" />
+    <Tag
+      Name="tr" />
+    <Tag
+      Name="MadCap|glossaryProxy" />
+    <Tag
+      Name="MadCap|tocProxy" />
+    <Tag
+      Name="MadCap|footnotesBlock" />
+    <Tag
+      Name="html">
+      <Class
+        Name="welcome" />
+      <Class
+        Name="task" />
+      <Class
+        Name="concept" />
+      <Class
+        Name="reference" />
+      <Class
+        Name="topic" />
+    </Tag>
+    <Tag
+      Name="li">
+      <Class
+        Name="ListParagraph" />
+      <Class
+        Name="ListParagraph_1" />
+      <Class
+        Name="ListParagraph_2" />
+      <Class
+        Name="ListParagraph_3" />
+      <Class
+        Name="ListParagraph_4" />
+      <Class
+        Name="ListParagraph_5" />
+      <Class
+        Name="ListParagraph_6" />
+      <Class
+        Name="ListParagraph_7" />
+    </Tag>
+    <Tag
+      Name="MadCap|expandingBody" />
+    <Tag
+      Name="MadCap|indexProxy" />
+    <Tag
+      Name="mcTableStyle" />
+    <Tag
+      Name="mcTableColumnStyle" />
+    <Tag
+      Name="mcTableHeadStyle" />
+    <Tag
+      Name="mcTableBodyStyle" />
+    <Tag
+      Name="mcTableFootStyle" />
+    <Tag
+      Name="MadCap|expanding" />
+    <Tag
+      Name="MadCap|dropDown" />
+    <Tag
+      Name="MadCap|toggler" />
+    <Tag
+      Name="MadCap|conceptLink" />
+    <Tag
+      Name="madcapEditorBehavior" />
+    <Tag
+      Name="select" />
+    <Tag
+      Name="input" />
+    <Tag
+      Name="textarea" />
+    <Tag
+      Name="object" />
+    <Tag
+      Name="script" />
+    <Tag
+      Name="address" />
+    <Tag
+      Name="pre" />
+    <Tag
+      Name="dd" />
+    <Tag
+      Name="dt" />
+    <Tag
+      Name="center" />
+    <Tag
+      Name="abbr" />
+    <Tag
+      Name="acronym" />
+    <Tag
+      Name="b" />
+    <Tag
+      Name="big" />
+    <Tag
+      Name="code" />
+    <Tag
+      Name="cite" />
+    <Tag
+      Name="del" />
+    <Tag
+      Name="em" />
+    <Tag
+      Name="i" />
+    <Tag
+      Name="ins" />
+    <Tag
+      Name="kbd" />
+    <Tag
+      Name="small" />
+    <Tag
+      Name="u" />
+    <Tag
+      Name="o" />
+    <Tag
+      Name="samp" />
+    <Tag
+      Name="strike" />
+    <Tag
+      Name="strong" />
+    <Tag
+      Name="sup" />
+    <Tag
+      Name="sub" />
+    <Tag
+      Name="tt" />
+    <Tag
+      Name="var" />
+    <Tag
+      Name="map" />
+    <Tag
+      Name="area" />
+    <Tag
+      Name="head" />
+    <Tag
+      Name="style" />
+    <Tag
+      Name="fieldset" />
+    <Tag
+      Name="form" />
+    <Tag
+      Name="frame" />
+    <Tag
+      Name="frameset" />
+    <Tag
+      Name="noframes" />
+    <Tag
+      Name="button" />
+    <Tag
+      Name="s" />
+    <Tag
+      Name="br" />
+    <Tag
+      Name="figure" />
+    <Tag
+      Name="figcaption" />
+    <Tag
+      Name="MadCap|variable" />
+    <Tag
+      Name="MadCap|bodyProxy" />
+    <Tag
+      Name="MadCap|topicToolbarProxy" />
+    <Tag
+      Name="MadCap|miniTocProxy" />
+    <Tag
+      Name="MadCap|listOfProxy" />
+    <Tag
+      Name="MadCap|conceptsProxy" />
+    <Tag
+      Name="MadCap|relationshipsProxy" />
+    <Tag
+      Name="MadCap|relationshipsHeading">
+      <Class
+        Name="concept" />
+      <Class
+        Name="task" />
+      <Class
+        Name="reference" />
+    </Tag>
+    <Tag
+      Name="MadCap|endnotesProxy" />
+    <Tag
+      Name="MadCap|snippetText" />
+    <Tag
+      Name="MadCap|snippetBlock" />
+    <Tag
+      Name="MadCap|slideshow" />
+    <Tag
+      Name="MadCap|slide" />
+    <Tag
+      Name="MadCap|slideshowCaption" />
+    <Tag
+      Name="MadCap|slideshowBullet">
+      <Class
+        Name="active" />
+    </Tag>
+    <Tag
+      Name="MadCap|slideshowNavigationControls">
+      <Class
+        Name="Previous" />
+      <Class
+        Name="Next" />
+    </Tag>
+    <Tag
+      Name="MadCap|slideshowAutoControls">
+      <Class
+        Name="Start" />
+      <Class
+        Name="active" />
+      <Class
+        Name="Stop" />
+    </Tag>
+    <Tag
+      Name="MadCap|slideThumbnail">
+      <Class
+        Name="active" />
+    </Tag>
+    <Tag
+      Name="MadCap|footnoteBlock" />
+    <Tag
+      Name="MadCap|endnotesBlock" />
+    <Tag
+      Name="MadCap|endnoteBlock" />
+    <Tag
+      Name="MadCap|footnote" />
+    <Tag
+      Name="MadCap|dropDownBody" />
+    <Tag
+      Name="MadCap|shortcut" />
+    <Tag
+      Name="MadCap|helpControlList" />
+    <Tag
+      Name="MadCap|helpControlListItem" />
+    <Tag
+      Name="MadCap|helpControlListItemLink" />
+    <Tag
+      Name="MadCap|conceptLinkControlList" />
+    <Tag
+      Name="MadCap|conceptLinkControlListItem" />
+    <Tag
+      Name="MadCap|conceptLinkControlListItemLink" />
+    <Tag
+      Name="MadCap|pageHeader">
+      <Class
+        Name="OddPage" />
+      <Class
+        Name="EvenPage" />
+      <Class
+        Name="FirstPage" />
+    </Tag>
+    <Tag
+      Name="MadCap|pageFooter">
+      <Class
+        Name="OddPage" />
+      <Class
+        Name="EvenPage" />
+      <Class
+        Name="FirstPage" />
+    </Tag>
+  </Map>
+  <SourceUrls>
+    <Url
+      Source="Resources/Stylesheets/Absolute.css" />
+    <Url
+      Source="Resources/Stylesheets/Absolutenew.css" />
+    <Url
+      Source="Resources/Stylesheets/BookStyles.css" />
+    <Url
+      Source="Resources/Stylesheets/diagram.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_A.css" />
+    <Url
+      Source="Resources/Stylesheets/Format_B.css" />
+    <Url
+      Source="Resources/Stylesheets/Header.css" />
+    <Url
+      Source="Resources/Stylesheets/In_Column.css" />
+    <Url
+      Source="Resources/Stylesheets/In_ColumnIndent.css" />
+    <Url
+      Source="Resources/Stylesheets/Modern.css" />
+    <Url
+      Source="Resources/Stylesheets/NewStyle.css" />
+    <Url
+      Source="Resources/Stylesheets/Styles.css" />
+    <Url
+      Source="Resources/TableStyles/diagram.css" />
+    <Url
+      Source="Resources/TableStyles/Format_A.css" />
+    <Url
+      Source="Resources/TableStyles/Format_B.css" />
+    <Url
+      Source="Resources/TableStyles/Header.css" />
+    <Url
+      Source="Resources/TableStyles/In_Column.css" />
+    <Url
+      Source="Resources/TableStyles/In_ColumnIndent.css" />
+    <Url
+      Source="../../../../../../../../../Program Files (x86)/MadCap Software/MadCap Flare V10/Flare.app/Resources/Schemas/xhtml.css" />
+    <Url
+      Source="../../../../../../../../../Program Files (x86)/MadCap Software/MadCap Flare V10/Flare.app/Resources/Schemas/MadCapEditor.css" />
+    <Url
+      Source="../../../../../../../../../Program Files (x86)/MadCap Software/MadCap Flare V10/Flare.app/Resources/Schemas/MadCapEditorFlare.css" />
+  </SourceUrls>
+</CatapultGlobalStyleCache>

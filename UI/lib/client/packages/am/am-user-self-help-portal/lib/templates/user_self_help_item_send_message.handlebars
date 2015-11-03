@@ -1,0 +1,34 @@
+<div class="modal-section-wrapper modal-commands-properties-container">
+  <div class="commands-info">
+    {{#if actionWarning}}
+      <p> <span class="alert alert-warning">{{actionWarning}}</span></p>
+    {{/if}}
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amUserSelfServicePortal.modals.sendMessage.enterMessage'}}</label>
+  </div>
+  <div class="properties-value">
+    <div>
+      {{textarea id="enterMessage" value=message rows="3" }}
+    </div>
+  </div>
+
+  {{#if displayOptions}}
+    <div class="force-remove-message-block">
+      <div>
+        <label class="for-checkbox">{{input type="checkbox" checked=timeOutEnabled}} {{t 'amUserSelfServicePortal.modals.sendMessage.removeMessageAfter'}}</label>
+        {{input type="text" id="timeOut" value=timeOut disabled=timeOutBoxDisabled}}
+        <label>{{t 'amUserSelfServicePortal.modals.sendMessage.timeOut'}}</label>
+      </div>
+      <label class="for-checkbox">{{input type="checkbox" checked=addCancelEnabled}} {{t 'amUserSelfServicePortal.modals.sendMessage.addCancelButton'}}</label>
+    </div>
+  {{/if}}
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

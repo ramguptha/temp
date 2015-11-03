@@ -1,0 +1,29 @@
+<div class="breadcrumb-container">
+  <ul class="breadcrumbs">
+    {{#each hierarchy as |crumb|}}
+      <li data-tooltip-source-id="breadcrumbs">{{crumb.title}}</li>
+    {{/each}}
+  </ul>
+  <div class="tooltip-source" data-tooltip-id="breadcrumbs">
+    <ul class="content-tooltip-list">
+      {{#each hierarchy as |crumb|}}
+        <li>
+          <div class="content-tooltip-title">
+            {{crumb.title}}
+          </div>
+          <div class="content-tooltip">
+            {{#if crumb.isFixedGroup}}
+              <span class="font-bold">Fixed Group:</span> {{crumb.deviceCount}} Devices
+            {{else}}
+              {{view crumb.advancedFilterController.AdvancedFilterView context=crumb.advancedFilterController}}
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<span class="icon-question-mark content-help-icon" data-tooltip-source-id="breadcrumb-help" alt="Help"></span>
+<div class="tooltip-source tooltip-help" data-tooltip-id="breadcrumb-help">
+  {{t 'ccDevice.deviceGroupDevicesPage.header.tooltips.nestedGroup'}}
+</div>

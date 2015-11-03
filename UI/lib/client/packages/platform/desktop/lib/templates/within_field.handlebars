@@ -1,0 +1,6 @@
+{{number-field number=view.number1 min="0" max="9999"}}
+{{#if view.isRange}}
+  {{view.conjunctionText}}
+  {{number-field number=view.number2 min="0" max="9999"}}
+{{/if}}
+{{view "select" content=view.operatorTypes optionValuePath="content.name" optionLabelPath="content.label" value=view.value}}

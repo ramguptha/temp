@@ -1,0 +1,3 @@
+settingsFile=${WebAPISettingsFile}
+tomcatExecutable=Tomcat8.exe
+amWebApiConfigurationFile=${WebAPIConfigurationFile}

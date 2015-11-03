@@ -1,0 +1,16 @@
+{{#if haveGroups}}
+  {{#each contentGroups as |group|}}
+    <optgroup label={{group}}>{{group}}
+      {{#each selectContent as |item|}}
+        {{#if (compare group item.group "===")}}
+          <option selected={{item.selected}} disabled={{item.disabled}} value={{item.value}}>{{item.label}}</option>
+        {{/if}}
+      {{/each}}
+    </optgroup>
+  {{/each}}
+{{else}}
+  {{#each selectContent as |item|}}
+    <option selected={{item.selected}} disabled={{item.disabled}} value={{item.value}}>{{item.label}}</option>
+  {{/each}}
+{{/if}}
+

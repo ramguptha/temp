@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>JsWorld Time Locales Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../JsWorld.js"></script>
+<script type="text/javascript" src="../locales/js/POSIX_LC.js"></script>
+
+<script type="text/javascript">
+
+function onLoad() {
+
+	var input = "23:59:59";
+	
+	document.getElementById("input").value = input;
+	
+	doTest();
+}
+
+function useNow() {
+
+	var now = jsworld.formatIsoTime(new Date());
+	doTest(now);
+}
+
+function doTest(now) {
+
+	// get user input
+	if (typeof now != "undefined")
+		var input = now;
+	else
+		var input = document.getElementById("input").value;
+	
+	// delete old table rows
+	var resultTableBody = document.getElementById("result-table-body");
+	
+	while (resultTableBody.firstChild)
+		resultTableBody.removeChild(resultTableBody.firstChild);
+	
+	// current locale
+	var lc = null;
+	
+	// formatted output
+	var formattedOutput = null;
+	
+	// parsed output
+	var parsedOutput = null;
+	
+	// render new rows
+	var i = 1;
+	var tr = null;
+	var td = null;
+	var cdata = null;
+	
+	for (var locale in POSIX_LC) {
+		
+		// create new table row
+		tr = document.createElement("tr");
+	
+		// number
+		td = document.createElement("td");
+		cdata = document.createTextNode(i++);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// locale code
+		td = document.createElement("td");
+		cdata = document.createTextNode(locale);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// t_fmt
+		td = document.createElement("td");
+		cdata = document.createTextNode(POSIX_LC[locale].t_fmt);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// input
+		td = document.createElement("td");
+		cdata = document.createTextNode(input);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		try {
+			lc = new jsworld.Locale(POSIX_LC[locale]);
+			var dtf = new jsworld.DateTimeFormatter(lc);
+			var formattedOutput = dtf.formatTime(input);
+		} catch (error) {
+			formattedOutput = error;
+		}
+		td = document.createElement("td");
+		cdata = document.createTextNode(formattedOutput);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		try {
+			var dtp = new jsworld.DateTimeParser(lc);
+			parsedOutput = dtp.parseTime(formattedOutput);
+		} catch (error) {
+			parsedOutput = error;
+		}
+		td = document.createElement("td");
+		cdata = document.createTextNode(parsedOutput);
+		td.appendChild(cdata);
+		tr.appendChild(td);
+		
+		// append row to table
+		resultTableBody.appendChild(tr);
+	}
+}
+</script>
+
+</head>
+
+<body onload="onLoad()">
+
+	<h1>JsWorld Time Locales Test</h1>
+
+	<div>
+		ISO-8601 time
+		<input id="input" type="text" maxlength="25"/>
+		<input type="submit" value="Test" onclick="doTest();"/>
+		<input type="submit" value="Test with now time" onclick="useNow();"/>
+	</div>
+
+	<table id="result-table" border="1" cellspacing="0">
+		<thead id="result-table-head">
+			<tr>
+				<th>#</th>
+				<th>Locale</th>
+				<th>t_fmt</th>
+				<th>Input</th>
+				<th>Formatted time</th>
+				<th>Parsed time</th>
+			</tr>
+		</thead>
+		<tbody id="result-table-body" >
+			<!-- generated rows come here -->
+		</tbody>
+	</table>
+
+</body>
+
+</html>

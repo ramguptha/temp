@@ -1,0 +1,21 @@
+<div class="modal-section-wrapper">
+  <div class="properties-label">
+    <label>{{t 'amMobilePolicies.modals.createNewPolicy.labelForTextField'}}</label>
+  </div>
+  <div class="properties-value">
+    <div class="inline-flex-row">
+      {{input type="text" id="policyNameID" value=policyName classNames="folder-name-field flex-shrink-off" placeholder=placeholder}}
+
+      {{#if errorMessage}}
+        <div class="is-container-for-duplicate-name-error-message required-field-message error">{{errorMessage}}</div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

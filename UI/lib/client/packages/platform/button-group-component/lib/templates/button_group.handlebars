@@ -1,0 +1,31 @@
+<div class="button-group clearfix">{{#each presentation as |button|}}<div class="reset-absolute-origin">
+  {{#if button.hasChildren}}
+    <button type="button"
+      class={{button.buttonClass}}
+      disabled={{button.disabled}}
+      {{action 'toggleMenu' button bubbles=false}}
+    >
+      {{#if button.iconClass}}<span class={{button.iconClass}}></span>{{/if}}{{button.labelFinal}}<span class="icon-arrow-2"></span>
+    </button>
+
+    {{#if button.showingChildren}}
+      <ul class="dropdown-menu-buttons" style="display: block;">
+        {{#each button.children as |childButton|}}
+          <li><button type="button" class={{childButton.buttonClass}} disabled={{childButton.disabled}} {{action "buttonClick" childButton}}>{{#if childButton.iconClass}}<span class={{childButton.iconClass}}></span>{{/if}}{{childButton.labelFinal}}</button></li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  {{else}}
+    {{#if button.hasTooltip}}
+      <div class='tooltip-source' data-tooltip-id={{button.tooltipID}}>{{button.tooltip}}</div>
+      <button type="button"
+        class={{button.buttonClass}}
+        disabled={{button.disabled}}
+        data-tooltip-source-id={{button.tooltipID}}
+        {{action "buttonClick" button}}
+      >{{#if button.iconClass}}<span class={{button.iconClass}}></span>{{/if}}{{button.labelFinal}}</button>
+    {{else}}
+      <button type="button" class={{button.buttonClass}} disabled={{button.disabled}} {{action "buttonClick" button}}>{{#if button.iconClass}}<span class={{button.iconClass}}></span>{{/if}}{{button.labelFinal}}</button>
+    {{/if}}
+  {{/if}}
+</div>{{/each}}</div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="modal-section-wrapper">
+    <p>{{heading}}</p>
+
+    {{view SelectionView context=selectionController controller=selectionController}}
+
+    <div class="assignment-type">
+      <label>{{t 'amMobilePolicies.shared.assignmentRuleLabel'}}</label>
+      <div class="help-wrapper">
+        <div class="help-container">
+          <span class="icon-question-mark"></span>
+          <span class="help-tooltip">
+            <div class="tooltip-arrow large-tooltip"></div>
+            <ul>
+              <li>{{t 'amMobilePolicies.shared.assignmentRuleLabelAutoInstallTooltip'}}</li>
+              <li>{{t 'amMobilePolicies.shared.assignmentRuleLabelOnDemandTooltip'}}</li>
+              <li>{{t 'amMobilePolicies.shared.assignmentRuleLabelAutoInstallAutoRemoveTooltip'}}</li>
+              <li>{{t 'amMobilePolicies.shared.assignmentRuleLabelOnDemandAutoRemoveTooltip'}}</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+
+      {{select-field content=assignmentTypes optionValuePath="content.type" optionLabelPath="content.name"
+      value=selectedAssignmentType.value disabled=isSelectionEmpty}}{{assignmentWarning}}
+    </div>
+    <div class="availability-time-box">
+      <label class="for-checkbox">{{input type="checkbox" checked=showAvailabilityTime disabled=isSelectionEmpty}}
+        {{t 'amMobilePolicies.shared.setAvailabilityTimeLabel'}}</label>
+
+      {{availability-time
+      isVisible=showAvailabilityTime
+      availabilitySelector=availabilitySelector
+      isDateTimeValid=isAvailabilityTimeValid
+      assignedTime=assignedTime
+      formattedTime=formattedTime}}
+
+    </div>
+  </div>
+
+  <div class="modal-action-buttons">
+    <div class="button-group" >
+      <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+      <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+    </div>
+  </div>
+</div>

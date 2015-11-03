@@ -1,0 +1,185 @@
+/***************************************************************************************
+*  TextFunctions.rul
+*
+*  Purpose:	text replacements, reading text etc.
+*           
+*/ 
+
+prototype ReplaceTextInFile(STRING, STRING, STRING, STRING);
+//
+STRING szFileNew, szExe, szMsg3;
+NUMBER  nFileHandle, nRes;
+
+function ReplaceTextInFile(szFilePath, szFileName, szReplaceWhat, szReplaceWith)
+begin 
+ 
+	//remove .bak file if it exists already
+	szFile = szFilePath ^ szFileName;
+	szFileNew = szFile + ".bak";
+	if (Is(FILE_EXISTS, szFileNew)) then
+		szExe = "cmd";
+		szCommand = "/c attrib -R -A -S \"" + szFileNew + "\"";
+		//MessageBox("Removing attributes from the file to delete backup, command line: " + szCommand, INFORMATION);
+		if (LaunchAppAndWait (szExe, szCommand, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+			Sprintf( szMsg3, @ABS_MSG_COMMON_LAUNCH_ERROR, szExe );    
+			MessageBox(szMsg3, SEVERE);
+		endif;
+		nRes = DeleteFile (szFileNew);
+		if (nRes < 0) then 
+			NumToStr (szMsg3, nRes);
+			MessageBox("Cannot delete file: " + szFileNew + ", result = " + szMsg3, SEVERE); 
+			abort;
+		endif;
+	endif;
+
+    
+    //rename the file to <file>.bak
+    szExe = "cmd";
+	szCommand = "/c attrib -R -A -S \"" + szFile + "\"";
+	//MessageBox("Removing attributes from the file to create backup, command line: " + szCommand, INFORMATION);
+	if (LaunchAppAndWait (szExe, szCommand, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg3, @ABS_MSG_COMMON_LAUNCH_ERROR, szExe );    
+		MessageBox(szMsg3, SEVERE);
+	endif;
+		//MessageBox("Renaming file: " + szFile + " to: " + szFileNew, INFORMATION);
+	nRes = RenameFile (szFile, szFileNew);
+    if (nRes < 0) then
+		NumToStr (szMsg3, nRes);    
+        MessageBox("Cannot rename file: " + szFile + " to replace \"" + szReplaceWhat + "\", result = " + szMsg3, WARNING);
+        //abort;
+    endif;
+   
+	//replace dollar sign in szReplaceWhat for PowerShell to work properly
+	StrReplace(szReplaceWhat, "$", "\\`$", 0);
+
+	//replace text using PowerShell
+	szExe = "cmd";
+	szCommand = "/c mode con:cols=255 \& cd \"" + szFilePath + "\" \& type \"" + szFileName + ".bak\" | powershell -Command \"$input | ForEach-Object { $_ -replace \\\"" + szReplaceWhat + "\\\", \\\"" + szReplaceWith + "\\\"}\" > \"" + szFileName + "\"";
+	//MessageBox("szCommand = " + szCommand, INFORMATION);
+	if (LaunchAppAndWait (szExe, szCommand, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg3, @ABS_MSG_COMMON_LAUNCH_ERROR, szExe );    
+	    MessageBox(szMsg3, SEVERE);      
+	endif;
+	
+	//clean-up - delete .bak file
+	DeleteFile(szFile + ".bak");
+	
+	return 0;
+
+end;
+
+prototype ReadLineFromTextFile(STRING, STRING, BYREF STRING);
+
+function ReadLineFromTextFile(szFilePath, szFileName, szString) 
+begin 
+    
+    OpenFileMode(FILE_MODE_NORMAL); 
+
+    OpenFile(nFileHandle, szFilePath, szFileName); 
+
+    if (GetLine(nFileHandle, szString) < 0) then
+		MessageBox ("Unable to read from file: " + szFilePath ^ szFileName, SEVERE);
+		abort;
+	endif; 
+
+    // Close the file. 
+    CloseFile(nFileHandle);
+    StrTrim (szString);
+    return 0;
+end;
+
+// Helper function that returns a line from a text file that contains specified search string
+prototype SearchForTextInFile(STRING, STRING, BYREF STRING);
+
+function SearchForTextInFile(szFilePath, szSeachString, szReturnLine) 
+begin
+    // Find the search string in the source file.
+    nResult = FileGrep (szFilePath, szSeachString, szReturnLine, nLineNumber, RESTART);
+    switch(nResult)
+        case FILE_NOT_FOUND:
+            // Report error; then abort.
+            MessageBox("File not found: " + szFilePath, WARNING);
+            abort;
+        case FILE_LINE_LENGTH:
+            // Report error; then abort.
+            MessageBox ("Lines in file " + szFilePath + " are longer than 4096 characters.", WARNING);
+            abort;
+        case OTHER_FAILURE:
+            // Report error; then abort.
+            MessageBox ("Unknown failure on call to FileGrep on file " + szFilePath, WARNING);
+            abort;
+    endswitch;
+    // Loop until end of file.
+    while (nResult != END_OF_FILE)
+        // Set up message string for SprintfBox.
+        //szMsg = "'PATH' found in line %d of %s:\n\n'%s'";
+        
+        // Report matching line from file.
+        //SprintfBox (INFORMATION, "FileGrep", szMsg, nLineNumber, SOURCE_FILE, svReturnLine);
+        
+        // Search again
+        nResult = FileGrep (szFilePath, szSeachString, szReturnLine, nLineNumber, CONTINUE);
+    endwhile;
+	return 0;
+end; 
+
+//removes white spaces, tabs, CRs from a string
+
+prototype RemoveSpacesFromString(STRING, BYREF STRING);
+
+function RemoveSpacesFromString (szStrInput, szStrOutput)
+
+STRING svSubString;
+
+INT    iLoop, iLength;
+
+begin
+
+	iLength = StrLength (szStrInput);
+	for iLoop = 0 to iLength step 1
+		StrSub (svSubString, szStrInput, iLoop, 1);
+		
+		if ((svSubString != " ") && (svSubString != "\t") && (svSubString != "\n")) then
+			szStrOutput = szStrOutput + svSubString;
+		endif;
+	endfor;
+	return 0;
+
+end;
+
+//check if the string is smaller than required minimum
+
+prototype BOOL IsValidStringLength(STRING, INT);
+
+function BOOL IsValidStringLength(szStrInput, nMinLength)
+
+begin
+
+	if (StrLength (szStrInput) < nMinLength) then
+		return FALSE;
+	else
+		return TRUE;
+	endif;
+	
+end;
+
+
+//validates input string against given regular expression
+prototype BOOL ValidateStringRegEx(STRING, VARIANT);
+
+function BOOL ValidateStringRegEx(szInputString,szPattern)
+OBJECT oRegEx;   
+BOOL MatchFound;
+begin
+
+	try
+		set oRegEx = CoCreateObject("VBScript.RegExp");
+	catch
+		MessageBox("CoCreateObject Failed: "+ Err.Decription, SEVERE);
+	endcatch;
+	oRegEx.Pattern = szPattern;
+	oRegEx.IgnoreCase = 1;
+	MatchFound = oRegEx.Test(szInputString);  
+	set oRegEx = NOTHING;
+	return MatchFound;
+end;

@@ -1,0 +1,36 @@
+{{#unless noPlatformSupported}}
+
+  <div class="properties-label">
+    <label>{{t 'amAssignableItem.modals.actionProperties.targetPlatforms'}}</label>
+  </div>
+
+  <div class="properties-value">
+    <div class="inline-flex-row">
+      {{#if isIosSupported}}
+        <label>{{t 'amAssignableItem.modals.actionProperties.ios'}}</label>
+      {{/if}}
+
+      {{#if isAndroidSupported}}
+        <label>{{t 'amAssignableItem.modals.actionProperties.android'}}</label>
+      {{/if}}
+
+      {{#if isIosAndroidSupported}}
+        <label>{{input type="checkbox" checked=iosChecked classNames="is-checkbox-for-platform-ios"}}{{t 'amAssignableItem.modals.actionProperties.ios'}}</label>
+        <label>{{input type="checkbox" checked=androidChecked classNames="is-checkbox-for-platform-android"}}{{t 'amAssignableItem.modals.actionProperties.android'}}</label>
+      {{/if}}
+
+      {{#if isAllSupported}}
+        <label>{{input type="checkbox" checked=iosChecked classNames="is-checkbox-for-platform-ios"}}{{t 'amAssignableItem.modals.actionProperties.ios'}}</label>
+        <label>{{input type="checkbox" checked=androidChecked classNames="is-checkbox-for-platform-android"}}{{t 'amAssignableItem.modals.actionProperties.android'}}</label>
+        <label>{{input type="checkbox" checked=windowsChecked classNames="is-checkbox-for-platform-windows"}}{{t 'amAssignableItem.modals.actionProperties.windows'}}</label>
+      {{/if}}
+
+      {{#if isSupportedPlatformEmpty}}
+        <div class="is-container-for-supported-platform-error-message required-field-message error">
+          {{t 'amAssignableItem.modals.actionProperties.validation.requiredPlatformMessage'}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+{{/unless}}

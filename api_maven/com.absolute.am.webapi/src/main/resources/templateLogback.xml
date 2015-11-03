@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration  scan="true" debug="true">
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%X - %m%n</pattern>
+    </encoder>
+  </appender>
+  <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <File>${WebAPILogbackFileLocation}/logs/com.absolute.am.webapi.txt</File>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${WebAPILogbackFileLocation}/logs/com.absolute.am.webapi-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+      <timeBasedFileNamingAndTriggeringPolicy
+            class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <!-- or whenever the file size reaches 500k -->
+        <maxFileSize>500KB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{25}\(%line\) %X %rEx{4}: %msg%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="org.hibernate" level="INFO" />
+  
+  <!-- logger name="com.absolute.am.webapi.controllers" level="WARN"/-->
+  <root level="WARN">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="ROLLING"/>
+  </root>
+</configuration>

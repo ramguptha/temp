@@ -1,0 +1,64 @@
+<div class="modal-section-wrapper">
+  <div class="commands-info">
+    {{#if actionDescription}}
+      <p>{{actionDescription}}</p>
+    {{/if}}
+
+
+    <p><strong>{{fieldName}}</strong>  {{#if fieldDisplayType}}( {{fieldDisplayType}} ){{/if}}</p>
+    <p>{{fieldDescription}}</p>
+  </div>
+
+  <div class="properties-value">
+    {{#if fieldIsNumber}}
+      {{decimal-field
+      value=itemValue
+      classNames="is-input-for-decimal-value"
+      dataType=dataNumberTypeValue
+      isInvalidData=decimalParsingError
+      type="text"}}
+
+    {{else}}
+      {{#if fieldIsIpAddress}}
+        {{ip-field fromIp=itemValue}}
+
+      {{else}}
+        {{#if fieldIsDate}}
+          {{date-time-picker value=itemValue}}
+        {{else}}
+          {{#if fieldIsBoolean}}
+
+            {{#each booleanOptions as |option|}}
+              <label>
+                {{radio-button
+                name='booleanValues'
+                selection=booleanOption
+                value=option.value
+                class=option.class}}
+                {{option.label}}
+              </label>
+            {{/each}}
+
+          {{else}}
+            {{#if fieldIsEnum}}
+              {{#if loaded}}
+                {{select-field content=enumContent value=itemValue optionValuePath="content.value" optionLabelPath="content.label"}}
+              {{/if}}
+
+            {{else}}
+              {{input type="text" type="text" value=itemValue}}
+
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group">
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

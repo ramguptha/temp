@@ -1,0 +1,124 @@
+<div class="modal-section-wrapper">
+  {{#if isAddAssignmentsMode}}
+    <!-- If user is assigning new policy or action -->
+    <p>{{selectedContextLabel}}: {{selectedContextName}}</p>
+    <p>{{t 'amAssignableItem.modals.action.policyAssignment.message'}}</p>
+
+  {{else}}
+    <!-- If user is editing existing assignment properties -->
+    <p>{{t 'amAssignableItem.modals.actionProperties.actionName'}}: {{actionName}}</p>
+    <p>{{t 'amAssignableItem.modals.actionProperties.actionType'}}: {{actionType}}</p>
+  {{/if}}
+
+  {{#if isAddAssignmentsMode}}
+    {{view SelectionView context=selectionController controller=selectionController class="is-container-for-list"}}
+  {{/if}}
+</div>
+
+<div class="modal-section-wrapper">
+  <div>
+    <div class="properties-label {{if isSelectionListEmpty 'disabled'}}">
+      <label>
+        {{input type="checkbox"
+        checked=delayChecked
+        disabled=isSelectionListEmpty
+        classNames="is-checkbox-for-action-delay"}}{{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.delayTitle'}}</label>
+    </div>
+
+    <div class="properties-value short-text-field {{if delayNotChecked 'disabled'}}">
+
+      {{view DigitalFieldView
+      type="text"
+      disabled=delayNotChecked
+      value=initialDelay
+      max="9999"
+      min="0"
+      maxlength="4"
+      classNames="is-input-for-delay-number-of-times"}}
+
+      {{select-field
+      content=intervalOptions
+      value=delaySelectorId
+      optionValuePath="content.value"
+      optionLabelPath="content.name"
+      disabled=delayNotChecked
+      classNames="is-selector-for-delay-frequency"}}
+
+      {{#if isInitialDelayNaN}}
+        <div class="is-container-for-initial-delay-error-message required-field-message error">
+          {{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.numberValidation'}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div>
+    <div class="properties-label {{if isSelectionListEmpty 'disabled'}}">
+      <label>{{input type="checkbox"
+      checked=repeatChecked
+      disabled=isSelectionListEmpty
+      classNames="is-checkbox-for-action-repeat"}}{{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.repeatTitle'}}</label>
+    </div>
+
+    <div class="properties-value short-text-field {{if repeatNotChecked 'disabled'}}">
+      <div class="table-row">
+        <div class="table-cell">
+          <label>{{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.frequency'}}</label>
+        </div>
+
+        {{view DigitalFieldView
+        type="text"
+        disabled=repeatNotChecked
+        value=repeatInterval
+        max="9999"
+        min="0"
+        maxlength="4"
+        classNames="is-input-for-repeat-frequency-number"}}
+
+        {{select-field
+        disabled=repeatNotChecked
+        content=intervalOptions
+        value=repeatSelectorId
+        optionValuePath="content.value"
+        optionLabelPath="content.name"
+        classNames="is-selector-for-repeat-frequency"}}
+
+        {{#if isRepeatIntervalNaN}}
+          <div class="is-container-for-repeat-interval-error-message required-field-message error">
+            {{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.numberValidation'}}
+          </div>
+        {{/if}}
+      </div>
+      <div class="table-row">
+        <div class="table-cell">
+          <label class="table-cell">{{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.repeat'}}</label>
+        </div>
+
+        {{view DigitalFieldView
+        type="text"
+        disabled=repeatNotChecked
+        value=repeatCount
+        max="9999"
+        min="0"
+        maxlength="4"
+        classNames="is-input-for-repeat-number-of-times"}}
+        <label>{{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.numberOfTimes'}}</label>
+
+        {{#if isRepeatCountNaN}}
+          <div class="is-container-for-repeat-count-error-message required-field-message error">
+            {{t 'amAssignableItem.modals.action.policyAssignment.timeComponent.numberValidation'}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "save"}} disabled={{isActionBtnDisabled}}>{{t 'shared.buttons.save'}}</button>
+  </div>
+</div>
+

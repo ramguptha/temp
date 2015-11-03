@@ -1,0 +1,145 @@
+<div class="snap-content-container self-help-content flexbox-content">
+<div class="all-details-content">
+<div class="snap-content-title">
+
+   <span class="device-icon {{deviceIconPath}}"></span>
+    <div class="device-name-info">
+    <h3>{{name}}</h3>
+  {{#if isPhoneDevice}}
+      <h4>{{t 'amUserSelfServicePortal.deviceDetails.phoneNumber'}} {{phoneNumber}}</h4>
+  {{/if}}
+    </div>
+</div>
+
+
+<div data-tooltip-id="tooltip-active-battery" class="tooltip-source"><i>{{t 'amUserSelfServicePortal.deviceDetails.detectedDateTooltip' batteryLevelDate=batteryLevelDate }}</i></div>
+
+<div class="device-main-description">
+
+  <div class="device-details-table-heading">
+    <div class="table-heading-row">
+    {{#if isNotWinPhoneDevice}}
+      <div class="device-details-table-cell"><span class="snap-content-icon"><img src={{osSmallIconPath}}></span><span class="device-details-text"><div class="underscore">{{t 'amUserSelfServicePortal.deviceDetails.osText'}}</div><p>{{platformText}}</p></span></div>
+      {{#unless model.data.isComputer}}
+        <div class="device-details-table-cell"><span class={{passcodePresentIconClass}}></span><span class="device-details-text"><div class="underscore">{{t 'amUserSelfServicePortal.deviceDetails.passcodePresent'}}</div><p>{{isPasscodePresent}}</p></span></div>
+        <div class="device-details-table-cell"><span class="icon-capacity"></span><span class="device-details-text"><div class="underscore">{{t 'amUserSelfServicePortal.deviceDetails.deviceCapacity'}}</div><p>{{deviceCapacity}}</p></span></div>
+      {{/unless}}
+      {{#if displayControls}}
+        {{#if batteryLevel}}
+          <div class="device-details-table-cell tooltip-s" data-tooltip-source-id="tooltip-active-battery" data-sticky-tooltip="true" >
+            <span class={{batteryLevelIconClass}}></span>
+            <span class="device-underscore-text"><div class="underscore">{{t 'amUserSelfServicePortal.deviceDetails.batteryLevel'}}</div><p>{{batteryLevel}}%</p></span>
+          </div>
+        {{/if}}
+      {{/if}}
+    {{/if}}
+    </div>
+  </div>
+</div>
+
+<table class="device-details-table-body">
+  <tbody>
+    <tr>
+      <td>{{t 'amUserSelfServicePortal.deviceDetails.serialNumber'}}</td>
+      <td>{{model.data.deviceSerialNumber}}</td>
+    </tr>
+    <tr>
+      <td>{{t 'amUserSelfServicePortal.deviceDetails.modelNumber'}}</td>
+      <td>{{model.data.deviceModel}}</td>
+    </tr>
+    {{#unless model.data.isComputer}}
+      <tr>
+        <td>{{t 'amUserSelfServicePortal.deviceDetails.identifierUDID'}}</td>
+        <td>{{model.data.identifier}}</td>
+      </tr>
+    {{/unless}}
+    <tr>
+      <td>{{t 'amUserSelfServicePortal.deviceDetails.osVersion'}}</td>
+      <td>{{osVersion}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div class="device-actions">
+  <div class="device-actions-title"><span class="icon-checkmark1"></span><h3>{{t 'amUserSelfServicePortal.deviceDetails.actionsLabel'}}</h3></div>
+  <div class="device-actions-list">
+  {{#if displayControls}}
+  <ul class="actions-list">
+    {{#if canIssueLockDeviceCommand}}
+    <li>
+      <a href="#" class="is-button-for-lock-device" {{action "lockDevice"}}>
+        <span class="command-icon icon-passcode"></span>
+        <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.deviceLockTitle'}}</span>
+      </a>
+    </li>
+    {{/if}}
+    {{#if canIssueResetTrackingCommand}}
+      <li>
+        <a href="#" class="is-button-for-clear-passcode" {{action "resetPasscode"}}>
+          <span class="command-icon icon-reset-pass"></span>
+          {{#if isAndroidDevice}}
+            <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.resetTrackingPassphraseAndroidTitle'}}</span>
+          {{/if}}
+          {{#if isIOsDevice}}
+            <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.resetTrackingPassphraseIOsTitle'}}</span>
+          {{/if}}
+        </a>
+      </li>
+    {{/if}}
+      {{#if canIssueClearOrSetPasscodeCommand}}
+        <li>
+          <a href="#" class="is-button-for-clear-passcode" {{action "clearOrSetPasscode"}}>
+            <span class="command-icon icon-reset-pass"></span>
+            {{#if isAndroidDevice}}
+              <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.resetTrackingPassphraseAndroidTitle'}}</span>
+            {{/if}}
+            {{#if isIOsDevice}}
+              <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.resetTrackingPassphraseIOsTitle'}}</span>
+            {{/if}}
+          </a>
+        </li>
+      {{/if}}
+      {{#if canIssueRemoteEraseCommand}}
+        <li>
+          <a href="#" class="is-button-for-remote-erase" {{action "remoteErase"}}>
+            <span class="command-icon icon-cantrash"></span>
+            <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.remoteDataDeleteTitle'}}</span>
+          </a>
+        </li>
+      {{/if}}
+      {{#if canIssueSendMessageCommand}}
+        <li>
+          <a href="#" class="is-button-for-send-message" {{action "sendMessage"}}>
+            <span class="command-icon icon-message"></span>
+            <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.sendMessageTitle'}}</span>
+          </a>
+        </li>
+      {{/if}}
+      {{#if canIssueTrackDeviceCommand}}
+        <li>
+          <a href="#" class="is-button-for-update-device-info" {{action "trackDevice"}}>
+            <span class="command-icon icon-tracking"></span>
+            <span class="record-action-name action-list-name">{{t 'amUserSelfServicePortal.deviceDetails.commands.trackDeviceTitle'}}</span>
+          </a>
+        </li>
+      {{/if}}
+
+      {{#if isAndroidAndSupportsNoCommands}}
+        <div>{{t 'amUserSelfServicePortal.deviceDetails.commands.isAndroidAndSupportsNoCommandsMessage' isAndroidAndSupportsNoCommandsMessage=isAndroidAndSupportsNoCommandsMessage}}</div>
+      {{/if}}
+      {{#if isIOSAndSupportsNoCommands}}
+        <div>{{t 'amUserSelfServicePortal.deviceDetails.commands.isIOSAndSupportsNoCommandsMessage' isIOSAndSupportsNoCommandsMessage=isIOSAndSupportsNoCommandsMessage}}</div>
+      {{/if}}
+      {{#if isWinPhoneAndSupportsNoCommands}}
+        <div>{{t 'amUserSelfServicePortal.deviceDetails.commands.isWinPhoneAndSupportsNoCommandsMessage' isWinPhoneAndSupportsNoCommandsMessage=isWinPhoneAndSupportsNoCommandsMessage}}</div>
+      {{/if}}
+      {{#if userHasNoCommandPermissions}}
+        <div>{{t 'amUserSelfServicePortal.deviceDetails.commands.userHasNoCommandPermissionsMessage' userHasNoCommandPermissionsMessage=userHasNoCommandPermissionsMessage}}</div>
+      {{/if}}
+  </ul>
+  {{/if}}
+  </div>
+</div>
+</div>

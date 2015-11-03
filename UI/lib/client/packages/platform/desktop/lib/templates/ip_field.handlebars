@@ -1,0 +1,19 @@
+{{input type="text" class="ip ip-enabled"}}
+
+{{input type="text" class="ip_octet" value=view.octet1 maxlength="3" disabled=disabled}} .
+{{input type="text" class="ip_octet" value=view.octet2 maxlength="3" disabled=disabled}} .
+{{input type="text" class="ip_octet" value=view.octet3 maxlength="3" disabled=disabled}} .
+{{input type="text" class="ip_octet" value=view.octet4 maxlength="3" disabled=disabled}}
+
+
+{{#if view.isRange}}
+  {{view.conjunctionText}}
+
+  {{input type="text" class="ip ip-enabled"}}
+  <div class="ip_container">
+    {{input type="text" class="ip_octet" value=view.octet5 maxlength="3"}} .
+    {{input type="text" class="ip_octet" value=view.octet6 maxlength="3"}} .
+    {{input type="text" class="ip_octet" value=view.octet7 maxlength="3"}} .
+    {{input type="text" class="ip_octet" value=view.octet8 maxlength="3"}}
+  </div>
+{{/if}}

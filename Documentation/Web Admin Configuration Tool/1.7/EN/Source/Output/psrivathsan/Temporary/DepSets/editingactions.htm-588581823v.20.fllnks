@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/workingwithactions.htm" />
+    <Link
+      Url="Content/policyactions.htm" />
+    <Link
+      Url="Content/duplicatingactions.htm" />
+    <Link
+      Url="Content/deletingactions.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/workingwithactions.htm" />
+    <Link
+      Url="Content/policyactions.htm" />
+    <Link
+      Url="Content/duplicatingactions.htm" />
+    <Link
+      Url="Content/deletingactions.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UrlList>
+    <Url Source="Resources/Images/remove-button.png" />
+    <Url Source="Resources/Images/edit-button.png" />
+    <Url Source="../../../../../../Users/jberardo/Pictures/edit-button.png" />
+    <Url Source="../../../../../../Users/jberardo/Pictures/remove-button.png" />
+    <Url Source="Resources/Images/rightarrow.jpg" />
+    <Url Source="Resources/Images/navicon.jpg" />
+    <Url Source="Resources/Images/SortOrder_icon.png" />
+    <Url Source="Resources/Images/SortOrder2_icon.png" />
+    <Url Source="Resources/Images/Remove_filter_icon.png" />
+    <Url Source="Resources/Images/search_all.png" />
+    <Url Source="Resources/Images/workarea.jpg" />
+    <Url Source="Resources/Images/toolbar.jpg" />
+    <Url Source="Resources/Images/sidebar.jpg" />
+</UrlList>

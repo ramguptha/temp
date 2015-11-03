@@ -1,0 +1,19 @@
+{{#if nameOptions}}
+  {{view view.SearchableSelectView
+    value=searchQuery.searchAttr
+    class="is-adhoc-search-attr-select"
+
+    content=nameOptionsWithPlaceholder
+    optionValuePath=nameOptionValuePath
+    optionLabelPath=nameOptionLabelPath
+
+    showSelectionText=showSelectionText
+    tPlaceholder=tNamePlaceholder
+  }}
+{{/if}}
+
+{{clearable-text-field
+  value=searchQuery.searchFilter
+  class="is-adhoc-search-filter-input"
+  placeholder=valuePlaceholder
+}}

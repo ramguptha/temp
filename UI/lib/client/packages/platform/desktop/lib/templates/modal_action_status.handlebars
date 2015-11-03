@@ -1,0 +1,62 @@
+<div class="is-container-for-modal-action-status row-fluid modal-action-status">
+  {{view spinnerView showSpinner=actionInProgress}}
+
+  {{#unless actionInProgress}}
+    {{#if actionFailed}}
+      <div class="is-container-for-action-failed-icon modal-action-icon">
+        <span class="icon-circle-attention"></span>
+      </div>
+
+      <div class="is-container-for-action-failed-content modal-action-content">
+        <div class={{modalActionErrorMsgClass}}><h3>{{errorMsg}}</h3></div>
+
+        {{#if errorDetails}}
+          <div class={{modalActionErrorDetailsClass}}>
+            <p>{{errorDetails}}</p>
+                {{#if showErrorDetail}}
+                <p>
+                  <a class="show-error-detail" href="#" {{action "showHideError" counter.loadStatus.lastError}}>{{t 'shared.errors.showErrorDetail'}}</a>
+                </p>
+                {{else}}
+                <p>
+                  <a class="show-error-detail" href="#" {{action "showHideError" counter.loadStatus.lastError}}>{{t 'shared.errors.hideErrorDetail'}}</a>
+                    <p></p>
+                    <p>{{t 'shared.errors.unableLoadData'}}</p>
+                    <p>{{t 'shared.modals.errors.details' errorStatusCode=errorStatusCode errorStatusText=errorStatusText}}</p>
+                    <p>{{t 'shared.modals.errors.url' errorUrl=errorUrl}}</p>
+                </p>
+                {{/if}}
+          </div>
+        {{/if}}
+
+      </div>
+    {{else}}
+      <span class="is-container-for-action-ok checkmark-image"></span>
+    {{/if}}
+  {{/unless}}
+
+  <div class="status-message">{{#if statusMsgItem}}<b>{{statusMsgItem}}</b> {{/if}}{{statusMsg}}</div>
+
+  {{#if statusMsgSub}}
+    <div class="status-message-sub">{{statusMsgSub}}</div>
+  {{/if}}
+
+  {{#if statusMsgDetails}}
+    <div class="status-message-details">
+      <span class="icon-warning"></span>
+      {{statusMsgDetails}}
+    </div>
+  {{/if}}
+</div>
+<div class="container-fluid modal-action-buttons">
+  <div class="button-group" >
+    {{#if showOkBtn}}
+      <button type="button" class="is-button-for-confirm btn btn-action" {{action "ok"}} autofocus>{{t 'shared.buttons.ok'}}</button>
+    {{else}}
+      {{#unless actionInProgress}}
+        <button type="button" class="is-button-for-cancel btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.close'}}</button>
+        <!--<button type="button" class="btn btn-action" {{!action tryAgain}}>Try Again</button>-->
+      {{/unless}}
+    {{/if}}
+  </div>
+</div>

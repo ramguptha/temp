@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1"
+  DepSetCode="185327577"
+  SavedSource="file:///C:/Data/TFS/Documentation/Manage/Web Admin Online Help/1.7/JA/Source/Output/psrivathsan/Temporary/HTML5 v.1.catapulttoccache">
+  <TocEntry
+    Title="はじめに">
+    <TocEntry
+      Title="Absolute Manage Web Admin のご案内"
+      Link="/Content/welcome.htm" />
+    <TocEntry
+      Title="免責事項"
+      Link="/Content/disclaimer.htm" />
+    <TocEntry
+      Title="最新情報"
+      Link="/Content/whatsnew.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Absolute Manage Web Admin の使い方">
+    <TocEntry
+      Title="ログインと表示言語を設定する"
+      Link="/Content/loginpreferences.htm" />
+    <TocEntry
+      Title="インターフェイスを移動する"
+      Link="/Content/navigating.htm" />
+    <TocEntry
+      Title="列レイアウトをカスタマイズする"
+      Link="/Content/columnlayout.htm" />
+    <TocEntry
+      Title="情報を検索する"
+      Link="/Content/searchingforinfo.htm" />
+    <TocEntry
+      Title="キューに入れられたコマンドとコマンド履歴を管理する"
+      Link="/Content/viewingcommands.htm" />
+    <TocEntry
+      Title="セルフサービスポータルについて"
+      Link="/Content/aboutselfservice.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="コンピューターを操作する"
+    Link="/Content/workingwithcomputers.htm">
+    <TocEntry
+      Title="コンピューターの詳細を表示する"
+      Link="/Content/viewingcompdetails.htm" />
+    <TocEntry
+      Title="コンピューターへメッセージを送信する"
+      Link="/Content/sendingmessagescomp.htm" />
+    <TocEntry
+      Title="コンピューター情報を収集する"
+      Link="/Content/gatheringinformation.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="モバイルデバイスを操作する "
+    Link="/Content/workingwithdevices.htm">
+    <TocEntry
+      Title="モバイルデバイスの管理に関する情報"
+      Link="/Content/aboutmdm.htm" />
+    <TocEntry
+      Title="デバイスの詳細を表示する"
+      Link="/Content/viewingdevicedetails.htm" />
+    <TocEntry
+      Title="デバイスをロックする"
+      Link="/Content/lockingdevices.htm" />
+    <TocEntry
+      Title="デバイスのパスコードを管理する"
+      Link="/Content/managingpasscodes.htm" />
+    <TocEntry
+      Title="デバイスを消去する"
+      Link="/Content/deletingdata.htm" />
+    <TocEntry
+      Title="デバイスへメッセージを送信する"
+      Link="/Content/sendingmessages.htm" />
+    <TocEntry
+      Title="デバイス情報を更新する"
+      Link="/Content/updatingdevice.htm" />
+    <TocEntry
+      Title="デバイスの名前を変更する"
+      Link="/Content/settingdevicename.htm" />
+    <TocEntry
+      Title="デバイスのローミングオプションを設定する"
+      Link="/Content/roamingoptions.htm" />
+    <TocEntry
+      Title="デバイスにアプリケーションを配信する"
+      Link="/Content/installingapps.htm" />
+    <TocEntry
+      Title="デバイスのアプリケーションをアンインストールする"
+      Link="/Content/uninstallingapps.htm" />
+    <TocEntry
+      Title="デバイスに構成プロファイルをインストールする"
+      Link="/Content/installingconfigprofiles.htm" />
+    <TocEntry
+      Title="デバイスから構成プロファイルを削除する"
+      Link="/Content/removingconfigprofiles.htm" />
+    <TocEntry
+      Title="デバイスにプロビジョニングプロファイルをインストールする"
+      Link="/Content/installingprovprofiles.htm" />
+    <TocEntry
+      Title="デバイスからプロビジョニングプロファイルを削除する"
+      Link="/Content/removingprovprofiles.htm" />
+    <TocEntry
+      Title="デバイスオーナーシップを設定する"
+      Link="/Content/settingdeviceownership.htm" />
+    <TocEntry
+      Title="デバイスの登録ユーザーを設定する"
+      Link="/Content/settingenrollmentuser.htm" />
+    <TocEntry
+      Title="デバイスの組織情報を設定する"
+      Link="/Content/settingorginfo.htm" />
+    <TocEntry
+      Title="アクティベーションロックオプションを設定する"
+      Link="/Content/settingactivationlock.htm" />
+    <TocEntry
+      Title="カスタムフィールド値を設定する"
+      Link="/Content/settingcustomfieldvalue.htm" />
+    <TocEntry
+      Title="失敗したインストールを再試行する"
+      Link="/Content/reissuingcommands.htm" />
+    <TocEntry
+      Title="デバイスをポリシーに追加する"
+      Link="/Content/addingdevicetopolicy.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="ポリシーを操作する"
+    Link="/Content/workingwithpolicies.htm">
+    <TocEntry
+      Title="ポリシーについて"
+      Link="/Content/aboutpolicies.htm" />
+    <TocEntry
+      Title="ポリシーの詳細を表示する"
+      Link="/Content/viewingpolicydetails.htm" />
+    <TocEntry
+      Title="標準ポリシーを作成する"
+      Link="/Content/creatingpolicies.htm" />
+    <TocEntry
+      Title="スマートポリシーを作成する"
+      Link="/Content/creatingsmartpolicies.htm">
+      <TocEntry
+        Title="フィルターを理解する"
+        Link="/Content/understandingfilters.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="ポリシー内のインハウスアプリケーションを操作する"
+      Link="/Content/policyinhouseapps.htm" />
+    <TocEntry
+      Title="ポリシー内のサードパーティアプリケーションを操作する"
+      Link="/Content/policy3rdpartyapps.htm" />
+    <TocEntry
+      Title="ポリシー内の構成プロファイルを操作する"
+      Link="/Content/policyconfigprofiles.htm" />
+    <TocEntry
+      Title="ポリシー内のメディアファイルを操作する"
+      Link="/Content/policymediafiles.htm" />
+    <TocEntry
+      Title="ポリシー内のアクションを操作する"
+      Link="/Content/policyactions.htm" />
+    <TocEntry
+      Title="ポリシーを編集する"
+      Link="/Content/editingpolicies.htm" />
+    <TocEntry
+      Title="ポリシーを削除する"
+      Link="/Content/deletingpolicies.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="割り当て可能なアイテムを操作する"
+    Link="/Content/workingwithitems.htm">
+    <TocEntry
+      Title="メディアファイルを管理する">
+      <TocEntry
+        Title="メディアファイルをインポートする"
+        Link="/Content/importingmediafiles.htm" />
+      <TocEntry
+        Title="メディアファイルの詳細を表示する"
+        Link="/Content/viewingcontentdetails.htm" />
+      <TocEntry
+        Title="メディアファイルのプロパティを編集する"
+        Link="/Content/editingcontent.htm" />
+      <TocEntry
+        Title="メディアファイルを削除する"
+        Link="/Content/deletingcontent.htm" />
+    </TocEntry>
+    <TocEntry
+      Title="インハウスアプリケーションの詳細を表示する"
+      Link="/Content/contentinhouseapps.htm" />
+    <TocEntry
+      Title="サードパーティアプリケーションの詳細を表示する"
+      Link="/Content/content3rdpartyapps.htm" />
+    <TocEntry
+      Title="電子書籍の詳細を表示する"
+      Link="/Content/contentbooks.htm" />
+    <TocEntry
+      Title="構成プロファイルの詳細を表示する"
+      Link="/Content/contentconfigprofiles.htm" />
+    <TocEntry
+      Title="プロビジョニングプロファイルの詳細を表示する"
+      Link="/Content/contentprovisioningprofiles.htm" />
+    <TocEntry
+      Title="アクションを操作する"
+      Link="/Content/workingwithactions.htm">
+      <TocEntry
+        Title="アクションの詳細を表示する"
+        Link="/Content/viewingactiondetails.htm" />
+      <TocEntry
+        Title="アクションを作成する">
+        <TocEntry
+          Title="デバイスへメッセージを送信"
+          Link="/Content/actionsendmessage.htm" />
+        <TocEntry
+          Title="メールを送信"
+          Link="/Content/actionsendemail.htm" />
+        <TocEntry
+          Title="SMS を送信"
+          Link="/Content/actionsendsms.htm" />
+        <TocEntry
+          Title="ローミングオプションを設定"
+          Link="/Content/actionsetroaming.htm" />
+        <TocEntry
+          Title="アクティベーションロックオプションを設定"
+          Link="/Content/actionsetactivationlock.htm" />
+        <TocEntry
+          Title="壁紙を設定"
+          Link="/Content/actionsetwallpaper.htm" />
+        <TocEntry
+          Title="デバイス名を設定"
+          Link="/Content/actionsetdevicename.htm" />
+        <TocEntry
+          Title="カスタムフィールド値の設定"
+          Link="/Content/actionsetcustomfield.htm" />
+        <TocEntry
+          Title="デバイス情報のアップデート"
+          Link="/Content/actionupdatedeviceinfo.htm" />
+        <TocEntry
+          Title="アテンションモードの設定"
+          Link="/Content/actionsetattentionmode.htm" />
+        <TocEntry
+          Title="デバイスをフリーズ"
+          Link="/Content/actionfreezedevice.htm" />
+        <TocEntry
+          Title="VPP招待を送る"
+          Link="/Content/actionsendvppinvitation.htm" />
+        <TocEntry
+          Title="VPP でのユーザー登録"
+          Link="/Content/actionregistervpp.htm" />
+        <TocEntry
+          Title="VPP からのユーザー退任"
+          Link="/Content/actionretirevpp.htm" />
+        <TocEntry
+          Title="構成プロファイルを削除"
+          Link="/Content/actionremoveconfigprofile.htm" />
+        <TocEntry
+          Title="非管理中デバイスへの降格"
+          Link="/Content/actiondemotedevice.htm" />
+      </TocEntry>
+      <TocEntry
+        Title="アクションを編集する"
+        Link="/Content/editingactions.htm" />
+      <TocEntry
+        Title="アクションを複製する"
+        Link="/Content/duplicatingactions.htm" />
+      <TocEntry
+        Title="アクションを削除する"
+        Link="/Content/deletingactions.htm" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="カスタムフィールドを操作する"
+    Link="/Content/workingwithcustomfields.htm">
+    <TocEntry
+      Title="カスタムフィールドを作成する"
+      Link="/Content/creatingcustomfields.htm" />
+    <TocEntry
+      Title="カスタムフィールドを編集する"
+      Link="/Content/editingcustomfields.htm" />
+    <TocEntry
+      Title="カスタムフィールドを複製する"
+      Link="/Content/duplicatingcustomfields.htm" />
+    <TocEntry
+      Title="カスタムフィールドを削除する"
+      Link="/Content/deletingcustomfields.htm" />
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="show-hide-columns-instructions">
+    <span class="icon-move-cursor"></span>
+    {{t 'desktop.showHideColumns.description'}}
+  </div>
+  <div class="show-hide-columns-content">
+    <h5>{{t 'desktop.showHideColumns.availableColumns'}}</h5>
+    <div class="show-hide-columns-block available-columns-block">
+      <div class="show-hide-columns-search">
+        {{clearable-text-field value=searchCriteria placeHolder=tSearch class="txt-search snap-view-search-input"}}
+      </div>
+      <div class="available-columns-content-panel">
+        <div class="columns-wrap">
+          <ul class="available-columns-list">
+            <!--<li> are drawn in the view by jquery-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="show-hide-columns-content">
+    <h5>{{t 'desktop.showHideColumns.includeColumns'}}</h5>
+    <div class="show-hide-columns-block include-columns-block">
+      <div class="include-columns-instruction">
+        <p>{{t 'desktop.showHideColumns.includeColumnsDescription'}}</p>
+      </div>
+      <div class="include-columns-content-panel">
+        <div class="columns-wrap">
+          <ul class="include-columns-list">
+              <!--<li> are drawn in the view by jquery-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid edit-content-actions">
+    <div class="modal-button-group create-folder-controls">
+      <span class="save-folder-spinner"></span>
+      <button type="button" class="create-folder-cancel btn-low" {{action "closeModal"}}>{{t 'shared.buttons.cancel'}}</button>
+      <button type="button" class="btn btn-action" {{action "done"}} disabled={{isActionBtnDisabled}}>{{t 'shared.buttons.done'}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,248 @@
+                                                                     NOTICES
+
+_______________________________________________________________
+
+The following terms apply to the JRE 7.0 and Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 7:
+
+This software is restricted from use or re-export to certain countries.  Before using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.  See <http://www.wassenaar.org/> for more information.
+
+In particular
+
+- this software may not be diverted contrary to US law (EAR Section 358.6).
+- this software may not be used by any end user, whether civil, military or otherwise, directly or indirectly involved in the research, development or production of chemical, biological or nuclear weapons or missile programs
+- this software may not be used by an end user in a country on Canada's Area Control List or in any country subject to Canadian economic sanctions pursuant to the United Nations Act, the Special Economic Measures Act or other relevant Act of Parliament which prohibit the export of certain goods and/or technology.
+
+
+The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS), has classified this software as Export Commodity Control Number (ECCN) 5D992, which includes software specifically designed or modified for the development, production or use of mobile communication equipment.  The form and manner of this distribution makes it eligible for export under Eligible License Exception: NLR Mass Market, CCATS G073612.
+
+_______________________________________________________________
+
+The following terms apply to the Legion of the Bouncy Castle Java Cryptography API:
+
+Copyright (c) 2000 - 2012 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The following terms apply to Apache Tomcat server code included with the Software:
+http://www.apache.org/licenses/LICENSE-2.0
+_______________________________________________________________
+
+The following terms apply to the SLF4JAPI code included with the Software:
+
+Copyright (c) 2004-2011 QOS.ch  All rights reserved.
+
+ Permission is hereby granted, free  of charge, to any person obtaining a  copy  of this  software  and  associated  documentation files  (the "Software"), to  deal in  the Software without  restriction, including without limitation  the rights to  use, copy, modify,  merge, publish, distribute,  sublicense, and/or sell  copies of  the Software,  and to permit persons to whom the Software  is furnished to do so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. _______________________________________________________________
+
+Logback code supplied with this software is licensed under the terms of the Eclipse Public License (http://www.eclipse.org/legal/epl-v10.html)
+_______________________________________________________________
+
+The following terms apply to sqlite-jdbc code included with the Software:
+http://www.apache.org/licenses/LICENSE-2.0
+_______________________________________________________________
+
+The following terms apply to the Ember.js code included with the Software:
+
+Copyright (c) 2013 Yehuda Katz, Tom Dale, Charles Jolley and Ember.js contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The following terms apply to the Spin.js code included with the Software:
+
+Copyright (c) 2011 Felix Gnass [fgnass at neteye dot de]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The MIT license applies and the following terms apply to the Modernizr code included with the Software:
+
+Copyright (c) 2009–2013
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The following terms apply to the jQuery code included with the Software:
+
+Copyright 2013 jQuery Foundation and other contributors
+http://jquery.com/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The following terms apply to the require.js code included with the Software:
+
+Copyright (c) 2010-2011, The Dojo Foundation
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The following terms apply to the handlebars.js code included with the Software:
+
+Copyright (C) 2011 by Yehuda Katz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The Apache license and the following terms apply to Select 2 code included with the Software:  http://www.apache.org/licenses/LICENSE-2.0
+_______________________________________________________________
+
+The following terms apply to the purl.js code included with the Software:
+
+Copyright (c) 2012 Mark Perkins, http://allmarkedup.com/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The following terms apply to the jqueryui.js code included with the Software:
+
+Copyright 2013 jQuery Foundation and other contributors, http://jqueryui.com/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+_______________________________________________________________
+
+The Eclipse Public License, v.1.0 (EPL) (http://www.eclipse.org/legal/epl-v10.html) license applies and the following terms apply to the c3p0 - JDBC3 Connection and Statement Pooling (http://www.mchange.com/projects/c3p0/) 
+
+Copyright (c) 2013 Machinery For Change, Inc.
+
+This software is made available for use, modification, and redistribution, under the terms of the Lesser GNU Public License, v.2.1 (LGPL) or the Eclipse Public License, v.1.0 (EPL), at your option. You should have received copies of both licenses with this distribution. 
+_______________________________________________________________
+
+The following terms apply to the Enunciate code included with the Software:
+http://www.apache.org/licenses/LICENSE-2.0
+_______________________________________________________________
+
+The following terms apply to the momentJS code included with the Software:
+https://github.com/moment/moment/blob/develop/LICENSE
+_______________________________________________________________
+
+The following terms apply to the wysihtml5 code included with the Software:
+https://github.com/xing/wysihtml5/blob/master/LICENSE
+_______________________________________________________________
+
+The following terms apply to the Atmosphere code included with the Software:
+https://github.com/Atmosphere/atmosphere/tree/master/license
+_______________________________________________________________
+
+The following terms apply to the decimal.js code included with the Software:
+https://github.com/MikeMcl/decimal.js/blob/master/LICENCE
+_______________________________________________________________
+
+The following terms apply to the jquery-ui-contextmenu code included with the Software:
+https://github.com/mar10/jquery-ui-contextmenu/blob/master/LICENSE.txt
+_______________________________________________________________
+
+The following terms apply to the tipsy code included with the Software:
+https://github.com/jaz303/tipsy/blob/master/LICENSE
+_______________________________________________________________
+
+The following terms apply to the timepicker code included with the Software:
+https://github.com/fgelinas/timepicker/blob/master/MIT-LICENSE.txt
+_______________________________________________________________
+
+The following terms apply to the Spin.js code included with the Software:
+https://github.com/fgnass/spin.js/blob/master/LICENSE.md
+_______________________________________________________________
+
+The following terms apply to the Node.js code included with the Software:
+https://raw.githubusercontent.com/nodejs/node/master/LICENSE
+_______________________________________________________________
+
+The following terms apply to the ASM code included with the Software:
+https://github.com/intel-hadoop/HiTune/blob/master/chukwa-hitune-dist/lib/asm-3.1-LICENSE.txt
+_______________________________________________________________
+
+The following terms apply to the Hibernate code included with the Software:
+http://hibernate.org/community/license/
+_______________________________________________________________
+
+The following terms apply to the Jackson code included with the Software:
+http://www.apache.org/licenses/LICENSE-2.0.txt
+_______________________________________________________________
+
+The following terms apply to the Javassist code included with the Software:
+https://github.com/jboss-javassist/javassist/blob/master/License.html
+_______________________________________________________________
+
+The following terms apply to the JBoss Logging code included with the Software:
+http://www.gnu.org/licenses/lgpl-2.1.txt
+_______________________________________________________________
+
+The following terms apply to the JBoss Transaction code included with the Software:
+http://repository.jboss.org/licenses/cddl.txt
+_______________________________________________________________
+
+The following terms apply to the Jersey code included with the Software:
+https://jersey.java.net/license.html
+_______________________________________________________________
+
+The following terms apply to the Jettison code included with the Software:
+http://www.apache.org/licenses/LICENSE-2.0.txt
+_______________________________________________________________
+
+The following terms apply to the Java Servlet API code included with the Software:
+https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html
+_______________________________________________________________
+
+The following terms apply to the Asynchronous Http and WebSocket Client code included with the Software:
+https://github.com/AsyncHttpClient/async-http-client/blob/master/LICENSE-2.0.txt

@@ -1,0 +1,10 @@
+{{#if counter.loadStatus.isInvoked}}
+  <span class="spinner spinner-small"></span>
+{{/if}}
+
+{{#if counter.loadStatus.isFailed}}
+  <span class="icon-circle-attention empty-list-icon"></span>
+  {{tUnableLoadData}}
+  <a class="show-error-detail" href="#" {{action "showError" counter.loadStatus.lastError}}>{{tShowErrorDetail}}</a>
+  <button type="button" class="btn-small btn-low retry" {{action "retryLoad"}}>{{tTryAgain}}</button>
+{{/if}}

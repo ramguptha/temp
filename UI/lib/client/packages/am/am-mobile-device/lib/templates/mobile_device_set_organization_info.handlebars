@@ -1,0 +1,81 @@
+<div class="modal-section-wrapper modal-commands-properties-container">
+  <div class="commands-info">
+    {{#if deviceCountDetails}}
+      {{#compare deviceCountDetails 1 ">"}}<p><b>{{t 'amMobileDevice.shared.devicesSelected' deviceCountDetails=deviceCountDetails}}</b></p>{{/compare}}
+    {{/if}}
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amMobileDevice.modals.setOrganizationInfo.name'}}</label>
+  </div>
+
+  <div class="properties-value">
+    <div class="inline-flex-row">
+      {{input type="text" id="id1" class="folder-name-field" value=orgName}}
+
+      {{#if nameErrorMessage}}
+        <div class="required-field-message error">{{nameErrorMessage}}</div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amMobileDevice.modals.setOrganizationInfo.phoneNumber'}}</label>
+  </div>
+
+  <div class="properties-value">
+    <div class="inline-flex-row">
+      {{phone-field id="id2" class="folder-name-field" errorMessage=phoneErrorMessage value=phone}}
+
+      {{#if phoneErrorMessage}}
+        <div class="required-field-message error">{{phoneErrorMessage}}</div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amMobileDevice.modals.setOrganizationInfo.email'}}</label>
+  </div>
+
+  <div class="properties-value">
+    <div class="inline-flex-row">
+      {{email-field id="id3" errorMessage=emailErrorMessage value=email}}
+
+      {{#if emailErrorMessage}}
+        <div class="required-field-message error">{{emailErrorMessage}}</div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amMobileDevice.modals.setOrganizationInfo.address'}}</label>
+  </div>
+
+  <div class="properties-value">
+    <div>  {{textarea id="uid4" rows="2" value=address}}</div>
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amMobileDevice.modals.setOrganizationInfo.comments'}}</label>
+  </div>
+
+  <div class="properties-value">
+    <div>{{input type="text" id="id5" class="folder-name-field" value=custom}} </div>
+
+    <a href="#" class="paragraph-title" {{action "clearFields"}}>{{t 'amMobileDevice.modals.setOrganizationInfo.clearAllFields'}}</a>
+    <p>{{t 'amMobileDevice.modals.setOrganizationInfo.leaveAllFieldsEmpty'}}</p>
+  </div>
+
+  {{#if unsupportedDevices}}
+    <div class="commands-unsupported-info"><span class="icon-triangle-attention"></span>{{unsupportedDevicesMessage}}</div>
+
+    {{view unsupportedDeviceListController.SummaryListView context=unsupportedDeviceListController controller=unsupportedDeviceListController}}
+  {{/if}}
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="Working with Assignable Items|Managing Media Files">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Importing Media Files</title>
+        <script>/* <![CDATA[ */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50107827-2', 'absolute.com');
+			ga('send', 'pageview');
+		/* ]]> */</script>
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="Resources/Stylesheets/Absolute.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Default.htm#importingmediafiles.htm">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="workingwithitems.htm">Working with Assignable Items</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbsSelf">Managing Media Files</span><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Importing Media Files</span>
+        </div>
+        <h1 class="Heading1">Importing Media Files</h1>
+        <p class="Body">You can import <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">media files<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Files that you can distribute to mobile devices through policies.</span></a> using <span class="VariablesProductName"><a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Absolute Manage<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Allows organizations to persistently manage and secure all of their endpoints from a single console, including PC, Mac, iOS, Android, and Windows Phone devices. Absolute Manage can be deployed as a complete asset management solution as well as a stand-alone solution for Mobile Device Management (MDM).</span></a> Web Admin</span> and make them
+available to managed iOS and Android devices through the
+<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">AbsoluteSafe<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>An Absolute Manage client application for iOS and Android devices that allows administrators to securely distribute media to mobile device users.</span></a> application.</p>
+        <p class="Body">During the import process, you can distribute media files through existing <a href="aboutpolicies.htm">policies</a>, which give you granular
+control over who has  access to a particular file.
+Furthermore, you can optionally prevent media files from being taken
+out of AbsoluteSafe. Files in AbsoluteSafe are stored in an encrypted format on the mobile device and are not part of any device backup to computers (for example, through <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">iTunes<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Apple's mobile device management application that provides an interface for managing files and applications on iOS devices.</span></a>).</p>
+        <p class="BodyWithListFollowing">While you can distribute any type of file to mobile devices, AbsoluteSafe provides support for users to view the following media files directly within the application:</p>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Web content</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">HTML pages (HTM, HTML)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">XML</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">XSL</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Safari web archive (WEBARCHIVE); iOS only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Documents</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">PDF</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Word (DOC, DOCX)*; iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Pages (PAGES); iOS only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Rich text (RTF)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">RTF&#160;directory (RTFD); iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Unformatted text (TXT)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Presentations</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">PowerPoint (PPT, PPTX)*; iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Keynote (KEY); iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Spreadsheets</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Excel (XLS, XLSX)*; iOS only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Numbers (NUMBERS); iOS only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Images</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">BMP</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">GIF</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">JPG, JPEG</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">PNG</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">TIF, TIFF; iOS only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">WEBP; Android only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Audio**</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">AAC audio (M4A/3GP)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">AAC audio books (M4B/M4P); iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">AIFF (AIFF, AIF, AIFC, CDDA); iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">AMR (AMR, 3GP)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">FLAC; Android only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">MIDI (IMY, MID, XMF, MXMF, OTA, RTTTL, RTX); Android only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">MP3 (MP3, SWA)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">MPEG&#160;audio (MPEG, MPG, MP3, SWA)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">Vorbis (OGG, MKV); Android only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">WAVE (WAV, BWF)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Video and multimedia**</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">3GP, 3GPP</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">3GP2, 3G2</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">AVI</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">MPEG-4 (MP4, M4V)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="◦">QuickTime (MOV, QT, MQV); iOS&#160;only</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1ProcedureLast" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span class="CircleBullet">◦</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="◦">VP8 (WEBM, MKV); Android only</td>
+            </tr>
+        </table>
+        <p class="Indent1"><span class="Emphasis">* Microsoft Office 95 or older formats are not supported.</span>
+        </p>
+        <p class="Indent1"><span class="Emphasis">** Support for audio and video formats depends on the container
+and codec formats of the mobile device.
+Therefore, some files may not be playable within AbsoluteSafe even
+though the container and codec are supported. On some devices, AbsoluteSafe may be able to play
+additional formats not listed here.</span>
+        </p>
+        <p class="TaskIntro">To import media files and distribute them to mobile devices through policies:</p>
+        <table class="AutoNumber_p_Step1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="1. ">Navigate to the <span class="Bold">Assignable Items</span> area.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="2. ">In the sidebar, click <span class="Bold">Content</span>. (You can also  click <img src="Resources/Images/navicon.jpg" class="Icon" /> in the top left corner of the screen and then click <span class="Bold">Mobile Content</span>.)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="3. ">Click <span class="Bold">Add Content</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="4. ">In the Upload Files dialog page, do the following:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>a) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="a) ">Drag  the files you want to import to the designated area of the page, or click inside the area to browse and select the files to import.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>b) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="b) ">If needed, edit the names of the files in the text fields.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>c) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="c) ">Click <span class="Bold">Continue</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="5. ">In the Assign Properties dialog page, do the following:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_SubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>a) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="a) ">Enter a category that best classifies the files you are importing. Default categories (Documents, Pictures, Multimedia, and Other) appear as suggestions as you type.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>b) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="b) ">Enter a description in the field provided.</td>
+            </tr>
+        </table>
+        <p class="Indent3">The description you enter here is visible to mobile device users and should give them an indication of the relevance of the files you are importing.</p>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>c) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="c) ">If you want mobile device users to be able to view or edit the files in applications other than AbsoluteSafe, select the <span class="Bold">Files can leave
+AbsoluteSafe</span> checkbox.</td>
+            </tr>
+        </table>
+        <p class="Important_Procedure_Substep" data-mc-autonum="IMPORTANT &#160;&#160;"><span class="autonumber"><span class="ImportantHead">IMPORTANT &#160;&#160;</span></span>While not enabling this option reliably prevents the actual file from
+leaving AbsoluteSafe, the same is not necessarily true for the
+information contained within the file. For example, a user still
+could take screenshots of the text in a file and send those images to other people.</p>
+        <p class="Indent3">When this option is enabled, you can select the <span class="Bold">User can email files</span> and <span class="Bold">User can print files</span> checkboxes to provide buttons within AbsoluteSafe to let users quickly execute these two tasks.</p>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>d) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="d) ">If the file is large and you do not want users to experience long download times or excessive data charges, select the <span class="Bold">Download files only over
+<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Wi-Fi<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>A technology that allows electronic devices to connect to the Internet or communicate with one another wirelessly within a particular area over radio waves.</span></a></span> checkbox. </td>
+            </tr>
+        </table>
+        <p class="Note_Procedure_Substep" data-mc-autonum="NOTE &#160;&#160;"><span class="autonumber"><span class="NoteHeader">NOTE &#160;&#160;</span></span>This option requires AbsoluteSafe 1.1 or higher. Earlier versions of
+AbsoluteSafe ignore it.</p>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>e) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="e) ">To set a password for the file, enter and confirm the password in the
+<span class="Bold">Passphrase</span> fields. Users must enter this passphrase every time they open the file in
+AbsoluteSafe.</td>
+            </tr>
+        </table>
+        <p class="Indent3">If you set a passphrase for a file, it cannot leave
+AbsoluteSafe. Therefore, you can set a passphrase only for file
+types that are supported by AbsoluteSafe (see above for supported file types). You cannot enable the <span class="Bold">Files can leave
+AbsoluteSafe</span> option when you set a passphrase.</p>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>f) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="f) ">Click <span class="Bold">Continue</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>6. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="6. ">In the Assign Policy dialog page, do one of the following:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●">If you want to import the media files without assigning them to policies at this point, click <span class="Bold">Save</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●">If you want to assign the media files to existing policies now, do the following:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_subSubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 72px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>i) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="i) ">Select the checkbox of each <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">policy<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>A tool you can use to automate certain aspects of mobile device administration. A policy includes a collection of target mobile devices, plus one or more of the following elements: third-party applications, in-house applications, configuration profiles, and media files. There are two types of policies you can use: standard policies and smart policies.</span></a> that you want to add the media files to. To quickly find specific policies, you can use the search field to narrow the items listed by specific criteria (for example, by policy name).</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_subSubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 72px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>ii) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="ii) ">From the <span class="Bold">Assignment Rule</span> list, select how you want to manage the selected media files on devices belonging to the policy:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 96px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Auto-install</span>: The media file is downloaded when a device enters
+the policy. The file remains on the device when it leaves the
+policy, and the device's user can manually delete the file, if desired.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1subSubProcedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 96px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">On-demand</span>: The media file is made available within AbsoluteSafe and the device's user can manually download the file.
+The file remains on the device when it leaves the policy, and the device's user can
+manually delete the file, if desired.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1subSubProcedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 96px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Auto-install, Auto-remove</span>: The media file is downloaded when the
+device enters the policy and deleted when it leaves.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1subSubProcedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 96px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">On-demand, Auto-remove</span>: The media file is made available within AbsoluteSafe and the device's user can manually download the file. The file is deleted when the device leaves the policy.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_subSubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 72px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>iii) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="iii) ">To restrict the availability of the selected media files to certain dates or times, select the <span class="Bold">Set availability time</span> checkbox, then choose one of the following options:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1subSubProcedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 96px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Every day between</span>: The media file is
+available to mobile devices belonging to this policy only during a certain
+time of the day (for example, during office hours). Specify the start and end times in the available fields.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1subSubProcedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 96px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">From</span>: The media file is available to mobile devices belonging to this policy only during a specific time period. Specify the start date and time as well as the end date and time.</td>
+            </tr>
+        </table>
+        <p class="Note_Procedure_subSubstep" data-mc-autonum="NOTE &#160;&#160;"><span class="autonumber"><span class="NoteHeader">NOTE &#160;&#160;</span></span>Use your local time in these fields. Times you enter are converted to and stored in Coordinated Universal Time (<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">UTC<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Coordinated Universal Time. The primary time standard by which the world regulates clocks and time. UTC is closely related to and generally interchangeable with Greenwich Mean Time (GMT).</span></a>) on the Absolute Manage server. As a result, you should take into account any time
+differences that may exist with your mobile clients. You also must
+manually compensate for Daylight Saving Time (<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">DST<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Daylight Saving Time. The practice of advancing clocks during the summer months so that people rise earlier in the morning and experience more daylight in the evening. Typically, clocks are adjusted forward one hour near the start of spring and are adjusted backward in the autumn. Exact start and end dates for DST vary with location.</span></a>), if desired,
+because DST does not apply to UTC.</p>
+        <table class="AutoNumber_p_subSubStep1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 72px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>iv) </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="iv) ">Click <span class="Bold">Save</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>7. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="7. ">Click <span class="Bold">Done</span>.</td>
+            </tr>
+        </table>
+        <div class="MCHelpControl MCHelpControl-Related relatedTopics" style="mc-help-control-display: list;"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="28" alt="Related Topics Icon" />Related Topics</span>
+            <ul class="MCHelpControlList MCRelatedTopicsControlList">
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="aboutpolicies.htm">About Policies</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="editingcontent.htm">Editing Media File Properties</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="viewingcontentdetails.htm">Viewing Media File Details</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="policymediafiles.htm">Working with Media Files Inside a Policy</a>
+                </li>
+            </ul>
+        </div>
+        <table cellspacing="0" width="100%">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <tr>
+                <td>
+                    <br />
+                    <br /><span style="font-size: 8pt;">©2015 Absolute Software Corporation. 
+				All rights reserved.</span>
+                </td>
+                <td>
+                    <p style="text-align: right;">
+                        <br />
+                        <br />
+                        <script type="text/javascript">/*<![CDATA[*/var str = location.href.toString();
+//var arr = str.split("::/");
+var htm_page = str;
+var mailSubject = 'Absolute Manage Web Admin Documentation Feedback: ' + htm_page;
+var mailBody = '\n\n(Comments apply to the following help page: ' + location.href + ')'; 
+var mailDisplay = 'Send feedback on this help topic'; 
+document.write('<a href="#" style="font-size: 8pt;">Back to top</a> | <a target="_blank" href="mailto:helpfeedback_AMWA@absolute.com' + '?subject=' + escape(mailSubject) + '&body=' + escape(mailBody) + '" style="font-size: 8pt;">' + mailDisplay + '</a>');/*]]>*/</script>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

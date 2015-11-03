@@ -1,0 +1,391 @@
+<html>
+<head>
+<title>JsWorld Examples</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript" src="JsWorld.js"></script>
+<script type="text/javascript" src="locales/js/en_GB.js"></script>
+<script type="text/javascript" src="locales/js/en_US.js"></script>
+<script type="text/javascript" src="locales/js/de_DE.js"></script>
+<script type="text/javascript" src="locales/js/hi_IN.js"></script>
+<script type="text/javascript" src="locales/js/ja_JP.js"></script>
+<script type="text/javascript" src="locales/js/pt_BR.js"></script>
+<script type="text/javascript" src="locales/js/zh_Hans_CN.js"></script>
+
+</head>
+
+<body>
+
+<h1>JsWorld Examples</h1>
+
+<pre>	
+
+<h2>Numeric Formatting</h2>
+
+Basic numeric formatting, en_US locale:
+<script>
+// Create an en_US locale object required 
+// to configure the numeric formatter
+var lc = new jsworld.Locale(POSIX_LC.en_US);
+
+// Now create the formatter
+var nf = new jsworld.NumericFormatter(lc);
+
+// print a few numbers
+document.writeln(nf.format(2500000.001));
+document.writeln(nf.format(-2500000.999));
+
+// you can also pass a string value
+document.writeln(nf.format("100000.00"));
+</script>
+
+
+Modifying the formatted output:
+<script>
+var num = -777000;
+
+document.writeln("default output   : " + nf.format(num));
+
+document.writeln("no grouping      : " + nf.format(num, "^"));
+document.writeln("no +/- signs     : " + nf.format(num, "~"));
+document.writeln("3 decimal digits : " + nf.format(num, ".3"));
+
+document.writeln("options mix      : " + nf.format(num, "^~.3"));
+</script>
+
+
+Force precision of six decimal places (rounding where necessary):
+<script>
+// print three numbers forcing a precision of 6 decimal places
+document.writeln(nf.format(10, ".6"));
+document.writeln(nf.format(20.5, ".6"));
+document.writeln(nf.format(30.0000009, ".6"));
+</script>
+
+
+Exception handling:
+<script>
+try {
+	var lc = new jsworld.Locale(POSIX_LC.en_US);
+	var nf = new jsworld.NumericFormatter(lc);
+	nf.format("abc");
+	
+} catch (error) {
+	document.writeln(error);
+}
+</script>
+
+
+
+<h2>Currency Formatting</h2>
+
+
+Basic formatting, en_GB locale:
+<script>
+// Create locale object from the en_GB data
+var lc = new jsworld.Locale(POSIX_LC.en_GB);
+
+// Now configure a monetary formatter for the en_GB locale
+var mf = new jsworld.MonetaryFormatter(lc);
+
+// Print a few pound amounts
+document.writeln(mf.format(0));
+document.writeln(mf.format(45.95));
+document.writeln(mf.format(25000));
+document.writeln(mf.format(7500000));
+
+// You can also pass a string value
+document.writeln(mf.format("-100000.00"));
+</script>
+
+
+Basic formatting, de_DE, hi_IN and pt_BR locales:
+<script>
+var amount = 250000;
+
+// For de_DE locale
+mf = new jsworld.MonetaryFormatter(new jsworld.Locale(POSIX_LC.de_DE));
+document.writeln(mf.format(amount));
+
+// For hi_IN locale
+mf = new jsworld.MonetaryFormatter(new jsworld.Locale(POSIX_LC.hi_IN));
+document.writeln(mf.format(amount));
+
+// For pt_BR locale
+mf = new jsworld.MonetaryFormatter(new jsworld.Locale(POSIX_LC.pt_BR));
+document.writeln(mf.format(amount));
+</script>
+
+
+Modifying the output format:
+<script>
+var amount = -999000;
+
+// Create new formatter for the Japanese locale
+mf = new jsworld.MonetaryFormatter(new jsworld.Locale(POSIX_LC.ja_JP));
+
+document.writeln("default output             : " + mf.format(amount));
+
+document.writeln("no grouping                : " + mf.format(amount, "^"));
+document.writeln("no symbol                  : " + mf.format(amount, "!"));
+document.writeln("no symbol and no sign      : " + mf.format(amount, "~"));
+document.writeln("force international symbol : " + mf.format(amount, "i"));
+document.writeln("force decimal precision 3  : " + mf.format(amount, ".3"));
+document.writeln("options mix                : " + mf.format(amount, "^i.3"));
+</script>
+
+
+Formatting a non-local currency, e.g. locale = en_US, currency = EUR:
+
+Using default ISO-4217 codes:
+<script>
+lc = new jsworld.Locale(POSIX_LC.en_US);
+mf = new jsworld.MonetaryFormatter(lc, "EUR");
+
+document.writeln(mf.format(-100));
+document.writeln(mf.format(100));
+document.writeln(mf.format(100000));
+document.writeln(mf.format(100000000));
+</script>
+
+Forcing shorthand symbol (1):
+<script>
+// It is safer to use the UTF-8 escape sequence than pass the &euro; sign directly
+mf = new jsworld.MonetaryFormatter(lc, "EUR", "\u20ac");
+document.writeln(mf.format(-100));
+document.writeln(mf.format(100));
+document.writeln(mf.format(100000));
+document.writeln(mf.format(100000000));
+</script>
+
+Forcing shorthand symbol (2):
+<script>
+// Grab the Euro sign from the de_DE (Germany) locale
+var germanLocale = new jsworld.Locale(POSIX_LC.de_DE);
+mf = new jsworld.MonetaryFormatter(lc, "EUR", germanLocale.getCurrencySymbol());
+document.writeln(mf.format(-100));
+document.writeln(mf.format(100));
+document.writeln(mf.format(100000));
+document.writeln(mf.format(100000000));
+</script>
+
+
+Exception handling:
+<script>
+try {
+	var lc = new jsworld.Locale(POSIX_LC.en_US);
+	var mf = new jsworld.MonetaryFormatter(lc);
+	mf.format("abc");
+} catch (error) {
+	document.write(error);
+}
+</script>
+
+
+
+Using brackets for negative amounts (en_US locale):
+<script>
+// Change property from 1 to 0 to turn brackets on
+POSIX_LC.en_US.n_sign_posn = 0;
+
+// Create new MonetaryFormatter with the modified definition
+mf = new jsworld.MonetaryFormatter(new jsworld.Locale(POSIX_LC.en_US));
+
+// Print a few negative amounts
+document.writeln(mf.format(-2500));
+document.writeln(mf.format(-5000));
+document.writeln(mf.format(-7500));
+</script>
+
+
+
+<h2>Date/Time Formatting</h2>
+
+
+Current date/time formatting, de_DE locale:
+<script>
+// Create new date/time formatter for the de_DE locale
+var lc = new jsworld.Locale(POSIX_LC.de_DE)
+var dtf = new jsworld.DateTimeFormatter(lc);
+
+// get the current date/time
+var now = new Date();
+
+// show the time
+document.writeln(dtf.formatTime(now));
+
+// show the date
+document.writeln(dtf.formatDate(now));
+
+// show the combined time and date
+document.writeln(dtf.formatDateTime(now));
+</script>
+
+
+Date/time formatting using ISO-8601 input:
+<script>
+var isoDateTime = "2014-11-21 22:45:15";
+
+// show the time
+document.writeln(dtf.formatTime(isoDateTime));
+
+// show the date
+document.writeln(dtf.formatDate(isoDateTime));
+
+// show the combined time and date
+document.writeln(dtf.formatDateTime(isoDateTime));
+</script>
+
+
+Helper methods:
+<script>
+// Create en_US locale object (American English/US)
+var lc_en = new jsworld.Locale(POSIX_LC.en_US);
+
+// Create pt_BR locale object (Portuguese/Brazil)
+var lc_pt = new jsworld.Locale(POSIX_LC.pt_BR);
+
+// Print the month names in both languages
+for (var i=0; i < 12; i++) {
+	var month_en = lc_en.getMonthName(i);	
+	var month_pt = lc_pt.getMonthName(i);
+
+	document.writeln(i+1 + ". " + month_en + " : " + month_pt);
+}
+
+// Print the current weekday in English and Portuguese
+var today = new Date().getDay();
+
+document.writeln("Today is " + lc_en.getWeekdayName(today));
+document.writeln("Hoje &eacute; " + lc_pt.getWeekdayName(today));
+</script>
+
+
+Exception handling:
+<script>
+try {
+	var lc = new jsworld.Locale(POSIX_LC.en_US);
+	var dtf = new jsworld.DateTimeFormatter(lc);
+	dtf.formatDate(1999);
+	
+} catch (error) {
+	document.write(error);
+}
+
+</script>
+
+
+Customising date/time formatting:
+<script>
+// Print the t_fmt property of the en_US locale
+document.writeln("POSIX_LC.en_US.t_fmt = " + POSIX_LC.en_US.t_fmt);
+
+// Test default time formatting of en_US locale
+var lc = new jsworld.Locale(POSIX_LC.en_US);
+var dtf = new jsworld.DateTimeFormatter(lc);
+var t = "1999-12-31 23:59:59";
+document.writeln(dtf.formatTime(t));
+
+// Redefine time formatting
+POSIX_LC.en_US.t_fmt = "%Hh %Mm %Ss";
+
+// Create a new formatter
+var dtf = new jsworld.DateTimeFormatter(new jsworld.Locale(POSIX_LC.en_US));
+
+// Print time
+document.writeln(dtf.formatTime("1999-12-31 23:59:59"));
+</script>
+
+
+<h2>Numeric parsing</h2>
+
+Numeric parsing, en_US locale
+<script>
+var formattedNumber = "-123,456.789";
+
+// Create number parser for en_US locale
+var lc = new jsworld.Locale(POSIX_LC.en_US);
+var parser = new jsworld.NumericParser(lc);
+
+try {
+	var parsedNumber = parser.parse(formattedNumber);
+	document.writeln("Parsed original number: " + parsedNumber);
+} catch (error) {
+	alert(error);
+}
+</script>
+
+
+<h2>Currency Parsing</h2>
+
+Euro currency parsing, de_DE locale
+<script>
+var formattedAmount = "-1.234.567,89 €";
+
+// Create monetary parser for de_DE locale
+var lc = new jsworld.Locale(POSIX_LC.de_DE);
+var parser = new jsworld.MonetaryParser(lc);
+
+try {
+	var parsedAmount = parser.parse(formattedAmount);
+	document.writeln("Parsed original amount: " + parsedAmount);
+} catch (error) {
+	alert(error);
+}
+</script>
+
+Euro currency parsing using ISO 4217 code, en_GB locale
+<script>
+var formattedAmount = "GBP-1,234,567.89";
+
+// Create monetary parser for en_GB locale
+var lc = new jsworld.Locale(POSIX_LC.en_GB);
+var parser = new jsworld.MonetaryParser(lc);
+
+try {
+	var parsedAmount = parser.parse(formattedAmount);
+	document.writeln("Parsed original amount: " + parsedAmount);
+} catch (error) {
+	alert(error);
+}
+</script>
+
+
+<h2>Date/Time Parsing</h2>
+
+Date/time parsing, ja_JP locale
+<script>
+// Create Japanese locale object
+lc = new jsworld.Locale(POSIX_LC.ja_JP);
+
+// Create a date/time formatter and a parser
+formatter = new jsworld.DateTimeFormatter(lc);
+parser = new jsworld.DateTimeParser(lc);
+
+
+try {
+	// Parse date
+	date = formatter.formatDate("2014-04-17");
+	result = parser.parseDate(date);
+	document.writeln(date + " -> " + result);
+	
+	// Parse time
+	time = formatter.formatTime("23:59:59");
+	result = parser.parseTime(time);
+	document.writeln(time + " -> " + result);
+	
+	// Parse date/time
+	datetime = formatter.formatDateTime("2014-04-17 23:59:59");
+	result = parser.parseDateTime(datetime);
+	document.writeln(datetime + " -> " + result);
+	
+} catch (error) {
+	alert(error);
+}
+</script>
+
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!-- This template has its own lay out and it is not using the base mobile_device_commands_container template -->
+<div class="modal-section-wrapper modal-commands-properties-container">
+  <div class="commands-info">
+    {{#if deviceCountDetails}}
+      {{#if (compare deviceCountDetails 1 ">")}}<p><b>{{t 'amMobileDevice.shared.devicesSelected' deviceCountDetails=deviceCountDetails}}</b></p>{{/if}}
+    {{/if}}
+  </div>
+
+  <div class="commands-input-list">
+    {{#each retryOptions as |option|}}
+      <label>
+        {{radio-button
+        name='retryOptions'
+        selection=retryOption
+        value=option.value
+        class=option.class}}
+        {{option.label}}
+      </label>
+    {{/each}}
+  </div>
+
+  <p>{{actionDescription}} <span class="alert alert-warning">{{actionWarning}}</span></p>
+
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isNotChanged}} >{{actionButtonLabel}}</button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="daily-time">
+
+  {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.everyDayBetween'}}
+  {{am-content-time-picker time=availabilityDailyStart disabled=datePeriodBtnSelected}}
+
+  {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.and'}}
+  {{am-content-time-picker time=availabilityDailyEnd disabled=datePeriodBtnSelected
+    defaultHours=23 defaultMinutes=59 defaultSeconds=59}}
+
+  <div class="status-message">
+  {{#if availabilityDailyStartUTC}}
+    {{availabilityDailyStartUTC}} {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.utc'}}
+  {{/if}}
+  {{#if availabilityDailyEndUTC}}
+    {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.and'}}
+    {{availabilityDailyEndUTC}} {{t 'availabilityTimeComponent.dailyTimeIntervalSelector.utc'}}
+  {{/if}}
+  </div>
+
+  {{#if timeErrorMessage}}
+    <div class="alert alert-error tipsy tipsy-w">
+      <div class="tipsy-arrow tipsy-arrow-w"></div>
+      <div class="tipsy-inner">{{timeErrorMessage}}</div>
+    </div>
+  {{/if}}
+</div>

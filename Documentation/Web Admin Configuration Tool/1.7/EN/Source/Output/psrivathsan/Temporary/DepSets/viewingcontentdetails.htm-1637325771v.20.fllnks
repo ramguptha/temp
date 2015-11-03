@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/TableStyles/In_ColumnIndent.css" />
+    <Link
+      Url="Content/Resources/Images/email_icon.jpg" />
+    <Link
+      Url="Content/Resources/Images/print_icon.jpg" />
+    <Link
+      Url="Content/editingcontent.htm" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/TableStyles/In_ColumnIndent.css" />
+    <Link
+      Url="Content/Resources/Images/email_icon.jpg" />
+    <Link
+      Url="Content/Resources/Images/print_icon.jpg" />
+    <Link
+      Url="Content/editingcontent.htm" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/TableStyles/In_ColumnIndent.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

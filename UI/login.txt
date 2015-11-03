@@ -1,0 +1,4 @@
+server: qaams3
+port: 3971
+username: admin
+password: password

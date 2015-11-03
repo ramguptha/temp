@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="615" MadCap:lastWidth="1035">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Installing Configuration Profiles on Devices</h1>
+        <p class="Body">You can remotely install existing configuration profiles on mobile devices. A configuration profile is an easy way of distributing common settings (for example, Wi-Fi, VPN, email, or application-specific settings) to the mobile devices in your deployment. Before you can install a configuration profile from <MadCap:variable name="Variables.ProductName" />, you must import or create the profile using the Absolute Manage Admin interface. For more information, see "Working with configuration profiles" in the <span class="Emphasis">Absolute Manage User Guide</span>.</p>
+        <p class="Body">After you issue the command, the configuration profile is installed on the device as soon as it next contacts the notification server of its OS vendor. If
+the device is connected to a Wi-Fi or mobile network, this action
+is usually carried out within a minute; otherwise, it happens when the device
+reconnects to a network.</p>
+        <p class="BodyWithListFollowing">Results of the profile installation vary slightly depending on the device's operating system:</p>
+        <p class="Bullet1" MadCap:autonum="●">For iOS and Android devices, the profile is added to the existing profiles
+installed on the device.</p>
+        <p class="Bullet1" MadCap:autonum="●">For Windows Phone devices, the profile replaces the current
+profile of the mailboxes that the selected devices are
+synchronized with.
+Because of the way Exchange ActiveSync works, this action also applies
+the profile to all other devices that are synchronized with the
+same Exchange mailboxes. (If such other devices are iOS
+devices, the installed profile does not replace their current profiles, but
+the profile’s settings may override those of any configuration
+profiles installed on the devices.)</p>
+        <p class="TaskIntro">To install configuration profiles on mobile devices:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to a page in the Mobile Devices area that contains the devices you want to install configuration profiles on. For example, you can navigate to <span class="Bold">Mobile Devices</span> &gt; <span class="Bold">All Windows Phone Devices</span>, then <a href="searchingforinfo.htm">search for specific devices</a>.</p>
+        <p class="Steps" MadCap:autonum="2. ">In the results grid, select the checkbox of each applicable device and click <span class="Bold">Commands</span> &gt; <span class="Bold">Install Configuration Profile</span>.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">If you are issuing the command to multiple devices at once, you must select devices of the same OS; that is, select all iOS&#160;devices, all Android devices, or all Windows Phone devices.</p>
+        <p class="Indent2">You can also issue the command for a single device from its Device Details page:</p>
+        <p class="SubSteps" MadCap:autonum="a) ">In the results grid, click the device you want to install configuration profiles on.  The device's Device Details page opens.</p>
+        <p class="SubSteps" MadCap:autonum="b) "> From the Commands sidebar, click <span class="Bold">Install Configuration Profile</span>.</p>
+        <p class="Steps" MadCap:autonum="3. ">Select the checkboxes of the configuration profiles you want to install.</p>
+        <p class="Indent2">To quickly find specific configuration profiles, you can use the search field to narrow the profiles listed by specific criteria (for example, by profile name or description).</p>
+        <p class="Steps" MadCap:autonum="4. ">Click <span class="Bold">Install Profile</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="removingconfigprofiles.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

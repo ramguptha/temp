@@ -1,0 +1,9 @@
+{{#each attrs.modals.modalLayerSpecs as |modalLayerSpec|}}
+  {{#if modalLayerSpec.isTop}}
+    <div class="modal-backdrop" style={{modalLayerSpec.backdropStyle}}></div>
+  {{/if}}
+
+  <div class="modal-window" style={{modalLayerSpec.modalStyle}}>
+    <div class="modal-body">{{view modalLayerSpec.viewName context=modalLayerSpec.controller controller=modalLayerSpec.controller}}</div>
+  </div>
+{{/each}}

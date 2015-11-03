@@ -1,0 +1,15 @@
+<div class={{modalWindowClass}}>
+
+  <div class="modal-header-generic">
+  </div>
+
+  <div class="modal-body-generic">
+      {{yield}}
+  </div>
+
+  <div class="modal-footer-generic clearfix">
+    <div class="float-right">
+      <button type="button" class="btn btn-action" {{action "closeModal"}}>{{t 'shared.buttons.ok'}}</button>
+    </div>
+  </div>
+</div>

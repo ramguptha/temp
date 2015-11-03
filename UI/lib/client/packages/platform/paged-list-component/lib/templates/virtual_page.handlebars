@@ -1,0 +1,37 @@
+<ul class="virtual-page" style={{presentation.style}}>
+  {{#each presentation.rows as |row|}}
+    <li
+      style={{row.style}}
+      class="{{if row.isEven 'even' 'odd'}} {{if row.isSelected 'selected'}} {{if row.isDisabled 'disabled'}} {{if row.hasRowClick 'pointer'}} {{if row.node.isGroup 'is-group'}}"
+      data-automation-id={{row.automationId}}
+      data-id={{row.id}}
+      {{action "rowClick" row}}
+    >
+      {{#unless row.isDeferred}}
+        {{component row.itemComponent
+          pagedComponent=row.pagedComponent
+          row=row
+          node=row.node
+          refreshedAt=row.refreshedAt
+          style=row.style
+        }}
+      {{else}}
+        <div class="is-container-for-deferred {{if row.isLoading 'is-loading'}} {{if row.error 'load-page-failed'}} {{if row.isReadTail "is-tail" "is-inline"}}">
+          {{#if row.isLoading}}
+            {{component presentation.pagedComponent.loadingComponent
+              pagedComponent=presentation.pagedComponent
+              node=row.node
+            }}
+          {{/if}}
+
+          {{#if row.error}}
+            <span class="icon-circle-attention empty-list-icon"></span>
+            {{row.tUnableLoadData}}
+            <a class="show-error-detail" href="#" {{action "showError" row.error bubbles=false}}>{{row.tShowErrorDetail}}</a>
+            <button type="button" class="btn btn-low retry" {{action "retryLoad" node bubbles=false}}>{{row.tTryAgain}}</button>
+          {{/if}}
+        </div>
+      {{/unless}}
+    </li>
+  {{/each}}
+</ul>

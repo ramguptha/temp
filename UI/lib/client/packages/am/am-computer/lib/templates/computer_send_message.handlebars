@@ -1,0 +1,29 @@
+<div class="modal-section-wrapper modal-commands-properties-container">
+  <div class="commands-info">
+    {{#if actionWarning}}
+      <p> <span class="alert alert-warning">{{actionWarning}}</span></p>
+    {{/if}}
+  </div>
+
+  <div class="properties-label">
+    <label>{{t 'amMobileDevice.modals.sendMessage.enterMessage'}}</label>
+  </div>
+  <div class="properties-value">
+    <div>
+      {{textarea id="enterMessage" value=message rows="3" }}
+    </div>
+  </div>
+
+  {{#if unsupportedComputers}}
+    <div class="commands-unsupported-info"><span class="icon-triangle-attention"></span>{{unsupportedComputersMessage}}</div>
+    {{view unsupportedComputerListController.SummaryListView context=unsupportedComputerListController controller=unsupportedComputerListController}}
+  {{/if}}
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+  </div>
+</div>
+

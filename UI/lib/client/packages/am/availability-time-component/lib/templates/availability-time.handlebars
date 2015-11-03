@@ -1,0 +1,19 @@
+<div class={{dailyIntervalContainerClass}}>
+  {{view RadioButton isSelected=dailyIntervalBtnSelected value=1}}
+
+  <div class="hours-selector-container">
+    {{view dailyIntervalSelectorView}}
+  </div>
+</div>
+
+<div class={{datePeriodContainerClass}}>
+  {{view RadioButton isSelected=datePeriodBtnSelected value=2}}
+
+  <div class="date-selector-container">
+    {{view datePeriodSelectorView}}
+  </div>
+</div>
+
+{{#if infoMessage}}
+  <div class="alert alert-info">{{infoMessage}}</div>
+{{/if}}

@@ -1,0 +1,21 @@
+<div class="modal-action-window server-connect-error">
+  <div class="modal-action-icon"><span class="icon-circle-attention"></span></div>
+  <div class="modal-action-content">
+    <h3>{{title}}</h3>
+
+    {{#if details}}
+      <ul class="error-detail">{{#each details as |detail|}}<li>{{detail}}</li>{{/each}}</ul>
+    {{/if}}
+
+    {{#if resolution}}
+    <p class="error-resolution">{{resolution}}</p>
+    {{/if}}
+
+    <div class="container-fluid modal-action-buttons">
+      <div class="button-group" >
+        {{#if showCancelButton}}<button type="button" class="btn btn-low" {{action "cancel"}} autofocus>{{t 'shared.buttons.cancel'}}</button>{{else}}<button type="button" class="btn btn-action" {{action "cancel"}} autofocus>{{t 'shared.buttons.ok'}}</button>{{/if}}
+        {{#if showTryAgainButton}}<button type="button" class="btn btn-action" {{action "tryAgain"}}>{{t 'shared.buttons.tryAgain'}}</button>{{/if}}
+      </div>
+    </div>
+  </div>
+</div>

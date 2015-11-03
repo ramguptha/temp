@@ -1,0 +1,391 @@
+{{modals-container modals=modals}}
+
+<div class="page-container">
+  {{outlet class="page-wrapper"}}
+</div>
+
+<div class="app-header" style=""><div id="PageHeaderContainer" class="header-title-container {{if visibleGlobalNavMenu 'global-nav-menu-is-visible'}}">
+  <div class="menu-header row clearfix">
+    <div class="nav-main-container" >
+    {{#if visibleGlobalNavMenu}}
+    <ul class="{{if showingGlobalNavMenu 'is-active'}} main-nav">
+      <li {{action "toggleMenu" "globalNav" bubbles=false}}><span class="{{if showingGlobalNavMenu 'is-active'}} icon-list main-nav-icon"></span>
+        {{#if showingGlobalNavMenu}}
+          <div class="main-active-dropdown main-dropdown-menu dropdown-1columns">
+            <div class="col-1">
+            {{#each menuGroups as |menuGroup|}}
+              <div class="main-sub-menu alerts-links-menu">
+                {{#if menuGroup.landingAction}}
+                  <h3><a href="#" {{action "gotoViaGlobalNav" menuGroup.landingAction}}><span class="{{menuGroup.mainMenuIcon}} {{menuGroup.iconClassName}}"></span>{{menuGroup.name}}</a></h3>
+                {{else}}
+                  <h3><span class="{{menuGroup.mainMenuIcon}} {{menuGroup.iconClassName}}"></span>{{menuGroup.name}}</h3>
+                {{/if}}
+                <ul>
+                {{#each menuGroup.actions as |actionConfig|}}
+                  <li><a href="#" {{action "gotoViaGlobalNav" actionConfig}}>{{actionConfig.name}}</a></li>
+                {{/each}}
+                </ul>
+              </div>
+            {{/each}}
+            </div>
+          </div>
+        {{/if}}
+      </li>
+    </ul>
+    {{/if}}
+    </div>
+    <div class="logo-container">
+      <a href="#">
+        <div class="logo">
+            <div class="am-logo-main"><img src="../packages/platform/desktop/img/logo-retina.png" width="76"></div>
+        <span class="icon-a-logo"></span>
+            <!--<div class="am-main-preview"><img src="../packages/platform/desktop/img/preview.png"></div>-->
+        </div>
+      </a>
+    </div>
+    <div class="global-navigation-group">
+      {{#if view.helpLink}}
+          <div class="help-nav-panel"><a target="_blank" href={{view.helpLink}}><img src="../packages/platform/desktop/img/question-help-icon-retina.png" width="25" /></a></div>
+      {{/if}}
+      <div class="nav-global-container">
+      <div class="{{if showingUserMenu 'is-active'}} user-nav">
+        <div {{action "toggleMenu" "user" bubbles=false}} class="{{if showingUserMenu 'is-active'}}">
+          {{#if showingUserMenu}}
+            <div class="user-active-dropdown user-dropdown-menu dropdown-1column">
+              <!--<div class="user-sub-menu-avatar">-->
+                  <!--<img src="../packages/platform/desktop/img/martin_bestman_small.jpg">-->
+              <!--</div>-->
+              <div class="user-sub-menu">
+                <ul>
+                  <!--<li><a href="#">Edit Profile</a></li>-->
+                  <li><a href="#" class='is-button-for-about-info' {{action "showAboutInfo"}}>{{t 'desktop.accountMenu.options.about'}}</a></li>
+                  <li><a href="#" class='is-button-for-logout' {{action "logout"}}>{{t 'desktop.accountMenu.options.logout'}}</a></li>
+                </ul>
+              </div>
+            </div>
+          {{/if}}
+
+          <div class="user-nav-panel">
+
+            <a class="user-avatar">
+                <span id="user-id" class="user-id">
+                  <img id="user-avatar" src="../packages/platform/desktop/img/icon-avatar-retina.png" width="25">
+                </span>
+              <span class="icon-arrow-2 icon-user-arrow"></span>
+            </a>
+          </div>
+        </div><!-- End 1 columns Item -->
+      </div>
+    </div>
+        <div class="user-nav-currentuser">{{userName}}</div>
+  </div>
+  <div class="header-title-container {{if breadcrumbTop 'has-trail'}}">
+    <div class="trail-container">
+      <ul class="{{if showingTrailMenu 'is-active'}} trail-nav header-title">
+        <li {{action "toggleMenu" "trail" bubbles=false}} class="{{if showingTrailMenu 'is-active'}}">
+          <div class="title-trail-panel"><span class="title-trail-content">{{breadcrumbTop.title}}</span><span class="icon-arrow-2"></span></div>
+          {{#if showingTrailMenu}}
+            <div class="trail-active-dropdown trail-dropdown-menu">
+              <ul>
+                {{#each breadcrumbsTail as |crumb|}}
+                  <li><a href="#" class="is-button-for-home-breadcrumb" {{action "gotoBreadcrumb" crumb}}>{{crumb.title}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div><!-- #PageHeaderContainer --><div class="browser-error" style="display:none;"><span class="icon-triangle-attention"></span>Your browser is unsupported, please update to a <a href="#">newer browser.</a></div></div>
+<div class="page-footer-container"><div class="page-footer">
+    <div class="footer-content">
+    <ul>
+      <li>{{t 'desktop.footerInfo.amServerVersion'}} {{serverVersion}}</li>
+      <li>{{t 'desktop.footerInfo.webAPIVersion'}} {{webAPIVersion}}</li>
+      {{#if isSelfServicePortal}}
+        <li><a href="http://www.absolute.com/en/about/legal/agreements" target="_blank">{{t 'desktop.footerInfo.serviceAgreementSelfSevicePortal'}}</a></li>
+      {{else}}
+        <li><a href="http://www.absolute.com/company/legal/agreements/absolute-manage-agreement" target="_blank">{{t 'desktop.footerInfo.serviceAgreement'}}</a></li>
+      {{/if}}
+      <li><a href="http://www.absolute.com/en/company/legal/policy" target="_blank">{{t 'desktop.footerInfo.privacyPolicy'}}</a></li>
+    </ul>
+    </div>
+    <div class="alerts-dropdown-menu dropdown-alerts"><!-- Begin 2 columns container -->
+
+            <div class="dropdown-menu-title"><h3>Alerts</h3></div>
+            <ul>
+                <div class="footer-dropdown-item">
+                    <div class="footer-dropdown-item-icon"><span class="icon-circle-attention"></span></div>
+                    <div class="footer-dropdown-item-content">
+                        <h4 class="dropdown-item-title">Suspicious Software Installed</h4>
+                        <p class="dropdown-item-description">John Smith has installed Napster</p>
+                    </div>
+                </div>
+                <div class="footer-dropdown-item">
+                    <div class="footer-dropdown-item-icon"><span class="icon-triangle-attention"></span></div>
+                    <div class="footer-dropdown-item-content">
+                        <h4 class="dropdown-item-title">Computer's name changed</h4>
+                        <p class="dropdown-item-description">George has change his computer name</p>
+                    </div>
+                </div>
+                <div class="footer-dropdown-item">
+                    <div class="footer-dropdown-item-icon"><span class="icon-circle-attention"></span></div>
+                    <div class="footer-dropdown-item-content">
+                        <h4 class="dropdown-item-title">Suspicious Software Installed</h4>
+                        <p class="dropdown-item-description">John Smith has installed Napster</p>
+                    </div>
+                </div>
+            </ul>
+    </div>
+    <div class="history-dropdown-menu dropdown-history"><!-- Begin 2 columns container -->
+        <div class="dropdown-menu-title"><h3>Recent History</h3></div>
+        <div class="tabs-history-list liteTabs">
+            <ul class="tabs">
+                <li>
+                    <a class="history-tab" href="#media">Media</a>
+                </li>
+                <li>
+                    <a class="history-tab" href="#devices">Devices</a>
+                </li>
+                <li>
+                    <a class="history-tab" href="#groups">Groups</a>
+                </li>
+                <li>
+                    <a class="history-tab" href="#policy">Policy</a>
+                </li>
+            </ul>
+            <div name="#media" class="history-container">
+                <div class="history-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="#devices" class="history-container">
+                <div class="history-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="#groups" class="history-container">
+                <div class="history-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="#policy" class="history-container">
+                <div class="history-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End 2 columns container -->
+    <div class="favorites-dropdown-menu dropdown-favorites"><!-- Begin 2 columns container -->
+        <div class="dropdown-menu-title"><h3>Favorites</h3></div>
+        <div class="tabs-favorites-list liteTabs">
+            <ul class="tabs">
+                <li>
+                    <a class="favorites-tab" href="#media">Media</a>
+                </li>
+                <li>
+                    <a class="favorites-tab" href="#devices">Devices</a>
+                </li>
+                <li>
+                    <a class="favorites-tab" href="#groups">Groups</a>
+                </li>
+                <li>
+                    <a class="favorites-tab" href="#policy">Policy</a>
+                </li>
+            </ul>
+            <div name="#media" class="favorites-container">
+                <div class="favorites-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="#devices" class="favorites-container">
+                <div class="favorites-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="#groups" class="favorites-container">
+                <div class="favorites-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-apple"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="#policy" class="favorites-container">
+                <div class="favorites-container-list">
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-android"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown-item">
+                        <div class="footer-dropdown-item-icon"><span class="icon-windows"></span></div>
+                        <div class="footer-dropdown-item-content">
+                            <h4 class="dropdown-item-title">Absolute Brochure</h4>
+                            <p class="dropdown-item-description">Some description about this media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End 2 columns container -->
+    <div class="footer-menu-group">
+        <ul class="footer-menu">
+            <!--<li class="alerts-btn">-->
+                <!--<span class="icon-circle-attention footer-menu-icon"></span>-->
+            <!--</li>-->
+            <li class="history-btn">
+                <span class="icon-clock footer-menu-icon"></span>
+            </li>
+            <li class="favorites-btn"><span class="icon-star footer-menu-icon"></span>
+            </li>
+        </ul>
+    </div>
+</div><!-- page-footer row --></div></div>

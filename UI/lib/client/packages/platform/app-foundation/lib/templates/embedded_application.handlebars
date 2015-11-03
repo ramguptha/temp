@@ -1,0 +1,26 @@
+{{context-menu-options-container}}
+
+{{modals-container modals=modals}}
+
+<div class="page-container">
+  {{#unless applicationError}}
+    {{outlet class="page-wrapper"}}
+  {{else}}
+    <div class="view-landing-page">
+      <div class="landing-page-box">
+        <div class="landing-box-name">
+          <div><span class="icon-circle-attention color-error-icon icon-font-size-xl"></span></div>
+          <div class="landing-error-message">
+            <h2> Unable to communicate with the server </h2>
+            <p>The server may be down or busy. If the problem persists, please contact your System Administrator and quote the following error:</p>
+            <p class="text-muted">Error {{applicationError.status}} for URL {{applicationError.uri}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/unless}}
+  <div class="feedback-block">
+      <div class="version-number">v. 9f9fc7</div>
+      <a href="https://www.surveymonkey.com/s/CC_UI_Feedback" target="_blank" class="feedback-button"><span class="icon-message1"></span>{{t 'shared.feedback'}}</a>
+  </div>
+</div>

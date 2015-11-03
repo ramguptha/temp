@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlossary>
+  <GlossaryEntry>
+    <Terms>
+      <Term>パスコード</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスにアクセスするために必要な、英数字の文字列。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UDID</Term>
+    </Terms>
+    <Definition
+      Link="">デバイスの一意の識別子。IPhone、iPod touch、iPad を一意に識別する 40 桁のひと続きの文字と数値。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>管理デバイス</Term>
+    </Terms>
+    <Definition
+      Link="">Absolute Manage サーバーに登録されているモバイルデバイスであり、Absolute Manage Web Admin から管理できるデバイス。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>AbsoluteApps</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスにインストールされ、Absolute Manage へのリンクとして機能するクライアントアプリケーション。AbsoluteApps はモバイルデバイスのステータスについてレポートし、アドミニストレーターがデバイスを遠隔操作できるようにします。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>パーシスタンス</Term>
+    </Terms>
+    <Definition
+      Link="">Absolute Manage クライアントソフトウェアを削除しようとしたり、工場リセットした後でもこのソフトウェアをデバイスに留めることができる技術。パーシスタンス技術は一部の Android デバイスでサポートされています。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MAC アドレス</Term>
+    </Terms>
+    <Definition
+      Link="">メディアアクセス制御アドレス。12桁の16進数の番号であり、ハードウェアデバイスがネットワーク上で自分自身を一意に識別するために使用します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ローミング</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスが標準のキャリアネットワーク外に移動し、音声またはデータサービスを再開するために他のキャリアのネットワークに接続すること。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>IMEI</Term>
+    </Terms>
+    <Definition
+      Link="">国際移動体装置識別番号。すべての 3GPP (GSM、UMTS、および LTE) モバイルデバイスを一意に識別する15桁の番号。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MEID</Term>
+    </Terms>
+    <Definition
+      Link="">モバイル機器識別子。すべての CDMA モバイルデバイスを一意に識別する14桁の番号。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SIM</Term>
+    </Terms>
+    <Definition
+      Link="">加入者識別モジュール。モバイルデバイスの加入者を識別し、認証するために使用する情報を安全に保存する集積回路。SIM 回路は、「SIM カード」と呼ばれる着脱可能なプラスチック製のカードに埋め込まれています。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>構成プロファイル</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスと OS X コンピューターに一般的な設定 (たとえば Wi-Fi、VPN、e メール、またはアプリケーション固有の設定) を容易に配信する方法です。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>プロビジョニングプロファイル</Term>
+    </Terms>
+    <Definition
+      Link="">iOSデバイスにのみ適用されます。必要なデジタル証明書、App ID、UDID を含むバイナリファイルで、エンタープライズまたはベータアプリケーションを、App Store の外で iOS デバイスに配信することを可能にします。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>OS</Term>
+    </Terms>
+    <Definition
+      Link="">オペレーティング・システム。モバイルデバイス上のソフトウェアで、ハードウェアリソースを管理して各種アプリケーションに共通のサービスを提供します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>MDM</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスの管理。Absolute Manage のモジュールであり、モバイルデバイスを MDM サーバーを通じて管理するためのサポートとなります。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Absolute Manage</Term>
+    </Terms>
+    <Definition
+      Link="">組織がそのエンドポイントのすべてを、PC、Mac、iOS、Android、Windows Phone デバイスを含む単独コンソールから永続的に管理し、安全を確保できるようにします。Absolute Manage は、完全な資産管理ソリューションとして展開することも、モバイルデバイスの管理 (MDM) のスタンドアローンソリューションとして展開することもできます。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GB</Term>
+    </Terms>
+    <Definition
+      Link="">ギガバイト。バイトの倍数。デジタル情報の大きさを測る単位。1ギガバイトは、使用される測定基準に応じて、1,000,000,000または1,073,741,824バイトに相当します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>iTunes</Term>
+    </Terms>
+    <Definition
+      Link="">IOS デバイス上のファイルおよびアプリケーションを管理するためのインターフェースを提供する、Apple のモバイルデバイス管理アプリケーション。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>USB</Term>
+    </Terms>
+    <Definition
+      Link="">ユニバーサルシリアルバス。電子デバイスとその周辺機器との接続を定義する業界基準。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SD</Term>
+    </Terms>
+    <Definition
+      Link="">セキュアデジタル。スマートフォンなどの携帯機器で使用されるメモリーカード。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GPS</Term>
+    </Terms>
+    <Definition
+      Link="">グローバル・ポジショニング・システム。4個以上の GPS 衛星までの直線上に見通しを遮るものがない場合に、地球上または地上付近の任意の場所で、正確な位置と時間の情報を提供することができる、ナビゲーション衛星のグローバルシステム。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Wi-Fi</Term>
+    </Terms>
+    <Definition
+      Link="">電子デバイスがインターネットに接続したり、電波を介して特定のエリア内の別の電子デバイスと無線で相互に通信することを可能にする技術。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Bluetooth</Term>
+    </Terms>
+    <Definition
+      Link="">電子デバイス間で、データをワイヤレスに短距離だけ交換するための技術基準。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>CPU</Term>
+    </Terms>
+    <Definition
+      Link="">中央処理装置。ハードウェアとソフトウェアの命令を解釈して実行するモバイルデバイス内のコンポーネント。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>IPv4 アドレス</Term>
+    </Terms>
+    <Definition
+      Link="">インターネットプロトコルバージョン4のアドレス。通信用インターネットプロトコルバージョン4を使用してネットワーク内の各デバイスに割り当てられた数値ラベル。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>カーネル</Term>
+    </Terms>
+    <Definition
+      Link="">デバイスのソフトウェアとハードウェアの間のブリッジとして機能する、モバイルデバイスのオペレーティング・システムの基本的な部分。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>RAM</Term>
+    </Terms>
+    <Definition
+      Link="">ランダムアクセスメモリー。命令やデータ迅速を迅速に実行するための一時的なワークスペースを提供する、モバイルデバイスの主なタイプのメモリー。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>キャッシュ</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスがランダムアクセスメモリー (RAM) よりも迅速にアクセスできるメモリーのタイプ。これは、アプリケーションを実行するために何度も必要になる命令を保存するために使用され、デバイス全体の速度を向上します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GSM</Term>
+    </Terms>
+    <Definition
+      Link="">グローバル移動体通信システム。デジタルセルラー通信のための、世界で最も幅広く使用されている国際規格。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>CDMA</Term>
+    </Terms>
+    <Definition
+      Link="">符号分割多元接続。北米およびアジアで最も一般的な、スペクトル拡散技術を使用するデジタルセルラー技術。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>EDGE</Term>
+    </Terms>
+    <Definition
+      Link="">拡張型データ GSM 環境。より高速なデータレートおよびモバイルデバイスへのマルチメディアの配信を可能にするために設計された、GSM 規格の後続バージョン。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>GPRS</Term>
+    </Terms>
+    <Definition
+      Link="">汎用パケット無線サービス。モバイルデバイスがインターネットへの常時接続を維持することを可能にする、GSM ネットワークで使用されるパケットベースの無線データ規格。GPRS はモバイルデバイスの最初の一般的なデータ規格であり、EDGE および UMTS へと進化しました。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UMTS</Term>
+    </Terms>
+    <Definition
+      Link="">ユニバーサル移動通信サービス。モバイルユーザーに高速データおよびマルチメディア機能を提供する、GSM 規格に基づいたセルラーネットワークのための第三世代 (3G) モバイルブロードバンドシステム。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ICC 識別子</Term>
+    </Terms>
+    <Definition
+      Link="">集積回路カードの識別子。各 SIM を一意に識別する、22 桁までの番号。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>IMEISV</Term>
+    </Terms>
+    <Definition
+      Link="">国際移動体装置識別ソフトウェアのバージョン。2桁のソフトウェアのバージョン番号であり、モバイルデバイスにインストールされたソフトウェアの改訂を識別する IMEI に添付されています。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>アクティブ・ディレクトリ</Term>
+    </Terms>
+    <Definition
+      Link="">Windows ドメインネットワークのために Microsoft によって開発され、プロセスとサービスのセットとしてほとんどの Windows Server オペレーティング・システムに含まれているディレクトリ·サービス。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>オープンディレクトリ</Term>
+    </Terms>
+    <Definition
+      Link="">Mac OS X サーバーのネイティブディレクトリサービス。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>プッシュ通知</Term>
+    </Terms>
+    <Definition
+      Link="">アプリケーションで使用される技術であり、アプリケーションを開く必要なしに、コンテンツの更新、メッセージ、またはその他のイベントについてモバイルデバイスのユーザーに警告します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>Absolute Manage Admin</Term>
+    </Terms>
+    <Definition
+      Link="">Absolute Manage システムを通じてクライアントデバイス (コンピューターとモバイルデバイスの両方) を管理するため、アドミニストレーターが各自のワークステーションにインストールできるソフトウェアアプリケーション。これとは対照的に、Absolute Manage Web Admin はモバイルデバイスのみを管理するため、アドミニストレーターがブラウザ経由でアクセスする Web ベースのアプリケーションです。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>VPN</Term>
+    </Terms>
+    <Definition
+      Link="">仮想プライベートネットワーク。インターネットなどの公共ネットワークを経由でプライベートネットワークへの安全な接続を作成するネットワーク技術。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ActiveSync</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスが Microsoft Exchange サーバーとデータおよびポリシーを同期できるようにするプロトコル。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ポリシー</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスの管理の特定の場面を自動化するために使用できるツール。ポリシーには目標となるモバイルデバイスの集合に加えて、以下の要素 (サードパーティアプリケーション、構成プロファイル、メディアファイル) の1つ以上が含まれます。使用できるポリシーは、標準ポリシーとスマートポリシーの 2 種類です。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>標準ポリシー</Term>
+    </Terms>
+    <Definition
+      Link="">ポリシーから、またはポリシーへ特定のモバイルデバイスを手動で追加したり削除したりすることを可能にするポリシー。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>スマートポリシー</Term>
+    </Terms>
+    <Definition
+      Link="">どのモバイルデバイスをポリシーに含めるか決定するため、フィルター基準を設定することを可能にするポリシー。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>インハウスアプリケーション</Term>
+    </Terms>
+    <Definition
+      Link="">組織が IT 展開中のモバイルデバイス上で使用するために開発したアプリケーション。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>サードパーティアプリケーション</Term>
+    </Terms>
+    <Definition
+      Link="">社外で開発され、Google Play や App Store のような配信プラットフォームを通じて一般的に入手可能な、モバイルデバイス用のアプリケーション。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>メディアファイル</Term>
+    </Terms>
+    <Definition
+      Link="">ポリシーを通じてモバイルデバイスに配信できるファイル。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UTC</Term>
+    </Terms>
+    <Definition
+      Link="">協定世界時。世界が時計と時間を調節する基準となるプライマリ時間標準。UTC はグリニッジ標準時 (GMT) と密接に関係し、一般的に交換可能です。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>DST</Term>
+    </Terms>
+    <Definition
+      Link="">夏時間。夏の間時計を早めることで起床時間を早くし、夕方の明るい時間を楽しめるようにする慣習。一般的に、春の初めに時計を1時間先に進め、秋になると戻すように調整します。DST の正確な開始日と終了日は場所によって変わります。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>AbsoluteSafe</Term>
+    </Terms>
+    <Definition
+      Link="">IOS と Android デバイスのための Absolute Manage クライアント·アプリケーションであり、アドミニストレーターがモバイルデバイスのユーザーに確実にメディアを配信できるようにします。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>VPP</Term>
+    </Terms>
+    <Definition
+      Link="">Volume Purchase Program。組織が iOS アプリケーションを大量に購入し、アクティベーションコードの使用により、モバイルデバイスのユーザーにそれらを配信することができる、Apple が提供するプログラム。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>iTunes Store</Term>
+    </Terms>
+    <Definition
+      Link="">Apple デバイスのユーザーが、音楽、ビデオ、電子書籍、およびその他のメディアを購入・ダウンロードすることができる、Apple が運営するオンラインデジタルメディアストア。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>UUID</Term>
+    </Terms>
+    <Definition
+      Link="">汎用一意識別子。インターネットオブジェクトまたはデータを一意に識別する128ビットの番号。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ハートビート</Term>
+    </Terms>
+    <Definition
+      Link="">エージェントが送信する定期的な信号で、エージェントがまだコンピューター上で実行されていることを示します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>エージェント</Term>
+    </Terms>
+    <Definition
+      Link="">展開内のすべてのデバイスとの接続を維持することを可能にする、エンドポイントソフトウェアモジュール。エージェントは、定期的にAbsolute Manage サーバーに予約コールを行ってデバイスのステータスを報告し、デバイスの遠隔管理を行います。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ROM</Term>
+    </Terms>
+    <Definition
+      Link="">読み取り専用メモリー。コンピューターの電源を切っていても、データを恒久的に記憶する記憶媒体の種類。通常、ROM は読み取り専用で、書き込みはできません。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>スワップ領域</Term>
+    </Terms>
+    <Definition
+      Link="">一時的に非アクティブなメモリーページを保持し、RAM と一緒に、マシンの仮想メモリーを構成するハードディスク上の領域。スワップ領域は、マシンがアクティブなプロセスのための物理メモリを必要とし、未使用の利用可能な物理メモリーが不十分な場合に使用されます。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>ATA</Term>
+    </Terms>
+    <Definition
+      Link="">アドバンスドテクノロジーアタッチメント。コンピューターの記憶装置 (例えば、ハードディスクドライブや光ディスクドライブなど) を接続するための古いインターフェース規格。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SCSI</Term>
+    </Terms>
+    <Definition
+      Link="">小型計算機システムインターフェース。プリンター、ディスクドライブ、スキャナー、コンピューターに接続している他の周辺機器を取り付けるため、米国規格協会 (ANSI) によって開発されたパラレルインタフェース規格のセット。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>FireWire</Term>
+    </Terms>
+    <Definition
+      Link="">デジタルデバイス間の高速通信とデータ交換を可能にする技術。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>PCI</Term>
+    </Terms>
+    <Definition
+      Link="">ペリフェラルコンポーネントインターコネクト。コンピューターのマイクロプロセッサと、モデムカードやネットワークカードなどの拡張スロットを通じて接続されているすべてのデバイスとの間の相互接続システム。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>BIOS</Term>
+    </Terms>
+    <Definition
+      Link="">基本入出力システム。コンピューターの電源を入れた後に、コンピューターを起動するために使用される内蔵ファームウェア。BIOS は、コンピューターのオペレーティング・システムと、接続されているすべてのデバイスの間のデータフローも管理します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>SMC</Term>
+    </Terms>
+    <Definition
+      Link="">システム管理コントローラー。さまざまな内部システムを制御する Intel プロセッサベースの Mac コンピュータのサブシステム。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>FTP</Term>
+    </Terms>
+    <Definition
+      Link="">ファイル転送プロトコル。インターネット上で、あるコンピューターから別のコンピューターにファイルを転送するために使用される、標準的なネットワークプロトコル。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>DHCP</Term>
+    </Terms>
+    <Definition
+      Link="">動的ホスト構成プロトコル。インターネットプロトコル（IP）ネットワーク上で使用される標準化されたネットワークプロトコルであり、インタフェースおよびサービスのために IP アドレスなどのネットワーク構成パラメータを動的に配信します。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>DNS</Term>
+    </Terms>
+    <Definition
+      Link="">ドメイン名システム。コンピューター、サービス、またはインターネットや IP アドレスにドメイン名とホスト名を変換するプライベートネットワークに接続されているすべてのリソースのための、階層的な分散型ネーミングシステム。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>TCP</Term>
+    </Terms>
+    <Definition
+      Link="">伝送制御プロトコル。データの配信保証を必要とするアプリケーションによって使用される、トランスポート層プロトコル。</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry>
+    <Terms>
+      <Term>アクション</Term>
+    </Terms>
+    <Definition
+      Link="">モバイルデバイスがスマートポリシーに参加したときに、Absolute Manage が何をすべきか指定することを可能にします。</Definition>
+  </GlossaryEntry>
+</CatapultGlossary>

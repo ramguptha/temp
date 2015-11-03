@@ -1,0 +1,25 @@
+<div class="filters-main-content">
+  <div class="and-block filters-main-content-scrollable">
+    <div class="or-block add-filter-container ui-droppable">
+      {{#each filterNodeController as |filterController|}}
+        <div class="filter-line clearfix">
+          {{view AdvancedFilterEditorLineItemView filterController=filterController}}
+          <button type="button" class="remove-filter icon-minus tooltip-w" data-tooltip-attr="title" data-sticky-tooltip="true"
+            {{action "removeOperand" filterController.filter}}>
+          </button>
+        </div>
+
+        <span class="or uppercase">{{filter.label}}</span>
+      {{/each}}
+      <button type="button" class="add-filter-button add-single-filter-trigger" {{action "addOperand"}}>
+        <span class="plus-filter icon-plus"></span>{{t 'shared.buttons.addFilter'}}
+      </button>
+    </div>
+
+    {{#if noFiltersSpecified}}
+      <div class="no-filters-specified-container">
+        {{noFiltersSpecifiedMessage}}
+      </div>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,34 @@
+{{#unless presentation.isDeferred}}
+  {{#if presentation.overlayActions}}
+    {{context-menu
+      content=presentation.overlayActions
+      disabled=presentation.overlayActionsDisabled
+      menuContext=this
+      menuTarget=pagedComponent.parentView.context
+      hideTrigger=pagedComponent.scrollEventCount
+    }}
+  {{/if}}
+
+  {{component presentation.row.columnPresentation.overlayComponent
+    pagedComponent=pagedComponent
+    presentation=presentation
+    node=node
+    refreshedAt=component.pager.contentChangedAt
+  }}
+{{else}}
+  <div class="is-container-for-deferred {{if presentation.error "load-page-failed"}} {{if presentation.row.isReadTail "is-tail" "is-inline"}}">
+    {{#if presentation.isLoading}}
+      {{component presentation.row.columnPresentation.loadingComponent
+        pagedComponent=presentation.pagedComponent
+        node=node
+      }}
+    {{/if}}
+
+    {{#if presentation.error}}
+      <span class="icon-circle-attention empty-list-icon"></span>
+      {{presentation.tUnableLoadData}}
+      <a class="show-error-detail" href="#" {{action "showError" presentation.error target=presentation.pagedComponent}}>{{presentation.tShowErrorDetail}}</a>
+      <button type="button" class="btn btn-low retry" {{action "retryLoad" node target=presentation.pagedComponent}}>{{presentation.tTryAgain}}</button>
+    {{/if}}
+  </div>
+{{/unless}}

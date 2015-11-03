@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Comment=""
+    Name="CompanyName">Absolute</Variable>
+  <Variable
+    Comment="Absolute Toll Free Number"
+    Name="PhoneNumber">1 800 220 0733</Variable>
+  <Variable
+    Name="Version#"
+    Comment="">1.7</Variable>
+  <Variable
+    Name="ProductName"
+    Comment="">Absolute Manage Web Admin</Variable>
+</CatapultVariableSet>

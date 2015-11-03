@@ -1,0 +1,364 @@
+/*Absolute Software */
+/*-----------------------------*/
+/*Absolute Manage Application*/
+
+/* ----LOGIN PAGE ----*/
+
+html{
+    height: 100%;
+    font-family: helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: url('img/pattern.png'), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxMzlmZTciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI3NyUiIHN0b3AtY29sb3I9IiMwMDU1OTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvcmFkaWFsR3JhZGllbnQ+CiAgPHJlY3QgeD0iLTUwIiB5PSItNTAiIHdpZHRoPSIxMDEiIGhlaWdodD0iMTAxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background:url('img/pattern.png'),-moz-radial-gradient(center, circle cover,  #139FE7 0%, #005595 70%); /* FF3.6+ */
+    background:url('img/pattern.png'), -webkit-gradient(radial, center center, 0px, center center, 70%, color-stop(0%,#139FE7), color-stop(70%,#005595)); /* Chrome,Safari4+ */
+    background:url('img/pattern.png'), -webkit-radial-gradient(center, circle cover,  #139FE7 0%,#005595 70%); /* Chrome10+,Safari5.1+ */
+    background:url('img/pattern.png'), -o-radial-gradient(center, ellipse cover,  #139FE7 0%,#005595 70%); /* Opera 12+ */
+    background:url('img/pattern.png'), -ms-radial-gradient(center, ellipse cover,  #139FE7 0%,#005595 70%); /* IE10+ */
+    background:url('img/pattern.png'), radial-gradient(ellipse at center,  #139FE7 0%,#005595 70%); /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005595', endColorstr='#0A5FA7',GradientType=0 ); *//* IE6-8 */
+}
+
+h2{
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #405B70;
+}
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: 'absolute-icons';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+.login-container{
+    width: 100%;
+    padding: 20px 0;
+    border-top-width: 1px;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #0077d0;
+    border-bottom-color: #0077d0;
+background: none;
+  position:relative;
+}
+.logo-container{
+    margin: 83px auto 50px auto;
+    width: 216px;
+    height:76px;
+}
+.login-wrapper{
+    width: 711px;
+    height: 768px;
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.form-control {
+    position: relative;
+}
+
+.form-control .input-username,
+.form-control .input-password, .form-control
+.input-server-name, .form-control .input-port-name{
+    border-radius: 5px;
+    webkit-border-radius: 5px;
+    moz-border-radius: 5px;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.25) inset;
+    webkit-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.25) inset;
+    moz-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.25) inset;
+    color: #555555;
+    display: inline-block;
+    font-size: 14px;
+    /* Doesn't work with FF */
+    /* line-height: 32px; */
+    margin-bottom: 10px;
+    padding: 10px 4px 10px 10px;
+    border: 2px solid #005595;
+    font-family: "Helvetica", Arial, Helvetica, Geneva, sans-serif;
+    outline:none;
+}
+
+.form-control input:hover{
+    border: 2px solid #999 !important;
+}
+
+.form-control select.input-locale {
+  position: absolute;
+  top: -39px;
+  right: -17px;
+  border:1px solid #ccc;
+    height:24px;
+}
+.form-control .input-username,
+.form-control .input-password{
+    width:100%;
+}
+.form-control .input-server-name{
+	float: left;
+	width: 73%;
+}
+.form-control .input-port-name{
+	float: right;
+	width: 17%;
+  margin-right: -18px;
+}
+.form-control.success input{
+    border: 2px solid #009704;
+    background: #ccffdc;
+    color: #009114;
+}
+.form-control.error input{
+    border: 2px solid #ff3333;
+    background: #ffcccc;
+    color: #ff3333;
+}
+.form-control input:focus, .form-control input:hover:focus, .form-control input[type="text"]:focus{
+    border: 2px solid #33b5ff;
+    background: #fff;
+
+}
+.form-label{
+    position:absolute;
+    top:-900px;
+    left:-900px;
+}
+.login-form{
+    margin: 0 auto;
+    width:300px;
+    font-family: "Helvetica", Arial, Helvetica, Geneva, sans-serif;
+    color: #fff;
+    font-size: 14px;
+}
+.login-form p{
+    color: #fff;
+    font-size: 14px;
+}
+.login-title{
+    font-family: "Helvetica" Arial, Helvetica, Geneva, sans-serif;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #fff;
+}
+.remember-username{
+    padding: 10px 0;
+}
+.forgot-password{
+    padding: 20px 0;
+    text-align: center;
+}
+.forgot-password a{
+    color: #a8bed6;
+    text-decoration: underline;
+}
+.forgot-password a:hover{
+    color: #BAD4EF;
+    text-decoration: none;
+}
+
+.spinner-login{
+    right: 90px;
+    top: 8px;
+    position: absolute;
+}
+.feedback-container{
+    margin: 0 auto;
+    width: 290px;
+}
+.error-message {
+    position: absolute;
+    background: #131313;
+    color: #fff;
+    top: 155px;
+    width: 265px;
+    font-size: 13px;
+    display: block;
+    border-radius: 5px;
+    webkit-border-radius: 5px;
+    moz-border-radius: 5px;
+    text-align: left;
+    margin: 0 0 15px 4px;
+    padding: 20px 10px 20px 10px;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  z-index:1000;
+}
+.error-message h4{
+    margin: 0 0 20px 40px;
+}
+.error-message p{
+    margin-left: 40px;
+}
+.error-message.invalid-auth{
+  top: auto;
+  bottom: 333px;
+}
+.error-message:before {
+    bottom: -20px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.indicator-activity{
+    margin: 0 auto;
+    width:150px;
+}
+.footer-content{
+    margin: 0 auto;
+    display: table;
+    padding: 20px 0;
+}
+.footer-content span a{
+    color: #a8bed6;
+    font-size:12px;
+}
+.footer-content span a:hover{
+    color: #BAD4EF;
+    text-decoration: none;
+}
+.footer-content span {
+    display: inline-block;
+    float:left;
+    list-style: none;
+    margin: 0 10px;
+}
+@font-face {
+    font-family: 'absolute-icons';
+    src:url('../../desktop/css/fonts/absolute-icons.eot');
+    src:url('../../desktop/css/fonts/absolute-icons.eot?#iefix') format('embedded-opentype'),
+    url('../../desktop/css/fonts/absolute-icons.svg#absolute-icons') format('svg'),
+    url('../../desktop/css/fonts/absolute-icons.woff') format('woff'),
+    url('../../desktop/css/fonts/absolute-icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+[data-icon]:before {
+    font-family: 'absolute-icons';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: 'absolute-icons';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+.login-container .feedback-container .icon-octagon-attention{
+    color: red;
+    float: left;
+    font-size: 30px;
+}
+.login-container .feedback-container .icon-triangle-attention{
+    float: left;
+    margin: 0 10px 10px 0;
+    font-size: 30px;
+    color: #F1AE2D;
+}
+
+/*==============================================*/
+ /*No javascript page*/
+/*==============================================*/
+
+.nojs-content{
+    margin: 30px auto;
+    width:35%;
+    background:#fff;
+    padding:30px 50px;
+    text-align: center;
+    /* border-radius */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /* box-shadow */
+    -webkit-box-shadow: rgba(0,0,0,0.5) 1px 5px 7px;
+    -moz-box-shadow: rgba(0,0,0,0.5) 1px 1px 7px;
+    box-shadow: rgba(0,0,0,0.5) 1px 1px 7px;
+    border:1px solid #005595;
+    font-size:14px;
+    line-height:20px;
+}
+.nojs-main-logo{
+    margin: 83px auto 50px auto;
+    width: 211px;
+}
+.nojs-content .icon-triangle-attention{
+    font-size: 40px;
+    float: left;
+    margin-right: 10px;
+    color: #c90000;
+    line-height:40px;
+}
+.nojs-content h2{
+    color:#006598;
+    font-weight: normal;
+}
+.nojs-content p{
+    text-align:left;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+    background-color:#fff;
+}
+
+/* Spinner */
+
+.spinner {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  border: 3px solid rgba(125, 125, 125, 0.25);
+  border-top: 3px solid rgba(125, 125, 125, 0.80);
+  -webkit-animation: spinner .6s infinite linear;
+  -moz-animation: spinner .6s infinite linear;
+  -o-animation: spinner .6s infinite linear;
+  animation: spinner .6s infinite linear;
+  border-radius: 100%;
+}
+@-webkit-keyframes spinner {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes spinner {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes spinner {
+  from {-o-transform: rotate(0deg);}
+  to {-o-transform: rotate(359deg);}
+}
+@keyframes spinner {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
+}

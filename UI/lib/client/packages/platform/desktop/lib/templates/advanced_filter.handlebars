@@ -1,0 +1,116 @@
+{{#if showInline}}
+  {{#unless noFiltersSpecified}}
+    {{#each filterNodeController as |orFilterController|}}
+      {{#if filterNodeController.hasMultipleOperands}}({{/if}}
+
+      {{#each orFilterController as |filterController|}}
+        {{#if orFilterController.hasMultipleOperands}}({{/if}}
+
+        "{{filterController.attrLabel}}"
+
+        {{filterController.opLabel}}
+
+        {{#unless filterController.opIsUnary}}
+          "{{filterController.opRvalPresentation}}"
+        {{/unless}}
+
+        {{#if orFilterController.hasMultipleOperands}}){{/if}}
+
+        {{#unless filterController.isLastOperand}} <span class="or-class">{{orFilterController.filter.name}}</span> {{/unless}}
+      {{/each}}
+
+      {{#if filterNodeController.hasMultipleOperands}}){{/if}}
+
+      {{#unless orFilterController.isLastOperand}} <span class="and-class">AND</span> {{/unless}}
+    {{/each}}
+  {{/unless}}
+{{else}}
+  {{#if showEditButton}}
+    <div class="show-details-title-container">
+      <h3>{{t 'shared.filters'}}</h3>
+      <button type="button" class="btn-smaller" {{action "editFilter" }}>{{t 'shared.buttons.editFilter'}}</button>
+    </div>
+  {{/if}}
+  <div class="show-details-content-container">
+    {{#if noFiltersSpecified}}
+      <div class="no-filters-specified-container">
+        {{noFiltersSpecifiedMessage}}
+      </div>
+    {{else}}
+      <div data-tooltip-source-id="filters" class="show-details-info-list tooltip-se text-ellipsis">
+        {{#each filterNodeController as |orFilterController|}}
+          {{#if filterNodeController.hasMultipleOperands}}({{/if}}
+
+          {{#each orFilterController as |filterController|}}
+            {{#if orFilterController.hasMultipleOperands}}({{/if}}
+
+            "{{filterController.attrLabel}}"
+
+            {{filterController.opLabel}}
+
+            {{#if filterController.opIsTrinary}}
+              {{#if filterController.opTypeIsLastNOp}}
+                "{{filterController.topRvalValue1}}" {{filterController.topConvertedTimeRange}}
+              {{/if}}
+
+              {{#if filterController.opTypeIsBetweenDate}}
+                ("{{date filterController.topRvalValue1}}" <span class="and-class">AND</span>
+                "{{date filterController.topRvalValue2}}")
+              {{/if}}
+            {{/if}}
+
+            {{#if filterController.opIsBinary}}
+              "{{filterController.opRvalPresentation}}"
+            {{/if}}
+
+            {{#if orFilterController.hasMultipleOperands}}){{/if}}
+
+            {{#unless filterController.isLastOperand}} <span class="or-class">{{orFilterController.filter.name}}</span> {{/unless}}
+          {{/each}}
+
+          {{#if filterNodeController.hasMultipleOperands}}){{/if}}
+
+          {{#unless orFilterController.isLastOperand}} <span class="and-class">AND</span> {{/unless}}
+        {{/each}}
+      </div>
+      <div class="tooltip-source" data-tooltip-id="filters">
+      <p class="content-tooltip">
+        {{#each filterNodeController as |orFilterController|}}
+          {{#if filterNodeController.hasMultipleOperands}}({{/if}}
+
+          {{#each orFilterController as |filterController|}}
+            {{#if orFilterController.hasMultipleOperands}}({{/if}}
+
+            "{{filterController.attrLabel}}"
+
+            {{filterController.opLabel}}
+
+            {{#if filterController.opIsTrinary}}
+              {{#if filterController.opTypeIsLastNOp}}
+                "{{filterController.topRvalValue1}}" {{filterController.topConvertedTimeRange}}
+              {{/if}}
+
+              {{#if filterController.opTypeIsBetweenDate}}
+                ("{{date filterController.topRvalValue1}}" <span class="and-class">AND</span>
+                "{{date filterController.topRvalValue2}}")
+              {{/if}}
+            {{/if}}
+
+            {{#if filterController.opIsBinary}}
+              "{{filterController.opRvalPresentation}}"
+            {{/if}}
+
+            {{#if orFilterController.hasMultipleOperands}}){{/if}}
+
+            {{#unless filterController.isLastOperand}} <span class="or-class">{{orFilterController.filter.name}}</span> {{/unless}}
+          {{/each}}
+
+          {{#if filterNodeController.hasMultipleOperands}}){{/if}}
+
+          {{#unless orFilterController.isLastOperand}} <span class="and-class">AND</span> {{/unless}}
+        {{/each}}
+        </p>
+      </div>
+    {{/if}}
+  </div>
+{{/if}}

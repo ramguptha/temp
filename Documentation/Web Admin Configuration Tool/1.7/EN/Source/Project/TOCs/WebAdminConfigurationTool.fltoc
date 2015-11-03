@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="Introduction">
+    <TocEntry
+      Title="Welcome to Web Admin Configuration Tool"
+      Link="/Content/welcome.htm" />
+    <TocEntry
+      Title="Disclaimer"
+      Link="/Content/disclaimer.htm" />
+  </TocEntry>
+  <TocEntry
+    Title="Getting Started With Web Admin Configuration Tool"
+    Link="/Content/GettingStartedWithWebAdminConfigurationTool.htm"></TocEntry>
+  <TocEntry
+    Title="Managing AM Servers"
+    Link="/Content/ManagingAMServers.htm">
+    <TocEntry
+      Title="Viewing a List of Existing AM Servers"
+      Link="/Content/ViewingListofAMServers.htm" />
+    <TocEntry
+      Title="Registering a New AM Server"
+      Link="/Content/AddingaNewAMServer.htm"
+      StartSection="false"
+      SectionNumberReset="continue"
+      VolumeNumberReset="same"
+      ChapterNumberReset="continue"
+      ComputeToc="false"
+      ReplaceMergeNode="false" />
+  </TocEntry>
+  <TocEntry
+    Title="Configuring Web Admin Settings"
+    Link="/Content/ConfiguringWebAdminSettings.htm"></TocEntry>
+</CatapultToc>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="615" MadCap:lastWidth="1035">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">デバイスに構成プロファイルをインストールする</h1>
+        <p class="Body">既存の構成プロファイルをモバイルデバイスに遠隔でインストールすることができます。構成プロファイルは、お客様の展開内のモバイルデバイスに一般的な設定 (たとえば Wi-Fi、VPN、e メール、またはアプリケーション固有の設定) を容易に配信することができます。<MadCap:variable name="Variables.ProductName" />から構成プロファイルをインストールする前に、Absolute Manage アドミンインターフェイスを使用してプロファイルをインポートまたは作成する必要があります。詳細については、<span class="Emphasis">Absolute Manage ユーザーガイド</span>の「構成プロファイルの操作」を参照してください。</p>
+        <p class="Body">コマンドを発行すると、その OS ベンダーの通知サーバーにデバイスが次回連絡後すぐに、構成プロファイルがデバイスにインストールされます。デバイスが Wi-Fi またはモバイルネットワークに接続されている場合、このアクションは通常 1 分以内に実行されますが、それ以外の場合はデバイスがネットワークに再接続されたときに行われます。</p>
+        <p class="BodyWithListFollowing">プロファイルをインストールした結果は、デバイスのオペレーティングシステムに応じて多少異なります:</p>
+        <p class="Bullet1" MadCap:autonum="●">IOS および Android デバイスでは、プロファイルはデバイスにインストールされている既存のプロファイルに追加されます。</p>
+        <p class="Bullet1" MadCap:autonum="●">Windows Phone デバイスでは、プロファイルは選択したデバイスが同期されているメールボックスの現在のプロファイルに置き換わります。Exchange ActiveSync の動作仕様により、この操作を行うと、同じ Exchange メールボックスに同期されている他のすべてのデバイスにもプロファイルが適用されます。(このような他のデバイスが iOS デバイスである場合、インストールされたプロファイルは現在のプロファイルに置き換わりませんが、プロファイルの設定はそのデバイスにインストールされている構成プロファイルを無効にすることがあります。)</p>
+        <p class="TaskIntro">デバイスに構成プロファイルをインストールするには:</p>
+        <p class="Step1" MadCap:autonum="1. ">構成プロファイルをインストールしようとするデバイスが含まれるモバイルデバイスエリアのページに移動します。たとえば、<span class="Bold">モバイルデバイス</span> &gt; <span class="Bold">すべての Windows Phone デバイス</span>、<a href="searchingforinfo.htm">特定のデバイスを検索</a>に移動できます。</p>
+        <p class="Steps" MadCap:autonum="2. ">結果グリッドで、該当するデバイスのチェックボックスを選択し、<span class="Bold">コマンド</span> &gt; <span class="Bold">構成プロファイルをインストール</span>をクリックします。</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">一度に複数のデバイスにコマンドを発行する場合、OS が同じデバイスを選択する必要があり、すべての iOS&#160;デバイス、すべての Android デバイス、またはすべての Windows Phone デバイスを選択します。</p>
+        <p class="Indent2">また、デバイスの詳細ページから、単独のデバイスにコマンドを発行することもできます。</p>
+        <p class="SubSteps" MadCap:autonum="a) ">結果グリッドで、構成プロファイルをインストールしたいデバイスをクリックします。該当デバイスのデバイス詳細ページが開きます。</p>
+        <p class="SubSteps" MadCap:autonum="b) "> コマンドのサイドバーから、<span class="Bold">構成プロファイルをインストール</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="3. ">インストールしたい構成プロファイルのチェックボックスを選択します。</p>
+        <p class="Indent2">検索フィールドを使用して、具体的な条件 (プロファイル名または説明など) でリストを絞り込み、特定の構成プロファイルを素早く探しだすことができます。</p>
+        <p class="Steps" MadCap:autonum="4. "><span class="Bold">プロファイルのインストール</span>をクリックします。</p>
+        <p class="Steps" MadCap:autonum="5. "><span class="Bold">OK</span> をクリックして確認メッセージを閉じてください。</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="removingconfigprofiles.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<div class="modal-action-icon"><span class={{headingIconClass}}></span></div>
+<div class="modal-action-content">
+  <div class="modal-action-confirmation">
+  <h3>{{heading}}</h3>
+  <br />
+
+  <label>{{t 'amUserSelfServicePortal.modals.trackDevice.labels.actionDetails'}}</label>
+  <br />
+
+  <div class="track-device-checkbox-block">
+    <label class="for-checkbox">{{input type="checkbox" checked=trackDeviceEnabled}} {{t 'amUserSelfServicePortal.modals.trackDevice.labels.trackDevice'}}</label>
+    <div class="help-wrapper help-no-float">
+      <div class="help-container">
+        <span class="icon-question-mark"></span><span class="help-tooltip">
+          <div class="tooltip-arrow large-tooltip"></div>
+          <ul>
+            <li><strong>{{t 'amUserSelfServicePortal.modals.trackDevice.help.trackDeviceStrong'}}</strong> {{t 'amUserSelfServicePortal.modals.trackDevice.help.trackDeviceText'}}</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="track-device-passphrase-block">
+    <label>{{t 'amUserSelfServicePortal.modals.trackDevice.labels.activationPassphrase'}}</label>
+    <div class="container-device-passphrase">
+      {{input type="text" placeholder='amUserSelfServicePortal.modals.trackDevice.labels.activationPassphrasePlaceholder' value=activationPassphrase  disabled=trackDeviceDisabled}}
+    </div>
+    <div class="help-wrapper help-no-float">
+      <div class="help-container">
+        <span class="icon-question-mark"></span><span class="help-tooltip">
+          <div class="tooltip-arrow large-tooltip"></div>
+          <ul>
+            <li><strong>{{t 'amUserSelfServicePortal.modals.trackDevice.help.activationPassphraseStrong'}}</strong> {{t 'amUserSelfServicePortal.modals.trackDevice.help.activationPassphraseText'}}</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="track-device-interval-block">
+    <label>{{t 'amUserSelfServicePortal.modals.trackDevice.labels.trackingInterval'}}</label>
+    <div class="container-interval">
+      {{input type="text" placeholder='amUserSelfServicePortal.modals.trackDevice.labels.trackingIntervalPlaceholder' value=trackingInterval  disabled=trackDeviceDisabled}}
+      <div>
+        {{select-field content=intervalPeriodList value=selectedIntervalPeriodId optionValuePath="content.data.id" optionLabelPath="content.data.intervalPeriodTitle" disabled=trackDeviceDisabled}}
+      </div>
+    </div>
+    <div class="help-wrapper help-no-float">
+      <div class="help-container">
+        <span class="icon-question-mark"></span><span class="help-tooltip">
+        <div class="tooltip-arrow large-tooltip"></div>
+        <ul>
+          <li><strong>{{t 'amUserSelfServicePortal.modals.trackDevice.help.trackingIntervalStrong'}}</strong> {{t 'amUserSelfServicePortal.modals.trackDevice.help.trackingIntervalText'}}</li>
+        </ul>
+      </span>
+      </div>
+    </div>
+   </div>
+
+    <div class="track-device-location-accuracy-block">
+      <label>{{t 'amUserSelfServicePortal.modals.trackDevice.labels.locationAccuracy'}}</label>
+      <div class="container-location-accuracy-dropdown">
+        {{select-field content=locationAccuracyList value=selectedLocationAccuracyIs optionValuePath="content.data.id" optionLabelPath="content.data.selectedLocationTitle"  disabled=trackDeviceDisabled}}
+      </div>
+      <div class="help-wrapper help-no-float">
+        <div class="help-container">
+          <span class="icon-question-mark"></span><span class="help-tooltip">
+        <div class="tooltip-arrow large-tooltip"></div>
+        <ul>
+          <li><strong>{{t 'amUserSelfServicePortal.modals.trackDevice.help.locationAccuracyStrong'}}</strong> {{t 'amUserSelfServicePortal.modals.trackDevice.help.locationAccuracyText'}}</li>
+        </ul>
+      </span>
+        </div>
+      </div>
+    </div>
+
+
+    {{#if unsupportedDevices}}
+    <div class="unsupported-attention-message"><span class="icon-triangle-attention"></span>{{unsupportedDevicesMessage}}</div>
+      {{view unsupportedDeviceListController.SummaryListView context=unsupportedDeviceListController controller=unsupportedDeviceListController}}
+  {{/if}}
+  </div>
+
+  <div class="container-fluid modal-action-buttons">
+    <div class="button-group" >
+        <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+        <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+    </div>
+  </div>
+</div>

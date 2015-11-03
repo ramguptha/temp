@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="ja" xml:lang="ja" data-mc-search-type="NGram" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>アクションで変数を使用する</title>
+        <script>/* <![CDATA[ */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50107827-2', 'absolute.com');
+			ga('send', 'pageview');
+		/* ]]> */</script>
+        <link href="Resources/Stylesheets/In_Column.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="Resources/Stylesheets/Absolute.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Default.htm#usingmessagevariables.htm">ナビ付きでトピックを開</a>
+        </p>
+        <h1 class="Heading1">アクションで変数を使用する</h1>
+        <p class="Body">モバイルデバイス用のメッセージまたは名前を含むアクションを作成する場合、特定のテキストフィールド内に、デバイスおよびユーザーに関連する変数を埋め込むことができます。これらの変数は、アクションが実行されるときに、対応する情報アイテムの内容に置換されます。</p>
+        <p class="Body">アクションで変数を使用するには、波括弧とドルマークの接頭辞で囲みます (例: <span class="Bold">${MD_DeviceName}</span>)。</p>
+        <p class="Body">以下の表は、アクションに記載できる変数のリストです。</p>
+        <table style="mc-table-style: url('Resources/Stylesheets/In_Column.css');width: 600px;" class="TableStyle-In_Column" cellspacing="0">
+            <col class="TableStyle-In_Column-Column-Column1" style="width: 241px;">
+            </col>
+            <col class="TableStyle-In_Column-Column-Column1" style="width: 357px;">
+            </col>
+            <thead>
+                <tr class="TableStyle-In_Column-Head-Header1">
+                    <th class="TableStyle-In_Column-HeadE-Column1-Header1">変数</th>
+                    <th class="TableStyle-In_Column-HeadD-Column1-Header1">対応する情報アイテムを含む</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1" colspan="2">
+                        <p class="CellSubHeading">デバイス関連の変数</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_CurrentCarrierNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの現在のキャリアネットワーク</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_DeviceModel</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのモデル</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_DeviceName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイス名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_HomeCarrierNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのホームネットワーク</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">IMEI<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>国際移動体装置識別番号。すべての 3GPP (GSM、UMTS、および LTE) モバイルデバイスを一意に識別する15桁の番号。</span></a></p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの IMEI</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">UDID<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>デバイスの一意の識別子。IPhone、iPod touch、iPad を一意に識別する 40 桁のひと続きの文字と数値。</span></a></p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの識別子 (UDID)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_PhoneNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの電話番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_SerialNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのシリアル番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_LastMDMHeartbeat</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの最後の連絡</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_IPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのパブリック IP アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_CellIPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスのセル IP アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_WifiIPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Wi-Fi<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>電子デバイスがインターネットに接続したり、電波を介して特定のエリア内の別の電子デバイスと無線で相互に通信することを可能にする技術。</span></a> IP アドレス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_WifiMACAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスの Wi-Fi <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">MAC アドレス<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>メディアアクセス制御アドレス。12桁の16進数の番号であり、ハードウェアデバイスがネットワーク上で自分自身を一意に識別するために使用します。</span></a></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_WifiNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの Wi-Fi ネットワーク</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_Model</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスのモデル番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_OSVersion</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスの <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">OS<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>オペレーティング・システム。モバイルデバイス上のソフトウェアで、ハードウェアリソースを管理して各種アプリケーションに共通のサービスを提供します。</span></a> バージョン</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IsJailbroken</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Jailbreak されたモバイルデバイス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_PasscodePresent</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのパスコードが存在</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IsRoaming</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスがローミング中</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_DataRoamingEnabled</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">モバイルデバイスのデータローミングが有効</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_VoiceRoamingEnabled</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">モバイルデバイスボイスローミングが有効</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1" colspan="2">
+                        <p class="CellSubHeading">ユーザー関連の変数</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_FirstName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーのファースト・ネーム（名）</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_LastName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーのラスト・ネーム（姓）</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_LogOnName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーのログイン名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_DisplayName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの表示名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_EnrollmentUsername</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの登録ユーザー名</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_EnrollmentDomain</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの登録ドメイン</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_PhoneNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの電話番号</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_EMail</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの E メール</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_OrganizationalUnitPath</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの組織単位のパス</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_OrganizationalUnitPath</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの組織単位</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_IsMemberOf</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーは次のメンバーである</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Department</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの部署</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_Office</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの事務所</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Company</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの会社</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_Street</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの番地</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_City</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの市区町村</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_State</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの都道府県</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Country</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">デバイスユーザーの国</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyB-Column1-Body2">
+                        <p class="CellBody">MDU_ZIPCode</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyA-Column1-Body2">
+                        <p class="CellBody">デバイスユーザーの郵便番号</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyFollowingList">また、<a href="creatingcustomfields.htm">カスタムフィールドを作成</a>し、変数名をフィールドに割り当てることでカスタム変数を使用することもできます。</p>
+        <div class="MCHelpControl MCHelpControl-Related relatedTopics" style="mc-help-control-display: list;"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="28" alt="Related Topics Icon" />関連トピック</span>
+            <ul class="MCHelpControlList MCRelatedTopicsControlList">
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="actionsendsms.htm">アクション:SMS を送信</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="actionsetcustomfield.htm">アクション:カスタムフィールド値の設定</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="actionsendmessage.htm">アクション:デバイスへメッセージを送信</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="actionsetdevicename.htm">アクション:デバイス名を設定</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="actionsendemail.htm">アクション:メールを送信</a>
+                </li>
+            </ul>
+        </div>
+        <table cellspacing="0" width="100%">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <tr>
+                <td>
+                    <br />
+                    <br /><span style="font-size: 8pt;">©2015 Absolute Software Corporation. 
+				無断複写・複製・転載を禁ず。</span>
+                </td>
+                <td>
+                    <p style="text-align: right;">
+                        <br />
+                        <br />
+                        <script type="text/javascript">/*<![CDATA[*/var str = location.href.toString();
+//var arr = str.split("::/");
+var htm_page = str;
+var mailSubject = 'Absolute Manage Web Admin Documentation Feedback: ' + htm_page;
+var mailBody = '\n\n(Comments apply to the following help page: ' + location.href + ')'; 
+							var mailDisplay = 'このヘルプトピックについてフィードバックを送る'; 
+document.write('<a href="#" style="font-size: 8pt;">上に戻る</a> | <a target="_blank" href="mailto:helpfeedback_AMWA@absolute.com' + '?subject=' + escape(mailSubject) + '&body=' + escape(mailBody) + '" style="font-size: 8pt;">' + mailDisplay + '</a>');/*]]>*/</script>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

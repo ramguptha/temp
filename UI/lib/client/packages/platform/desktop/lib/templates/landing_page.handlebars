@@ -1,0 +1,30 @@
+<div class="landing-showcase">
+    <div class="help-icon-block">
+  {{#if urlForHelp}}
+    <a href={{urlForHelp}} target="_blank" class="btn btn-small btn-help is-button-for-help">?</a>
+  {{/if}}
+    </div>
+  {{#each systemMessages as |message|}}
+  <div class="system-message">
+    <div class="system-message-icon">
+      <img class="chat-message-icon" src="../packages/platform/desktop/img/chat-bubble-small.png">
+    </div>
+    <div class="system-message-block">
+      <div class="system-message-title">
+        <h3>{{message.title}}</h3>
+      </div>
+    </div>
+    <a href="#" class="system-message-close button close icon-close"{{action "dismissSystemMessage" message}}></a>
+  </div>
+  {{/each}}
+</div>
+<div class="landing-widgets-block">
+  {{#each content as |section|}}
+    <a href="#" class={{section.landingButtonClassName}} {{action "gotoViaGlobalNav" section}}>
+      <div class="landing-widget-button">
+        <h3>{{section.name}}</h3>
+        <img width="100" class="chat-message-icon" src={{section.icon}}>
+      </div>
+    </a>
+  {{/each}}
+</div>

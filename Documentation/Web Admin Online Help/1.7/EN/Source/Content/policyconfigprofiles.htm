@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1995" MadCap:lastWidth="1228">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Working with Configuration Profiles Inside a Policy</h1>
+        <p class="BodyWithListFollowing">You can use configuration profiles within a policy in the following ways:</p>
+        <p class="Bullet1" MadCap:autonum="●">Make configuration profiles available for on-demand installation by users of mobile devices that belong to the policy (iOS&#160;and Android devices only)</p>
+        <p class="Bullet1" MadCap:autonum="●">Automatically install configuration profiles on mobile devices that belong to the policy</p>
+        <p class="Bullet1Last" MadCap:autonum="●">Prohibit the installation of configuration profiles on mobile devices that belong to the policy</p>
+        <p class="Body">Before you can add a configuration profile to a policy from <MadCap:variable name="Variables.ProductName" />, you must import or create the profile using the Absolute Manage Admin interface. For more information, see "Working with configuration profiles" in the <span class="Emphasis">Absolute Manage User Guide</span>.</p>
+        <p class="Body">Policy actions take place on any mobile device belonging to the
+policy as soon as the device contacts the notification server of its OS&#160;vendor. If
+the device is connected to a Wi-Fi or mobile network, this action usually takes place within a minute; otherwise, it happens when the device
+reconnects to a network.</p>
+        <p class="BodyWithListFollowing">It is possible to use the same configuration profile inside multiple policies in conflicting ways. For example, a device could belong to one policy where the profile is auto-installed and to another policy where the profile is
+forbidden.
+ Since
+there is no way to satisfy both policies’ requirements at the same time, Absolute Manage uses the following hierarchy for carrying out profile actions, where higher entries take precedence over lower entries:</p>
+        <p class="Bullet1" MadCap:autonum="●">Forbidden</p>
+        <p class="Bullet1" MadCap:autonum="●">Auto-install</p>
+        <p class="Bullet1" MadCap:autonum="●">On-demand</p>
+        <p class="Bullet1Last" MadCap:autonum="●">Auto-remove</p>
+        <p class="Body">For example, if a
+configuration profile is auto-installed in one policy that a mobile device
+belongs to and forbidden in another, the profile is not available on the
+device because the “forbidden” category has a higher priority than
+“auto-install”.</p>
+        <p class="Note" MadCap:autonum="NOTE &#160;&#160;">Only one configuration profile (that is, the Exchange ActiveSync policy) can be active on a
+Windows Phone device at any time. As a result, profiles are not installed on Windows Phone devices when the Absolute Manage policies that the devices belong to specify more than one profile as
+automatically installed.</p>
+        <p class="Body">After you add a configuration profile to a policy, you cannot edit the profile's assignment properties within the policy. If you want to edit these properties, you must remove the configuration profile from the policy and re-add it using the desired properties.</p>
+        <h2 class="Heading2">Adding Configuration Profiles to a Policy</h2>
+        <p class="TaskIntro">To add configuration profiles to a policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the policy that you want to add configuration profiles to.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Configuration Profiles</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">In the work area toolbar, click <span class="Bold">Add Configuration Profile</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Select the checkbox of each configuration file you want to add to the policy.</p>
+        <p class="Indent2">To quickly find specific configuration profiles, you can use the search field to narrow the profiles listed by specific criteria (for example, by profile name or description).</p>
+        <p class="Steps" MadCap:autonum="6. ">From the <span class="Bold">Assignment Rule</span> list, select how you want to manage the selected profiles on devices belonging to the policy:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Auto-install</span>: The profile is automatically installed when a device enters
+the policy. The profile remains on the device when it leaves the
+policy, and the device's user can manually remove the profile, if desired.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">On-demand</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile.
+The profile remains on the device when it leaves the policy, and the device's user can
+manually remove the profile, if desired.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Auto-install, Auto-remove</span>: The profile is installed when the
+device enters the policy and removed when it leaves.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">On-demand, Auto-remove</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile. The profile is removed when the device leaves the policy.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">Forbidden</span>:The profile cannot be installed on devices belonging to the policy.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">On-demand profile installation is available on iOS&#160;and Android devices only. For information about on-demand profile installation on iOS devices,
+contact <a href="http://www.absolute.com/en/support" target="_blank" class="Hyperlink">Absolute Global Support</a>.</p>
+        <p class="Steps" MadCap:autonum="7. ">To restrict the availability of the selected profiles to certain dates or times, select the <span class="Bold">Set availability time</span> checkbox, then choose one of the following options:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Every day between</span>: The profile is
+available to mobile devices belonging to this policy only during a certain
+time of the day (for example, during office hours). Specify the start and end times in the available fields.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">From</span>: The profile is available to mobile devices belonging to this policy only during a specific time period. Specify the start date and time as well as the end date and time.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">Use your local time in these fields. Times you enter are converted to and stored in Coordinated Universal Time (UTC) on the Absolute Manage server. As a result, you should take into account any time
+differences that may exist with your mobile clients. You also must
+manually compensate for Daylight Saving Time (DST), if desired,
+because DST does not apply to UTC.</p>
+        <p class="Steps" MadCap:autonum="8. ">Click <span class="Bold">Add to Policy</span>.</p>
+        <p class="Steps" MadCap:autonum="9. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <h2 class="Heading2">Editing Assignment Rules of Configuration Profiles</h2>
+        <p class="TaskIntro">To edit the assignment rules of configuration profiles inside a policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the policy that you want to edit.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Configuration Profiles</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">Select the checkbox of each configuration profile whose assignment rules you want to change.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <img src="Resources/Images/edit-button.png" class="Icon" />.</p>
+        <p class="Steps" MadCap:autonum="6. ">From the <span class="Bold">Assignment Rule</span> list, select how you want to manage the selected profiles on devices belonging to the policy:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Auto-install</span>: The profile is automatically installed when a device enters
+the policy. The profile remains on the device when it leaves the
+policy, and the device's user can manually remove the profile, if desired.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">On-demand</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile.
+The profile remains on the device when it leaves the policy, and the device's user can
+manually remove the profile, if desired.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Auto-install, Auto-remove</span>: The profile is installed when the
+device enters the policy and removed when it leaves.</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">On-demand, Auto-remove</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile. The profile is removed when the device leaves the policy.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">Forbidden</span>:The profile cannot be installed on devices belonging to the policy.</p>
+        <p class="Steps" MadCap:autonum="7. ">To restrict the availability of the selected profiles to certain dates or times, select the <span class="Bold">Set availability time</span> checkbox, then choose one of the following options:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●"><span class="Bold">Every day between</span>: The profile is
+available to mobile devices belonging to this policy only during a certain
+time of the day (for example, during office hours). Specify the start and end times in the available fields.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●"><span class="Bold">From</span>: The profile is available to mobile devices belonging to this policy only during a specific time period. Specify the start date and time as well as the end date and time.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">Use your local time in these fields. Times you enter are converted to and stored in Coordinated Universal Time (UTC) on the Absolute Manage server. As a result, you should take into account any time
+differences that may exist with your mobile clients. You also must
+manually compensate for Daylight Saving Time (DST), if desired,
+because DST does not apply to UTC.</p>
+        <p class="Steps" MadCap:autonum="8. ">Click <span class="Bold">Save</span>.</p>
+        <p class="Steps" MadCap:autonum="9. ">Click <span class="Bold">Done</span> to close the confirmation message.</p>
+        <h2 class="Heading2">Removing Configuration Profiles from a Policy</h2>
+        <p class="Body">When you remove a configuration profile from a policy, there is no immediate effect on
+the mobile devices that belong to the policy. That is, when you remove a
+profile that is set to "auto-install", it is not removed from the
+policy's devices, and when you remove a profile that is set to "forbidden", it is
+not installed on the policy's devices.
+However, the restrictions placed on mobile devices with respect to the
+configuration profile are lifted: the user can now remove a previously required profile or install a previously prohibited profile.</p>
+        <p class="TaskIntro">To remove configuration profiles from a policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the policy that you want to remove configuration profiles from.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Configuration Profiles</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">Select the checkbox of each policy that you want to remove.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <img src="Resources/Images/remove-button.png" class="Icon" />.</p>
+        <p class="Steps" MadCap:autonum="6. ">Click <span class="Bold">Remove Profiles</span>.</p>
+        <p class="Steps" MadCap:autonum="7. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="aboutpolicies.htm" />
+                <MadCap:relatedTopic src="creatingpolicies.htm" />
+                <MadCap:relatedTopic src="creatingsmartpolicies.htm" />
+                <MadCap:relatedTopic src="editingpolicies.htm" />
+                <MadCap:relatedTopic src="sendingmessages.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

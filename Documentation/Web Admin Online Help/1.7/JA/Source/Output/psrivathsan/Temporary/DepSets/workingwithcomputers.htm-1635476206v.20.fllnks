@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/viewingcompdetails.htm" />
+    <Link
+      Url="Content/sendingmessagescomp.htm" />
+    <Link
+      Url="Content/gatheringinformation.htm" />
+    <Link
+      Url="Content/navigating.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/viewingcompdetails.htm" />
+    <Link
+      Url="Content/sendingmessagescomp.htm" />
+    <Link
+      Url="Content/gatheringinformation.htm" />
+    <Link
+      Url="Content/navigating.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

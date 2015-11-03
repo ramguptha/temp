@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="626" MadCap:lastWidth="1035">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Distributing Applications to Devices</h1>
+        <p class="Body">You can remotely distribute both in-house applications and third-party applications for installation on mobile devices. This command is available for iOS&#160;and Android devices only.</p>
+        <p class="Body">Before you can distribute an application for installation from <MadCap:variable name="Variables.ProductName" />, you must import the application file as a mobile application package using the Absolute Manage Admin interface. For more information, see "Installing software on mobile devices" in the <span class="Emphasis">Absolute Manage User Guide</span>.</p>
+        <p class="Note" MadCap:autonum="NOTE &#160;&#160;">You cannot install an application on an iOS device that
+already contains an unmanaged version of the same application
+(unmanaged applications are applications that are installed
+on a device through means other than Absolute Manage.)</p>
+        <p class="Body">After you issue the command to install an application, the device's user is prompted to install the application as soon as the device next contacts the notification server of its OS vendor. If
+the device is connected to a Wi-Fi or mobile network, the user is usually prompted to install within a minute; otherwise, it happens when the device
+reconnects to a network. If the device's user declines the installation, the application is not installed on the device.</p>
+        <p class="Note" MadCap:autonum="NOTE &#160;&#160;">On devices running iOS 4.x, the user is prompted to install the application only when AbsoluteApps comes to the foreground.</p>
+        <p class="TaskIntro">To distribute software to mobile devices:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to a page in the Mobile Devices area that contains the devices you want to distribute software to. For example, you can navigate to <span class="Bold">Mobile Devices</span> &gt; <span class="Bold">All Mobile Devices</span>, then <a href="searchingforinfo.htm">search for specific devices</a>.</p>
+        <p class="Steps" MadCap:autonum="2. ">In the results grid, select the checkbox of each applicable device  and click <span class="Bold">Commands</span> &gt; <span class="Bold">Install Application</span>.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">If you are issuing the command to multiple devices at once, you must select devices of the same OS; that is, select either all iOS&#160;devices or all Android devices.</p>
+        <p class="Indent2">You can also issue the command for a single device from its Device Details page:</p>
+        <p class="SubSteps" MadCap:autonum="a) ">In the results grid, click the device you want to distribute software to.  The device's Device Details page opens.</p>
+        <p class="SubSteps" MadCap:autonum="b) "> From the Commands sidebar, click <span class="Bold">Install Application</span>.</p>
+        <p class="Steps" MadCap:autonum="3. ">From the <span class="Bold">In-House Applications</span> and <span class="Bold">Third-Party Applications</span> lists, select the checkboxes of the applications you want to distribute for installation.</p>
+        <p class="Indent2">To quickly find specific applications, you can use the search field to narrow the applications listed by specific criteria (for example, by application name or version number).</p>
+        <p class="Steps" MadCap:autonum="4. ">Click <span class="Bold">Install Application</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="reissuingcommands.htm" />
+                <MadCap:relatedTopic src="uninstallingapps.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

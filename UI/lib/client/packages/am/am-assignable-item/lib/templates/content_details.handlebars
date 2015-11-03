@@ -1,0 +1,59 @@
+<div class="all-details-content content-details-container">
+  <div class="snap-content-title">
+    <h3>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.header'}}</h3>
+    <button class="btn btn-smaller" {{action "gotoEditContentProperties"}}>{{t 'shared.buttons.edit'}}</button>
+    <button class="btn btn-smaller" {{action "gotoDeleteContent"}}>{{t 'shared.buttons.delete'}}</button>
+  </div>
+    <div class="content-details-table-heading">
+      <div class="content-details-table-cell"><span class="icon-openwith"></span>
+        {{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.leaveAbsoluteSafeLabel'}}
+        <div class="help-wrapper">
+          <span>{{model.presentation.canLeaveAbsSafe}}&nbsp;&nbsp;</span>
+          <div class={{if model.data.canBeEmailed 'help-container' 'help-container display-none'}}>
+            <span class={{if model.data.canBeEmailed 'icon-email' ''}}></span>
+            <span class="help-tooltip"><div class="tooltip-arrow"></div>
+              {{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.fileEmailAllowed'}}
+            </span>
+          </div>
+          <div class={{if model.data.canBePrinted 'help-container' 'help-container display-none'}}>
+            <span class={{if model.data.canBePrinted 'icon-print' ''}}></span>
+            <span class="help-tooltip"><div class="tooltip-arrow"></div>
+              {{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.filePrintAllowed'}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="content-details-table-cell"><span class={{passcodePresentIconClass}}></span>
+        {{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.noPasscodePresentLabel'}}<p>{{hasPassword}}</p></div>
+      <div class="content-details-table-cell"><span class="icon-wifi"></span>
+        {{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.wiFiDownloadOnlyLabel'}}<p>{{model.presentation.wifiOnly}}</p></div>
+    </div>
+    <table class="content-details-table-body">
+      <tbody>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.filenameHeader'}}</td>
+        <td>{{model.presentation.mediaFileName}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.fileTypeHeader'}}</td>
+        <td>{{mediaType}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.categoryHeader'}}</td>
+        <td>{{model.presentation.mediaCategory}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.filesizeHeader'}}</td>
+        <td>{{model.presentation.mediaFileSize}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.lastModifiedHeader'}}</td>
+        <td>{{model.presentation.modified}}</td>
+      </tr>
+      <tr>
+        <td>{{t 'amAssignableItem.assignableContentDetailsPage.tabDetails.descriptionHeader'}}</td>
+        <td>{{model.presentation.description}}</td>
+      </tr>
+      </tbody>
+    </table>
+</div>

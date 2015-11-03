@@ -1,0 +1,104 @@
+<div class="progress-steps-new-content">
+<ul class="progress-steps">
+    <li><span class="icon-checkmark1"></span>SET PROPERTIES</li>
+    <li class="active-step"><span class="icon-number-2"></span>DELETE OPTIONS</li>
+    <li><span class="icon-number-3"></span>REVIEW AND REQUEST</li>
+  </ul>
+</div>
+
+<div class="container-device-freeze-set-properties" >
+  <div class="select-enter-category for-device-freeze">
+    <div>
+      <label>Choose a Data Delete Option</label>
+    </div>
+    <div class="data-delete-option clearfix">
+    <div class="radio-button-block">
+      <label class="name-input-container">{{view Em.RadioButton isSelected=eraseAllFilesAndOsOption }}Erase All Files and Operating System</label>
+    </div>
+    <div class="help-wrapper">
+      <div class="help-container"><span class="icon-question-mark"></span>
+        <span class="help-tooltip">
+        <div class="tooltip-arrow large-tooltip"></div>
+          <ul>
+            <li><strong> Operation on PC's and Mac:</strong></li>
+            <li> - Remove all files</li>
+            <li> - Remove Operating System</li>
+<!-- Temporarily disabled till next release
+            <li> - Use RTT-IP or RTT-SMS if available</li>
+-->
+            <li> - Number of data overwrites: 3</li>
+            <li><strong> Device will stop contacting the monitoring center</strong></li>
+          </ul>
+        </span>
+      </div>
+    </div>
+    </div>
+    <div class="data-delete-option clearfix">
+    <div class="radio-button-block">
+      <label>{{view Em.RadioButton isSelected=eraseAllFilesOption }}Erase All Files</label>
+    </div>
+    <div class="help-wrapper">
+      <div class="help-container"><span class="icon-question-mark"></span>
+        <span class="help-tooltip">
+        <div class="tooltip-arrow large-tooltip"></div>
+          <ul>
+            <li><strong> Operation on PC's and Mac:</strong></li>
+            <li> - Remove all files</li>
+<!-- Temporarily disabled till next release
+            <li> - Use RTT-IP or RTT-SMS if available</li>
+-->
+            <li> - Number of data overwrites: 3</li>
+            <li><strong> Device will continue to contact the monitoring center</strong></li>
+          </ul>
+        </span>
+      </div>
+    </div>
+    </div>
+    <div class="data-delete-option clearfix">
+    <div class="radio-button-block block-no-float">
+      <label>{{view Em.RadioButton isSelected=customRulesOption }}Custom Rules</label>
+    </div>
+    {{#if customRulesOption}}
+      <div class="full-path-custom-block">
+          <div>
+        <label>Enter a full path to a file or a folder</label>
+          </div>
+        <div class="help-wrapper">
+          <div class="help-container"><span class="icon-question-mark"></span>
+        <span class="help-tooltip">
+        <div class="tooltip-arrow large-tooltip"></div>
+          <ul>
+            <li><strong>Help text TODO:</strong> Erase All Files text</li>
+          </ul>
+        </span>
+          </div>
+        </div>
+      </div>
+      <div class="custom-rules-content">
+        {{textarea placeholder="Enter path here..." rows="3" class="folder-name-field" value=customPolicy isVisible=customRulesOption}}
+      </div>
+    {{/if}}
+      </div>
+
+
+    <div class="force-reboot-block">
+    </div>
+    {{#if errorMessage}}
+      <div class="alert alert-error tipsy tipsy-sw">
+        <div class="tipsy-arrow tipsy-arrow-sw"></div>
+        <div class="tipsy-inner">{{errorMessage}}</div>
+      </div>
+    {{/if}}
+    {{#if actionWarning}}
+      <div class="alert-warning">{{actionWarning}}</div>
+    {{/if}}
+  </div>
+</div>
+
+<div class="container-fluid add-content-actions">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>Cancel</button>
+    <button class="btn btn-low back-button" {{action "gotoPreviousStep"}}>Back</button>
+    <button class="btn btn-action" {{action "gotoNextStep"}} disabled={{isContinueDisabled}}>Continue</button>
+  </div>
+</div>

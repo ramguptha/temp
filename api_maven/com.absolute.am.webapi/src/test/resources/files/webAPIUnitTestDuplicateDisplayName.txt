@@ -1,0 +1,2 @@
+This file is used for the duplicate display name test case. The client uploads this file, and sets the displayname to match the filename.
+It then attempts to upload the same file again, and should get HTTP Status code 205 with the first block posted.

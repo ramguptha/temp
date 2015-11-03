@@ -1,0 +1,179 @@
+#define SYNC_SERVICE_PORT_NUMBER "9668"
+#define WEB_SSL_PORT_NUMBER "443"
+#define WEB_SITE_NAME "AmWebUi"
+#define CERTIFICATE_STORE_NAME "MY"
+#define ABSOLUTE_SOFTWARE "Absolute Software"
+
+
+// Included header files ----------------------------------------------------
+#include "ifx.h"
+
+// Note: In order to have your InstallScript function executed as a custom
+// action by the Windows Installer, it must be prototyped as an 
+// entry-point function.
+
+// The keyword export identifies MyFunction() as an entry-point function.
+// The argument it accepts must be a handle to the Installer database.
+    
+/* export prototype MyFunction(HWND); */
+
+
+//---------------------------------------------------------------------------
+// The UnInstalling event is sent just before the feature 
+// AmWebInterface is uninstalled.
+//---------------------------------------------------------------------------
+export prototype AmWebInterface_UnInstalling();
+function AmWebInterface_UnInstalling()
+string szMsg1, szExec, szArgs, szResultConfigPath, szTargetInstallDataPath, szSyncServicesPath;
+begin
+
+	RetrieveDirsFromRegistry();
+	
+	//delete firewall rules
+	szExec = "netsh";
+	szString = "\"Absolute Manage Web Admin Open Port " + API_SSL_PORT_NUMBER + "\"";
+	//delete rule first to prevent duplicate rules
+	szArgs = "advfirewall firewall delete rule name=" + szString;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szString = "\"Absolute Manage Web Admin Block Port " + API_SSL_PORT_NUMBER + "\"";
+	//delete rule first to prevent duplicate rules
+	szArgs = "advfirewall firewall delete rule name=" + szString;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szString = "\"Absolute Manage Web Admin Block Port " + API_NONSSL_PORT_NUMBER + "\"";
+	//delete rule first to prevent duplicate rules
+	szArgs = "advfirewall firewall delete rule name=" + szString;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	szString = "\"Absolute Manage Web Admin Open Port " + WEB_SSL_PORT_NUMBER + "\"";
+	//delete rule first to prevent duplicate rules
+	szArgs = "advfirewall firewall delete rule name=" + szString;
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	
+
+	//stop Tomcat service
+    szExec = "sc";
+	szArgs = "stop " + TOMCAT8_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	szArgs = "stop " + TOMCAT7_SERVICE_NAME;
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	
+	Delay(2);
+	
+	//restore original web.xml, server.xml files from backup
+	szTomcatConf = szTomcat ^ "conf";
+	
+	szSource = szTomcatConf^"backup";
+	szTarget = szTomcatConf;
+	szExec = "cmd";
+	szArgs = "/c robocopy \"" + szSource + "\" \"" + szTarget + "\" /copyall";
+		//MessageBox ("Tomcat configuration files successfully restored to " + szTomcatConf, INFORMATION);
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);
+		abort;
+	endif;
+	
+    DeleteDir (szTomcatConf^"backup", ALLCONTENTS);
+		//MessageBox ("conf backup directory is deleted", INFORMATION);
+	
+	//commented out - better not delete the iplisten table
+	/*
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	szRegKey = "SYSTEM\\CurrentControlSet\\Services\\HTTP\\Parameters";
+	RegDBDeleteValue (szRegKey, "ListenOnlyList");
+	
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	szRegKey = "SYSTEM\\ControlSet001\\Services\\HTTP\\Parameters";
+	RegDBDeleteValue (szRegKey, "ListenOnlyList");
+	*/
+
+	szResultConfigPath = CommonAppDataFolder^ABSOLUTE_SOFTWARE^"AmWebApiData";
+	szSyncServicesPath = CommonAppDataFolder^ABSOLUTE_SOFTWARE^"AMSyncServices";
+	
+	szProductPath = PROGRAMFILES64^ABSOLUTE_SOFTWARE^WEB_SITE_NAME;
+
+	//this folder must match same folder in Setup
+    szTargetInstallDataPath =  szResultConfigPath^"install"; 
+
+	if(Is(FILE_EXISTS, szTargetInstallDataPath^"com.absolute.am.webapi.domain.txt")) then
+		ReadLineFromTextFile(szTargetInstallDataPath, "com.absolute.am.webapi.domain.txt", szDomainName);
+	else
+		//hacky way of retrieving the URL of AM Web Admin website from the existing welcome.html page
+		//can also use command line: appcmd list site /name:AmWebUi and parse output
+		SearchForTextInFile(szProductPath^"welcome.html", "https:", szReturnLine);
+		StrSub ( szMsg, szReturnLine, StrFind (szReturnLine, "https:") + 8, 200 );
+		nResult = StrFind (szMsg, "/login\"");
+		StrSub ( szDomainName, szMsg, 0, nResult );
+	endif;
+
+
+	//copy uninst.cmd to C:
+	if (XCopyFile (SUPPORTDIR^"uninst.cmd", TempFolder, COMP_NORMAL) < 0) then
+		MessageBox ("Copying uninst.cmd file failed. Target directory: " + TempFolder, SEVERE);
+	else
+		//MessageBox ("uninst.cmd file successfully copied to C:\\", INFORMATION);
+	endif;
+	
+	//copy certutil utility and delete_cert.bat to install folder
+    if (XCopyFile (SUPPORTDIR^"certutil.exe", szTargetInstallDataPath, COMP_NORMAL) < 0) then
+        MessageBox ("Copying certutil.exe file failed. Target directory: " + szTargetInstallDataPath, SEVERE);
+    else
+		//MessageBox ("certutil.exe file successfully copied to " + szTargetInstallDataPath, INFORMATION);
+    endif;
+    if (XCopyFile (SUPPORTDIR^"delete_cert.cmd", szTargetInstallDataPath, COMP_NORMAL) < 0) then
+        MessageBox ("Copying delete_cert.cmd file failed. Target directory: " + szTargetInstallDataPath, SEVERE);
+    else
+		//MessageBox ("delete_cert.cmd file successfully copied to " + szTargetInstallDataPath, INFORMATION);
+    endif;
+
+	
+	LAAW_SHELLEXECUTEVERB = "runas";
+	//call uninst.cmd to execute most un-install steps
+	//parameters: %1 ApiData\install path (C:\ProgramData\Absolute Software\AmWebApiData\install), %2 cert store name, %3 domain name
+	szExec = "cmd";
+	szArgs = "/c cd \"" + TempFolder + "\" \& uninst.cmd \"" + szTargetInstallDataPath + "\" " + CERTIFICATE_STORE_NAME + " \"" + szTomcatConf^"Catalina"^szDomainName + "\"";
+		//MessageBox ("Executing uninstallation, command line:\ncmd " + szArgs, INFORMATION);
+	if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+		Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+		MessageBox(szMsg1, SEVERE);      
+	endif;
+	LAAW_SHELLEXECUTEVERB = "open";
+	
+	//clean-up - delete uninst.cmd
+	DeleteFile(TempFolder ^ "uninst.cmd");
+	
+	//remove unneeded path from environment variable
+	//TODO: implement as a custom action instead, to get rid of Access denied problem (see if ((nResult < 0) && bAddMe) then in PathVarSetup)
+	szTomcatWebappsLibPath = szTomcat^"webapps"^"com.absolute.am.webapi"^"WEB-INF"^"lib";
+	RemoveFromPath(szTomcatWebappsLibPath);
+	
+	REGDB_OPTIONS = REGDB_OPTIONS | REGDB_OPTION_WOW64_64KEY;
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	szRegKey = "SOFTWARE\\" + ABSOLUTE_SOFTWARE + "\\AMSyncServices";
+	RegDBDeleteKey (szRegKey);
+	
+	REGDB_OPTIONS = REGDB_OPTIONS & ~REGDB_OPTION_WOW64_64KEY;
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	szRegKey = "SOFTWARE\\" + ABSOLUTE_SOFTWARE + "\\AMSyncServices";
+	RegDBDeleteKey (szRegKey);
+
+end;

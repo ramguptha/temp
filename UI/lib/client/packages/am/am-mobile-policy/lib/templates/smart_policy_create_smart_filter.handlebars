@@ -1,0 +1,37 @@
+<div class="progress-steps-new-content">
+  <ul class="progress-steps">
+    <li class="complete-step"><span class="icon-checkmark1"></span>{{setPropertiesTxt}}</li>
+    <li class="active-step"><span class="icon-number-2"></span>{{createSmartFilterTxt}}</li>
+    <li class=""><span class="icon-number-3"></span>{{verifyAndSaveTxt}}</li>
+  </ul>
+</div>
+<div class="container-fluid select-devices-grid">
+  <div class="select-device-title-container">
+    <h3>
+      {{#if filterByNone}}
+        {{t 'amMobilePolicies.modals.createNewSmartPolicy.conditionSelectionLabel'}}
+        {{select-field content=allAnyOptions value=selectedOption optionValuePath="content.value" optionLabelPath="content.name"}}
+      {{else}}
+        {{t 'amMobilePolicies.modals.createNewSmartPolicy.conditionSelectionAppAndProfilesLabel'}}
+        {{#if filterByApp}}
+          {{select-field content=allAppOptions value=selectedOption optionValuePath="content.value" optionLabelPath="content.name"}}
+        {{else}}
+          {{select-field content=allProfilesOptions value=selectedOption optionValuePath="content.value" optionLabelPath="content.name"}}
+        {{/if}}
+      {{/if}}
+    </h3>
+  </div>
+
+  <div class={{advancedFilterViewClassNames}}>
+    {{view advancedFilterController.AdvancedFilterEditorView controller=advancedFilterController}}
+  </div>
+</div>
+
+<div class="container-fluid modal-action-buttons">
+  <div class="button-group" >
+    <button type="button" class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <div class="buttons-divider"></div>
+    <button type="button" class="btn btn-low back-button" {{action "gotoPreviousStep"}}>{{t 'shared.buttons.back'}}</button>
+    <button type="button" class="btn btn-action" {{action "onConfirmAction"}} disabled={{advancedFilterController.isActionBtnDisabledForFilters}}>{{t 'shared.buttons.continue'}}</button>
+  </div>
+</div>

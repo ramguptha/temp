@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <title>Absolute Manage Login</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="viewport" content="width=device-width">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="images/CTiPhoneicon.png"/>
+
+  <!--[if IE 8]>
+  <html class="ie8">
+  <style type="text/css">
+    html {
+      background-color: #005595;
+    }
+  </style>
+  <![endif]-->
+  <!--[if IE 9]>
+  <html class="ie9">
+  <![endif]-->
+  <!--[if IE 9]>
+  <style type="text/css">
+    .ie9 body {
+      filter: none!important;
+    }
+    .login-container, .btn-login {
+      filter: none!important;
+    }
+  </style>
+  <![endif]-->
+
+  <link rel="stylesheet" href="../packages/am/login/css/login.css" />
+  <link rel="stylesheet" href="../packages/platform/desktop/css/uiresponsive.css" />
+  <link rel="stylesheet" href="../packages/platform/desktop/css/buttons.css" />
+  <link rel="stylesheet" href="../packages/platform/desktop/css/font-icons.css" />
+  <link rel="shortcut icon" href="../packages/platform/desktop/img/favicon.ico">
+  <script data-main="main" src="../packages/platform/lib/require.js"></script>
+  <style type="text/css">
+    #NoScriptWarning {
+      display: none;
+    }
+  </style>
+  <noscript>
+    <style type="text/css">
+      #NoScriptWarning {
+        display: block;
+      }
+      html {height:100%;}
+      body {height: auto; margin:0; font-family: Helvetica, Arial, Verdana;}
+
+      /*h3 {color: #333; font-weight: normal;font-size: 22px; margin-bottom: 5px; }*/
+      /*p {font-size: 16px; color: #333333;}*/
+
+      body{
+        margin: 0;
+        padding: 0;
+        background: rgb(255,255,255); /* Old browsers */
+        background: url('img/pattern-nojs.png'), -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 10%, rgba(200,200,200,1) 100%); /* FF3.6+ */
+        background: url('img/pattern-nojs.png'), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(10%,rgba(255,255,255,1)), color-stop(100%,rgba(200,200,200,1))); /* Chrome,Safari4+ */
+        background: url('img/pattern-nojs.png'), -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 10%,rgba(200,200,200,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: url('img/pattern-nojs.png'), -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 10%,rgba(200,200,200,1) 100%); /* Opera 12+ */
+        background: url('img/pattern-nojs.png'), -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 10%,rgba(200,200,200,1) 100%); /* IE10+ */
+        background: url('img/pattern-nojs.png'), radial-gradient(ellipse at center,  rgba(255,255,255,1) 10%,rgba(200,200,200,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dbdbdb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+      .box h3 {color: #333; font-weight: normal;font-size: 22px; margin-bottom: 5px;}
+      .box p {font-size: 16px; color: #818181; margin-top: 5px; line-height: 22px;}
+      .otherLanguages h3 {font-size: 16px; margin-bottom: 5px;}
+      .otherLanguages p {font-size: 13px; margin-top: 5px;}
+
+      .innerContainer {
+        display:block;
+        width:100%;
+        text-align:center;
+        vertical-align:middle;
+      }
+
+      .logo {
+        position: absolute;
+        top: 13%;
+        left: 50%;
+        margin-left: -103px;
+        box-sizing: border-box;
+      }
+
+      .box {
+        display: table;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #ffffff;
+        height: 150px;
+        vertical-align: middle;
+        width: 620px;
+        margin: auto;
+        position: relative;
+        -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+      }
+
+      .alert {
+        float:left;
+        margin-left: 40px;
+        margin-top: 40px;
+      }
+
+      .textContainer {
+        position: relative;
+        display: block;
+        text-align: left;
+        margin-left: 110px;
+        margin-top: 30px;
+        width: 450px;
+        margin-bottom: 25px;
+      }
+      .otherLanguages {
+        background: #f8f8f8;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 7px 10px 7px 110px;
+        border-top: 1px solid #e5e4e4;
+
+      }
+
+      /* Text Animation blocks - add languages text blocks below */
+      /*.english {*/
+        /*animation: english 10s infinite;*/
+        /*-o-animation: english 10s infinite;*/
+        /*-moz-animation: english 10s infinite;*/
+        /*-webkit-animation: english 10s infinite;*/
+      /*}*/
+
+      /*.japanese {*/
+        /*animation: japanese 10s infinite;*/
+        /*-o-animation: japanese 10s infinite;*/
+        /*-moz-animation: japanese 10s infinite;*/
+        /*-webkit-animation: japanese 10s infinite;*/
+      /*}*/
+
+      /*@-webkit-keyframes english {*/
+        /*0% {opacity: 0;}*/
+        /*10% {opacity: 1;}*/
+        /*20% {opacity: 1;}*/
+        /*30% {opacity: 1;}*/
+        /*40% {opacity: 1;}*/
+        /*50% {opacity: 0;}*/
+        /*60% {opacity: 0;}*/
+        /*70% {opacity: 0;}*/
+        /*80% {opacity: 0;}*/
+        /*90% {opacity: 0;}*/
+        /*100% {opacity: 0;}*/
+      /*}*/
+
+      /*@keyframes english {*/
+        /*0% {opacity: 0;}*/
+        /*10% {opacity: 1;}*/
+        /*20% {opacity: 1;}*/
+        /*30% {opacity: 1;}*/
+        /*40% {opacity: 1;}*/
+        /*50% {opacity: 0;}*/
+        /*60% {opacity: 0;}*/
+        /*70% {opacity: 0;}*/
+        /*80% {opacity: 0;}*/
+        /*90% {opacity: 0;}*/
+        /*100% {opacity: 0;}*/
+      /*}*/
+
+      /*@-webkit-keyframes japanese {*/
+        /*0% {opacity: 1;}*/
+        /*10% {opacity: 0;}*/
+        /*20% {opacity: 0;}*/
+        /*30% {opacity: 0;}*/
+        /*40% {opacity: 0;}*/
+        /*50% {opacity: 1;}*/
+        /*60% {opacity: 1;}*/
+        /*70% {opacity: 1;}*/
+        /*80% {opacity: 1;}*/
+        /*95% {opacity: 1;}*/
+        /*100% {opacity: 1;}*/
+      /*}*/
+
+      /*@keyframes japanese {*/
+        /*0% {opacity: 1;}*/
+        /*10% {opacity: 0;}*/
+        /*20% {opacity: 0;}*/
+        /*30% {opacity: 0;}*/
+        /*40% {opacity: 0;}*/
+        /*50% {opacity: 1;}*/
+        /*60% {opacity: 1;}*/
+        /*70% {opacity: 1;}*/
+        /*80% {opacity: 1;}*/
+        /*95% {opacity: 1;}*/
+        /*100% {opacity: 1;}*/
+      /*}*/
+    </style>
+  </noscript>
+</head>
+
+  <body>
+    <div id="NoScriptWarning">
+      <div class="nojs-main-logo">
+        <img src="../packages/am/login/css/img/am-logo-nojs.png">
+      </div>
+      <div class="container">
+        <div class="innerContainer">
+
+          <!--<img class="logo" src="images/AM-logo.png" alt="Absolute Manage" />-->
+
+          <div class="box"><!-- Add Languages divs inside this div -->
+
+            <img class="alert" src="../packages/am/login/css/img/icon-alert.png" alt="Alert" />
+
+            <div class="textContainer english">
+              <h3>It looks like you have Javascript turned off.</h3>
+              <p>Please enable Javascript in your browser settings to use Absolute Manage and its features.</p>
+            </div>
+
+            <div class="textContainer otherLanguages">
+              <h3>JavaScriptが無効になっているようです。</h3> <!-- Japanese -->
+              <p>Absolute Manageとその機能を利用するにはJavaScriptを有効化してください。</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

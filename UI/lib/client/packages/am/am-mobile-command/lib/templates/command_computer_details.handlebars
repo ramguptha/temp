@@ -1,0 +1,226 @@
+<div class="container-command-details data-delete-command">
+  <div class="device-main-description for-data-delete-command">
+    <div class="device-details-table-heading">
+      <div class="table-heading-row">
+        <div class="device-details-table-cell current-status-cell">
+          <div></div>
+          <div class="current-status-info"><p class="small-title-for-block">Current Status</p>
+
+            <p>{{deviceData.presentation.computerDeviceFreezeStatus}}</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="device-view-info-block block-closed" data-name="device-details">
+    <div class="title-collapsible title-with-icons content-closed">
+      <h3>Device Details</h3>
+
+      <div class="device-details-table-heading">
+        <div class="snap-content-icon">
+          <img src={{osIconPath}} alt=" ">
+        </div>
+        <h4 class="device-model">{{deviceData.presentation.machineModel}}</h4>
+
+        <div class="table-heading-row">
+          <div class="device-details-table-cell">Device Name<p>{{deviceData.presentation.agentName}}</p></div>
+          {{#if isComputerEsnEmpty}}
+            <div class="device-details-table-cell">ESN<p>{{deviceData.presentation.computerEsn}}</p></div>
+          {{else}}
+            <div class="device-details-table-cell">ESN<p><a
+              href="#" {{action "openInNewTab" computerEsn}}>{{deviceData.presentation.computerEsn}}</a></p></div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="content-collapsible">
+      <table class="device-details-table-body">
+        <tbody>
+        <tr>
+          <td>Make</td>
+          <td>{{deviceData.presentation.makeInfo}}</td>
+        </tr>
+        <tr>
+          <td>Agent Serial Number</td>
+          <td>{{deviceData.presentation.agentSerialNumber}}</td>
+        </tr>
+        <tr>
+          <td>Last Heartbeat</td>
+          <td>{{deviceData.presentation.lastHeartbeat}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {{#if isCommandsDetailsAvailable}}
+    <div class="device-view-info-block block-closed" data-name="device-details">
+      <div class="title-collapsible content-closed">
+        <div class="command-details-title">
+          <h3>Command Details</h3>
+        </div>
+      </div>
+      <div class="content-collapsible">
+        {{#if isCommandTypeDeviceFreeze}}
+          <div>
+            <table class="device-details-table-body">
+              <tbody>
+              <tr data-name="show-preview">
+                <td>Message</td>
+                <td class="title-collapsible"><p><span>{{messageNameDisplay}}</span> - <span
+                  class="message-preview-title">{{previewTitleText}}</span></p></td>
+              </tr>
+              <tr>
+                <td class="command-details-message content-closed" colspan="2">
+                  <div class="content-collapsible">
+                    {{messageHtmlDisplay}}
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Unfreeze Passcode</td>
+                <td>{{preSetPasswordDisplay}}</td>
+              </tr>
+              <tr>
+                <td>Force reboot</td>
+                <td>{{forceRebootEnabledDisplay}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        {{/if}}
+        {{#if isCommandTypeDataDelete}}
+          <div>
+            <table class="device-details-table-body">
+              <tbody>
+              {{#unless isDataDeleteTypeCustomRules}}
+                <tr>
+                  <td>Delete Option</td>
+                  <td>
+                    <div class="delete-option-command">{{dataDeleteTypeDisplay}}</div>
+                    {{#if isDataDeleteTypeEraseAllFilesAndOS}}
+                      <span class="help-wrapper">
+                    <div class="help-container">
+                      <span class="icon-info-1"></span>
+                      <span class="help-tooltip">
+                        <div class="tooltip-arrow large-tooltip"></div>
+                        <ul>
+                          <li><strong> Operation on PC's and Mac:</strong></li>
+                          <li> - Remove all files</li>
+                          <li> - Remove Operating System</li>
+                          <li> - Use RTT-IP or RTT-SMS if available</li>
+                          <li> - Number of data overwrites: 3</li>
+                          <li><strong> Device will stop contacting the monitoring center</strong></li>
+                        </ul>
+                      </span>
+                    </div>
+                  </span>
+                    {{/if}}
+                    {{#if isDataDeleteTypeEraseAllFiles}}
+                      <span class="help-wrapper">
+                    <div class="help-container">
+                      <span class="icon-info-1"></span>
+                      <span class="help-tooltip">
+                        <div class="tooltip-arrow large-tooltip"></div>
+                        <ul>
+                          <li><strong> Operation on PC's and Mac:</strong></li>
+                          <li> - Remove all files</li>
+                          <li> - Use RTT-IP or RTT-SMS if available</li>
+                          <li> - Number of data overwrites: 3</li>
+                          <li><strong> Device will continue to contact the monitoring center</strong></li>
+                        </ul>
+                      </span>
+                    </div>
+                  </span>
+                    {{/if}}
+                  </td>
+                </tr>
+              {{/unless}}
+              {{#if isDataDeleteTypeCustomRules}}
+                <tr data-name="show-custom-preview">
+                  <td>Delete Option</td>
+                  <td class="title-collapsible">
+                    <span class="type-display-data-delete">{{dataDeleteTypeDisplay}}</span> - <span
+                    class="message-preview-title">{{messageCustomPolicyDetailsTitleText}}</span>
+                <span class="help-wrapper">
+                  <div class="help-container">
+                    <span class="icon-info-1"></span>
+                      <span class="help-tooltip">
+                        <div class="tooltip-arrow large-tooltip"></div>
+                        <ul>
+                          <li><strong>Help text TODO:</strong> Custom Rules text</li>
+                        </ul>
+                      </span>
+                  </div>
+                </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="command-details-custom-policy content-closed" colspan="2">
+                    <div class="content-collapsible">
+                      {{customPolicyDisplay}}
+                    </div>
+                  </td>
+                </tr>
+              {{/if}}
+              <tr>
+                <td>Reason</td>
+                <td>{{reasonTypeDisplay}}</td>
+              </tr>
+              <tr>
+                <td>Comment</td>
+                <td>{{commentDisplay}}</td>
+              </tr>
+              </tbody>
+            </table>
+            <br>
+            {{#if isLogFileDisplay}}
+              <table class="device-details-table-body">
+                <tbody>
+                <tr>
+                  <td>Log File</td>
+                  <td data-name="show-preview">
+                    <div class="title-collapsible">
+                      <span>{{logFileDisplayTitle}}</span> - <span
+                      class="message-preview-title">{{previewTitleText}}</span>
+                    </div>
+                    <a href={{logFileDownloadLink}} class="btn btn-small">Download log</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="command-details-message bottom-table-preview content-closed" colspan="2">
+                    <div class="content-collapsible">
+                      {{logFileShortTextDisplay}}
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            {{/if}}
+          </div>
+        {{/if}}
+        {{#if actionWarning}}
+          <p><span class="alert alert-warning">{{actionWarning}}</span></p>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+</div>
+
+<div class="container-fluid command-details-actions modal-content-actions">
+  <div class="button-group">
+    <!-- TODO enable it in the next release
+    <button class="btn btn-small" {{action "onCancelRequestDeviceAction" this}}>
+      <span class="icon-cancel-x"></span>Cancel Request
+    </button>
+    -->
+    {{#if isCommandTypeDeviceFreeze}}
+      <button class="btn btn-small unfreeze-btn" {{action "deviceUnfreezeCommand"}}>
+        <span class="icon-checkmark3 icon-for-btn"></span>Unfreeze
+      </button>
+    {{/if}}
+    <button class="btn btn-action-secondary" {{action "cancel"}}>OK</button>
+  </div>
+</div>
+
+

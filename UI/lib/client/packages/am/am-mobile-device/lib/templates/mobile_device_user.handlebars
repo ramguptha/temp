@@ -1,0 +1,115 @@
+<div class="snap-content-container">
+  <div class="user-details-content">
+    <div class="snap-content-title">
+      <h3>{{t 'amMobileDevice.devicePage.userTab.title'}}</h3>
+    </div>
+    {{#if model}}
+        <table class="device-details-table-body">
+          <tbody>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.displayName'}}</td>
+            <td>{{#if model.displayName}}{{model.displayName}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.firstName'}}</td>
+            <td>{{#if model.firstName}}{{model.firstName}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.lastName'}}</td>
+            <td>{{#if model.lastName}}{{model.lastName}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.logonName'}}</td>
+            <td>{{#if model.logonName}}{{model.logonName}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.email'}}</td>
+            <td>{{#if model.email}}{{model.email}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.phoneNumber'}}</td>
+            <td>{{#if model.phoneNumber}}{{model.phoneNumber}}{{else}}--{{/if}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <br />
+        <table class="device-details-table-body">
+          <tbody>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.organizationalUnit'}}</td>
+            <td>{{#if model.organizationalUnit}}{{model.organizationalUnit}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.organizationalUnitPath'}}</td>
+            <td>{{#if model.organizationalUnitPath}}{{model.organizationalUnitPath}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.memberOf'}}</td>
+            <td>{{#if model.memberOf}}{{model.memberOf}}{{else}}--{{/if}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <br />
+        <table class="device-details-table-body">
+          <tbody>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.company'}}</td>
+            <td>{{#if model.company}}{{model.company}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.department'}}</td>
+            <td>{{#if model.department}}{{model.department}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.office'}}</td>
+            <td>{{#if model.office}}{{model.office}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.street'}}</td>
+            <td>{{#if model.street}}{{model.street}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.city'}}</td>
+            <td>{{#if model.city}}{{model.city}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.state'}}</td>
+            <td>{{#if model.state}}{{model.state}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.zipCode'}}</td>
+            <td>{{#if model.zipCode}}{{model.zipCode}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.country'}}</td>
+            <td>{{#if model.country}}{{model.country}}{{else}}--{{/if}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <br />
+        <h3>
+          {{t 'amMobileDevice.devicePage.userTab.mDmServerEnrollment'}}
+        </h3>
+        <br />
+        <table class="device-details-table-body">
+          <tbody>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.enrollmentUserName'}}</td>
+            <td>{{#if model.enrollmentUserName}}{{model.enrollmentUserName}}{{else}}--{{/if}}</td>
+          </tr>
+          <tr>
+            <td>{{t 'amMobileDevice.devicePage.userTab.enrollmentDomain'}}</td>
+            <td>{{#if model.enrollmentDomain}}{{model.enrollmentDomain}}{{else}}--{{/if}}</td>
+          </tr>
+          </tbody>
+        </table>
+    {{else}}
+      <div class="empty-result-layout">
+        <span class="icon-square-attention1 empty-list-icon"></span>
+        <h3>{{t 'amMobileDevice.devicePage.userTab.noDataToDisplay'}}</h3>
+      </div>
+    {{/if}}
+  </div>
+</div>

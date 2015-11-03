@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/reissuingcommands.htm" />
+    <Link
+      Url="Project/VariableSets/Variables.flvar" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/Images/navicon.jpg" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/reissuingcommands.htm" />
+    <Link
+      Url="Project/VariableSets/Variables.flvar" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables>
+    <Variable
+      Name="Variables.ProductName" />
+  </Variables>
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

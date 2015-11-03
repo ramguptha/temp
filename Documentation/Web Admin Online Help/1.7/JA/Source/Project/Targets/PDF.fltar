@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="PDF"
+  Type="PDF"
+  Destinations=""
+  MasterToc="/Project/TOCs/AMWebAdmin.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/Absolute.css"
+  MasterPageLayout="/Content/Resources/PageLayouts/Chapters.flpgl"
+  ConditionTagExpression="exclude[Default.ScreenOnly] "
+  PatchHeadingLevels="false"
+  AutoSizeCaptureCaptions="false"
+  TargetLanguage="ja">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="true"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="true"
+    ExpandingTextConversion="expand"
+    PopupConversion="expand" />
+  <PDF
+    ImageCompression="Automatic"
+    ShowUsedBookmarks="false" />
+</CatapultTarget>

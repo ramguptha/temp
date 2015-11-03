@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>New Gen UI style guide</title>
+
+  <!--CC styles-->
+  <link href="../../lib/client/packages/platform/desktop/css/font-icons.css" rel="stylesheet">
+  <link href="/Pages/ng/css/main.css" rel="stylesheet">
+  <link href="../../lib/client/packages/platform/desktop/css/buttons.css" rel="stylesheet">
+  <link href="../../lib/client/packages/platform/desktop/css/ui-modal-windows.css" rel="stylesheet">
+  <link href="../../lib/client/packages/platform/desktop/css/ui-select2.css" rel="stylesheet">
+  <link href="../../lib/client/packages/platform/lib/css/tipsy.css" rel="stylesheet">
+
+  <link href="../assets/bootstrap-3.0.0/css/pygments-manni.css" rel="stylesheet">
+  <link href="../assets/bootstrap-3.0.0/css/docs.css" rel="stylesheet">
+  <link href="style-guide.css" rel="stylesheet">
+  <script type="text/javascript" src="/Pages/ng/packages/platform/lib/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="/Pages/ng/packages/platform/lib/jquery-ui-1.10.3.custom.js"></script>
+  <script type="text/javascript" src="/Pages/ng/packages/platform/lib/select2.js"></script>
+  <script type="text/javascript" src="/Pages/ng/packages/platform/lib/jquery.tipsy.js"></script>
+  <script type='text/javascript'>
+    $(document).ready(function () {
+
+      $('#example-dropdown-tree-search').hide();
+
+      $('span[rel=tipsy]').tipsy({fade: true, gravity: 'w'});
+
+      $(".edit-btn-example").on('click', function (event) {
+        event.stopPropagation();
+        $('.edit-menu-buttons').toggle();
+      });
+      $(".add-device-btn-example").on('click', function (event) {
+        event.stopPropagation();
+        $('.add-device-menu-buttons').toggle();
+      });
+      $('html').on('click', function () {
+        $('.edit-menu-buttons, #example-dropdown-tree-search').hide();
+        $('.add-device-menu-buttons').hide();
+      });
+      $('#ember1580').select2({
+        allowClear: true
+      });
+      $('#select2-example-close-icon').on('click', function() {
+        $('#select2-example-input').val('');
+      });
+      $('#example-dropdown-tree-search-selector').on('click', function(event) {
+        event.stopPropagation();
+        $('#example-dropdown-tree-search').toggle();
+      });
+      $('#example-dropdown-tree-search-close').on('click', function() {
+        $('#example-dropdown-tree-search-input').val('');
+      });
+
+    });
+  </script>
+
+</head>
+
+<body>
+<div class="styleguide-header">
+  <img src="../assets/images/abs_logo_styleguide.png">
+</div>
+<div class="content">
+<h1 class="content-title">Color Palette</h1>
+<div class="example">
+  <table class="table-demo color-table">
+    <tbody>
+    <tr>
+      <td><h3 class="table-head-name">example</h3></td>
+      <td><h3 class="table-head-name">style</h3></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-absolute-color"></div></td>
+      <td><code>color:#005595</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-white"></div></td>
+      <td><code>color:#FFFFFF</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-blue-bright"></div></td>
+      <td><code>color:#00A3FF</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-grey"></div></td>
+      <td><code>color:#91A4B8</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-red-dark"></div></td>
+      <td><code>color:#A21818</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-blue-light"></div></td>
+      <td><code>color:#DFF2FF</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-blue"></div></td>
+      <td><code>color:#CCC</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-blue-grey"></div></td>
+      <td><code>color:#CCC</code></td>
+    </tr>
+    <tr>
+      <td><div class="color-box box-grey-dark"></div></td>
+      <td><code>color:#CCC</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<h1 class="content-title">Typography</h1>
+<div class="example">
+  <table class="table-demo typography-table">
+    <tbody>
+    <tr>
+      <td><h3 class="table-head-name">example</h3></td>
+      <td><h3 class="table-head-name">mark-up/style</h3></td>
+    </tr>
+    <tr>
+      <td><h1>h1 - Content/Section Title</h1></td>
+      <td><code class="html"><span class="nt">&lt;h1&gt;</span><span class="nv">h1 - Content/Section Title</span><span class="nt">&lt;/h1&gt;</span><br/><br/>font-family:  Arial, Helvetica san-serif;<br>
+        font-size:  20px;<br/>
+        color: #3F5A6F;<br/>
+        text-shadow:  1px 1px 0  rgba(255, 255, 255, 0.75);<br/>
+        font-weight:  normal;</code></td>
+    </tr>
+    <tr>
+      <td><h2>h2 - Modal Header/Sub Content Title</h2></td>
+      <td><code class="html"><span class="nt">&lt;h2&gt;</span><span class="nv">h2 - Modal Header/Sub Content Title</span><span class="nt">&lt;/h2&gt;</span><br/><br/>font-family:  Arial, Helvetica san-serif;<br>
+        font-size:  16px;<br>
+        color: #3F5A6F;<br>
+        text-shadow:  1px 1px 0  rgba(255, 255, 255, 0.75);<br>
+        font-weight:  normal;</code></td>
+    </tr>
+    <tr>
+      <td><h2 class="snap-view-title">h2 - Snap View Title</h2></td>
+      <td><code class="html"><span class="nt">&lt;h2</span><span class="na"> class=</span><span class="s">&quot;snap-view-title&quot;<span class="nt">&gt;</span></span><span class="nv">h2 - Snap View Title</span><span class="nt">&lt;/h2&gt;</span><br/><br/>font-size:  12px;<br>
+        color:   #3F5A6F; <br>
+        text-shadow:  1px 1px 0  rgba(255, 255, 255, 0.75);<br>
+        font-weight:  normal;
+        text-transform: uppercase;</code></td>
+    </tr>
+    <tr>
+      <td><h3>h3 - Modal Header/Sub Content Titles</h3></td>
+      <td><code class="html"><span class="nt">&lt;h3&gt;</span><span class="nv">h3 - Modal Header/Sub Content Titles</span><span class="nt">&lt;/h3&gt;</span><br/><br/>font-family:  Arial, Helvetica san-serif;<br>
+        font-size:  14px;<br>
+        color: #3F5A6F;<br>
+        text-shadow:  1px 1px 0  rgba(255, 255, 255, 0.75);<br>
+        font-weight:  normal;</code></td>
+    </tr>
+    <tr>
+      <td><h4>h4 Header</h4></td>
+      <td><code class="html"><span class="nt">&lt;h4&gt;</span><span class="nv">h4 Header</span><span class="nt">&lt;/h4&gt;</span><br/><br/>font-family:  Arial, Helvetica san-serif;<br>
+        font-size:  12px;<br>
+        color: #3F5A6F;<br>
+        text-shadow:  1px 1px 0  rgba(255, 255, 255, 0.75);<br>
+        font-weight:  bold;</code></td>
+    </tr>
+    <tr>
+      <td><p>Copy text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p></td>
+      <td><code class="html"><span class="nt">&lt;p&gt;</span><span class="nt">&lt;/p&gt;</span><br/><br/>font-family:  Arial, Helvetica san-serif;<br>
+        font-size:  12px;<br>
+        color: #333333;</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h1 class="content-title">UI Elements</h1>
+<div class="example">
+<table class="table-demo typography-table">
+<tbody>
+<tr>
+  <td><h3 class="table-head-name">example</h3></td>
+  <td><h3 class="table-head-name">mark-up</h3></td>
+</tr>
+<tr>
+  <td>
+    <div class="to-set-property-panel name-input-container form-block-demo">
+      <label for="NameField">Label</label>
+      <input placeholder="Placeholder text" class="is-input-for-name" type="text" autofocus>
+    </div>
+    <div class="to-set-property-panel name-input-container form-block-demo">
+      <input placeholder="focus" class="is-input-for-name focus-input" type="text" autofocus>
+    </div>
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;name-input-container&quot;<span class="nt">&gt;</span></span>
+      <br>
+      &nbsp;<span class="nt">&lt;label</span>
+      <span class="na"> for=</span>
+      <span class="s">&quot;NameField&quot;<span class="nt">&gt;</span></span>
+      <span class="nv">Label</span>
+      <span class="nt">&lt;/label&gt;</span><br/>
+      &nbsp;<span class="nt">&lt;input</span>
+      <span class="na"> placeholder=</span>
+      <span class="s">&quot;Placeholder text&quot;</span>
+      <span class="na"> type=</span>
+      <span class="s">&quot;text&quot;</span>
+      <span class="na"> autofocus=</span>
+      <span class="s">&quot;true&quot;</span>
+      <span class="nt">&gt;</span><br/>
+      <span class="nt">&lt;/div&gt;</span>
+      <br/>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td>
+
+    <div class="to-set-property-panel name-input-container form-block-demo">
+      <label for="NameField">Label</label>
+      <div class="alert alert-error tipsy tipsy-w demo-alert-message">
+        <div class="tipsy-arrow tipsy-arrow-w"></div>
+        <div class="tipsy-inner">Error message here</div>
+      </div>
+      <input placeholder="Placeholder text" class="is-input-for-name" type="text" autofocus>
+    </div>
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;name-input-container&quot;<span class="nt">&gt;</span></span>
+      <br>
+      &nbsp;<span class="nt">&lt;label</span>
+      <span class="na"> for=</span>
+      <span class="s">&quot;NameField&quot;<span class="nt">&gt;</span></span>
+      <span class="nv">Label</span><span class="nt">&lt;/label&gt;</span><br/>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;alert alert-error tipsy tipsy-w&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;tipsy-arrow tipsy-arrow-w&quot;<span class="nt">&gt;</span></span>&hellip;<span class="nt">&lt;/div&gt;</span><br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;tipsy-inner&quot;<span class="nt">&gt;</span></span><span class="nv">Error message here</span><span class="nt">&lt;/div&gt;</span><br/>
+      &nbsp;&nbsp;<span class="nt">&lt;/div&gt;</span><br/>
+      &nbsp;<span class="nt">&lt;input</span>
+      <span class="na"> placeholder=</span>
+      <span class="s">&quot;Placeholder text&quot;</span>
+      <span class="na"> type=</span>
+      <span class="s">&quot;text&quot;</span>
+      <span class="na"> autofocus=</span>
+      <span class="s">&quot;true&quot;</span>
+      <span class="nt">&gt;</span><br/>
+      <span class="nt">&lt;/div&gt;</span>
+      <br/>
+    </code>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <div class="manage-content-group select2-demo" style="white-space: nowrap">
+
+      <select id="ember1580">
+        <option>All</option>
+        <option value="assetNumber">Asset Number</option>
+        <option value="assignedUsername">Assigned Username</option>
+        <option value="atapiDeviceDescription1">Atapi Device Description1</option>
+        <option value="atapiDeviceDescription2">Atapi Device Description2</option>
+        <option value="cpu">Cpu</option>
+        <option value="cpuSpeed">Cpu Speed</option>
+        <option value="departmentName">Department Name</option>
+        <option value="detectedAntiMalware">Detected Anti Malware</option>
+        <option value="detectedAssetNumber">Detected Asset Number</option>
+        <option value="detectedMake">Detected Make</option>
+      </select><div class="ember-view clearable-input txt-search column-search-input">
+      <input id="select2-example-input" placeholder="Search" maxlength="255" type="text">
+      <!--<span id="select2-example-close-icon" class="clear-search-input icon-close-2" style="display:block;"></span>-->
+    </div>
+    </div>
+
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;manage-content-group&quot;<span class="nt">&gt;</span></span>
+      <br>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;select2-container&quot;<span class="nt">&gt;</span></span>
+      &hellip;
+      <span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;<span class="nt">&lt;select</span>
+      <span class="na"> id=</span>
+      <span class="s">&quot;&hellip;&quot;</span><span class="na"> style=</span><span class="s">&quot;display: none;&quot;<span class="nt">&gt;</span></span>&hellip;<span class="nt">&lt;/select&gt;</span><br/>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;clearable-input&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      <span class="nt">&lt;/div&gt;</span>
+      <br/>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td style="position: relative;">
+    <div class="snap-view-controls">
+      <div class="filter-field-search">
+        <div id="example-dropdown-tree-search-selector" class="snap-view-column select-filter-column filter-column-selects">
+          <a href="#" onclick="return false;" class="select2-choice" tabindex="-1">
+            <div><b></b></div>
+          </a>
+        </div><div class="clearable-input txt-search snap-view-search-input">
+        <input id="example-dropdown-tree-search-input" class="txt-search snap-view-search-input" placeholder="Search" maxlength="255" type="text">
+        <span id="example-dropdown-tree-search-close" class="icon-close-2" style="display:none;"></span>
+      </div>
+      </div>
+    </div>
+    <div id="example-dropdown-tree-search" class="select2-drop snap-filter-column-select2-drop select2-with-searchbox select2-drop-active" style="top: 73px; left: 22px; width: 32px;">
+      <ul class="select2-results">
+        <li class="select2-results-dept-0 select2-result select2-result-selectable ember-view select2-highlighted">
+          <div class="select2-result-label"><span class="select2-match"></span>All</div>
+        </li>
+        <li class="select2-results-dept-0 select2-result select2-result-selectable ember-view">
+          <div class="select2-result-label"><span class="select2-match"></span>Name</div>
+        </li>
+        <li class="select2-results-dept-0 select2-result select2-result-selectable ember-view">
+          <div class="select2-result-label"><span class="select2-match"></span>Description</div>
+        </li>
+      </ul>
+    </div>
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;snap-view-controls&quot;<span class="nt">&gt;</span></span>
+      <br>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;filter-field-search&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;select2-container&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;clearable-input snap-view-search-input&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;input</span>
+      <span class="na"> id=</span>
+      <span class="s">&quot;&hellip;&quot;</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;snap-view-search-input&quot;</span>
+      <span class="nt">&gt;</span><br/>
+      &nbsp;<span class="nt">&lt;/div&gt;</span>
+      <br/>
+      <span class="nt">&lt;/div&gt;</span>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td style="background:#ccc;">
+    <div class="modal-window">
+      <div class="modal-wizard-window">
+        <div class="modal-wizard-header">
+          <h2><span class="icon-smartgroupcreate"></span>Modal Window</h2>
+        </div>
+        <div class="modal-wizard-body">
+          <div class="progress-steps-new-content">
+            <ul class="progress-steps">
+              <li class="active-step"></li>
+              <li class=""></li>
+              <li class=""></li>
+            </ul>
+          </div>
+          <div class="container-fluid set-properties-view">
+            <div class="to-set-property-panel">
+              <div class="name-input-container">
+                <label for="NameField">Group Name</label>
+                <input id="NameField" class="is-input-for-name" maxlength="255" type="text" autofocus>
+              </div>
+
+              <div class="description-input-container">
+                <label for="Description">Description <i>(optional)</i></label>
+                <textarea id="Description" class="is-input-for-description" maxlength="1000"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid modal-action-buttons">
+            <div class="button-group">
+              <span class="save-folder-spinner"></span>
+              <button type="button" class="create-folder-cancel btn-low">Cancel</button>
+              <button type="button" class="btn btn-action">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-window&quot;<span class="nt">&gt;</span></span>
+      <br>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-wizard-window&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-wizard-header&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-wizard-body&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;progress-steps-new-content&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;set-properties-view&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-buttons&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;<span class="nt">&lt;/div&gt;</span>
+      <br/>
+      <span class="nt">&lt;/div&gt;</span>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td style="background:#ccc;">
+    <div class="modal-action-window" data-bindattr-51="51">
+      <div class="modal-action-body">
+        <div class="is-container-for-modal-action-icon modal-action-icon"><span class="icon-square-attention1" data-bindattr-52="52"></span></div>
+        <div class="is-container-for-modal-action-confirm modal-action-content">
+          <div class="modal-action-confirmation">
+            <h3>Dialog</h3>
+            <script id="metamorph-118-end" type="text/x-placeholder"></script>
+            <p><script id="metamorph-120-start" type="text/x-placeholder"></script>The device group will be permanently deleted.<script id="metamorph-120-end" type="text/x-placeholder"></script></p>
+            <script id="metamorph-121-start" type="text/x-placeholder"></script><script id="metamorph-121-end" type="text/x-placeholder"></script>
+          </div>
+
+          <div class="container-fluid modal-action-buttons">
+            <div class="button-group">
+              <button type="button" class="is-button-for-cancel btn btn-low" data-ember-action="53">Cancel</button>
+              <button type="button" class="is-button-for-confirm btn btn-action" data-ember-action="54"><script id="metamorph-122-start" type="text/x-placeholder"></script>Delete<script id="metamorph-122-end" type="text/x-placeholder"></script></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-window&quot;<span class="nt">&gt;</span></span>
+      <br>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-body&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-icon&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-content&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-confirmation&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;modal-action-buttons&quot;<span class="nt">&gt;</span></span><span class="nv">&hellip;</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;&nbsp;<span class="nt">&lt;/div&gt;</span>
+      <br/>
+      &nbsp;<span class="nt">&lt;/div&gt;</span>
+      <br/>
+      <span class="nt">&lt;/div&gt;</span>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td>
+    <h2>Tooltip Example</h2>
+    <span class="icon-question-mark content-help-icon tooltip-w" data-tooltip-attr="title" rel="tipsy" title="Viewing list of the groups"></span>
+    <div class="tipsy-demo-element">
+      <div class="tipsy tipsy-demo tipsy-s"><div class="tipsy-arrow tipsy-arrow-w"></div><div class="tipsy-inner tipsy-inner-demo">Viewing list of the groups, testing tipsy content</div></div>
+    </div>
+  </td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;tipsy tipsy-w&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span><span class="s">&quot;tipsy-arrow tipsy-arrow-w&quot;<span class="nt">&gt;</span></span>&hellip;<span class="nt">&lt;/div&gt;</span><br/>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span><span class="s">&quot;tipsy-inner&quot;<span class="nt">&gt;</span></span><span class="nv">Viewing list of the groups, testing tipsy content</span><span class="nt">&lt;/div&gt;</span><br/>
+      <span class="nt">&lt;/div&gt;</span><br/>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td><div class="snap-view-controls"><h2 class="snap-view-title">Snap View</h2></div></td>
+  <td>
+    <code class="html">
+      <span class="nt">&lt;div</span>
+      <span class="na"> class=</span>
+      <span class="s">&quot;snap-view-controls&quot;<span class="nt">&gt;</span></span>
+      <br/>
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span><span class="s">&quot;snap-view-title&quot;<span class="nt">&gt;</span></span><span class="nv">Snap View</span><span class="nt">&lt;/div&gt;</span>
+      <br/>
+      <span class="nt">&lt;/div&gt;</span><br/>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class="show-details-container">
+      <h2>Show Details/Filter</h2>
+    </div>
+  </td>
+  <td>
+    <code class="html">
+      &nbsp;<span class="nt">&lt;div</span>
+      <span class="na"> class=</span><span class="s">&quot;show-details-container&quot;<span class="nt">&gt;</span></span>&hellip;<span class="nt">&lt;/div&gt;</span><br/>
+    </code>
+  </td>
+</tr>
+<tr>
+  <td><h2>Default Table</h2>
+    <div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>Volume</th>
+            <th>Type</th>
+            <th>Filesystem</th>
+            <th>Total Space (MB)</th>
+            <th>Free Space (MB)</th>
+          </tr>
+          <tr>
+            <td>C:\</td>
+            <td>Hard Drive</td>
+            <td>NTFS</td>
+            <td>39.67 GB</td>
+            <td>21.01 GB</td>
+          </tr>
+          <tr>
+            <td>D:\</td>
+            <td>CD-ROM Drive</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>F:\</td>
+            <td>Floppy/Removable</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="3">Totals</td>
+            <td>39.67 GB</td>
+            <td>21.01 GB</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></td>
+  <td><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span>&quot;table&quot;<span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span></code></td>
+</tr>
+<tr>
+  <td><h2>Table&nbsp;with alternating rows</h2>
+    <div>
+      <table class="table table-striped">
+        <tbody><tr><th>Volume</th>
+          <th>Type</th>
+          <th>Filesystem</th>
+          <th>Total Space (MB)</th>
+          <th>Free Space (MB)</th>
+          
+          
+        </tr><tr>
+          <td>C:\</td>
+          <td>Hard Drive</td>
+          <td>NTFS</td>
+          <td>39.67 GB</td>
+          <td>21.01 GB</td>
+        </tr>
+        
+        <tr>
+          <td>D:\</td>
+          <td>CD-ROM Drive</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        
+        <tr>
+          <td>F:\</td>
+          <td>Floppy/Removable</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody></table>
+    </div></td>
+  <td><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span>&quot;table table-striped&quot;<span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span></code></td>
+</tr>
+<tr>
+  <td><h2>Table&nbsp;with a footer</h2>
+    <div>
+      <table class="table table-striped table-with-footer">
+        <tbody>
+          <tr>
+            <th>Volume</th>
+            <th>Type</th>
+            <th>Filesystem</th>
+            <th>Total Space (MB)</th>
+            <th>Free Space (MB)</th>
+          </tr>
+          <tr>
+            <td>C:\</td>
+            <td>Hard Drive</td>
+            <td>NTFS</td>
+            <td>39.67 GB</td>
+            <td>21.01 GB</td>
+          </tr>
+          <tr>
+            <td>D:\</td>
+            <td>CD-ROM Drive</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>F:\</td>
+            <td>Floppy/Removable</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td colspan="3">Totals</td>
+            <td>39.67 GB</td>
+            <td>21.01 GB</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></td>
+  <td><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span>&quot;table table-striped table-with-footer&quot;<span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span></code></td>
+</tr>
+<tr>
+  <td><h2>Table&nbsp;with header on a left</h2>
+    <div>
+      <table class="table table-left-header">
+      <tbody><tr>
+        <td class="text-right">Date Stolen</td>
+        <td>n/a</td>
+      </tr>
+      <tr>
+        <td class="text-right">Identifier</td>
+        <td>2BXEL7O3KIMABO3Z6740</td>
+      </tr>
+      <tr>
+        <td class="text-right">Serial Number</td>
+        <td>VMWARE-75CTZ56OVPMRJ440X060</td>
+      </tr>
+      <tr>
+        <td class="text-right">Device Name</td>
+        <td>SARS-WIN2008-32</td>
+      </tr>
+      <tr>
+        <td class="text-right">Asset Number</td>
+        <td>No Asset Tag</td>
+      </tr>
+      <tr>
+        <td class="text-right">Detected Asset Number</td>
+        <td>No Asset Tag</td>
+      </tr>
+      <tr>
+        <td class="text-right">Make</td>
+        <td>VMware, Inc.</td>
+      </tr>
+      <tr>
+        <td class="text-right">Model</td>
+        <td>VMware Virtual Platform</td>
+      </tr>
+      <tr>
+        <td class="text-right">Full Device Name</td>
+        <td>qa-dv2corp2-2</td>
+      </tr>
+    </tbody></table>
+    </div></td>
+  <td><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span>&quot;table table-left-header&quot;<span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span></code></td>
+</tr>
+<tr>
+  <td><h2>100% Width Table&nbsp;</h2>
+    <div>
+      <table class="table fill-width">
+        <tbody>
+          <tr>
+            <th>Volume</th>
+            <th>Type</th>
+            <th>Filesystem</th>
+            <th>Total Space (MB)</th>
+            <th>Free Space (MB)</th>
+          </tr>
+          <tr>
+            <td>C:\</td>
+            <td>Hard Drive</td>
+            <td>NTFS</td>
+            <td>39.67 GB</td>
+            <td>21.01 GB</td>
+          </tr>
+          <tr>
+            <td>D:\</td>
+            <td>CD-ROM Drive</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>F:\</td>
+            <td>Floppy/Removable</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></td>
+  <td><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span>&quot;table fill-width&quot;<span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span></code></td>
+</tr>
+<tr>
+  <td>
+    <h2>Data Table Styles</h2>
+    <div class="data-table-example">
+      <div class="row-alt1">Row Alt1 - background-color:#F3FAFF</div>
+      <div class="row-alt2">Row Alt2 - background-color:#FFFFFF</div>
+      <div class="row-hover">Row Hover - background-color:#C9E4F7</div>
+      <div class="row-selected">Row Selected - background-color:#E9F6FE</div>
+      <div class="row-edited">Row Edited - background-color:#FDFDD9</div>
+    </div>
+  </td>
+  <td>
+
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h1 class="content-title">Buttons</h1>
+
+
+<p>Use any of the available button classes to quickly create a styled button.</p>
+<div class="example">
+  <table class="table-demo buttons-table">
+    <tbody>
+    <tr>
+      <td><h3 class="table-head-name">example</h3></td>
+      <td><h3 class="table-head-name">style</h3></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-small">Standard Button</button></td>
+      <td><code class="html"><span class="c">&lt;!-- Standard  button --&gt;</span><br>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-small"</span><span class="nt">&gt;</span><span class="nv">Standard Button</span><span class="nt">&lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-action">Action</button></td>
+      <td><code class="html"><span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span><br>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-action"</span><span class="nt">&gt;</span><span class="nv">Action</span><span class="nt">&lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td><div class="reset-absolute-origin">
+        <button type="button" class="btn btn-small dropdown-toggle edit-btn-example">Edit <span class="icon-arrow-2"></span></button>
+
+        <ul class="dropdown-menu-buttons edit-menu-buttons">
+          <li><button type="button" class="btn-dropdown">Test Properties</button></li>
+          <li><button type="button" class="btn-dropdown">Delete</button></li>
+        </ul>
+      </div></td>
+      <td><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-small dropdown-toggle"</span><span class="nt">&gt;</span><span class="nv">Edit</span> <span class="nt">&lt;span </span><span class="na">class=</span><span class="s">&quot;icon-arrow-2&quot;</span><span class="nt">&gt;&lt;/span&gt;<br>&lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td><div class="reset-absolute-origin button-group">
+        <button type="button" class="btn btn-small dropdown-toggle add-device-btn-example"><span class="icon-plus"></span> Add Device<span class="icon-arrow-2"></span></button>
+        <ul class="dropdown-menu-buttons add-device-menu-buttons">
+          <li><button type="button" class="btn-dropdown" data-bindattr-199="199" data-ember-action="200">Properties</button></li>
+          <li><button type="button" class="btn-dropdown" data-bindattr-201="201" data-ember-action="202">Delete</button></li>
+        </ul>
+      </div>
+      </td>
+      <td><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-small dropdown-toggle"</span><span class="nt">&gt;<br>
+              &nbsp;&nbsp;&lt;span </span><span class="na">class=</span><span class="s">&quot;icon-plus&quot;</span><span class="nt">&gt;&lt;/span&gt;</span> <span class="nv">Add Device</span><span class="nt">&lt;span </span><span class="na">class=</span><span class="s">&quot;icon-arrow-2&quot;</span><span class="nt">&gt;&lt;/span&gt;<br>
+              &lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-small"><span class="icon-sort1"></span></button></td>
+      <td><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-small"</span><span class="nt">&gt;<br>
+              &nbsp;&nbsp;&lt;span </span><span class="na">class=</span><span class="s">&quot;icon-sort1&quot;</span><span class="nt">&gt;&lt;/span&gt;</span><span class="nt"><br>
+              &lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="reset-absolute-origin button-group">
+          <button type="button" class="btn btn-small dropdown-toggle"> <span class="icon-settings"></span><span class="icon-arrow-2"></span></button>
+        </div>
+      </td>
+
+      <td><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-small"</span><span class="nt">&gt;<br>
+              &nbsp;&nbsp;&lt;span </span><span class="na">class=</span><span class="s">&quot;icon-sort1&quot;</span><span class="nt">&gt;&lt;/span&gt;</span><span class="nt">&lt;span </span><span class="na">class=</span><span class="s">&quot;icon-arrow-2&quot;</span><span class="nt">&gt;&lt;/span&gt;</span><span class="nt"><br>
+              &lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-smaller">Default</button></td>
+      <td><code class="html"><span class="c">&lt;!-- Standard  button --&gt;</span><br>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-smaller"</span><span class="nt">&gt;</span><span class="nv">Default</span><span class="nt">&lt;/button&gt;</span></code></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-small" disabled="disabled">Default</button></td>
+      <td><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-smaller" </span><span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span><span class="nv">Default</span><span class="nt">&lt;/button&gt; </span></code></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-action" disabled="disabled">Action</button></td>
+      <td><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-action" </span><span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span><span class="nv">Action</span><span class="nt">&lt;/button&gt;</span></code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<h1 class="content-title">Font Icons</h1>
+<div class="example">
+<table class="table-demo font-icons-table">
+<tbody>
+<tr>
+  <td><h3 class="table-head-name">example classes</h3></td>
+</tr>
+<tr>
+<td>
+<span class="box1">
+    <span aria-hidden="true" class="icon-book-alt2"></span>
+    &nbsp;icon-book-alt2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-list"></span>
+    &nbsp;icon-list
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-warning"></span>
+    &nbsp;icon-warning
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-minus"></span>
+    &nbsp;icon-minus
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-close"></span>
+    &nbsp;icon-close
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-octagon-attention"></span>
+    &nbsp;icon-octagon-attention
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-help"></span>
+    &nbsp;icon-help
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-close-2"></span>
+    &nbsp;icon-close-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-arrow"></span>
+    &nbsp;icon-arrow
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-arrow-2"></span>
+    &nbsp;icon-arrow-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-arrow-3"></span>
+    &nbsp;icon-arrow-3
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-arrow-4"></span>
+    &nbsp;icon-arrow-4
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-star"></span>
+    &nbsp;icon-star
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-clock"></span>
+    &nbsp;icon-clock
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-single-right-icon"></span>
+    &nbsp;icon-single-right-icon
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-double-right-icon"></span>
+    &nbsp;icon-double-right-icon
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-double-left-icon"></span>
+    &nbsp;icon-double-left-icon
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-edit2"></span>
+    &nbsp;icon-edit2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-user"></span>
+    &nbsp;icon-user
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-2"></span>
+    &nbsp;icon-number-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-3"></span>
+    &nbsp;icon-number-3
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-4"></span>
+    &nbsp;icon-number-4
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-5"></span>
+    &nbsp;icon-number-5
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-6"></span>
+    &nbsp;icon-number-6
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-7"></span>
+    &nbsp;icon-number-7
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-8"></span>
+    &nbsp;icon-number-8
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-9"></span>
+    &nbsp;icon-number-9
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-users"></span>
+    &nbsp;icon-users
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-device"></span>
+    &nbsp;icon-device
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-reports"></span>
+    &nbsp;icon-reports
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-cd"></span>
+    &nbsp;icon-cd
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-install"></span>
+    &nbsp;icon-install
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-sort"></span>
+    &nbsp;icon-sort
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-floppy"></span>
+    &nbsp;icon-floppy
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-column-sort"></span>
+    &nbsp;icon-column-sort
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-column-freeze"></span>
+    &nbsp;icon-column-freeze
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-drag"></span>
+    &nbsp;icon-drag
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-invisible"></span>
+    &nbsp;icon-invisible
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-apple"></span>
+    &nbsp;icon-apple
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-android"></span>
+    &nbsp;icon-android
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-windows"></span>
+    &nbsp;icon-windows
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-square-attention1"></span>
+    &nbsp;icon-square-attention1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-absolutelogo"></span>
+    &nbsp;icon-absolutelogo
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-a-logo"></span>
+    &nbsp;icon-a-logo
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-absolute-logo"></span>
+    &nbsp;icon-absolute-logo
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-preview-label"></span>
+    &nbsp;icon-preview-label
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-handel"></span>
+    &nbsp;icon-handel
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-am-logo"></span>
+    &nbsp;icon-am-logo
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-settings"></span>
+    &nbsp;icon-settings
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-add-files"></span>
+    &nbsp;icon-add-files
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-talk"></span>
+    &nbsp;icon-talk
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-open-panel"></span>
+    &nbsp;icon-open-panel
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-content"></span>
+    &nbsp;icon-content
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-policy"></span>
+    &nbsp;icon-policy
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-unchecked"></span>
+    &nbsp;icon-unchecked
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-checked"></span>
+    &nbsp;icon-checked
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-checkmark"></span>
+    &nbsp;icon-checkmark
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-single-left-icon"></span>
+    &nbsp;icon-single-left-icon
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-question-mark"></span>
+    &nbsp;icon-question-mark
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-funnel"></span>
+    &nbsp;icon-funnel
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-share"></span>
+    &nbsp;icon-share
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-plus"></span>
+    &nbsp;icon-plus
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-edit-icon"></span>
+    &nbsp;icon-edit-icon
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-trashcan"></span>
+    &nbsp;icon-trashcan
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-mac"></span>
+    &nbsp;icon-mac
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-ios"></span>
+    &nbsp;icon-ios
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-blackberry"></span>
+    &nbsp;icon-blackberry
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-windows-2"></span>
+    &nbsp;icon-windows-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-wifi"></span>
+    &nbsp;icon-WiFi
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-print"></span>
+    &nbsp;icon-print
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-openwith"></span>
+    &nbsp;icon-openwith
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-email"></span>
+    &nbsp;icon-email
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-full-screen"></span>
+    &nbsp;icon-full-screen
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-number-1"></span>
+    &nbsp;icon-number-1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-laptop"></span>
+    &nbsp;icon-laptop
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-shield"></span>
+    &nbsp;icon-shield
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-info"></span>
+    &nbsp;icon-info
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-finder"></span>
+    &nbsp;icon-finder
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-message1"></span>
+    &nbsp;icon-message1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-roaming"></span>
+    &nbsp;icon-roaming
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-message"></span>
+    &nbsp;icon-message
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-wifi"></span>
+    &nbsp;icon-wifi
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-unlocked"></span>
+    &nbsp;icon-unlocked
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-tablet-device"></span>
+    &nbsp;icon-tablet-device
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-phone-device"></span>
+    &nbsp;icon-phone-device
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-os"></span>
+    &nbsp;icon-os
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-manufacturer"></span>
+    &nbsp;icon-manufacturer
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-locked"></span>
+    &nbsp;icon-locked
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-homenet"></span>
+    &nbsp;icon-homenet
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-gpsmark"></span>
+    &nbsp;icon-gpsmark
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-current-network"></span>
+    &nbsp;icon-current-network
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-celltech"></span>
+    &nbsp;icon-celltech
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-battery"></span>
+    &nbsp;icon-battery
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-status"></span>
+    &nbsp;icon-status
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-info-1"></span>
+    &nbsp;icon-info-1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-pivot"></span>
+    &nbsp;icon-pivot
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-policy-page"></span>
+    &nbsp;icon-policy-page
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-checkmark-1"></span>
+    &nbsp;icon-checkmark-1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-system"></span>
+    &nbsp;icon-system
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-share1"></span>
+    &nbsp;icon-share1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-refresh"></span>
+    &nbsp;icon-refresh
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-triangle-attention"></span>
+    &nbsp;icon-triangle-attention
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-search"></span>
+    &nbsp;icon-search
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-import-list"></span>
+    &nbsp;icon-import-list
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-commands"></span>
+    &nbsp;icon-commands
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-install-app"></span>
+    &nbsp;icon-install-app
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-install-config"></span>
+    &nbsp;icon-install-config
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-uninstall-app"></span>
+    &nbsp;icon-uninstall-app
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-uninstall-config"></span>
+    &nbsp;icon-uninstall-config
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-unmanaged-device"></span>
+    &nbsp;icon-unmanaged-device
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-arrow-5"></span>
+    &nbsp;icon-arrow-5
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-checkmark1"></span>
+    &nbsp;icon-checkmark1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-checkmark1-2"></span>
+    &nbsp;icon-checkmark1-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-openwith-2"></span>
+    &nbsp;icon-openwith-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-print-2"></span>
+    &nbsp;icon-print-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-email-2"></span>
+    &nbsp;icon-email-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-fixedgroup"></span>
+    &nbsp;icon-fixedgroup
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-smartgroup"></span>
+    &nbsp;icon-smartgroup
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-fixedgr"></span>
+    &nbsp;icon-fixedgr
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-software-report"></span>
+    &nbsp;icon-software-report
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-smartgr"></span>
+    &nbsp;icon-smartgr
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-newfolder"></span>
+    &nbsp;icon-newfolder
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-folder"></span>
+    &nbsp;icon-folder
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-triangle"></span>
+    &nbsp;icon-triangle
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-triangle-2"></span>
+    &nbsp;icon-triangle-2
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-circle-attention"></span>
+    &nbsp;icon-circle-attention
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-sort1"></span>
+    &nbsp;icon-sort1
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-customdb"></span>
+    &nbsp;icon-customdb
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-calendar"></span>
+    &nbsp;icon-calendar
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-close-panel"></span>
+    &nbsp;icon-close-panel
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-arrow-rel"></span>
+    &nbsp;icon-arrow-rel
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-move-to"></span>
+    &nbsp;icon-move-to
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-customdb-act"></span>
+    &nbsp;icon-customdb-act
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-deactivate-db"></span>
+    &nbsp;icon-deactivate-db
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-drag-drop"></span>
+    &nbsp;icon-drag-drop
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-dragable"></span>
+    &nbsp;icon-dragable
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-move-cursor"></span>
+    &nbsp;icon-move-cursor
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-fixedgroupcreate"></span>
+    &nbsp;icon-fixedgroupcreate
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-smartgroupcreate"></span>
+    &nbsp;icon-smartgroupcreate
+  </span>
+  <span class="box1">
+    <span aria-hidden="true" class="icon-newfoldercreate"></span>
+    &nbsp;icon-newfoldercreate
+  </span>
+      <span class="box1">
+    <span aria-hidden="true" class="icon-report-gen"></span>
+    &nbsp;icon-report-gen
+  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+
+</body>
+</html>

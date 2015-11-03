@@ -1,0 +1,187 @@
+/***************************************************************************************
+*  ReadXmlValueFromFile.rul
+*
+*  Purpose:	returns the value in specifed node in XML file
+*           
+*/ 
+
+prototype GetValueFromXml(STRING, STRING, BYREF STRING);
+prototype UpdateValueInXml(STRING, STRING, BYREF STRING);
+
+//
+//
+
+function GetValueFromXml(szXmlFile, szXpathExpression, szValue)
+	OBJECT oDoc, oNode, oNodeList, oDocType;
+    STRING szMessage, szError, szLine, szLinePos;
+begin 
+
+	//Check if the file exists
+    if Is(FILE_EXISTS , szXmlFile) = FALSE then
+        MessageBox("XML file does not exist:" + szXmlFile, SEVERE);
+        return -1;
+    endif;
+    
+    //Create XML DOM Object
+    set oDoc = CreateObject("Msxml2.DOMDocument.4.0");   
+    if ( IsObject(oDoc) = FALSE ) then
+        MessageBox("MSXML DOM-Document Creation Failed:" + szXmlFile, SEVERE);
+        return -2;    
+    endif;  
+    oDoc.async = FALSE;  
+    
+    //Load the file
+    oDoc.setProperty("SelectionLanguage" , "XPath");
+    //oDoc.setProperty("SelectionNamespaces" , svNamespace);
+	
+	if oDoc.load(szXmlFile) then
+        set oNodeList = oDoc.selectNodes(szXpathExpression);
+//NumToStr(szMessage , oNodeList.length);
+//MessageBox("Number of matching elements: " + szMessage, INFORMATION);
+        if (oNodeList.length > 0) then   
+           set oNode = oNodeList.nextNode;
+           szValue = oNode.nodeValue;
+//MessageBox("First value: " + szValue, INFORMATION);
+        else
+			MessageBox("No matching elements found." , SEVERE);
+			return -4;
+        endif;
+        
+    else    
+		MessageBox("The XML File did not load correctly:" + szXmlFile, SEVERE);
+		return -3;		
+    endif;
+    
+    
+    
+    /*
+    
+    oDoc.load(szXmlFile);
+	if (oDoc.parseError.errorCode != 0) then
+		NumToStr(szError , oDoc.parseError.errorCode);
+        NumToStr(szLine , oDoc.parseError.line);
+        NumToStr(szLinePos , oDoc.parseError.linepos);
+		MessageBox("The XML File did not load correctly.\n" + 
+					 "Error Code: " + szError + "\n" +
+					 "Error Line: " + szLine + "\n" + 
+					 "Error Line Position: " + szLinePos + "\n" +
+					 oDoc.parseError.reason , 0);
+		return -3;
+	endif; 
+
+    //Search XML File for all matching elements
+	set oNodeList = oDoc.selectNodes(szXpathExpression);
+    
+    //If no matching elements
+    if (oNodeList.length = 0) then
+    	MessageBox("No matching elements found." , 0);
+    	return -4;
+    endif;
+    
+    //If more than one matching elements
+    if (oNodeList.length > 1) then
+    	szMessage = "There is more than one matching element.  Press YES to accept changing all nodes or NO to quit";
+    	return -5;
+    endif;
+    
+    //Get the value
+    set oNode = oNodeList.nextNode;
+    szValue = oNode.nodeValue;
+*/    
+    
+    set oDoc = NOTHING;
+    set oNode = NOTHING;
+    set oNodeList = NOTHING;
+    
+    return 0;
+
+	
+end;
+
+function UpdateValueInXml(szXmlFile, szXpathExpression, szValue)
+	OBJECT oDoc, oNode, oNodeList, oDocType;
+    STRING szMessage, szError, szLine, szLinePos;
+begin 
+
+	//Check if the file exists
+    if Is(FILE_EXISTS , szXmlFile) = FALSE then
+        MessageBox("XML file does not exist:" + szXmlFile, SEVERE);
+        return -1;
+    endif;
+    
+    //Create XML DOM Object
+    set oDoc = CreateObject("Msxml2.DOMDocument.4.0");   
+    if ( IsObject(oDoc) = FALSE ) then
+        MessageBox("MSXML DOM-Document Creation Failed:" + szXmlFile, SEVERE);
+        return -2;    
+    endif;  
+    oDoc.async = FALSE;  
+    
+    //Load the file
+    oDoc.setProperty("SelectionLanguage" , "XPath");
+    //oDoc.setProperty("SelectionNamespaces" , svNamespace);
+	
+	if oDoc.load(szXmlFile) then
+        set oNodeList = oDoc.selectNodes(szXpathExpression);
+//NumToStr(szMessage , oNodeList.length);
+//MessageBox("Number of matching elements: " + szMessage, INFORMATION);
+        if (oNodeList.length > 0) then   
+           set oNode = oNodeList.nextNode;
+           oNode.nodeValue = szValue;
+//MessageBox("First value: " + szValue, INFORMATION);
+			oDoc.save(szXmlFile);
+        else
+			MessageBox("No matching elements found." , SEVERE);
+			return -4;
+        endif;
+        
+    else    
+		MessageBox("The XML File did not load correctly:" + szXmlFile, SEVERE);
+		return -3;		
+    endif;
+    
+    
+    
+    /*
+    
+    oDoc.load(szXmlFile);
+	if (oDoc.parseError.errorCode != 0) then
+		NumToStr(szError , oDoc.parseError.errorCode);
+        NumToStr(szLine , oDoc.parseError.line);
+        NumToStr(szLinePos , oDoc.parseError.linepos);
+		MessageBox("The XML File did not load correctly.\n" + 
+					 "Error Code: " + szError + "\n" +
+					 "Error Line: " + szLine + "\n" + 
+					 "Error Line Position: " + szLinePos + "\n" +
+					 oDoc.parseError.reason , 0);
+		return -3;
+	endif; 
+
+    //Search XML File for all matching elements
+	set oNodeList = oDoc.selectNodes(szXpathExpression);
+    
+    //If no matching elements
+    if (oNodeList.length = 0) then
+    	MessageBox("No matching elements found." , 0);
+    	return -4;
+    endif;
+    
+    //If more than one matching elements
+    if (oNodeList.length > 1) then
+    	szMessage = "There is more than one matching element.  Press YES to accept changing all nodes or NO to quit";
+    	return -5;
+    endif;
+    
+    //Get the value
+    set oNode = oNodeList.nextNode;
+    szValue = oNode.nodeValue;
+*/    
+    
+    set oDoc = NOTHING;
+    set oNode = NOTHING;
+    set oNodeList = NOTHING;
+    
+    return 0;
+
+	
+end;

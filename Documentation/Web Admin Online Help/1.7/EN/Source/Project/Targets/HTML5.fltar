@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="MadCap HTML5 Target"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="first"
+  MasterStylesheet="/Content/Resources/Stylesheets/Absolute.css"
+  UseCustomTopicFileExtension="false"
+  MasterPage="/Content/Resources/PageLayouts/OnlineHelpMasterPage.flmsp"
+  GetLatestBeforeCompile="true"
+  ConditionTagExpression="include[Default.ScreenOnly] exclude[Default.InProgess or Default.PrintOnly] "
+  Medium="non-print"
+  AliasFile="/Project/Advanced/CSH/AliasFile.flali"
+  InsertMOTW="true"
+  ExcludeNonWords="false"
+  PartialWordSearch="true"
+  GenerateWebSafeImages="false"
+  MakeFileLowerCase="false">
+  <PrintedOutput
+    CollapseMargins="true" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/Destination.fldes" />
+  </Destinations>
+</CatapultTarget>

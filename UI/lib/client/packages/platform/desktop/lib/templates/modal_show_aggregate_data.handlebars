@@ -1,0 +1,28 @@
+<div class="data-collection-header">
+  <span class="icon-info-1"></span>
+  <div class="data-collection-header-title"><h2>{{title}}</h2>
+    <span>{{subTitle}}</span>
+  </div>
+</div>
+<div class="list-top-frame data-collection-top"><span>{{t 'shared.results'}}: {{count}}</span></div>
+<div class="data-collection-container">
+    <table class="table table-data-collection table-striped">
+      <tr class="collection-header">
+        {{#each columnHeaders as |name|}}
+          <th>
+            {{name}}
+          </th>
+        {{/each}}
+      </tr>
+
+      {{#each aggregateContent.rows as |row|}}
+        <tr>
+          {{#each row as |field|}}
+            <td>
+              {{field}}
+            </td>
+          {{/each}}
+        </tr>
+      {{/each}}
+    </table>
+</div>

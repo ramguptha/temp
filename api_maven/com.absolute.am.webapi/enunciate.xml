@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://raw.githubusercontent.com/stoicflame/enunciate/master/top/src/main/resources/META-INF/enunciate-1.29.xsd"
+	includeReferenceTrailInErrors="true">
+	<facets>
+		<exclude name="exclude" />
+	</facets>
+	<api-import pattern="com.absolute.am.webapi.*" />
+	<api-import pattern="com.absolute.am.model.*" />
+
+	<deployment host="http://localhost:8080" context="/api" />
+
+
+
+	<namespaces>
+		<namespace id="webapi" uri="com.absolute.am.webapi" />
+		<namespace id="model" uri="com.absolute.am.model" />
+		<namespace id="model.command" uri="com.absolute.am.model.command" />
+		<namespace id="model.content" uri="com.absolute.am.model.content" />
+		<namespace id="model.exception" uri="com.absolute.am.model.exception" />
+		<namespace id="model.policy" uri="com.absolute.am.model.policy" />
+		<namespace id="model.policyconfigurationprofile"
+			uri="com.absolute.am.model.policyconfigurationprofile" />
+		<namespace id="model.policycontent" uri="com.absolute.am.model.policycontent" />
+		<namespace id="model.policyinhouseapp" uri="com.absolute.am.model.policyinhouseapp" />
+		<namespace id="model.policymobiledevice" uri="com.absolute.am.model.policymobiledevice" />
+		<namespace id="model.policythirdpartyapp" uri="com.absolute.am.model.policythirdpartyapp" />
+		<namespace id="model.ssp.command" uri="com.absolute.am.model.ssp.command" />
+		<namespace id="model.userprefs" uri="com.absolute.am.model.userprefs" />
+
+	</namespaces>
+
+	<services>
+		<rest defaultRestSubcontext="/api" />
+	</services>
+
+	<modules>
+		<docs freemarkerXMLProcessingTemplate="src\main\resources\docs.fmt"
+			splashPackage="com.absolute.am.webapi" title="AM Web API Specification"
+			copyright=" Absolute Software Corporation. All rights reserved."
+			includeExampleXml="false" includeDefaultDownloads="false"
+			disableRestMountpoint="true">
+		</docs>
+		<basic-app disabled="true" />
+		<amf disabled="true" />
+		<c disabled="true" />
+		<obj-c disabled="true" />
+		<csharp disabled="true" />
+		<cxf disabled="true" />
+		<gwt disabled="true" />
+		<jaxws-ri disabled="true" />
+		<jersey disabled="true" />
+		<spring-app disabled="true" />
+		<ruby disabled="true" />
+		<php disabled="true" />
+		<xml disabled="true" />
+
+	</modules>
+</enunciate>

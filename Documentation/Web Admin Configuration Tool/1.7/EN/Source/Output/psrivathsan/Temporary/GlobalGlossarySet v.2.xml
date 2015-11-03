@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalGlossaryCache
+  SavedSource="file:///C:/Data/TFS/Documentation/Manage/Web Admin Configuration Tool/0.1/EN/Source/Output/psrivathsan/Temporary/GlobalGlossarySet v.2.xml">
+  <Map>
+    <GlossaryCacheEntry
+      Term="AbsoluteApps"
+      SourceFile="/Project/Glossaries/AMWebAdmin.flglo">
+      <Definition
+        Link="">The client application installed on mobile devices that acts as a link to Absolute Manage. AbsoluteApps reports on the status of a mobile device and enables administrators to perform remote actions on the device.</Definition>
+    </GlossaryCacheEntry>
+    <GlossaryCacheEntry
+      Term="Absolute Manage"
+      SourceFile="/Project/Glossaries/AMWebAdmin.flglo">
+      <Definition
+        Link="">Allows organizations to persistently manage and secure all of their endpoints from a single console, including PC, Mac, iOS, Android, and Windows Phone devices. Absolute Manage can be deployed as a complete asset management solution as well as a stand-alone solution for Mobile Device Management (MDM).</Definition>
+    </GlossaryCacheEntry>
+    <GlossaryCacheEntry
+      Term="Absolute Manage Admin"
+      SourceFile="/Project/Glossaries/AMWebAdmin.flglo">
+      <Definition
+        Link="">The software application that administrators can install on their workstations to manage client devices (both computers and mobile devices) through the Absolute Manage system. In contrast, Absolute Manage Web Admin is a web-based application that administrators access through their browser to manage mobile devices only.</Definition>
+    </GlossaryCacheEntry>
+    <GlossaryCacheEntry
+      Term="agent"
+      SourceFile="/Project/Glossaries/AMWebAdmin.flglo">
+      <Definition
+        Link="">An endpoint software module that allows you to maintain a connection with all of the devices in your deployment. The agent makes regularly scheduled calls to the Absolute Manage Server to report on device status and to allow for remote device management.</Definition>
+    </GlossaryCacheEntry>
+  </Map>
+  <SourceUrls>
+    <Url
+      Source="../Project/Glossaries/AMWebAdmin.flglo" />
+  </SourceUrls>
+</CatapultGlobalGlossaryCache>

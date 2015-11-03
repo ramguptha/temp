@@ -1,0 +1,61 @@
+<div class="progress-steps-new-content">
+  <ul class="progress-steps">
+      <li class="active-step"><span class="icon-number-1"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.uploadFiles'}}</li>
+      <li><span class="icon-number-2"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.assignProperties'}}</li>
+      <li><span class="icon-number-3"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.assignPolicy'}}</li>
+      <li><span class="icon-number-4"></span>{{t 'amAssignableItem.modals.addContent.stepLabels.finish'}}</li>
+  </ul>
+</div>
+<form id="upload_form" class={{uploadFormClass}}>
+  {{#if errorMessage}}
+    <div class="alert alert-error"><span class="icon-triangle-attention"></span>{{errorMessage}}</div>
+  {{/if}}
+
+  {{#if successMessage}}
+    <div class="uploading-message">{{successMessage}}</div>
+  {{/if}}
+
+  <div class="clearfix"></div>
+  <input type="file" name="files[]" id="browseFiles" style="display:none" {{action "onFileSelectionChanged" target=view on="change"}} multiple />
+  <!--<output id="fileTable">-->
+  <div class="file-table-wrapper" id="fileTableWrapper">
+    <div class="table-wrapper modal-file-table">
+      {{#each newContentFiles as |newContent|}}
+        <table class="table file-table table-bordered">
+          <tr>
+            <td>
+              <div class="file-container">
+                <div style={{newContent.progressBarStyle}}> </div>
+                <div class={{newContent.fileInnerContainerClass}}>
+                  <img height="32" width="32" alt="No icon" src={{newContent.fileTypeIcon}}>
+                  {{input type="text" value=newContent.displayName}}
+                  {{newContent.formattedSize}}
+                  <div class="remove-btn-container">
+                    <div class="upload-time-left">{{newContent.secsLeft}}</div>
+                    <span class="remove-filter icon-minus" {{action "onCancelFileUpload" newContent.uploader}}></span>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      {{/each}}
+    </div>
+  </div>
+
+  <!--</output>-->
+  {{view newContentDropZoneView class="fd-zone" id="fileDropZone"}}
+
+  <div class="container-fluid add-content-actions">
+    <span class="icon-question-mark modal-footer-info" {{action "onHelpStep1"}}></span>
+
+    {{#if hintMessage}}
+      <span class="icon-talk"></span>{{hintMessage}}
+    {{/if}}
+
+    <div class="button-group" >
+      <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+      <button class="btn btn-action" {{action "gotoNextStep"}} disabled={{isContinueDisabled}}>{{t 'shared.buttons.continue'}}</button>
+    </div>
+  </div>
+</form>

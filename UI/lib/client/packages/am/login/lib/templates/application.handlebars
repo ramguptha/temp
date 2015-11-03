@@ -1,0 +1,46 @@
+<div class="logo-container"><img src={{localeConfig.logoPath}} width="216"></div>
+<div id="LoginContainer" class="login-container">
+  <div class="feedback-container">
+    {{#if errorMessage}}
+    <div class="error-message invalid-auth">
+      <span class="icon-triangle-attention"></span>{{errorMessage}}
+    </div>
+    {{/if}}
+    <div style="display:none">{{#if successMessage}}<div class="alert success-message">{{successMessage}}</div>{{/if}}</div>
+
+    <div class="error-message locked-account" style="display: none; ">
+      <span class="icon-octagon-attention"></span>
+      <h4>{{translations.login.accountLockedTitle}}</h4>
+      {{translations.login.accountLockedDescription}}
+    </div>
+  </div>
+  <form class="login-form">
+    <h2 class="login-title">{{translations.login.heading}}</h2>
+    <div class="form-control">
+      <label class="form-label label-port-name" for="Locale">{{translations.login.localeField.label}}</label>
+      {{view Em.Select class="input-locale" placeholder=translations.login.localeField.placeholder id="Locale" value=localeName content=availableLocales optionValuePath="content.name" optionLabelPath="content.label"}}
+
+      <label class="form-label label-port-name" for="Port">{{translations.login.portField.label}}</label>
+      {{input class="input-port-name" placeholder=translations.login.portField.placeholder id="PortName" value=serverPort}}
+
+      <label class="form-label label-server-name" for="ServerName">{{translations.login.serverField.label}}</label>
+      {{input class="input-server-name" placeholder=translations.login.serverField.placeholder id="ServerName" value=serverName}}
+
+      <label class="form-label label-username" for="Username">{{translations.login.usernameField.label}}</label>
+      {{input class="input-username" placeholder=translations.login.usernameField.placeholder id="Username" value=username}}
+
+      <label class="form-label label-password" for="Password">{{translations.login.passwordField.label}}</label>
+      {{input class="input-password" placeholder=translations.login.passwordField.placeholder id="Password" value=password type="password"}}
+    </div>
+    <div class="remember-username"><label>{{input type="checkbox" class="checkbox" checked=rememberMe}} {{translations.login.checkboxRememberMe}}</label></div>
+    <div class="button-group"><button class="btn-login" {{action "login"}} disabled={{isLoginDisabled}}>{{translations.login.buttonLogIn}}</button><span class="spinner-login"></span></div>
+    <div class="forgot-password"><a href="#" class="forgot-password-link" {{action "forgotPassword"}}>{{translations.login.links.forgotYourPassword}}</a></div>
+  </form>
+</div>
+<div class="footer-content">
+  <span><a href="http://www.absolute.com/company/legal/agreements/absolute-manage-agreement" target="_blank">{{translations.login.links.serviceAgreement}}</a></span>
+  <span><a href="http://www.absolute.com/en/company/legal/policy" target="_blank">{{translations.login.links.privacyPolicy}}</a></span>
+  {{#if SSPLoginEnabled}}
+  <span><a href="#" {{action "gotoUserLoginPage"}}>{{translations.login.links.userLogin}}</a></span>
+  {{/if}}
+</div>

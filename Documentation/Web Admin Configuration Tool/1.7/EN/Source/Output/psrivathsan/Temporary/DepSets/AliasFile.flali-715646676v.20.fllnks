@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="false"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/welcome.htm" />
+    <Link
+      Url="Content/workingwithdevices.htm" />
+    <Link
+      Url="Content/viewingdevicedetails.htm" />
+    <Link
+      Url="Content/lockingdevices.htm" />
+    <Link
+      Url="Content/managingpasscodes.htm" />
+    <Link
+      Url="Content/deletingdata.htm" />
+    <Link
+      Url="Content/sendingmessages.htm" />
+    <Link
+      Url="Content/settingdevicename.htm" />
+    <Link
+      Url="Content/roamingoptions.htm" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="Content/installingconfigprofiles.htm" />
+    <Link
+      Url="Content/installingprovprofiles.htm" />
+    <Link
+      Url="Content/settingdeviceownership.htm" />
+    <Link
+      Url="Content/settingenrollmentuser.htm" />
+    <Link
+      Url="Content/settingorginfo.htm" />
+    <Link
+      Url="Content/settingactivationlock.htm" />
+    <Link
+      Url="Content/reissuingcommands.htm" />
+    <Link
+      Url="Content/viewingcommands.htm" />
+    <Link
+      Url="Content/workingwithpolicies.htm" />
+    <Link
+      Url="Content/deletingpolicies.htm" />
+    <Link
+      Url="Content/editingpolicies.htm" />
+    <Link
+      Url="Content/creatingpolicies.htm" />
+    <Link
+      Url="Content/creatingsmartpolicies.htm" />
+    <Link
+      Url="Content/viewingpolicydetails.htm" />
+    <Link
+      Url="Content/policyinhouseapps.htm" />
+    <Link
+      Url="Content/policy3rdpartyapps.htm" />
+    <Link
+      Url="Content/policyconfigprofiles.htm" />
+    <Link
+      Url="Content/policymediafiles.htm" />
+    <Link
+      Url="Content/workingwithitems.htm" />
+    <Link
+      Url="Content/importingmediafiles.htm" />
+    <Link
+      Url="Content/viewingcontentdetails.htm" />
+    <Link
+      Url="Content/editingcontent.htm" />
+    <Link
+      Url="Content/deletingcontent.htm" />
+    <Link
+      Url="Content/contentinhouseapps.htm" />
+    <Link
+      Url="Content/content3rdpartyapps.htm" />
+    <Link
+      Url="Content/contentbooks.htm" />
+    <Link
+      Url="Content/contentconfigprofiles.htm" />
+    <Link
+      Url="Content/contentprovisioningprofiles.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/workingwithcomputers.htm" />
+    <Link
+      Url="Content/sendingmessagescomp.htm" />
+    <Link
+      Url="Content/gatheringinformation.htm" />
+    <Link
+      Url="Content/viewingcompdetails.htm" />
+    <Link
+      Url="Content/workingwithactions.htm" />
+    <Link
+      Url="Content/deletingactions.htm" />
+    <Link
+      Url="Content/duplicatingactions.htm" />
+    <Link
+      Url="Content/actionsendmessage.htm" />
+    <Link
+      Url="Content/actionsendemail.htm" />
+    <Link
+      Url="Content/actionsendsms.htm" />
+    <Link
+      Url="Content/actionsetroaming.htm" />
+    <Link
+      Url="Content/actionsetactivationlock.htm" />
+    <Link
+      Url="Content/actionsetwallpaper.htm" />
+    <Link
+      Url="Content/actionsetdevicename.htm" />
+    <Link
+      Url="Content/actionsetcustomfield.htm" />
+    <Link
+      Url="Content/actionupdatedeviceinfo.htm" />
+    <Link
+      Url="Content/actionsetattentionmode.htm" />
+    <Link
+      Url="Content/actionfreezedevice.htm" />
+    <Link
+      Url="Content/actionregistervpp.htm" />
+    <Link
+      Url="Content/actionretirevpp.htm" />
+    <Link
+      Url="Content/actionremoveconfigprofile.htm" />
+    <Link
+      Url="Content/actiondemotedevice.htm" />
+    <Link
+      Url="Content/viewingactiondetails.htm" />
+    <Link
+      Url="Content/policyactions.htm" />
+    <Link
+      Url="Content/workingwithcustomfields.htm" />
+    <Link
+      Url="Content/deletingcustomfields.htm" />
+    <Link
+      Url="Content/creatingcustomfields.htm" />
+    <Link
+      Url="Content/editingcustomfields.htm" />
+    <Link
+      Url="Content/duplicatingcustomfields.htm" />
+    <Link
+      Url="Content/settingcustomfieldvalue.htm" />
+    <Link
+      Url="Content/actionsendvppinvitation.htm" />
+  </Links>
+  <LongLinks />
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

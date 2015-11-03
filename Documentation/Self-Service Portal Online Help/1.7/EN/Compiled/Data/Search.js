@@ -1,0 +1,1 @@
+define({r:0.5,st:'Stem',n:1,t:[0],s:['015','dit','ight','olumbi','row','zatio'],p:[['06',1]]});

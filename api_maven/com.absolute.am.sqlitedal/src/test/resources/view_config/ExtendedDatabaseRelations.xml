@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>admin_mobile_devices_webapi</key>
+	<dict>
+		<key>Relations</key>
+		<dict>
+		  <key>admins</key>
+		  <dict>
+		    <key>ForeignKeyColumn</key>
+		    <string>AdminUUID</string>
+		    <key>ReferencedColumn</key>
+		    <string>AdminUUID</string>
+		    <key>RelationKind</key>
+		    <integer>2</integer>
+		  </dict>
+		  <key>iphone_info</key>
+		  <dict>
+		    <key>ForeignKeyColumn</key>
+		    <string>iphone_info_record_id</string>
+		    <key>ReferencedColumn</key>
+		    <string>id</string>
+		    <key>RelationKind</key>
+		    <integer>2</integer>
+		  </dict>
+		</dict>
+		<key>TableClass</key>
+		<string>Mobile</string>
+	</dict>
+</dict>
+</plist>

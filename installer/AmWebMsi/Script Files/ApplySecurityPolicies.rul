@@ -1,0 +1,41 @@
+/***************************************************************************************
+*  ApplySecurityPolicies.rul
+*
+*  Purpose:	copy local_policy.jar and US_export_policy.jar files from the installer
+*           to JavaHome\lib\security directory
+*/ 
+
+prototype CopySecurityPolicies(STRING);
+
+// 
+//
+
+function CopySecurityPolicies(szTargetDir) 
+begin 
+
+	
+	szSource = SUPPORTDIR ^ "*policy.jar";
+    szTarget = szTargetDir ^ "lib" ^ "security";
+    
+    nResult = CopyFile(szSource, szTarget);
+    
+    switch (nResult)
+        case 0:
+            //MessageBox ("Policy files successfully copied.", INFORMATION);
+        case COPY_ERR_CREATEDIR:
+            MessageBox ("A target directory for policy files could not be created.", SEVERE);
+        case COPY_ERR_MEMORY:
+            MessageBox ("Insufficient memory to copy policy files.", SEVERE);
+        case COPY_ERR_NODISKSPACE:
+            MessageBox ("Insufficient disk space to copy policy files.", SEVERE);
+        case COPY_ERR_OPENINPUT:
+            MessageBox ("Unable to open policy files in "+ SUPPORTDIR +".", SEVERE);
+        case COPY_ERR_OPENOUTPUT:
+            MessageBox ("Unable to copy policy files.", SEVERE);
+        case COPY_ERR_TARGETREADONLY:
+            MessageBox ("Policy files already exist and cannot be overwritten.", SEVERE);
+        default:
+            MessageBox ("An unspecified error occurred when copying policy files.", SEVERE);
+    endswitch;
+	
+end;

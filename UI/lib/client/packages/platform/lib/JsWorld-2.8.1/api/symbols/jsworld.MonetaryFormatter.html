@@ -1,0 +1,678 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JSWorld API Reference - jsworld.MonetaryFormatter</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 120%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#logo {
+	margin-bottom: 15px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<div id="logo">
+	<img src="../icon-jsworld-64x64.png"/><b>JsWorld 2.8.1</b>
+</div>
+
+			
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/jsworld.html">jsworld</a></li>
+	
+	<li><a href="../symbols/jsworld.DateTimeFormatter.html">jsworld.DateTimeFormatter</a></li>
+	
+	<li><a href="../symbols/jsworld.DateTimeParser.html">jsworld.DateTimeParser</a></li>
+	
+	<li><a href="../symbols/jsworld.Locale.html">jsworld.Locale</a></li>
+	
+	<li><a href="../symbols/jsworld.MonetaryFormatter.html">jsworld.MonetaryFormatter</a></li>
+	
+	<li><a href="../symbols/jsworld.MonetaryParser.html">jsworld.MonetaryParser</a></li>
+	
+	<li><a href="../symbols/jsworld.NumericFormatter.html">jsworld.NumericFormatter</a></li>
+	
+	<li><a href="../symbols/jsworld.NumericParser.html">jsworld.NumericParser</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class jsworld.MonetaryFormatter
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				Class for localised formatting of currency amounts.
+
+<p>See: <a href="http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html#tag_07_03_03">
+POSIX LC_MONETARY</a>.
+				
+				
+					<br /><i>Defined in: </i> &lt;JsWorld.js&gt;.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jsworld.MonetaryFormatter.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/jsworld.MonetaryFormatter.html#constructor">jsworld.MonetaryFormatter</a></b>(locale, currencyCode, altIntSymbol)
+							</div>
+							<div class="description">Creates a new monetary formatter for the specified locale.</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jsworld.MonetaryFormatter.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.MonetaryFormatter.html#currencySymbolPrecedes">currencySymbolPrecedes</a></b>(intFlag)
+								</div>
+								<div class="description">Gets the position of the currency symbol relative to
+the amount.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.MonetaryFormatter.html#format">format</a></b>(amount, options)
+								</div>
+								<div class="description">Formats a monetary amount according to the preset 
+locale.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.MonetaryFormatter.html#getCurrencySymbol">getCurrencySymbol</a></b>()
+								</div>
+								<div class="description">Gets the currency symbol used in formatting.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.MonetaryFormatter.html#getDecimalPoint">getDecimalPoint</a></b>()
+								</div>
+								<div class="description">Gets the decimal delimiter (radix) used in formatting.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jsworld.MonetaryFormatter.html#getFractionalDigits">getFractionalDigits</a></b>(intFlag)
+								</div>
+								<div class="description">Gets the number of fractional digits.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>jsworld.MonetaryFormatter</b>(locale, currencyCode, altIntSymbol)
+				</div>
+				
+				<div class="description">
+					Creates a new monetary formatter for the specified locale.
+					
+				</div>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{<a href="../symbols/jsworld.Locale.html">jsworld.Locale</a>}</span>  <b>locale</b>
+								
+							</dt>
+								<dd>A locale object specifying the required 
+       POSIX LC_MONETARY formatting properties.</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>currencyCode</b>
+								<i>Optional</i>
+							</dt>
+								<dd>Set the currency explicitly by
+       passing its international ISO-4217 code, e.g. "USD", "EUR", "GBP".
+       Use this optional parameter to override the default local currency</dd>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>altIntSymbol</b>
+								<i>Optional</i>
+							</dt>
+								<dd>Non-local currencies are formatted
+       with their international ISO-4217 code to prevent ambiguity.
+       Use this optional argument to force a different symbol, such as the
+       currency's shorthand sign. This is mostly useful when the shorthand
+       sign is both internationally recognised and identifies the currency
+       uniquely (e.g. the Euro sign).</dd>
+						
+						</dl>
+					
+					
+					
+					
+						<dl class="detailList">
+						<dt class="heading">Throws:</dt>
+						
+							<dt>
+								 <b></b>
+							</dt>
+								<dd>Error on constructor failure.</dd>
+						
+						</dl>
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name="currencySymbolPrecedes"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>currencySymbolPrecedes</b>(intFlag)
+					
+					</div>
+					<div class="description">
+						Gets the position of the currency symbol relative to
+the amount. Assumes a non-negative amount and local formatting.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>intFlag</b>
+									
+								</dt>
+								<dd>Optional flag to force international
+formatting by passing the string "i".</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> True if the symbol precedes the amount, false if
+the symbol succeeds the amount.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="format"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>format</b>(amount, options)
+					
+					</div>
+					<div class="description">
+						Formats a monetary amount according to the preset 
+locale.
+
+<pre>
+For local currencies the native shorthand symbol will be used for
+formatting.
+Example:
+       locale is en_US
+       currency is USD
+       -> the "$" symbol will be used, e.g. $123.45
+       
+For non-local currencies the international ISO-4217 code will be
+used for formatting.
+Example:
+      locale is en_US (which has USD as currency)
+      currency is EUR
+      -> the ISO three-letter code will be used, e.g. EUR 123.45
+
+If the currency is non-local, but an alternative currency symbol was
+provided, this will be used instead.
+Example
+      locale is en_US (which has USD as currency)
+      currency is EUR
+      an alternative symbol is provided - "€"
+      -> the alternative symbol will be used, e.g. €123.45
+</pre>
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Number|String}</span> <b>amount</b>
+									
+								</dt>
+								<dd>The amount to format as currency.</dd>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>Options to modify the formatted output:
+      <ul>
+          <li>"^"  suppress grouping
+          <li>"!"  suppress the currency symbol
+          <li>"~"  suppress the currency symbol and the sign (positive or negative)
+          <li>"i"  force international sign (ISO-4217 code) formatting
+          <li>".n" specify decimal precision</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>"Error: Invalid amount" on bad amount.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>The formatted currency amount as string.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getCurrencySymbol"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String}</span>
+					<b>getCurrencySymbol</b>()
+					
+					</div>
+					<div class="description">
+						Gets the currency symbol used in formatting.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> The currency symbol.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getDecimalPoint"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{String}</span>
+					<b>getDecimalPoint</b>()
+					
+					</div>
+					<div class="description">
+						Gets the decimal delimiter (radix) used in formatting.
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> The radix character.</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getFractionalDigits"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{integer Number}</span>
+					<b>getFractionalDigits</b>(intFlag)
+					
+					</div>
+					<div class="description">
+						Gets the number of fractional digits. Assumes local
+formatting.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>intFlag</b>
+									
+								</dt>
+								<dd>Optional flag to force international
+       formatting by passing the string "i".</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{integer Number}</span> The number of fractional digits.</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0
+		</div>
+	</body>
+</html>

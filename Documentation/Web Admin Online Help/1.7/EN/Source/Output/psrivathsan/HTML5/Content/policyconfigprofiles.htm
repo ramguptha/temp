@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-medium="non-print" data-mc-toc-path="Working with Policies">
+    <!-- saved from url=(0016)http://localhost -->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Working with Configuration Profiles Inside a Policy</title>
+        <script>/* <![CDATA[ */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50107827-2', 'absolute.com');
+			ga('send', 'pageview');
+		/* ]]> */</script>
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" />
+        <link href="Resources/Stylesheets/Absolute.css" rel="stylesheet" />
+        <script src="../Resources/Scripts/custom.modernizr.js">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.min.js">
+        </script>
+        <script src="../Resources/Scripts/require.config.js">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../Default.htm#policyconfigprofiles.htm">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">You are here: </span><a class="MCBreadcrumbsLink" href="workingwithpolicies.htm">Working with Policies</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Working with Configuration Profiles Inside a Policy</span>
+        </div>
+        <h1 class="Heading1">Working with Configuration Profiles Inside a Policy</h1>
+        <p class="BodyWithListFollowing">You can use configuration profiles within a <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">policy<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>A tool you can use to automate certain aspects of mobile device administration. A policy includes a collection of target mobile devices, plus one or more of the following elements: third-party applications, in-house applications, configuration profiles, and media files. There are two types of policies you can use: standard policies and smart policies.</span></a> in the following ways:</p>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Make configuration profiles available for on-demand installation by users of mobile devices that belong to the policy (iOS&#160;and Android devices only)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Automatically install configuration profiles on mobile devices that belong to the policy</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Last" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="●">Prohibit the installation of configuration profiles on mobile devices that belong to the policy</td>
+            </tr>
+        </table>
+        <p class="Body">Before you can add a <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">configuration profile<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>An easy way of distributing common settings (for example, Wi-Fi, VPN, email, or application-specific settings) to mobile devices and OS X computers.</span></a> to a policy from <span class="VariablesProductName"><a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Absolute Manage<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Allows organizations to persistently manage and secure all of their endpoints from a single console, including PC, Mac, iOS, Android, and Windows Phone devices. Absolute Manage can be deployed as a complete asset management solution as well as a stand-alone solution for Mobile Device Management (MDM).</span></a> Web Admin</span>, you must import or create the profile using the <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Absolute Manage Admin<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>The software application that administrators can install on their workstations to manage client devices (both computers and mobile devices) through the Absolute Manage system. In contrast, Absolute Manage Web Admin is a web-based application that administrators access through their browser to manage mobile devices only.</span></a> interface. For more information, see "Working with configuration profiles" in the <span class="Emphasis">Absolute Manage User Guide</span>.</p>
+        <p class="Body">Policy actions take place on any mobile device belonging to the
+policy as soon as the device contacts the notification server of its <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">OS<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Operating System. The software on mobile devices that manages hardware resources and provides common services for applications.</span></a>&#160;vendor. If
+the device is connected to a <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">Wi-Fi<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>A technology that allows electronic devices to connect to the Internet or communicate with one another wirelessly within a particular area over radio waves.</span></a> or mobile network, this <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">action<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Allows you to specify what Absolute Manage should do when a mobile device enters a smart policy.</span></a> usually takes place within a minute; otherwise, it happens when the device
+reconnects to a network.</p>
+        <p class="BodyWithListFollowing">It is possible to use the same configuration profile inside multiple policies in conflicting ways. For example, a device could belong to one policy where the profile is auto-installed and to another policy where the profile is
+forbidden.
+ Since
+there is no way to satisfy both policies’ requirements at the same time, Absolute Manage uses the following hierarchy for carrying out profile actions, where higher entries take precedence over lower entries:</p>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Forbidden</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">Auto-install</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="●">On-demand</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Last" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="●">Auto-remove</td>
+            </tr>
+        </table>
+        <p class="Body">For example, if a
+configuration profile is auto-installed in one policy that a mobile device
+belongs to and forbidden in another, the profile is not available on the
+device because the “forbidden” category has a higher priority than
+“auto-install”.</p>
+        <p class="Note" data-mc-autonum="NOTE &#160;&#160;"><span class="autonumber"><span class="NoteHeader">NOTE &#160;&#160;</span></span>Only one configuration profile (that is, the Exchange <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">ActiveSync<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>A protocol that allows mobile devices to synchronize data and policies with a Microsoft Exchange server.</span></a> policy) can be active on a
+Windows Phone device at any time. As a result, profiles are not installed on Windows Phone devices when the Absolute Manage policies that the devices belong to specify more than one profile as
+automatically installed.</p>
+        <p class="Body">After you add a configuration profile to a policy, you cannot edit the profile's assignment properties within the policy. If you want to edit these properties, you must remove the configuration profile from the policy and re-add it using the desired properties.</p>
+        <h2 class="Heading2">Adding Configuration Profiles to a Policy</h2>
+        <p class="TaskIntro">To add configuration profiles to a policy:</p>
+        <table class="AutoNumber_p_Step1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="2. ">Click the policy that you want to add configuration profiles to.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="3. ">Click the <span class="Bold">Configuration Profiles</span> tab.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="4. ">In the work area toolbar, click <span class="Bold">Add Configuration Profile</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="5. ">Select the checkbox of each configuration file you want to add to the policy.</td>
+            </tr>
+        </table>
+        <p class="Indent2">To quickly find specific configuration profiles, you can use the search field to narrow the profiles listed by specific criteria (for example, by profile name or description).</p>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>6. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="6. ">From the <span class="Bold">Assignment Rule</span> list, select how you want to manage the selected profiles on devices belonging to the policy:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Auto-install</span>: The profile is automatically installed when a device enters
+the policy. The profile remains on the device when it leaves the
+policy, and the device's user can manually remove the profile, if desired.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">On-demand</span>: The profile is made available within <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">AbsoluteApps<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>The client application installed on mobile devices that acts as a link to Absolute Manage. AbsoluteApps reports on the status of a mobile device and enables administrators to perform remote actions on the device.</span></a> and the device's user can manually install the profile.
+The profile remains on the device when it leaves the policy, and the device's user can
+manually remove the profile, if desired.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Auto-install, Auto-remove</span>: The profile is installed when the
+device enters the policy and removed when it leaves.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">On-demand, Auto-remove</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile. The profile is removed when the device leaves the policy.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1ProcedureLast" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Forbidden</span>:The profile cannot be installed on devices belonging to the policy.</td>
+            </tr>
+        </table>
+        <p class="Note_Procedure" data-mc-autonum="NOTE &#160;&#160;"><span class="autonumber"><span class="NoteHeader">NOTE &#160;&#160;</span></span>On-demand profile installation is available on iOS&#160;and Android devices only. For information about on-demand profile installation on iOS devices,
+contact <a href="http://www.absolute.com/en/support" target="_blank" class="Hyperlink">Absolute Global Support</a>.</p>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>7. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="7. ">To restrict the availability of the selected profiles to certain dates or times, select the <span class="Bold">Set availability time</span> checkbox, then choose one of the following options:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Every day between</span>: The profile is
+available to mobile devices belonging to this policy only during a certain
+time of the day (for example, during office hours). Specify the start and end times in the available fields.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1ProcedureLast" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">From</span>: The profile is available to mobile devices belonging to this policy only during a specific time period. Specify the start date and time as well as the end date and time.</td>
+            </tr>
+        </table>
+        <p class="Note_Procedure" data-mc-autonum="NOTE &#160;&#160;"><span class="autonumber"><span class="NoteHeader">NOTE &#160;&#160;</span></span>Use your local time in these fields. Times you enter are converted to and stored in Coordinated Universal Time (<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">UTC<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Coordinated Universal Time. The primary time standard by which the world regulates clocks and time. UTC is closely related to and generally interchangeable with Greenwich Mean Time (GMT).</span></a>) on the Absolute Manage server. As a result, you should take into account any time
+differences that may exist with your mobile clients. You also must
+manually compensate for Daylight Saving Time (<a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open MCTextPopupHotSpot_ #text">DST<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Daylight Saving Time. The practice of advancing clocks during the summer months so that people rise earlier in the morning and experience more daylight in the evening. Typically, clocks are adjusted forward one hour near the start of spring and are adjusted backward in the autumn. Exact start and end dates for DST vary with location.</span></a>), if desired,
+because DST does not apply to UTC.</p>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>8. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="8. ">Click <span class="Bold">Add to Policy</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>9. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="9. ">Click <span class="Bold">OK</span> to close the confirmation message.</td>
+            </tr>
+        </table>
+        <h2 class="Heading2">Editing Assignment Rules of Configuration Profiles</h2>
+        <p class="TaskIntro">To edit the assignment rules of configuration profiles inside a policy:</p>
+        <table class="AutoNumber_p_Step1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="2. ">Click the policy that you want to edit.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="3. ">Click the <span class="Bold">Configuration Profiles</span> tab.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="4. ">Select the checkbox of each configuration profile whose assignment rules you want to change.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="5. ">Click <img src="Resources/Images/edit-button.png" class="Icon" />.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>6. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="6. ">From the <span class="Bold">Assignment Rule</span> list, select how you want to manage the selected profiles on devices belonging to the policy:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Auto-install</span>: The profile is automatically installed when a device enters
+the policy. The profile remains on the device when it leaves the
+policy, and the device's user can manually remove the profile, if desired.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">On-demand</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile.
+The profile remains on the device when it leaves the policy, and the device's user can
+manually remove the profile, if desired.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Auto-install, Auto-remove</span>: The profile is installed when the
+device enters the policy and removed when it leaves.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">On-demand, Auto-remove</span>: The profile is made available within AbsoluteApps and the device's user can manually install the profile. The profile is removed when the device leaves the policy.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1ProcedureLast" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Forbidden</span>:The profile cannot be installed on devices belonging to the policy.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>7. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="7. ">To restrict the availability of the selected profiles to certain dates or times, select the <span class="Bold">Set availability time</span> checkbox, then choose one of the following options:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1Procedure" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">Every day between</span>: The profile is
+available to mobile devices belonging to this policy only during a certain
+time of the day (for example, during office hours). Specify the start and end times in the available fields.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet1ProcedureLast" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 48px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top"><span>●</span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Procedure" valign="top" data-mc-autonum="●"><span class="Bold">From</span>: The profile is available to mobile devices belonging to this policy only during a specific time period. Specify the start date and time as well as the end date and time.</td>
+            </tr>
+        </table>
+        <p class="Note_Procedure" data-mc-autonum="NOTE &#160;&#160;"><span class="autonumber"><span class="NoteHeader">NOTE &#160;&#160;</span></span>Use your local time in these fields. Times you enter are converted to and stored in Coordinated Universal Time (UTC) on the Absolute Manage server. As a result, you should take into account any time
+differences that may exist with your mobile clients. You also must
+manually compensate for Daylight Saving Time (DST), if desired,
+because DST does not apply to UTC.</p>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>8. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="8. ">Click <span class="Bold">Save</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>9. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="9. ">Click <span class="Bold">Done</span> to close the confirmation message.</td>
+            </tr>
+        </table>
+        <h2 class="Heading2">Removing Configuration Profiles from a Policy</h2>
+        <p class="Body">When you remove a configuration profile from a policy, there is no immediate effect on
+the mobile devices that belong to the policy. That is, when you remove a
+profile that is set to "auto-install", it is not removed from the
+policy's devices, and when you remove a profile that is set to "forbidden", it is
+not installed on the policy's devices.
+However, the restrictions placed on mobile devices with respect to the
+configuration profile are lifted: the user can now remove a previously required profile or install a previously prohibited profile.</p>
+        <p class="TaskIntro">To remove configuration profiles from a policy:</p>
+        <table class="AutoNumber_p_Step1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1" valign="top" data-mc-autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="2. ">Click the policy that you want to remove configuration profiles from.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="3. ">Click the <span class="Bold">Configuration Profiles</span> tab.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="4. ">Select the checkbox of each policy that you want to remove.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="5. ">Click <img src="Resources/Images/remove-button.png" class="Icon" />.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>6. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="6. ">Click <span class="Bold">Remove Profiles</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Steps" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 24px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet1Last" valign="top"><span>7. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet1Last" valign="top" data-mc-autonum="7. ">Click <span class="Bold">OK</span> to close the confirmation message.</td>
+            </tr>
+        </table>
+        <div class="MCHelpControl MCHelpControl-Related relatedTopics" style="mc-help-control-display: list;"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="28" alt="Related Topics Icon" />Related Topics</span>
+            <ul class="MCHelpControlList MCRelatedTopicsControlList">
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="aboutpolicies.htm">About Policies</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="creatingsmartpolicies.htm">Creating Smart Policies</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="creatingpolicies.htm">Creating Standard Policies</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="editingpolicies.htm">Editing Policies</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="searchingforinfo.htm">Searching for Information</a>
+                </li>
+                <li class="MCHelpControlListItem MCRelatedTopicsControlListItem"><a class="MCHelpControlListItemLink MCRelatedTopicsControlListItemLink" href="sendingmessages.htm">Sending Messages to Devices</a>
+                </li>
+            </ul>
+        </div>
+        <table cellspacing="0" width="100%">
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+            <tr>
+                <td>
+                    <br />
+                    <br /><span style="font-size: 8pt;">©2015 Absolute Software Corporation. 
+				All rights reserved.</span>
+                </td>
+                <td>
+                    <p style="text-align: right;">
+                        <br />
+                        <br />
+                        <script type="text/javascript">/*<![CDATA[*/var str = location.href.toString();
+//var arr = str.split("::/");
+var htm_page = str;
+var mailSubject = 'Absolute Manage Web Admin Documentation Feedback: ' + htm_page;
+var mailBody = '\n\n(Comments apply to the following help page: ' + location.href + ')'; 
+var mailDisplay = 'Send feedback on this help topic'; 
+document.write('<a href="#" style="font-size: 8pt;">Back to top</a> | <a target="_blank" href="mailto:helpfeedback_AMWA@absolute.com' + '?subject=' + escape(mailSubject) + '&body=' + escape(mailBody) + '" style="font-size: 8pt;">' + mailDisplay + '</a>');/*]]>*/</script>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

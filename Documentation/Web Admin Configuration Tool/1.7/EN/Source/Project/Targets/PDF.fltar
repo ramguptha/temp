@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="PDF"
+  Type="PDF"
+  Destinations=""
+  MasterToc="/Project/TOCs/WebAdminConfigurationTool.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/Absolute.css"
+  MasterPageLayout="/Content/Resources/PageLayouts/Chapters.flpgl"
+  ConditionTagExpression="include[Default.InProgess or Default.PrintOnly or Default.ScreenOnly] "
+  PatchHeadingLevels="true"
+  AutoSizeCaptureCaptions="false"
+  InjectEmptyPages="true"
+  InjectBookHeadings="true"
+  RemoveImagesFromHeadings="true">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="true"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="true"
+    ExpandingTextConversion="expand"
+    PopupConversion="expand" />
+  <PDF
+    ImageCompression="Automatic"
+    ShowUsedBookmarks="false"
+    ConvertBookmarks="true"
+    Tagged="true"
+    InitialMagnification="Fit"
+    PageLayout="SinglePage" />
+</CatapultTarget>

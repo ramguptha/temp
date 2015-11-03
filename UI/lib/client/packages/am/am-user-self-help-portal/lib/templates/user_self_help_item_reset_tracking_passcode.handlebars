@@ -1,0 +1,20 @@
+<div class="modal-action-icon"><span class={{headingIconClass}}></span></div>
+  <div class="modal-action-content">
+    <div class="modal-action-confirmation">
+    <h3>{{heading}}</h3>
+    <br />
+
+    <label><strong>{{t 'amUserSelfServicePortal.modals.resetTrackingPasscode.actionWarning'}}</strong></label>
+    <br />
+    <br />
+    <label>{{t 'amUserSelfServicePortal.modals.resetTrackingPasscode.actionDetails'}}</label>
+
+  </div>
+
+  <div class="container-fluid modal-action-buttons">
+    <div class="button-group" >
+        <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+        <button class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{actionButtonLabel}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="898" MadCap:lastWidth="1019">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Understanding Filters</h1>
+        <p class="Body">You can use filters in a smart policy to determine the mobile devices that should be part of the policy. For example, you may want to create a policy that installs certain configuration profiles only on mobile devices running iOS&#160;6 and lower. Because you have hundreds of devices in your deployment, you do not want to manually pick and choose the devices to include in your policy; rather, you want the system to automatically create and update the list of included devices on the fly. A smart policy manages the list of included devices for you based on the filters you have set. (See <a href="creatingsmartpolicies.htm">Creating Smart Policies</a> for more information on creating smart policies.)</p>
+        <h2 class="Heading2">Using the Filter Fields</h2>
+        <p class="Body">A filter consists of two or more fields, depending on the filter criterion you use. The following are examples of filters you can specify within a smart policy:</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex3.jpg">
+            </img>
+        </p>
+        <p class="Figure">Example 1: This filter isolates mobile devices that are actively managed by Absolute Manage.</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex1.jpg" />
+        </p>
+        <p class="Figure">Example 2: This filter isolates mobile devices that are running any version of the iOS operating system.</p>
+        <p class="Body">
+            <img src="Resources/Images/filterex2.jpg" />
+        </p>
+        <p class="Figure">Example 3: This filter isolates mobile devices  that are running version 6 or lower of any operating system.</p>
+        <p class="BodyWithListFollowing">The fields contained in a filter are defined as follows:</p>
+        <p class="Bullet1" MadCap:autonum="●">First field = Filter criteria: A list of available filter criteria (for example, <span class="Bold">Mobile Device Managed</span>)</p>
+        <p class="Bullet1" MadCap:autonum="●">Second field = Operator: A list of operators specific to the selected filter criterion (for example, <span class="Bold">is less than or equal to</span>)</p>
+        <p class="Bullet1" MadCap:autonum="●">Third field = Value: A text field or list box where you can enter or select a specific value (may or may not be available depending on the filter criterion you selected)</p>
+        <p class="Bullet1Last" MadCap:autonum="●">Fourth field = Value type: A list of possible value types to further define the value you entered in the previous field (may or may not be available depending on the filter criterion you selected)</p>
+        <p class="BodyWithListFollowing">For example, to isolate all mobile devices whose warranty is expiring in the next 30 days, you can create a filter as follows:</p>
+        <p class="Bullet1" MadCap:autonum="●">Filter criteria = <span class="Bold">Mobile Device Warranty End</span></p>
+        <p class="Bullet1" MadCap:autonum="●">Operator = <span class="Bold">is in the next</span></p>
+        <p class="Bullet1" MadCap:autonum="●">Value = <span class="Bold">30</span></p>
+        <p class="Bullet1" MadCap:autonum="●">Value type = <span class="Bold">Days</span></p>
+        <h2 class="Heading2">Combining Filters</h2>
+        <p class="BodyWithListFollowing">You can combine filters to produce the results you want:</p>
+        <p class="Bullet1" MadCap:autonum="●"> To  refine your results,  select <span class="Bold">All</span> from the list above the filter area and click <span class="Bold">Add Filter</span> to specify additional filters. This action places the "AND" operator between each filter and produces only those results that satisfy all filters.</p>
+        <p class="Bullet1Last" MadCap:autonum="●">To expand your results, select <span class="Bold">Any</span> from the list above the filter area and click <span class="Bold">Add Filter</span> to specify additional filters. This action places the "OR" operator between each filter and produces results that satisfy at least one of the filters. </p>
+        <p class="BodyFollowingList">You can add as many filters as required to generate your desired results. </p>
+        <h2 class="Heading2">Removing Filters</h2>
+        <p class="BodyWithListFollowing">You may want to remove one or more filters. To remove an individual filter, click the <img src="Resources/Images/Remove_filter_icon.png" style="width: 15px; height: 14px;" class="Icon"></img> icon next to the filter.</p>
+    </body>
+</html>

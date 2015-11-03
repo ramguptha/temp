@@ -1,0 +1,16 @@
+<div class="modal-wizard-window {{addModalClass}}">
+  <div class="modal-wizard-header">
+    <div class="pull-right">
+      {{#if displayClose}}
+        <div class="button close modal-window-close icon-closedialog pointer" {{action "close"}}></div>
+      {{/if}}
+      {{#if urlForHelp}}
+        <a href={{urlForHelp}} target="_blank" class="btn btn-small btn-help is-button-for-help">?</a>
+      {{/if}}
+    </div>
+    <h2><span class="modal-header-icon {{headingIconClass}}"></span>{{heading}}</h2>
+  </div>
+  <div class="modal-wizard-body">
+    {{yield}}
+  </div>
+</div>

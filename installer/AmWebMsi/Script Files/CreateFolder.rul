@@ -1,0 +1,27 @@
+/***************************************************************************************
+*  CreateFolder.rul
+*
+*  Purpose:	create a new folder
+*/ 
+
+prototype CreateFolder(STRING);
+
+// 
+//
+
+function CreateFolder(szFolder) 
+begin
+ 
+	// Check to see if directory already exists.
+	if (ExistsDir (szFolder) != EXISTS) then
+
+		// The directory does not exist; create it.
+		if (CreateDir (szFolder) < 0) then
+			MessageBox ("Unable to create directory: " + szFolder, SEVERE);
+			abort;
+		endif;
+
+	endif;
+
+end;
+ 

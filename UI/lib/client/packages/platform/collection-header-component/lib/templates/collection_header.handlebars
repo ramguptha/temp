@@ -1,0 +1,27 @@
+{{#if hasSelectionActions}}
+  {{#unless isButtonGroupHorizontal}}
+    {{button-group
+    class="left action-buttons-block"
+    content=selectionActionsWrapper
+    buttonContext=selectionActionsContext
+    buttonTarget=selectionActionsTarget
+    disabled=selectionActionsDisabledOrNoContext
+    }}
+  {{else}}
+    {{button-group-horizontal
+    class="left action-buttons-block"
+    content=selectionActionsWrapper
+    buttonContext=selectionActionsContext
+    buttonTarget=selectionActionsTarget
+    disabled=selectionActionsDisabledOrNoContext
+    }}
+  {{/unless}}
+{{/if}}
+
+<div class="right pagination-block">
+  {{#if counter.hasTotal}}
+    {{totalSummary}}
+  {{else}}
+    {{count-status counter=counter showErrorDetail="showErrorDetail"}}
+  {{/if}}
+</div>

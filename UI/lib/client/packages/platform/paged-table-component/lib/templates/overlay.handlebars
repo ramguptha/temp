@@ -1,0 +1,23 @@
+<span class="parent-arrow-icon tree-wrap-ltr {{if node.isExpanded 'icon-arrow-2' 'icon-arrow-3'}}"></span>
+
+<span class="is-major" data-column-id={{column.config.id}}>
+  <span class="is-name">{{presentation.column.content}}</span>:
+  {{component presentation.valueContext.valueComponent
+    pagedComponent=pagedComponent
+    node=node
+    presenter=presentation.valueContext.presenter
+    refreshedAt=pagedComponent.pager.refreshedAt
+  }}
+</span>
+
+{{#each presentation.subContexts as |item|}}
+  <span class="is-minor" data-column-id={{item.id}}>
+    <span class="is-name">{{item.label}}</span>:
+    {{component item.valueComponent
+      pagedComponent=item.pagedComponent
+      node=item.node
+      presenter=item.presenter
+      refreshedAt=item.pagedComponent.pager.refreshedAt
+    }}
+  </span>
+{{/each}}

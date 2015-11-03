@@ -1,0 +1,64 @@
+<div class="is-container-for-list list-top list-controls flex-item-top clearfix search-query">
+  <div class="top-container-block">
+    <span class="top-container-icon {{iconClassName}}"></span>
+
+    <div class="list-info-header">
+      <!-- All related list controllers have 'relatedListTitle' instead of 'name' which has smaller font size -->
+      {{#if relatedListTitle}}
+        <h3>{{relatedListTitle}}</h3>
+      {{else}}
+        <h1 class="list-title text-ellipsis" data-tooltip-attr="title" title={{name}}>{{name}}</h1>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="is-container-for-manage-search-filter manage-content-group">
+    {{adhoc-search searchQuery=searchQuery nameOptions=searchableOptions}}
+
+    {{#if selectColumnsSupported}}
+      <button type="button"
+              class="btn btn-small" {{action "selectColumns"}}>{{t 'shared.buttons.showHideColumns'}}</button>
+    {{/if}}
+
+    <div class="button-block-container">
+      {{#if urlForHelp}}
+        <a href={{urlForHelp}} target="_blank" class="btn btn-small btn-help is-button-for-help">?</a>
+      {{/if}}
+
+      {{button-group class="right pagination-block action-buttons-block" content=listActions}}
+    </div>
+  </div>
+</div>
+
+{{collection-header
+  class='flex-item-middle'
+  isButtonGroupHorizontal=isButtonGroupHorizontal
+  rActionsLabel=actionsLabelPath
+
+  selectionActions=selectionActions
+  selectionActionsTarget=this
+  selections=selections
+
+  counter=dataCounter
+  totalSummary=tTotalSummary
+
+  showErrorDetail="showCommunicationError"
+}}
+
+{{data-table
+  pager=dataPager
+  columns=visibleColumns
+  paused=paused
+  hasSelection=selectionEnabled
+  selector=selector
+  selectedIds=selections
+
+  rowClick="rowClick"
+  resize="resize"
+  hasRowClick=hasRowClick
+  selectOnRowClick=selectOnRowClick
+
+  showErrorDetail="showCommunicationError"
+  externalError=externalError
+}}
+

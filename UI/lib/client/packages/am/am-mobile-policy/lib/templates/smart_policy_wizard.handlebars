@@ -1,0 +1,27 @@
+<div class="select-add-devices-as-modal">
+  <div class="select-add-devices-content">
+    <div class="select-add-devices-panel">
+      <div class="error-content" style="display: none">
+        <div class="error-message-details">
+          <span class="icon-triangle-attention error-attention-icon"></span>Problem Creating Smart Group
+        </div>
+        <div class="error-details"></div>
+      </div>
+      <div class="folder-created-content" style="display: none">
+        <div class="folder-created-success-details">
+          <span class="icon-checkmark success-icon"></span>Smart Group Created Success
+        </div>
+        <div class="folder-created-controls modal-button-group">
+          <button type="button" class="btn-action folder-created-ok jqmClose">Ok</button>
+        </div>
+      </div>
+    </div>
+    <div class="validation-error-details" style="display:none"></div>
+    <div class="modal-button-group">
+      <span class="save-folder-spinner"></span>
+      <button type="button" class="create-folder-cancel btn-low" {{action "close"}} disabled={{isNotChanged}}>{{t 'shared.buttons.cancel'}}</button>
+    </div>
+  </div>
+</div>
+
+

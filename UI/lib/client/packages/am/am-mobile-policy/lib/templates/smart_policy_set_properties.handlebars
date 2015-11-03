@@ -1,0 +1,45 @@
+<div class="progress-steps-new-content">
+  <ul class="progress-steps">
+    <li class="active-step"><span class="icon-number-1"></span>{{setPropertiesTxt}}</li>
+    <li class=""><span class="icon-number-2"></span>{{createSmartFilterTxt}}</li>
+    <li class=""><span class="icon-number-3"></span>{{verifyAndSaveTxt}}</li>
+  </ul>
+</div>
+<div class="container-fluid set-properties-view">
+  <div class="to-set-property-panel set-smart-group-panel">
+    <div class="name-input-container">
+      <label for="SetSmartGroupNameField">{{t 'amMobilePolicies.modals.createNewSmartPolicy.labelForTextField'}}</label>
+      {{#if errorMessage}}
+        <div class="alert alert-error tipsy tipsy-w">
+          <div class="tipsy-arrow tipsy-arrow-w"></div>
+          <div class="tipsy-inner">{{errorMessage}}</div>
+        </div>
+      {{/if}}
+      {{test}}
+      {{input type="text" value=policyName placeholder=placeholder class="folder-name-field"
+      id="SetSmartGroupNameField" class="is-input-for-name set-smart-group-name-field" maxlength="255" autofocus="true"}}
+      <div>
+        <label><input id="filterByNone" type="radio" class="ember-radio-button" {{action "selectFilterBy" "filterByNone"}} disabled={{byNoneBtnDisabled}}>
+          {{t 'amMobilePolicies.modals.createNewSmartPolicy.radioButtonLabels.mobileDevices'}}
+        </label>
+      </div>
+      <div>
+        <label><input id="filterByApp" type="radio" class="ember-radio-button" {{action "selectFilterBy" "filterByApp"}} disabled={{byAppBtnDisabled}}>
+          {{t 'amMobilePolicies.modals.createNewSmartPolicy.radioButtonLabels.mobileDevicesByInstalledApplications'}}
+        </label>
+      </div>
+      <div>
+        <label><input id="filterByProfile" type="radio" class="ember-radio-button" {{action "selectFilterBy" "filterByProfile"}} disabled={{byAppBtnDisabled}}>
+          {{t 'amMobilePolicies.modals.createNewSmartPolicy.radioButtonLabels.mobileDevicesByAddedConfigurationProfiles'}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-action-buttons">
+  <div class="button-group">
+    <span class="save-folder-spinner"></span>
+    <button type="button" class="create-folder-cancel btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button type="button" class="btn btn-action" {{action "onConfirmAction"}} disabled={{isActionBtnDisabled}}>{{t 'shared.buttons.continue'}}</button>
+  </div>
+</div>

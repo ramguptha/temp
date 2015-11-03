@@ -1,0 +1,111 @@
+<div class="action-properties-container">
+  <div class="is-container-for-properties-container-upper properties-container-upper">
+    <div>
+      <div class="properties-label">
+        <label>{{t 'amAssignableItem.modals.actionProperties.actionName'}}</label>
+      </div>
+      <div class="properties-value">
+        <div class="properties-value-input-text">
+          <div class="inline-flex-row">
+            {{input type="text"
+            id="actionName"
+            value=name
+            maxlength="255"
+            classNames="is-input-for-action-name flex-shrink-off"}}
+
+            {{#if isNameDuplicate}}
+              <div class="is-container-for-duplicate-name-error-message required-field-message error">
+                {{t 'amAssignableItem.modals.actionProperties.validation.duplicateNameMessage'}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="properties-label">
+        <label>{{t 'amAssignableItem.modals.actionProperties.description'}}</label>
+      </div>
+      <div class="properties-value">
+        {{textarea
+        rows="3"
+        value=description
+        maxlength="255"
+        classNames="is-input-for-action-description"}}
+      </div>
+    </div>
+
+    <div>
+      {{view SupportedPlatformsView}}
+    </div>
+
+    <div class="is-container-for-action-dynamic-properties properties-container-lower">
+
+      <div class="is-container-for-action-set-roaming">
+        <div>
+          <div class="properties-label">
+            <label>{{t 'amAssignableItem.modals.actionProperties.voiceRoaming'}}</label>
+          </div>
+
+          <div class="properties-value">
+            <div class="inline-flex-row">
+              {{#each roamingOptions as |option|}}
+                <label class="flex-shrink-off">
+                  {{radio-button
+                  name='voiceRoaming'
+                  selection=voiceRoaming
+                  value=option.value
+                  class=option.class
+                  classNames="is-radio-button-for-voice-roaming"}}
+                  {{option.label}}
+                </label>
+              {{/each}}
+
+              {{#if isRoamingOptionInvalid}}
+                <div class="is-container-for-roaming-options-error-message required-field-message screen-options error">
+                  {{t 'amAssignableItem.modals.actionProperties.validation.requiredRoamingOptionMessage'}}
+                </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="properties-label">
+            <label>{{t 'amAssignableItem.modals.actionProperties.dataRoaming'}}</label>
+          </div>
+
+          <div class="properties-value">
+            {{#each roamingOptions as |option|}}
+              <label>
+                {{radio-button
+                name='dataRoaming'
+                selection=dataRoaming
+                value=option.value
+                class=option.class
+                classNames="is-radio-button-for-data-roaming"}}
+                {{option.label}}
+              </label>
+            {{/each}}
+
+            <p>{{t 'amAssignableItem.modals.actionProperties.actionMessage'}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="required-field-message">
+      <span><span class="bullet-small">&bull;</span>{{t 'amAssignableItem.modals.actionProperties.indicatesRequiredField'}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-action-buttons">
+  <div class="button-group" >
+    <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+    <button class="btn btn-small" {{action "saveAndAndAssignToPolicies"}} disabled={{isSaveAndAssignActionBtnDisabled}}>{{t 'amAssignableItem.modals.action.saveAndAssignButton'}}</button>
+    <button class="btn btn-action" {{action "save"}} disabled={{isActionBtnDisabled}}>{{t 'shared.buttons.save'}}</button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="fill-absolute container {{if hasSelection 'has-selection'}}">
+  {{#if isEmptyResultSet}}
+    {{component emptyResultComponent tNoResults=tNoResults tNoItems=tNoItems}}
+  {{/if}}
+
+  <div class="virtual-container reset-origin fill-height">
+    {{paged-list-page presentation=virtualPage0 rowClick="rowClick" showError="showError" retryLoad="retryLoad"}}
+    {{paged-list-page presentation=virtualPage1 rowClick="rowClick" showError="showError" retryLoad="retryLoad"}}
+    {{paged-list-page presentation=virtualPage2 rowClick="rowClick" showError="showError" retryLoad="retryLoad"}}
+
+    <!-- 1x1 transparent GIF -->
+    <img style={{virtualSizerStyle}}
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+    >
+  </div>
+
+  {{#if paused}}
+    {{#unless externalError}}
+      {{component pausedComponent pagedComponent=this classNames="is-paused"}}
+    {{/unless}}
+  {{/if}}
+</div>

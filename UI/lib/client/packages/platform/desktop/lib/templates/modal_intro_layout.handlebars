@@ -1,0 +1,31 @@
+<div class={{modalWindowClass}}>
+  <div class="slideshow-header">
+    <div class="slideshow-close-button float-right"><a href="#" {{action "closeModal"}}></a></div>
+  </div>
+
+  <div class="modal-slideshow-body">
+    <div class="slideshow-content">
+      <div class="intro-slides">
+        <!-- start Basic Jquery Slider -->
+        <ul class="bjqs">
+          {{#each slidePaths as |slide|}}
+            <li>
+              <img src={{slide}} title="">
+            </li>
+          {{/each}}
+        </ul>
+        <!-- end Basic jQuery Slider -->
+      </div>
+    </div>
+  </div>
+
+  <div class="slideshow-footer">
+    <div class="slideshow-footer-element to-not-show-again">
+      <label class="for-checkbox">{{input type="checkbox" checked=alwaysSkipIntro}} {{t 'shared.doNotShowAgain'}}</label>
+    </div>
+
+    <div class="slideshow-footer-element float-right">
+      <button type="button" class="btn btn-small" {{action "closeModal"}} autofocus>{{t 'shared.buttons.ok'}}</button>
+    </div>
+  </div>
+</div>

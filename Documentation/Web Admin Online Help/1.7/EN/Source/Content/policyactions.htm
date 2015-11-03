@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="1291" MadCap:lastWidth="1228">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Working with Actions Inside a Policy</h1>
+        <p class="Body">You can use actions within a smart policy to specify tasks that should be automatically performed
+on mobile devices when they join the policy. You cannot use actions with standard policies.</p>
+        <p class="Body">Actions must already be available within the <a href="workingwithactions.htm">Assignable Items &gt; Actions</a> area before you can add them to a smart policy.</p>
+        <p class="Body">When you add an action to a smart policy, the action is carried out on all mobile devices that are
+currently a member of the policy as soon as the devices contact the notification server of their OS&#160;vendor. If
+a device is connected to a Wi-Fi or mobile network, this action usually takes place within a minute; otherwise, it happens when the device
+reconnects to a network. Actions are also carried out on each mobile device
+that joins the smart policy in the future.</p>
+        <h2 class="Heading2">Adding Actions to a Smart Policy</h2>
+        <p class="TaskIntro">To add actions to a smart policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the smart policy that you want to add actions to.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Actions</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">In the work area toolbar, click <span class="Bold">Add Actions to Policy</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Select the checkbox of each action you want to add to the smart policy.</p>
+        <p class="Indent2">To quickly find specific actions, you can use the search field to narrow the actions listed by specific criteria (for example, by action name).</p>
+        <p class="Steps" MadCap:autonum="6. ">Specify whether you want to delay or repeat the action:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●">Select <span class="Bold">Action start delay</span> if you do not want the action to be performed
+immediately when a mobile device joins the
+smart policy, but only after the interval you specify has elapsed.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●">Select <span class="Bold">Action repeat</span> if you want the action to be repeated on the mobile device after
+the interval you specify for the number of times you specify.</p>
+        <p class="Indent2">You can combine both of these options, if desired. For example, you could use both options to send a message to
+mobile devices two hours after they join the policy
+and every hour thereafter.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">Any delays and repetitions you specify apply to both existing and
+future members of the smart policy. The delay for existing members is calculated from the
+moment the action is assigned to the smart policy. A delayed or repeated action is not carried out on a mobile device if it is no
+longer a member of the smart policy.</p>
+        <p class="Steps" MadCap:autonum="7. ">Click <span class="Bold">Save</span>.</p>
+        <p class="Steps" MadCap:autonum="8. ">Click <span class="Bold">Done</span> to close the confirmation message.</p>
+        <h2 class="Heading2">Editing Assignment Rules of Actions</h2>
+        <p class="TaskIntro">To edit the assignment rules of an action inside a smart policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the smart policy that you want to edit.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Actions</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">Select the checkbox of the action whose assignment rules you want to change.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <img src="Resources/Images/edit-button.png" class="Icon" />.</p>
+        <p class="Steps" MadCap:autonum="6. ">Specify whether you want to delay or repeat the action:</p>
+        <p class="Bullet1Procedure" MadCap:autonum="●">Select <span class="Bold">Action start delay</span> if you do not want the action to be performed
+immediately when a mobile device joins the
+smart policy, but only after the interval you specify has elapsed.</p>
+        <p class="Bullet1ProcedureLast" MadCap:autonum="●">Select <span class="Bold">Action repeat</span> if you want the action to be repeated on the mobile device after
+the interval you specify for the number of times you specify.</p>
+        <p class="Indent2">You can combine both of these options, if desired. For example, you could use both options to send a message to
+mobile devices two hours after they join the policy
+and every hour thereafter.</p>
+        <p class="Note_Procedure" MadCap:autonum="NOTE &#160;&#160;">Any delays and repetitions you specify apply to both existing and
+future members of the smart policy. The delay for existing members is calculated from the
+moment the action is assigned to the smart policy. A delayed or repeated action is not carried out on a mobile device if it is no
+longer a member of the smart policy.</p>
+        <p class="Steps" MadCap:autonum="7. ">Click <span class="Bold">Save</span>.</p>
+        <p class="Steps" MadCap:autonum="8. ">Click <span class="Bold">Done</span> to close the confirmation message.</p>
+        <h2 class="Heading2">Removing Actions from a Smart Policy</h2>
+        <p class="Body">When you remove an action from a smart policy, any remaining repetitions or delayed executions of the action are not carried out. If you want to remove an action from <MadCap:variable name="Variables.ProductName" /> and from all related smart policies, you can <a href="deletingactions.htm">delete the action</a>.</p>
+        <p class="TaskIntro">To remove actions from a smart policy:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to the <span class="Bold">Mobile Policies</span> area.</p>
+        <p class="Steps" MadCap:autonum="2. ">Click the smart policy that you want to remove actions from.</p>
+        <p class="Steps" MadCap:autonum="3. ">Click the <span class="Bold">Actions</span> tab.</p>
+        <p class="Steps" MadCap:autonum="4. ">Select the checkbox of each action you want to remove.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <img src="Resources/Images/remove-button.png" class="Icon" />.</p>
+        <p class="Steps" MadCap:autonum="6. ">Click <span class="Bold">Remove Actions</span>.</p>
+        <p class="Steps" MadCap:autonum="7. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="workingwithactions.htm" />
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="aboutpolicies.htm" />
+                <MadCap:relatedTopic src="creatingsmartpolicies.htm" />
+                <MadCap:relatedTopic src="editingpolicies.htm" />
+                <MadCap:relatedTopic src="editingactions.htm" />
+                <MadCap:relatedTopic src="deletingactions.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

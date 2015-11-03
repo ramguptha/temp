@@ -1,0 +1,14 @@
+<div class="commands-input-list">
+
+  {{#each ownershipOptions as |option|}}
+    <label>
+      {{radio-button
+      name='deviceOwnership'
+      selection=ownership
+      value=option.value
+      class=option.class}}
+      {{option.label}}
+    </label>
+  {{/each}}
+
+</div>

@@ -1,0 +1,31 @@
+Software Licence Agreement for JsWorld
+
+
+JsWorld, Copyright (c) Vladimir Dzhuvinov, 2008-2014
+
+
+Thank you for selecting JsWorld (the "Software").
+
+By purchasing this license in full and downloading the Software you agree to the
+following terms:
+
+1. You may use and distribute the Software as an integral part of your software 
+   application or service.
+
+2. You may modify the Software in order to adapt it to the needs of your
+   application or service, provided all original copyright notices are retained.
+   
+3. You may make copies of the Software for backup and archival purposes.
+
+4. Your rights under this agreement may be terminated or suspended by the 
+   licenser immediately and without notice if you fail to comply with the terms 
+   and conditions of this agreement.
+   
+5. You must comply with all applicable laws regarding use of the Software.
+
+6. The Software is provided "as is", without any express or implied warranties.
+   In no event shall the author be held liable for any damages arising from the
+   use of the Software.
+
+
+[2014-05-11]

@@ -1,0 +1,50 @@
+<div class="snap-view-menu" style={{view.navStyle}}>
+  {{nav-header
+    title=navTitle
+    searchQuery=navController.searchQuery
+    searchFilterSupported=navController.searchFilterSupported
+    isSearchCaseSensitive=navController.isSearchCaseSensitive
+    nameOptions=navController.searchableOptions
+
+    navActions=navController.navActions
+    navActionsContext=navController.navActionsContext
+    navActionsTarget=navController.navActionsTarget
+  }}
+
+  {{data-list
+    class=navController.classNames
+    pager=navController.dataPager
+    paused=navController.paused
+
+    showErrorDetail="showCommunicationError"
+    rowClick="rowClick"
+
+    rowHeight=navController.rowHeight
+    rowPresentation=navController.rowPresentation
+    itemComponent=navController.itemComponent
+
+    columns=navController.columns
+    selectedIds=navController.selections
+    hasMultipleSelection=false
+    hasSingleSelection=true
+    hasSelectAll=false
+    hideSelectionCheckboxes=true
+    showHeader=false
+  }}
+</div>
+
+<div class="page-snap-view" style={{view.clientStyle}}>
+  <div class="snap-view-divider-container">
+
+    <div class="snap-view-handler">
+      <div class="panel-opener">
+        <div class="panel-handle icon-arrow-4"><div class="slide-button"></div></div>
+      </div>
+    </div>
+
+    <div class="snap-view-divider"></div>
+
+  </div>
+
+  {{outlet}}
+</div>

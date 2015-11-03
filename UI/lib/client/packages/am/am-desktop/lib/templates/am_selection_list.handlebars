@@ -1,0 +1,25 @@
+<div class="is-container-for-list list-top list-controls flex-item-top clearfix">
+
+  {{#if adhocSearchSupported}}
+    <div class="is-container-for-manage-search-filter manage-content-group">
+      {{adhoc-search searchQuery=searchQuery nameOptions=searchableOptions}}
+    </div>
+  {{/if}}
+
+  <div class="select-container flex-item-bottom">
+    <div class="grid-container-block navigation-disabled resizer-bottom-element">
+      {{data-table
+
+        pager=dataPager
+        columns=visibleColumns
+        selector=selector
+        selectedIds=selections
+        selectOnRowClick=true
+        hasSelection=selectionEnabled
+
+        externalError=externalError
+        showErrorDetail="showCommunicationError"
+      }}
+    </div>
+  </div>
+</div>

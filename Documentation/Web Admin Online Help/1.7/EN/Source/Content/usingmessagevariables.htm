@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="9" MadCap:lastHeight="1157" MadCap:lastWidth="1137">
+    <head>
+        <link href="Resources/Stylesheets/In_Column.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 class="Heading1">Using Variables in Actions</h1>
+        <p class="Body">When creating actions that include messages or names intended for mobile devices, you can embed both device and user-related variables within certain text fields. These variables are replaced with the content of the
+corresponding information items
+when the action is carried out.</p>
+        <p class="Body">To use a variable within actions, enclose it in curly brackets and prefix with a dollar
+sign; for example, <span class="Bold">${MD_DeviceName}</span>.</p>
+        <p class="Body">The following table lists the variables you can include in actions:</p>
+        <table style="mc-table-style: url('Resources/Stylesheets/In_Column.css');width: 600px;" class="TableStyle-In_Column" cellspacing="0">
+            <col class="TableStyle-In_Column-Column-Column1" style="width: 241px;">
+            </col>
+            <col class="TableStyle-In_Column-Column-Column1" style="width: 357px;">
+            </col>
+            <thead>
+                <tr class="TableStyle-In_Column-Head-Header1">
+                    <th class="TableStyle-In_Column-HeadE-Column1-Header1">Variable</th>
+                    <th class="TableStyle-In_Column-HeadD-Column1-Header1">Corresponding Information Item</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1" colspan="2">
+                        <p class="CellSubHeading">Device-related variables</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_CurrentCarrierNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Current Carrier
+Network</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_DeviceModel</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Model</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_DeviceName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_HomeCarrierNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Home Network</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IMEI</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device IMEI</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_UDID</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Identifier (UDID)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_PhoneNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Phone Number</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_SerialNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Serial Number</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_LastMDMHeartbeat</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Last Contact</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_IPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Public IP Address</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_CellIPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Cell IP Address</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_WifiIPAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device WiFi IP Address</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_WifiMACAddress</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device WiFi MAC Address</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_WifiNetwork</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device WiFi Network</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_Model</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Model Number</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_OSVersion</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device OS Version</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IsJailbroken</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Jailbroken</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_PasscodePresent</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Passcode Present</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_IsRoaming</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Is Roaming</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MD_DataRoamingEnabled</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Mobile Device Data Roaming
+Enabled</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MD_VoiceRoamingEnabled</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Mobile Device Voice Roaming
+Enabled</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1" colspan="2">
+                        <p class="CellSubHeading">User-related variables</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_FirstName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User First Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_LastName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Last Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_LogOnName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Log-on Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_DisplayName</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Display Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_EnrollmentUsername</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Enrollment
+Username</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_EnrollmentDomain</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Enrollment
+Domain</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_PhoneNumber</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Phone Number</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_EMail</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User E-Mail</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_OrganizationalUnitPath</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Organizational
+Unit Path</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_OrganizationalUnit</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Organizational Unit</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_IsMemberOf</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Is Member Of</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Department</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Department</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_Office</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Office</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Company</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Company</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_Street</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User Street</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_City</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User City</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body2">
+                        <p class="CellBody">MDU_State</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body2">
+                        <p class="CellBody">Device User State</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body1">
+                    <td class="TableStyle-In_Column-BodyE-Column1-Body1">
+                        <p class="CellBody">MDU_Country</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyD-Column1-Body1">
+                        <p class="CellBody">Device User Country</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-In_Column-Body-Body2">
+                    <td class="TableStyle-In_Column-BodyB-Column1-Body2">
+                        <p class="CellBody">MDU_ZIPCode</p>
+                    </td>
+                    <td class="TableStyle-In_Column-BodyA-Column1-Body2">
+                        <p class="CellBody">Device User ZIP Code</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="BodyFollowingList">You can also use custom variables by <a href="creatingcustomfields.htm">creating custom fields</a> and assigning a variable name to the field.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="actionsendmessage.htm" />
+                <MadCap:relatedTopic src="actionsendemail.htm" />
+                <MadCap:relatedTopic src="actionsendsms.htm" />
+                <MadCap:relatedTopic src="actionsetdevicename.htm" />
+                <MadCap:relatedTopic src="actionsetcustomfield.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

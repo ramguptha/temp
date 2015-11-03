@@ -1,0 +1,47 @@
+<div class="snap-container-title tab-content-title"><span class="snap-container-icon"><img src={{snapContainerIconPath}}></span>
+  {{#if snapContainerSubTitle }}
+    <div class="list-info-header">
+      <h1 class="list-title text-ellipsis" data-tooltip-attr="title" title={{name}}>{{name}}</h1>
+      <div class="list-title-summary text-ellipsis" data-tooltip-source-id="deviceDetailsDesc">
+        {{snapContainerSubTitle}}
+      </div>
+      <div class="hide-block" data-tooltip-id="deviceDetailsDesc">{{snapContainerSubTitle}}</div>
+    </div>
+  {{else}}
+    <h2>{{name}}</h2>
+  {{/if}}
+
+  {{#if buttonBlockView}}
+    {{view buttonBlockView}}
+  {{/if}}
+</div>
+
+<div class={{snapContainerContentClass}}>
+  {{#if hasWarning}}
+    {{view warningView}}
+  {{/if}}
+  <div class="snap-container-frame">
+    <div class="tabs-menu">
+      <ul class="snap-menu-tabs">
+        {{#each tabList as |tab|}}
+          {{#if tab.length}}
+            <li class="menu-parent menu-closed">
+              <label class={{tab.itemClass}}>{{tab.label}}</label>
+              {{view tabCompoundItemView activeTab=activeTab tab=tab}}
+            </li>
+          {{else}}
+            {{view tabItemView activeTab=activeTab tab=tab}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="page-content-frame">
+      <div class="page-content">
+        {{yield}}
+      </div>
+    </div>
+
+    <div class="snap-container-footer"></div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+{{#with view.filterController as |filterController|}}
+  <div class="advanced-filter-selector select-generic">
+    {{view filterController.FilterAttrPickerView controller=filterController.filterAttrPickerController}}
+  </div>
+  {{#if filterController.supportedOps}}
+    <div class="advanced-filter-selector select-generic">
+      {{view view.ConditionSearchableSelect content=filterController.supportedOps optionValuePath="content.name" optionLabelPath="content.labelFinal" value=filterController.opName
+      disabled=filterController.selectOpDisabled}}
+    </div>
+  {{/if}}
+
+  {{#unless filterController.opIsUnary}}
+
+    {{#if filterController.opRvalTypeIsDate}}
+      <div class="date-field-wrapper">{{date-picker date=filterController.opRvalValue}}</div>
+    {{/if}}
+
+    {{#if filterController.opRvalTypeIsDateTime}}
+      <div class="date-field-wrapper">{{date-time-picker date=filterController.opRvalValue}}</div>
+    {{/if}}
+
+    {{#if filterController.opRvalTypeIsEnum}}
+      {{#if filterController.advancedFilterController.isLoaded}}
+        <div class="advanced-filter-selector select-generic">
+          {{view view.EnumSearchableSelect content=filterController.opRvalOptions value=filterController.opRvalValue
+          optionLabelPath="content.name" optionValuePath="content.value"}}
+        </div>
+      {{/if}}
+    {{/if}}
+
+    {{#if filterController.opRvalTypeIsString}}
+      {{ng-text-field value=filterController.opRvalValue maxlength="255" warningMessage=filterController.warningMessage}}
+    {{/if}}
+
+    {{#if filterController.opRvalTypeIsNumber}}
+      {{number-field number=filterController.opRvalValue min="0" max="1000000000"}}
+    {{/if}}
+
+    {{#if filterController.opTypeIsBetweenDate}}
+      {{between-date-field fromDate=filterController.topRvalValue1 toDate=filterController.topRvalValue2}}
+    {{/if}}
+
+    {{#if filterController.opRvalTypeIsIp}}
+      {{ip-field fromIp=filterController.opRvalValue}}
+    {{/if}}
+
+    {{#if filterController.opTypeIsIpRange}}
+      {{ip-field isRange=true fromIp=filterController.topRvalValue1 toIp=filterController.topRvalValue2}}
+    {{/if}}
+
+    {{#if filterController.opTypeIsLastNOp}}
+      {{within-field operatorTypes=filterController.operatorTypes number1=filterController.topRvalValue1 value=filterController.topRvalValue2}} {{filterController.filterLineAppendWord}}
+    {{/if}}
+    {{#if filterController.opTypeIsLastNOpRange}}
+      {{within-field operatorTypes=filterController.operatorTypes isRange=true number1=filterController.topRvalValue1 number2=filterController.topRvalValue2 value=filterController.topRvalValue3}} {{filterController.filterLineAppendWord}}
+    {{/if}}
+    {{#if filterController.opTypeIsSingleDate}}
+      <div class="date-field-wrapper">{{date-field dateValue=filterController.opRvalValue}}</div>
+    {{/if}}
+
+    {{#if filterController.opTypeIsSingleDateTime}}
+      <div class="date-field-wrapper">{{date-field hasTime=true dateValue=filterController.opRvalValue}}</div>
+    {{/if}}
+  {{/unless}}
+{{/with}}

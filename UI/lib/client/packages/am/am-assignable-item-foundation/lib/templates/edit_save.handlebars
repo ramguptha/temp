@@ -1,0 +1,27 @@
+<div class="row-fluid edit-content-save">
+  {{#if submitInProgress}}
+    <div class="float-left spinner-container">
+      <span class="spinner spinner-medium"></span>
+    </div>
+    <span class="status-message">{{submitStatusMsg}}</span>
+  {{else}}
+    {{#if errorMessage}}
+      <span class="icon-warning"></span>
+      <div class="modal-action-error-fullwidth">{{errorMessage}}</div>
+      <div class="modal-action-details-fullwidth">{{errorDetails}}</div>
+    {{else}}
+      <span class="icon-checkmark-1"></span>
+      <span class="status-message">{{submitStatusMsg}}</span>
+    {{/if}}
+  {{/if}}
+</div>
+<div class="modal-action-buttons">
+  <div class="button-group">
+    {{#if errorMessage}}
+      <button class="btn btn-low back-button" {{action "gotoPreviousStep"}}>{{t 'shared.buttons.back'}}</button>
+      <button class="btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.done'}}</button>
+    {{else}}
+      <button class="btn btn-action" {{action "done"}} disabled={{isDoneDisabled}}>{{t 'shared.buttons.done'}}</button>
+    {{/if}}
+  </div>
+</div>

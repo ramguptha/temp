@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/viewingdevicedetails.htm" />
+    <Link
+      Url="Content/lockingdevices.htm" />
+    <Link
+      Url="Content/managingpasscodes.htm" />
+    <Link
+      Url="Content/deletingdata.htm" />
+    <Link
+      Url="Content/sendingmessages.htm" />
+    <Link
+      Url="Content/updatingdevice.htm" />
+    <Link
+      Url="Content/settingdevicename.htm" />
+    <Link
+      Url="Content/roamingoptions.htm" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="Content/uninstallingapps.htm" />
+    <Link
+      Url="Content/installingconfigprofiles.htm" />
+    <Link
+      Url="Content/removingconfigprofiles.htm" />
+    <Link
+      Url="Content/installingprovprofiles.htm" />
+    <Link
+      Url="Content/removingprovprofiles.htm" />
+    <Link
+      Url="Content/settingdeviceownership.htm" />
+    <Link
+      Url="Content/settingenrollmentuser.htm" />
+    <Link
+      Url="Content/settingorginfo.htm" />
+    <Link
+      Url="Content/settingactivationlock.htm" />
+    <Link
+      Url="Content/reissuingcommands.htm" />
+    <Link
+      Url="Content/aboutmdm.htm" />
+    <Link
+      Url="Content/navigating.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/searchingforinfo.htm" />
+    <Link
+      Url="Content/columnlayout.htm" />
+    <Link
+      Url="Content/viewingdevicedetails.htm" />
+    <Link
+      Url="Content/lockingdevices.htm" />
+    <Link
+      Url="Content/managingpasscodes.htm" />
+    <Link
+      Url="Content/deletingdata.htm" />
+    <Link
+      Url="Content/sendingmessages.htm" />
+    <Link
+      Url="Content/updatingdevice.htm" />
+    <Link
+      Url="Content/settingdevicename.htm" />
+    <Link
+      Url="Content/roamingoptions.htm" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="Content/uninstallingapps.htm" />
+    <Link
+      Url="Content/installingconfigprofiles.htm" />
+    <Link
+      Url="Content/removingconfigprofiles.htm" />
+    <Link
+      Url="Content/installingprovprofiles.htm" />
+    <Link
+      Url="Content/removingprovprofiles.htm" />
+    <Link
+      Url="Content/settingdeviceownership.htm" />
+    <Link
+      Url="Content/settingenrollmentuser.htm" />
+    <Link
+      Url="Content/settingorginfo.htm" />
+    <Link
+      Url="Content/settingactivationlock.htm" />
+    <Link
+      Url="Content/reissuingcommands.htm" />
+    <Link
+      Url="Content/aboutmdm.htm" />
+    <Link
+      Url="Content/navigating.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets />
+</CatapultFileLinkSet>

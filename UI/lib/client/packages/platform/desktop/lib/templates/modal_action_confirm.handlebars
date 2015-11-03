@@ -1,0 +1,31 @@
+<div class="is-container-for-modal-action-icon modal-action-icon">
+  <span class={{headingIconClass}}></span>
+</div>
+<div class="is-container-for-modal-action-confirm modal-action-content">
+  <div class="modal-action-confirmation">
+    <h3>{{heading}}</h3>
+
+    {{#if inProgress}}
+      <span class="spinner"></span>
+    {{else}}
+      {{#if actionDescriptionWarning}}
+        <div class="is-container-for-action-description-warning confirmation-attention"><span class="icon-warning"></span><span class="warning-description-content">{{actionDescriptionWarning}}</span></div>
+      {{/if}}
+
+      <p>{{actionDescription}}</p>
+
+      {{#if actionWarning}}
+        <div class="is-container-for-action-warning"><span class="is-action-warning alert alert-warning">{{actionWarning}}</span></div>
+      {{/if}}
+    {{/if}}
+  </div>
+
+  <div class="container-fluid modal-action-buttons">
+    <div class="button-group" >
+      <button type="button" class="is-button-for-cancel btn btn-low" {{action "cancel"}}>{{t 'shared.buttons.cancel'}}</button>
+      {{#if actionButtonLabel}}
+        <button type="button" class="is-button-for-confirm btn btn-action" disabled={{disabled}} {{action "onConfirmAction"}} autofocus>{{actionButtonLabel}}</button>
+      {{/if}}
+    </div>
+  </div>
+</div>

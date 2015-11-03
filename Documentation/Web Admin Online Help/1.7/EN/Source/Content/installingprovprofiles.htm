@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="578" MadCap:lastWidth="722">
+    <head>
+    </head>
+    <body>
+        <h1 class="Heading1">Installing Provisioning Profiles on Devices</h1>
+        <p class="Body">You can remotely install existing provisioning profiles on iOS devices. A provisioning profile is a binary file that contains the necessary digital certificate, App ID, and UDIDs to allow an enterprise or beta application to be distributed to an iOS device outside of the App Store. While
+provisioning profiles are normally automatically installed as part of an
+application, it may be necessary to manually install them in special
+situations. Before you can install a provisioning profile from <MadCap:variable name="Variables.ProductName" />, you must import the profile using the Absolute Manage Admin interface.</p>
+        <p class="Body">After you issue the command, the provisioning profile is installed on the device as soon as it next contacts the notification server of its OS vendor. If
+the device is connected to a Wi-Fi or mobile network, this action
+is usually carried out within a minute; otherwise, it happens when the device
+reconnects to a network.</p>
+        <p class="TaskIntro">To install provisioning profiles on iOS devices:</p>
+        <p class="Step1" MadCap:autonum="1. ">Navigate to a page in the Mobile Devices area that contains the iOS devices you want to install provisioning profiles on. For example, you can navigate to <span class="Bold">Mobile Devices</span> &gt; <span class="Bold">All iOS Devices</span>, then <a href="searchingforinfo.htm">search for specific devices</a>.</p>
+        <p class="Steps" MadCap:autonum="2. ">In the results grid, select the checkbox of each applicable device and click <span class="Bold">Commands</span> &gt; <span class="Bold">Install Provisioning Profile</span>.</p>
+        <p class="Indent2">You can also issue the command for a single device from its Device Details page:</p>
+        <p class="SubSteps" MadCap:autonum="a) ">In the results grid, click the device you want to install provisioning profiles on.  The device's Device Details page opens.</p>
+        <p class="SubSteps" MadCap:autonum="b) "> From the Commands sidebar, click <span class="Bold">Install Provisioning Profile</span>.</p>
+        <p class="Steps" MadCap:autonum="3. ">Select the checkboxes of the provisioning profiles you want to install.</p>
+        <p class="Indent2">To quickly find specific provisioning profiles, you can use the search field to narrow the profiles listed by specific criteria (for example, by profile name or UUID).</p>
+        <p class="Steps" MadCap:autonum="4. ">Click <span class="Bold">Install Profile</span>.</p>
+        <p class="Steps" MadCap:autonum="5. ">Click <span class="Bold">OK</span> to close the confirmation message.</p>
+        <p>
+            <MadCap:relatedTopics style="mc-help-control-display: list;">
+                <MadCap:relatedTopic src="searchingforinfo.htm" />
+                <MadCap:relatedTopic src="removingprovprofiles.htm" />
+            </MadCap:relatedTopics>
+        </p>
+    </body>
+</html>

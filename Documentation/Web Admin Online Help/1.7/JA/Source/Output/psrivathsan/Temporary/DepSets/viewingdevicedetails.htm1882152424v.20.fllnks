@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileLinkSet
+  FileSearchable="true"
+  FileTimeEstimate="0"
+  FilePriority="0">
+  <Links>
+    <Link
+      Url="Content/Resources/TableStyles/In_ColumnIndent.css" />
+    <Link
+      Url="Content/Resources/Stylesheets/In_ColumnIndent.css" />
+    <Link
+      Url="Content/settingdeviceownership.htm" />
+    <Link
+      Url="Content/addingdevicetopolicy.htm" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="Content/uninstallingapps.htm" />
+    <Link
+      Url="Content/installingconfigprofiles.htm" />
+    <Link
+      Url="Content/removingconfigprofiles.htm" />
+    <Link
+      Url="Content/installingprovprofiles.htm" />
+    <Link
+      Url="Content/removingprovprofiles.htm" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/settingcustomfieldvalue.htm" />
+    <Link
+      Url="Content/Resources/Images/erase-button.png" />
+    <Link
+      Url="Content/Resources/Images/reexecute-button.png" />
+    <Link
+      Url="Content/settingorginfo.htm" />
+  </Links>
+  <LongLinks>
+    <Link
+      Url="Content/Resources/TableStyles/In_ColumnIndent.css" />
+    <Link
+      Url="Content/Resources/Stylesheets/In_ColumnIndent.css" />
+    <Link
+      Url="Content/settingdeviceownership.htm" />
+    <Link
+      Url="Content/addingdevicetopolicy.htm" />
+    <Link
+      Url="Content/Resources/Images/remove-button.png" />
+    <Link
+      Url="Content/installingapps.htm" />
+    <Link
+      Url="Content/uninstallingapps.htm" />
+    <Link
+      Url="Content/installingconfigprofiles.htm" />
+    <Link
+      Url="Content/removingconfigprofiles.htm" />
+    <Link
+      Url="Content/installingprovprofiles.htm" />
+    <Link
+      Url="Content/removingprovprofiles.htm" />
+    <Link
+      Url="Content/Resources/Images/edit-button.png" />
+    <Link
+      Url="Content/settingcustomfieldvalue.htm" />
+    <Link
+      Url="Content/Resources/Images/erase-button.png" />
+    <Link
+      Url="Content/Resources/Images/reexecute-button.png" />
+    <Link
+      Url="Content/settingorginfo.htm" />
+  </LongLinks>
+  <Anchors />
+  <Keywords />
+  <Concepts />
+  <ConceptControlNames />
+  <IndexControlNames />
+  <Variables />
+  <FileConditions />
+  <FileTags />
+  <AllConditions />
+  <Stylesheets>
+    <Url
+      Source="Content/Resources/TableStyles/In_ColumnIndent.css" />
+    <Url
+      Source="Content/Resources/Stylesheets/In_ColumnIndent.css" />
+  </Stylesheets>
+</CatapultFileLinkSet>

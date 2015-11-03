@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTargetOutput
+  GeneratedTarget="/Output/psrivathsan/PDF/PDF.pdf"
+  BuildVersion="10.2.2.0">
+  <Files>
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/rightarrow.jpg" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/related_topics_icon2.png" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/AM-logo-med.jpg" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/blog.png" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/twitter.png" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/linkedin.png" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/facebook.png" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/youtube.png" />
+    <Url
+      Source="Output/psrivathsan/Temporary/PDF/PDF_D087172/Resources/Images/google-plus.png" />
+    <Url
+      Source="Output/psrivathsan/PDF/PDF.pdf" />
+  </Files>
+  <Skins />
+</CatapultTargetOutput>

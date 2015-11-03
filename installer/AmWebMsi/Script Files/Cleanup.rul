@@ -1,0 +1,39 @@
+/***************************************************************************************
+*  Cleanup.rul
+*
+*  Purpose:	clean up after installation
+*/ 
+
+prototype Cleanup();
+
+STRING szPath1, szPath2;
+
+function Cleanup() 
+begin
+
+/*
+    //delete unwanted folders C:\Program Files\AmWebUi and C:\ProgramData\AmWebApi - IS creates them implicitly
+    //Note: C:\Program Files\AmWebUi does not get created in ver.1.1.3
+    szExec = "cmd";
+    szPath1 = PROGRAMFILES64^"AmWebUi";
+    szPath2 = CommonAppDataFolder^ABSOLUTE_SOFTWARE^"AmWebApi";
+	szArgs = "/c rd \"" + szPath1 + "\" /s /q \& rd \"" + szPath2 + "\" /s /q";
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;
+	
+	//delete unwanted folder C:\Program Files\Apache Software Foundation\Tomcat 7.0\$WebAPILogbackFileLocation
+	//created automatically before web.xml key replacement
+	//Note: $WebAPILogbackFileLocation does not get created in ver.1.1.3
+	//do not call RetrieveDirsFromRegistry(); - Tomcat may no longer be present
+	szPath1 = "C:\\Program Files\\Apache Software Foundation\\Tomcat 7.0\\$WebAPILogbackFileLocation";
+	szPath2 = "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.0\\$WebAPILogbackFileLocation";	
+	szArgs = "/c rd \"" + szPath1 + "\" /s /q \& rd \"" + szPath2 + "\" /s /q";
+    if (LaunchAppAndWait (szExec, szArgs, WAIT | LAAW_OPTION_HIDDEN | LAAW_OPTION_SHOW_HOURGLASS | LAAW_OPTION_USE_SHELLEXECUTE) < 0) then 
+	    Sprintf( szMsg1, @ABS_MSG_COMMON_LAUNCH_ERROR, szExec );    
+	    MessageBox(szMsg1, SEVERE);      
+	endif;	
+*/
+
+end;

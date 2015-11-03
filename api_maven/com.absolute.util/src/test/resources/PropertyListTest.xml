@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>View Definitions</key>
+	<dict>
+		
+		<key>All Android Tablets</key>
+		<dict>
+			<key>Filter</key>
+			<dict>
+				<key>CompareValue</key>
+				<array>
+					<dict>
+						<key>CachedInfoItemName</key>
+						<string>Mobile Device OS Platform</string>
+						<key>CompareValue</key>
+						<string>Android</string>
+						<key>CompareValue2</key>
+						<string></string>
+						<key>CompareValueUnits</key>
+						<string>Minutes</string>
+						<key>InfoItemID</key>
+						<string>8D8EB50B-EAE0-4D4B-8FA7-CA4C1DE220E5</string>
+						<key>IsCustomField</key>
+						<false/>
+						<key>Operator</key>
+						<string>==</string>
+						<key>UseNativeType</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>CachedInfoItemName</key>
+						<string>Mobile Device Is Tablet</string>
+						<key>CompareValue</key>
+						<true/>
+						<key>CompareValue2</key>
+						<string></string>
+						<key>CompareValueUnits</key>
+						<string>Minutes</string>
+						<key>InfoItemID</key>
+						<string>FA7F74E7-7E68-4C6A-ABFE-F8EFABD2F291</string>
+						<key>IsCustomField</key>
+						<false/>
+						<key>Operator</key>
+						<string>==</string>
+						<key>UseNativeType</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CriteriaFieldType</key>
+				<integer>0</integer>
+				<key>Operator</key>
+				<string>AND</string>
+					</dict>			
+			<key>ColumnOrder</key>
+			<array>
+				<string>column_device_name</string>
+				<string>column_device_model</string>
+				<string>column_ios_version</string>
+				<string>column_device_serialnumber</string>
+				<string>column_device_last_contact</string>
+				<string>column_ios_buildno</string>
+			</array>
+			<key>ColumnProperties</key>
+			<dict>
+				<key>column_device_last_contact</key>
+				<dict>
+					<key>CachedDisplayName</key>
+					<string>Mobile Device Last Contact</string>
+					<key>InfoItemID</key>
+					<string>4A8A81E0-0159-471D-B8D3-32E316CB81EF</string>
+				</dict>
+				<key>column_device_model</key>
+				<dict>
+					<key>CachedDisplayName</key>
+					<string>Mobile Device Model</string>
+					<key>InfoItemID</key>
+					<string>61479324-9E16-46FD-85E5-68F9865A7D6D</string>
+					<key>Width</key>
+					<integer>160</integer>
+				</dict>
+				<key>column_device_name</key>
+				<dict>
+					<key>CachedDisplayName</key>
+					<string>Mobile Device Name</string>
+					<key>InfoItemID</key>
+					<string>FE5A9F56-228C-4BDA-99EC-8666292CB5C1</string>
+					<key>Width</key>
+					<integer>151</integer>
+				</dict>
+				<key>column_device_serialnumber</key>
+				<dict>
+					<key>CachedDisplayName</key>
+					<string>Mobile Device Serial Number</string>
+					<key>InfoItemID</key>
+					<string>B20868B8-CAEA-446B-BE8D-BEC97368E839</string>
+					<key>Width</key>
+					<integer>151</integer>
+				</dict>
+				<key>column_ios_buildno</key>
+				<dict>
+					<key>CachedDisplayName</key>
+					<string>Mobile Device OS Build Number</string>
+					<key>InfoItemID</key>
+					<string>EFD8C1F6-770D-4C5B-B502-AE74A50B1D42</string>
+					<key>Width</key>
+					<integer>153</integer>
+				</dict>
+				<key>column_ios_version</key>
+				<dict>
+					<key>CachedDisplayName</key>
+					<string>Mobile Device OS Version</string>
+					<key>InfoItemID</key>
+					<string>1A9B0255-4BB2-43DC-BDC6-ABB65339BFF0</string>
+					<key>Width</key>
+					<integer>143</integer>
+				</dict>
+			</dict>
+			<key>RootTable</key>
+			<string>iphone_info</string>
+			<key>SortOrder</key>
+			<array>
+				<dict>
+					<key>Ascending</key>
+					<true/>
+					<key>ColumnID</key>
+					<string>column_device_name</string>
+				</dict>
+			</array>
+		</dict>
+		
+
+	</dict>
+</dict>
+</plist>
