@@ -35,7 +35,7 @@
 	</services>
 
 	<modules>
-		<docs freemarkerXMLProcessingTemplate="src\main\resources\docs.fmt"
+		<docs freemarkerXMLProcessingTemplate="src/main/resources/docs.fmt"
 			splashPackage="com.absolute.am.webapi" title="AM Web API Specification"
 			copyright=" Absolute Software Corporation. All rights reserved."
 			includeExampleXml="false" includeDefaultDownloads="false"
