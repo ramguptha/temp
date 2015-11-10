@@ -21,7 +21,7 @@ import com.absolute.localization.helpers.Helpers;
 
 public class PlistPropertyExporter {
 
-	/**
+	/** 
 	 * Takes InfoItemEnumerations.plist, ErrorMessages.plist or InformationItems.plist file as an input,
 	 * extracts all key-value property pairs and creates a properties file with that data.
 	 * Each Enumeration is prepended with Description string from the input plist.
